@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Images (to be added later)
+docs/images/
+
+# Temporary files
+*.tmp
+*.log
