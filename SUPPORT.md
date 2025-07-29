@@ -1,5 +1,7 @@
 # ViewLingo Support
 
+🌍 Language: **English** | [한국어](docs/SUPPORT-ko.md) | [日本語](docs/SUPPORT-ja.md) | [简体中文](docs/SUPPORT-zh-Hans.md) | [繁體中文](docs/SUPPORT-zh-Hant.md) | [ไทย](docs/SUPPORT-th.md) | [Español](docs/SUPPORT-es.md) | [Français](docs/SUPPORT-fr.md) | [Deutsch](docs/SUPPORT-de.md) | [Tiếng Việt](docs/SUPPORT-vi.md)
+
 Welcome to ViewLingo support! We're here to help you get the most out of your translation experience.
 
 ## 🚀 Quick Start Guide
@@ -92,7 +94,7 @@ Have an idea to make ViewLingo better? We'd love to hear it!
 
 - **GitHub Issues**: [For bugs and technical issues](https://github.com/puritysb/ViewLingo/issues)
 - **GitHub Discussions**: [For features and general discussion](https://github.com/puritysb/ViewLingo/discussions)
-- **Email**: viewlingo.support@gmail.com (for private concerns only)
+- **Email**: puritysb@gmail.com (for private concerns only)
 
 ## 🔧 Troubleshooting Checklist
 

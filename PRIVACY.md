@@ -1,5 +1,7 @@
 # ViewLingo Privacy Policy
 
+🌍 Language: **English** | [한국어](docs/PRIVACY-ko.md) | [日本語](docs/PRIVACY-ja.md) | [简体中文](docs/PRIVACY-zh-Hans.md) | [繁體中文](docs/PRIVACY-zh-Hant.md) | [ไทย](docs/PRIVACY-th.md) | [Español](docs/PRIVACY-es.md) | [Français](docs/PRIVACY-fr.md) | [Deutsch](docs/PRIVACY-de.md) | [Tiếng Việt](docs/PRIVACY-vi.md)
+
 **Last Updated: January 29, 2025**
 
 ## Our Commitment to Your Privacy
@@ -89,7 +91,7 @@ While ViewLingo's source code is proprietary, our privacy practices are transpar
 For any privacy-related questions or concerns:
 
 - GitHub Issues: [https://github.com/puritysb/ViewLingo/issues](https://github.com/puritysb/ViewLingo/issues)
-- Email: viewlingo.support@gmail.com
+- Email: puritysb@gmail.com
 
 ## Summary
 

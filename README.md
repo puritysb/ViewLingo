@@ -1,5 +1,7 @@
 # ViewLingo - Live Screen Translator for macOS
 
+🌍 Language: **English** | [한국어](docs/README-ko.md) | [日本語](docs/README-ja.md) | [简体中文](docs/README-zh-Hans.md) | [繁體中文](docs/README-zh-Hant.md) | [ไทย](docs/README-th.md) | [Español](docs/README-es.md) | [Français](docs/README-fr.md) | [Deutsch](docs/README-de.md) | [Tiếng Việt](docs/README-vi.md)
+
 [![Download on Mac App Store](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/app/viewlingo)
 
 ## 🎯 Point at Any Text, See It Translated Instantly
@@ -44,7 +46,7 @@ ViewLingo transforms any on-screen text in real-time with natural AR overlay - j
 ### 📮 Support & Feedback
 - 🐛 Bug reports: [Issues](https://github.com/puritysb/ViewLingo/issues)
 - 💡 Feature requests: [Discussions](https://github.com/puritysb/ViewLingo/discussions)
-- 📧 Email: viewlingo.support@gmail.com
+- 📧 Email: puritysb@gmail.com
 
 ### 🔐 Privacy
 ViewLingo does not collect any personal data. All translations are processed on your device. See our [Privacy Policy](PRIVACY.md) for details.
