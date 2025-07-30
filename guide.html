@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide - ViewLingo</title>
+    <meta name="description" content="Complete user guide for ViewLingo - learn how to translate any on-screen text with viewfinder technology">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .guide-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .guide-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .guide-section h3 {
+            color: #333;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .step-by-step {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+        
+        .step-content h4 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .step-content p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .keyboard-shortcut {
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 0 2px;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #28a74520, #20c99720);
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffc10720, #ff851120);
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .screenshot-placeholder {
+            background: #e9ecef;
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin: 1rem 0;
+            color: #6c757d;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #5a6fd8;
+        }
+        
+        .navigation {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navigation h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .navigation ul {
+            list-style: none;
+            columns: 2;
+            gap: 2rem;
+        }
+        
+        .navigation li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .navigation a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .guide-section {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .navigation ul {
+                columns: 1;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ViewLingo User Guide</h1>
+            <div class="subtitle">Master the art of screen translation</div>
+        </header>
+        
+        <div class="navigation">
+            <h3>📋 Quick Navigation</h3>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#basic-usage">Basic Usage</a></li>
+                <li><a href="#live-mode">Live Translation Mode</a></li>
+                <li><a href="#settings">Settings & Preferences</a></li>
+                <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
+                <li><a href="#tips">Tips & Best Practices</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#privacy">Privacy & Security</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-section" id="getting-started">
+            <h2>🚀 Getting Started</h2>
+            
+            <h3>Installation & Setup</h3>
+            <div class="step-by-step">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Download & Install</h4>
+                        <p>Download ViewLingo from the Mac App Store and install it like any other macOS app.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Grant Screen Recording Permission</h4>
+                        <p>When you first run ViewLingo, macOS will ask for Screen Recording permission. This is required for the app to capture and translate screen content.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Choose Your Languages</h4>
+                        <p>Set your preferred target language and source language priorities in the settings.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Start Translating!</h4>
+                        <p>Press <span class="keyboard-shortcut">Control+Shift+A</span> to create your first viewfinder and start translating.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> ViewLingo works completely offline! Once installed, you don't need an internet connection to translate text.
+            </div>
+        </div>
+        
+        <div class="guide-section" id="basic-usage">
+            <h2>📱 Basic Usage</h2>
+            
+            <h3>Creating a Viewfinder</h3>
+            <p>There are two main ways to create a viewfinder in ViewLingo:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Method 1: Area Selection</h4>
+                    <p>Press <span class="keyboard-shortcut">Control+Shift+A</span> and drag to select the area you want to translate. This gives you precise control over the capture area.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Method 2: Instant Creation</h4>
+                    <p>Press <span class="keyboard-shortcut">fn+Control+Option</span> to instantly create a viewfinder at your mouse cursor position. Quick and convenient!</p>
+                </div>
+            </div>
+            
+            <h3>Using the Viewfinder</h3>
+            <div class="step-by-step">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Position the Viewfinder</h4>
+                        <p>Drag the viewfinder window to position it over the text you want to translate. The viewfinder is semi-transparent so you can see the content underneath.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Resize if Needed</h4>
+                        <p>Drag the corners or edges to resize the viewfinder to fit your text perfectly. Larger text areas may need bigger viewfinders.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Automatic Translation</h4>
+                        <p>ViewLingo automatically detects and translates text within the viewfinder. Translations appear as overlays on the original text.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Close When Done</h4>
+                        <p>Press <span class="keyboard-shortcut">ESC</span> or triple-click the viewfinder to close it.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="screenshot-placeholder">
+                [Screenshot: Viewfinder positioned over Japanese text with English translation overlay]
+            </div>
+        </div>
+        
+        <div class="guide-section" id="live-mode">
+            <h2>⚡ Live Translation Mode</h2>
+            
+            <p>Live Mode automatically retranslates content as it changes on screen, perfect for videos, live streams, and dynamic content.</p>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Live Mode significantly increases memory usage and may affect system performance. It's disabled by default and should be used with caution for extended periods.
+            </div>
+            
+            <h3>When to Use Live Mode</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Video Subtitles</h4>
+                    <p>Translate foreign language subtitles in real-time while watching videos on YouTube, Netflix, or other platforms.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Live Streams</h4>
+                    <p>Follow live broadcasts, gaming streams, or news in foreign languages with continuous translation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Scrolling Content</h4>
+                    <p>Read through long articles or documents in foreign languages as you scroll.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Chat & Messages</h4>
+                    <p>Follow real-time conversations in messaging apps or chat rooms.</p>
+                </div>
+            </div>
+            
+            <h3>Enabling Live Mode</h3>
+            <div class="step-by-step">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Open Settings</h4>
+                        <p>Click the ViewLingo menu and select "Settings" or press <span class="keyboard-shortcut">Command+,</span></p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Find Experimental Features</h4>
+                        <p>Look for the "Experimental Features" section in the General tab.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Enable Live Mode</h4>
+                        <p>Toggle on "Live Translation Mode" and acknowledge the performance warning.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Use the Live Button</h4>
+                        <p>Click the "Live" button in your viewfinder to start continuous translation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 Performance Tip:</strong> When using Live Mode, close other resource-intensive applications and use it only when necessary. Turn it off when you're done to preserve system performance.
+            </div>
+        </div>
+        
+        <div class="guide-section" id="settings">
+            <h2>⚙️ Settings & Preferences</h2>
+            
+            <h3>Language Settings</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Target Language</h4>
+                    <p>Choose which language you want text translated to. This is typically your native language.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Source Language Priority</h4>
+                    <p>Set the order in which ViewLingo attempts to detect source languages. Put commonly encountered languages first.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Auto-Detection</h4>
+                    <p>Enable automatic language detection to let ViewLingo determine the source language automatically.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>App Language</h4>
+                    <p>Choose the language for ViewLingo's interface. Can follow system settings or be set manually.</p>
+                </div>
+            </div>
+            
+            <h3>Display Settings</h3>
+            <ul>
+                <li><strong>Background Opacity:</strong> Adjust how transparent the translation overlay background appears</li>
+                <li><strong>Text Filtering:</strong> Skip short text, numbers, or programming keywords</li>
+                <li><strong>Viewfinder Memory:</strong> Remember the last viewfinder size and position</li>
+            </ul>
+            
+            <h3>Performance Settings</h3>
+            <ul>
+                <li><strong>Live Mode:</strong> Enable/disable experimental live translation</li>
+                <li><strong>Text Recognition:</strong> Adjust OCR sensitivity and processing options</li>
+                <li><strong>Memory Management:</strong> Options for managing resource usage</li>
+            </ul>
+        </div>
+        
+        <div class="guide-section" id="shortcuts">
+            <h2>⌨️ Keyboard Shortcuts</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Create Viewfinder (Area Selection)</h4>
+                    <p><span class="keyboard-shortcut">Control+Shift+A</span></p>
+                    <p>Drag to select the area you want to translate</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Create Viewfinder (Instant)</h4>
+                    <p><span class="keyboard-shortcut">fn+Control+Option</span></p>
+                    <p>Creates viewfinder at mouse cursor position</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Close Viewfinder</h4>
+                    <p><span class="keyboard-shortcut">ESC</span></p>
+                    <p>Closes the active viewfinder</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Open Settings</h4>
+                    <p><span class="keyboard-shortcut">Command+,</span></p>
+                    <p>Opens the ViewLingo preferences</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Triple-Click</h4>
+                    <p>Click viewfinder three times quickly</p>
+                    <p>Alternative way to close viewfinder</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Quit ViewLingo</h4>
+                    <p><span class="keyboard-shortcut">Command+Q</span></p>
+                    <p>Closes ViewLingo completely</p>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 Customization:</strong> You can change some keyboard shortcuts in ViewLingo's settings to match your workflow preferences.
+            </div>
+        </div>
+        
+        <div class="guide-section" id="tips">
+            <h2>🎯 Tips & Best Practices</h2>
+            
+            <h3>For Best Translation Accuracy</h3>
+            <ul>
+                <li><strong>Ensure Good Contrast:</strong> Translation works best when text is clearly visible against its background</li>
+                <li><strong>Use Appropriate Viewfinder Size:</strong> Include entire words and sentences, but avoid excessive empty space</li>
+                <li><strong>Check Text Clarity:</strong> Blurry or pixelated text may not be recognized accurately</li>
+                <li><strong>Set Correct Source Language:</strong> If auto-detection isn't working, manually set the source language priority</li>
+            </ul>
+            
+            <h3>Workflow Optimization</h3>
+            <ul>
+                <li><strong>Position Viewfinders Strategically:</strong> Place them where text appears most frequently</li>
+                <li><strong>Use Multiple Viewfinders:</strong> You can have several viewfinders open simultaneously</li>
+                <li><strong>Learn the Shortcuts:</strong> Keyboard shortcuts make creating and closing viewfinders much faster</li>
+                <li><strong>Adjust Opacity:</strong> Fine-tune background opacity so translations are readable without obscuring original content</li>
+            </ul>
+            
+            <h3>Performance Tips</h3>
+            <ul>
+                <li><strong>Close Unused Viewfinders:</strong> Don't leave viewfinders open when not needed</li>
+                <li><strong>Use Live Mode Sparingly:</strong> Only enable Live Mode when actively needed</li>
+                <li><strong>Monitor System Resources:</strong> Keep an eye on memory usage if you notice slowdowns</li>
+                <li><strong>Restart Periodically:</strong> If you're doing extensive translation work, restart ViewLingo occasionally</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ Live Mode Warning:</strong> Live Mode can consume significant system resources. We recommend using it for short periods and closing it when done. Monitor your system's performance and disable Live Mode if you experience slowdowns.
+            </div>
+        </div>
+        
+        <div class="guide-section" id="troubleshooting">
+            <h2>🛠️ Troubleshooting</h2>
+            
+            <h3>Common Issues and Solutions</h3>
+            
+            <div class="feature-card" style="margin-bottom: 1rem;">
+                <h4>Text Not Being Recognized</h4>
+                <ul>
+                    <li>Check that the text is clearly visible and not blurry</li>
+                    <li>Ensure adequate contrast between text and background</li>
+                    <li>Try adjusting the viewfinder size to include more context</li>
+                    <li>Verify that the source language is supported</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card" style="margin-bottom: 1rem;">
+                <h4>Translations Are Inaccurate</h4>
+                <ul>
+                    <li>Check language settings - ensure correct source and target languages</li>
+                    <li>Include more context by expanding the viewfinder</li>
+                    <li>Verify that the text is in a supported language</li>
+                    <li>Some specialized terminology may not translate perfectly</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card" style="margin-bottom: 1rem;">
+                <h4>App Performance Issues</h4>
+                <ul>
+                    <li>Close unnecessary viewfinders</li>
+                    <li>Disable Live Mode if enabled</li>
+                    <li>Restart ViewLingo</li>
+                    <li>Check macOS system requirements (15.0+)</li>
+                    <li>Restart your Mac if problems persist</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card" style="margin-bottom: 1rem;">
+                <h4>Permission Issues</h4>
+                <ul>
+                    <li>Go to System Settings > Privacy & Security > Screen Recording</li>
+                    <li>Ensure ViewLingo is enabled in the list</li>
+                    <li>If ViewLingo isn't in the list, try reinstalling the app</li>
+                    <li>Restart ViewLingo after granting permission</li>
+                </ul>
+            </div>
+            
+            <h3>Getting Help</h3>
+            <p>If you're still experiencing issues:</p>
+            <ul>
+                <li><strong>Check our FAQ:</strong> <a href="faq.html" style="color: #667eea;">ViewLingo FAQ</a></li>
+                <li><strong>Report bugs:</strong> <a href="https://github.com/puritysb/ViewLingo/issues" style="color: #667eea;">GitHub Issues</a></li>
+                <li><strong>Ask questions:</strong> <a href="https://github.com/puritysb/ViewLingo/discussions" style="color: #667eea;">GitHub Discussions</a></li>
+            </ul>
+        </div>
+        
+        <div class="guide-section" id="privacy">
+            <h2>🔒 Privacy & Security</h2>
+            
+            <h3>How ViewLingo Protects Your Privacy</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>100% On-Device Processing</h4>
+                    <p>All translations happen on your Mac using Apple's built-in translation engine. Your content never leaves your device.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>No Data Collection</h4>
+                    <p>ViewLingo doesn't collect, store, or transmit any of your content. We don't know what you translate.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Secure Screen Capture</h4>
+                    <p>Screen captures are processed immediately and never stored. Only the content within your viewfinder is analyzed.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>No Internet Required</h4>
+                    <p>ViewLingo works completely offline, ensuring your sensitive content never crosses network boundaries.</p>
+                </div>
+            </div>
+            
+            <h3>App Store Security</h3>
+            <p>ViewLingo is distributed through the Mac App Store and runs in Apple's secure sandbox environment, providing additional protection against malicious behavior.</p>
+            
+            <div class="tip-box">
+                <strong>🔒 Privacy Guarantee:</strong> Your translations are as private as your thoughts - they never leave your Mac. Read our complete <a href="privacy.html" style="color: #667eea;">Privacy Policy</a> for more details.
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="margin-bottom: 2rem; color: #666;">Ready to become a ViewLingo power user?</p>
+            <a href="https://apps.apple.com/app/viewlingo" style="display: inline-block; background: #667eea; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; margin-right: 1rem;">Download ViewLingo</a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

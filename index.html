@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewLingo - Live Screen Translator for macOS</title>
+    <meta name="description" content="Point at any text on your Mac screen and see it translated instantly. $4.99 one-time purchase. 100% on-device privacy. Available on Mac App Store.">
+    <meta name="keywords" content="macos translation, screen translator, viewfinder translation, on-device translation, privacy translation">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .price-tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 20px auto;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .features {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .privacy-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .privacy-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .privacy-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .privacy-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        .comparison {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .comparison h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .checkmark {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .cross {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .features-grid,
+            .privacy-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ViewLingo</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#comparison">Compare</a></li>
+                <li><a href="https://github.com/puritysb/ViewLingo/issues">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>ViewLingo</h1>
+            <div class="subtitle">Point at Any Text, See It Translated Instantly</div>
+            <p>Transform your Mac screen into a multilingual workspace with innovative viewfinder translation technology.</p>
+            
+            <div class="price-tag">$4.99 - One-time purchase, no subscriptions</div>
+            
+            <a href="https://apps.apple.com/app/viewlingo" class="cta-button">
+                Download on Mac App Store
+            </a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Powerful Features, Simple Design</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Viewfinder Translation</h3>
+                    <p>Create a viewfinder over any text on your screen. Press Control+Shift+A and position it anywhere - websites, documents, videos, or apps.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Natural AR Overlay</h3>
+                    <p>Translations appear seamlessly overlaid on original text, maintaining context and readability. No more switching between apps.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>10 Language Support</h3>
+                    <p>Translate between English, Korean, Japanese, Chinese, Spanish, French, German, Russian, Italian, and Portuguese.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Smart OCR Technology</h3>
+                    <p>Advanced text recognition accurately captures screen content, even from complex layouts and various fonts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Live Translation Mode</h3>
+                    <p>Experimental feature for continuously changing content like videos or live streams. Use with caution for extended periods.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Native macOS Design</h3>
+                    <p>Built specifically for macOS with attention to detail. Supports dark mode and follows Apple's design guidelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy-section" id="privacy">
+        <div class="container">
+            <h2>🔒 Privacy-First Translation</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your content never leaves your Mac. All translations happen on-device using Apple's built-in translation engine.</p>
+            
+            <div class="privacy-features">
+                <div class="privacy-item">
+                    <h3>🚫 Zero Data Collection</h3>
+                    <p>We don't see, store, or transmit your translations. What you translate stays with you.</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <h3>📶 No Internet Required</h3>
+                    <p>Works completely offline. Perfect for sensitive documents and confidential content.</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <h3>🍎 Apple's Translation Engine</h3>
+                    <p>Powered by Apple's neural translation technology, running entirely on your device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison" id="comparison">
+        <div class="container">
+            <h2>ViewLingo vs ViewTrans</h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">
+                ViewLingo is the App Store version of our translation software, optimized for security and simplicity.
+            </p>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>ViewLingo (App Store)</th>
+                            <th>ViewTrans (Direct)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Viewfinder Translation</strong></td>
+                            <td><span class="checkmark">✅</span></td>
+                            <td><span class="checkmark">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Live Translation Mode</strong></td>
+                            <td><span class="checkmark">✅</span> (Experimental)</td>
+                            <td><span class="checkmark">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>QuickShot Translation</strong></td>
+                            <td><span class="cross">❌</span></td>
+                            <td><span class="checkmark">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>App Store Security</strong></td>
+                            <td><span class="checkmark">✅</span> Sandboxed</td>
+                            <td><span class="cross">❌</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Easy Installation</strong></td>
+                            <td><span class="checkmark">✅</span> One-click</td>
+                            <td><span class="cross">❌</span> Requires dev tools</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Price</strong></td>
+                            <td><strong>$4.99</strong></td>
+                            <td>Free*</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; opacity: 0.7;">
+                *ViewTrans requires developer tools for installation and manual updates
+            </p>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; text-align: center; background: white;">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem;">Ready to Transform Your Screen?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Join thousands of users who are already breaking down language barriers with ViewLingo's intuitive viewfinder translation.
+            </p>
+            
+            <div style="margin-bottom: 3rem;">
+                <div style="font-size: 2rem; font-weight: bold; color: #667eea; margin-bottom: 1rem;">$4.99</div>
+                <div style="opacity: 0.7;">One-time purchase • No subscriptions • Lifetime updates</div>
+            </div>
+            
+            <a href="https://apps.apple.com/app/viewlingo" class="cta-button" style="margin-bottom: 2rem; display: inline-block;">
+                Download on Mac App Store
+            </a>
+            
+            <div style="margin-top: 2rem;">
+                <p style="opacity: 0.6;">Requires macOS 15.0 or later</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="https://github.com/puritysb/ViewLingo/issues">Support</a>
+                <a href="https://github.com/puritysb/ViewLingo">GitHub</a>
+            </div>
+            <p>&copy; 2025 Serendipity Bound. All rights reserved.</p>
+            <p style="opacity: 0.7; margin-top: 1rem;">Made with ❤️ for the macOS community</p>
+        </div>
+    </footer>
+</body>
+</html>

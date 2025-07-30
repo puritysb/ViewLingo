@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - ViewLingo</title>
+    <meta name="description" content="Frequently asked questions about ViewLingo - screen translation app for macOS">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+            padding-left: 1.5rem;
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .faq-question:hover {
+            color: #667eea;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .faq-answer ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-answer code {
+            background: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        
+        .expand-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #5a6fd8;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .faq-section {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Frequently Asked Questions</h1>
+            <div class="subtitle">Everything you need to know about ViewLingo</div>
+        </header>
+        
+        <div class="faq-section">
+            <h2>🚀 Getting Started</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I create a viewfinder?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    There are two ways to create a viewfinder:
+                    <ul>
+                        <li><strong>Area Selection:</strong> Press <code>Control+Shift+A</code>, then drag to select the area you want to translate</li>
+                        <li><strong>Instant Creation:</strong> Press <code>fn+Control+Option</code> to create a viewfinder at your mouse position</li>
+                    </ul>
+                    The viewfinder will appear as a translucent window that you can move and resize as needed.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I close a viewfinder?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    You can close a viewfinder in several ways:
+                    <ul>
+                        <li>Press <code>ESC</code> key</li>
+                        <li>Triple-click anywhere on the viewfinder</li>
+                        <li>Click the close button (×) in the corner</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What permissions does ViewLingo need?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo requires <strong>Screen Recording permission</strong> to capture the content within your viewfinder. This is a macOS requirement for any app that captures screen content.
+                    <div class="highlight">
+                        <strong>Privacy Note:</strong> ViewLingo only captures the specific area within your viewfinder and processes it entirely on your device. Your content never leaves your Mac.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🌍 Languages & Translation</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Which languages are supported?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo supports translation between these 10 languages:
+                    <ul>
+                        <li>English</li>
+                        <li>Korean (한국어)</li>
+                        <li>Japanese (日本語)</li>
+                        <li>Chinese Simplified (简体中文)</li>
+                        <li>Chinese Traditional (繁體中文)</li>
+                        <li>Spanish (Español)</li>
+                        <li>French (Français)</li>
+                        <li>German (Deutsch)</li>
+                        <li>Russian (Русский)</li>
+                        <li>Italian (Italiano)</li>
+                        <li>Portuguese (Português)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How accurate are the translations?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo uses Apple's built-in neural translation engine, which provides high-quality translations comparable to other major translation services. Accuracy depends on:
+                    <ul>
+                        <li>Text clarity and font quality</li>
+                        <li>Language pair (some combinations work better than others)</li>
+                        <li>Context and text type (simple sentences vs. technical content)</li>
+                    </ul>
+                    For best results, ensure the text is clearly visible and well-lit on screen.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I translate offline?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Yes!</strong> ViewLingo works completely offline. All translations happen on your device using Apple's built-in translation engine. No internet connection is required once the app is installed.
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>⚡ Features & Performance</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is Live Translation Mode?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Live Mode automatically retranslates content as it changes on screen, perfect for:
+                    <ul>
+                        <li>Video subtitles</li>
+                        <li>Live streams</li>
+                        <li>Dynamic web content</li>
+                        <li>Scrolling documents</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>⚠️ Performance Warning:</strong> Live Mode significantly increases memory usage and may affect system performance. It's disabled by default and should be used with caution for extended periods.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Does ViewLingo slow down my Mac?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Under normal usage, ViewLingo has minimal impact on system performance:
+                    <ul>
+                        <li><strong>Regular Mode:</strong> Very low resource usage, processes only when you request translation</li>
+                        <li><strong>Live Mode:</strong> Higher resource usage due to continuous processing</li>
+                    </ul>
+                    The app is optimized for macOS 15.0+ and works efficiently on both Apple Silicon and Intel Macs.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I translate text in any app?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Yes!</strong> ViewLingo can translate text from any application or website, including:
+                    <ul>
+                        <li>Web browsers (Safari, Chrome, Firefox)</li>
+                        <li>PDF readers</li>
+                        <li>Video players</li>
+                        <li>Games</li>
+                        <li>Documents and presentations</li>
+                        <li>Social media apps</li>
+                    </ul>
+                    The viewfinder captures whatever is visible on your screen, regardless of the source application.
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>💰 Pricing & Purchase</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Why does ViewLingo cost $4.99?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo is a one-time purchase that includes:
+                    <ul>
+                        <li>All features with no restrictions</li>
+                        <li>All 10 language packs</li>
+                        <li>Lifetime updates</li>
+                        <li>No subscriptions or recurring fees</li>
+                        <li>Premium privacy with on-device processing</li>
+                    </ul>
+                    This is less than one month of most translation subscription services, but you own it forever.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I share ViewLingo with family members?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Yes!</strong> ViewLingo supports Apple's Family Sharing, so you can share your purchase with up to 6 family members at no additional cost. You can also install it on all your personal Macs.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What if I'm not satisfied with ViewLingo?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo follows Apple's standard refund policy. You can request a refund within 14 days of purchase through Apple if the app doesn't meet your needs. Contact Apple Support to process refunds.
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🔒 Privacy & Security</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is my data safe with ViewLingo?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Absolutely!</strong> ViewLingo is designed with privacy as a core principle:
+                    <ul>
+                        <li>All translations happen on your device</li>
+                        <li>No data is sent to external servers</li>
+                        <li>We don't collect, store, or transmit your content</li>
+                        <li>No analytics or tracking</li>
+                        <li>Works completely offline</li>
+                    </ul>
+                    <div class="highlight">
+                        Your translations are as private as your thoughts - they never leave your Mac.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What about screen recording permission?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    The screen recording permission allows ViewLingo to capture content within your viewfinder. This is:
+                    <ul>
+                        <li>Required by macOS for any screen capture functionality</li>
+                        <li>Limited to the specific area you select</li>
+                        <li>Processed immediately and never stored</li>
+                        <li>Cannot be accessed remotely or transmitted</li>
+                    </ul>
+                    ViewLingo uses this permission responsibly and only for translation purposes.
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🛠️ Troubleshooting</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo isn't recognizing text properly. What can I do?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Try these solutions:
+                    <ul>
+                        <li><strong>Check text clarity:</strong> Ensure the text is clearly visible and not blurry</li>
+                        <li><strong>Adjust viewfinder size:</strong> Make sure the entire text is within the viewfinder</li>
+                        <li><strong>Improve lighting:</strong> OCR works better with good contrast</li>
+                        <li><strong>Check language settings:</strong> Ensure the source language is supported</li>
+                        <li><strong>Try different fonts:</strong> Some decorative fonts may be harder to recognize</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    The app crashes or freezes. How do I fix this?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <ol>
+                        <li><strong>Restart ViewLingo:</strong> Quit and relaunch the app</li>
+                        <li><strong>Check macOS version:</strong> Ensure you're running macOS 15.0 or later</li>
+                        <li><strong>Disable Live Mode:</strong> If enabled, turn off Live Mode in settings</li>
+                        <li><strong>Restart your Mac:</strong> Sometimes a system restart helps</li>
+                        <li><strong>Reinstall:</strong> Delete and reinstall from the App Store</li>
+                    </ol>
+                    If problems persist, please report the issue on our <a href="https://github.com/puritysb/ViewLingo/issues" style="color: #667eea;">GitHub Issues page</a>.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I report bugs or request features?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    We welcome your feedback! You can:
+                    <ul>
+                        <li><strong>Report bugs:</strong> <a href="https://github.com/puritysb/ViewLingo/issues" style="color: #667eea;">GitHub Issues</a></li>
+                        <li><strong>Request features:</strong> <a href="https://github.com/puritysb/ViewLingo/discussions" style="color: #667eea;">GitHub Discussions</a></li>
+                        <li><strong>Leave App Store reviews:</strong> Help other users discover ViewLingo</li>
+                    </ul>
+                    Please include your macOS version and detailed steps to reproduce any issues.
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="margin-bottom: 2rem; color: #666;">Still have questions? We're here to help!</p>
+            <a href="https://github.com/puritysb/ViewLingo/discussions" style="display: inline-block; background: #667eea; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; margin-right: 1rem;">Ask a Question</a>
+            <a href="index.html" class="back-link">← Back to ViewLingo</a>
+        </div>
+    </div>
+    
+    <script>
+        // Simple FAQ expand/collapse functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('expanded');
+                
+                const answer = item.querySelector('.faq-answer');
+                if (item.classList.contains('expanded')) {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
+                }
+            });
+        });
+        
+        // Initially hide all answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
