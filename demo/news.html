@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テクノロジーニュース | ViewLingo Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: #d32f2f;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .date {
+            font-size: 0.9rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .article {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .article-header {
+            border-bottom: 2px solid #d32f2f;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .category {
+            background: #d32f2f;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .article-body {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .article-body p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 1rem;
+            border-left: 4px solid #d32f2f;
+            margin: 2rem 0;
+        }
+        
+        .related {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+        
+        .related h3 {
+            margin-bottom: 1rem;
+            color: #d32f2f;
+        }
+        
+        .related-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .related-item a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .related-item a:hover {
+            color: #d32f2f;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .article {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">テクノロジーニュース</div>
+            <div class="date">2025年1月30日（木）</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <article class="article">
+            <div class="article-header">
+                <span class="category">テクノロジー</span>
+                <h1>人工知能が医療診断を革命化：東京大学が画期的な研究成果を発表</h1>
+                <div class="meta">
+                    <span>📅 2025年1月30日</span>
+                    <span>👤 山田太郎</span>
+                    <span>📖 5分で読む</span>
+                </div>
+            </div>
+            
+            <div class="article-body">
+                <p>東京大学の研究チームは、人工知能（AI）を活用した革新的な医療診断システムの開発に成功したと発表しました。このシステムは、従来の診断方法と比較して、がんの早期発見率を40％向上させることができるという画期的な成果を示しています。</p>
+                
+                <p>研究チームの田中教授は、「このAIシステムは、医師の診断を支援するツールとして開発されました。人間の医師が見逃しがちな微細な変化も検出できるため、より正確な診断が可能になります」と説明しています。</p>
+                
+                <div class="highlight">
+                    <strong>主な特徴：</strong><br>
+                    • 診断精度：95％以上<br>
+                    • 処理時間：従来の1/10<br>
+                    • 対応可能な疾患：50種類以上<br>
+                    • 学習データ：100万件以上の症例
+                </div>
+                
+                <p>このシステムは、深層学習技術を基盤としており、継続的に学習を重ねることで診断精度を向上させています。特に、胃がん、肺がん、乳がんの早期発見において顕著な成果を上げており、医療現場での実用化が期待されています。</p>
+                
+                <p>また、このAIシステムは日本語の医療記録を直接処理できるため、日本の医療現場での導入がスムーズに行えるという利点もあります。研究チームは、今後2年以内に全国の主要病院での試験運用を開始する予定です。</p>
+                
+                <p>医療業界の専門家からは、「このような技術革新は、高齢化社会における医療の質向上に大きく貢献する」との評価が寄せられています。一方で、AIの判断に過度に依存することへの懸念も指摘されており、人間の医師との適切な協働が重要であるとの意見も出ています。</p>
+            </div>
+            
+            <div class="related">
+                <h3>関連記事</h3>
+                <div class="related-item">
+                    <a href="#">AIが変える未来の医療：専門家が語る可能性と課題</a>
+                </div>
+                <div class="related-item">
+                    <a href="#">東京大学、新たな研究施設を開設へ</a>
+                </div>
+                <div class="related-item">
+                    <a href="#">医療AIの倫理的課題について考える</a>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    <footer>
+        <p>This is a demo page for ViewLingo. | <a href="index.html">Back to Demo Index</a></p>
+    </footer>
+</body>
+</html>

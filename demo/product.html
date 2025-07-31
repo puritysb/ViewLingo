@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroBook Pro 15 - Portátil Ultraligero | ViewLingo Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: #1976d2;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .product-showcase {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .product-image {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #1976d2;
+        }
+        
+        .product-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1976d2;
+        }
+        
+        .price {
+            font-size: 2rem;
+            color: #f44336;
+            margin-bottom: 0.5rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+        
+        .discount {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stars {
+            color: #ffc107;
+        }
+        
+        .features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #1976d2;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1565c0;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1976d2;
+            border: 2px solid #1976d2;
+        }
+        
+        .btn-secondary:hover {
+            background: #e3f2fd;
+        }
+        
+        .specs {
+            margin-top: 3rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .specs h2 {
+            color: #1976d2;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .spec-item {
+            padding: 1rem;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        .spec-item h3 {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .spec-item p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .shipping-info {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #e8f5e9;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .shipping-info strong {
+            color: #2e7d32;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .product-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-info h1 {
+                font-size: 2rem;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">TechStore</div>
+            <nav class="nav">
+                <a href="#">Portátiles</a>
+                <a href="#">Smartphones</a>
+                <a href="#">Accesorios</a>
+                <a href="#">Ofertas</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="product-showcase">
+            <div class="product-image">
+                💻
+            </div>
+            
+            <div class="product-info">
+                <h1>AeroBook Pro 15</h1>
+                <div class="price">
+                    €1,299<span class="original-price">€1,599</span>
+                </div>
+                <div class="discount">¡Ahorra 19%!</div>
+                
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>4.8 (324 valoraciones)</span>
+                </div>
+                
+                <p>El portátil ultraligero más potente del mercado. Diseñado para profesionales que necesitan máximo rendimiento sin comprometer la portabilidad.</p>
+                
+                <ul class="features">
+                    <li>Procesador Intel Core i7 de 13ª generación</li>
+                    <li>16GB RAM DDR5 de alta velocidad</li>
+                    <li>SSD NVMe de 512GB ultrarrápido</li>
+                    <li>Pantalla OLED 4K de 15.6 pulgadas</li>
+                    <li>Batería de hasta 18 horas de duración</li>
+                    <li>Peso de solo 1.2 kg</li>
+                </ul>
+                
+                <div class="buttons">
+                    <button class="btn btn-primary">Comprar Ahora</button>
+                    <button class="btn btn-secondary">Añadir al Carrito</button>
+                </div>
+                
+                <div class="shipping-info">
+                    <strong>Envío GRATIS</strong> en 24-48 horas | <strong>Garantía</strong> de 2 años incluida
+                </div>
+            </div>
+        </div>
+        
+        <div class="specs">
+            <h2>Especificaciones Técnicas</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Procesador</h3>
+                    <p>Intel Core i7-1365U</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Memoria RAM</h3>
+                    <p>16GB DDR5 4800MHz</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Almacenamiento</h3>
+                    <p>512GB SSD NVMe Gen4</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Pantalla</h3>
+                    <p>15.6" OLED 4K (3840x2160)</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Gráficos</h3>
+                    <p>Intel Iris Xe Graphics</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Sistema Operativo</h3>
+                    <p>Windows 11 Pro</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Conectividad</h3>
+                    <p>WiFi 6E, Bluetooth 5.3</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Puertos</h3>
+                    <p>2x USB-C, 2x USB-A, HDMI 2.1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>This is a demo page for ViewLingo. | <a href="index.html">Back to Demo Index</a></p>
+    </footer>
+</body>
+</html>

@@ -193,53 +193,102 @@
             border-radius: 15px;
         }
         
-        .comparison {
+        .demo-section {
             padding: 80px 0;
             background: #f8f9fa;
         }
         
-        .comparison h2 {
+        .demo-section h2 {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: #333;
         }
         
-        .comparison-table {
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .demo-item {
             background: white;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
+            transition: transform 0.3s;
         }
         
-        .comparison-table table {
+        .demo-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .demo-media {
             width: 100%;
-            border-collapse: collapse;
+            height: 250px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #dee2e6;
+            position: relative;
+            overflow: hidden;
         }
         
-        .comparison-table th,
-        .comparison-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #eee;
+        .demo-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .comparison-table th {
-            background: #667eea;
+        .demo-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .demo-placeholder {
+            color: #6c757d;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .demo-content {
+            padding: 2rem;
+        }
+        
+        .demo-content h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+            font-size: 1.4rem;
+        }
+        
+        .demo-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(102, 126, 234, 0.9);
             color: white;
-            font-weight: 600;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
         }
         
-        .checkmark {
-            color: #28a745;
-            font-weight: bold;
-        }
-        
-        .cross {
-            color: #dc3545;
-            font-weight: bold;
+        .play-button:hover {
+            background: rgba(102, 126, 234, 1);
+            transform: translate(-50%, -50%) scale(1.1);
         }
         
         footer {
@@ -279,8 +328,17 @@
             }
             
             .features-grid,
-            .privacy-features {
+            .privacy-features,
+            .demo-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .demo-grid {
+                gap: 2rem;
+            }
+            
+            .demo-media {
+                height: 200px;
             }
         }
     </style>
@@ -292,7 +350,7 @@
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#privacy">Privacy</a></li>
-                <li><a href="#comparison">Compare</a></li>
+                <li><a href="#demo">Demo</a></li>
                 <li><a href="https://github.com/puritysb/ViewLingo/issues">Support</a></li>
             </ul>
         </nav>
@@ -319,7 +377,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
                     <h3>Viewfinder Translation</h3>
-                    <p>Create a viewfinder over any text on your screen. Press Control+Shift+A and position it anywhere - websites, documents, videos, or apps.</p>
+                    <p>Create a viewfinder over any text on your screen. Press fn+Control+Option and instantly start translating - websites, documents, videos, or apps.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -379,59 +437,76 @@
         </div>
     </section>
 
-    <section class="comparison" id="comparison">
+    <section class="demo-section" id="demo">
         <div class="container">
-            <h2>ViewLingo vs ViewTrans</h2>
+            <h2>See ViewLingo in Action</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">
-                ViewLingo is the App Store version of our translation software, optimized for security and simplicity.
+                Watch how ViewLingo transforms your screen into a multilingual workspace
             </p>
             
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>ViewLingo (App Store)</th>
-                            <th>ViewTrans (Direct)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Viewfinder Translation</strong></td>
-                            <td><span class="checkmark">✅</span></td>
-                            <td><span class="checkmark">✅</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Live Translation Mode</strong></td>
-                            <td><span class="checkmark">✅</span> (Experimental)</td>
-                            <td><span class="checkmark">✅</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>QuickShot Translation</strong></td>
-                            <td><span class="cross">❌</span></td>
-                            <td><span class="checkmark">✅</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>App Store Security</strong></td>
-                            <td><span class="checkmark">✅</span> Sandboxed</td>
-                            <td><span class="cross">❌</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Easy Installation</strong></td>
-                            <td><span class="checkmark">✅</span> One-click</td>
-                            <td><span class="cross">❌</span> Requires dev tools</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Price</strong></td>
-                            <td><strong>$4.99</strong></td>
-                            <td>Free*</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-media">
+                        <div class="demo-placeholder">📺 Video: Creating Your First Viewfinder</div>
+                        <button class="play-button">▶</button>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Getting Started</h3>
+                        <p>See how easy it is to create a viewfinder and start translating any text on your screen. Just press fn+Control+Option and you're ready to go!</p>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <div class="demo-media">
+                        <div class="demo-placeholder">🌐 Screenshot: Translating a Japanese Website</div>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Web Translation</h3>
+                        <p>Perfect for reading foreign language websites, news articles, and online content. The AR overlay keeps translations contextual and readable.</p>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <div class="demo-media">
+                        <div class="demo-placeholder">📱 Video: Live Mode in Action</div>
+                        <button class="play-button">▶</button>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Live Translation</h3>
+                        <p>Watch Live Mode automatically translate changing content like video subtitles, live streams, and dynamic web content in real-time.</p>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <div class="demo-media">
+                        <div class="demo-placeholder">📄 Screenshot: Document Translation</div>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Document Support</h3>
+                        <p>Translate PDFs, presentations, and documents without leaving your workflow. ViewLingo works with any app or file format.</p>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <div class="demo-media">
+                        <div class="demo-placeholder">🎮 Screenshot: Gaming Translation</div>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Gaming & Entertainment</h3>
+                        <p>Enjoy foreign language games, movies, and entertainment content with on-the-fly translation that doesn't interrupt your experience.</p>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <div class="demo-media">
+                        <div class="demo-placeholder">⚙️ Screenshot: Settings Interface</div>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Native macOS Design</h3>
+                        <p>Clean, intuitive settings that follow Apple's design guidelines. Configure languages, shortcuts, and preferences with ease.</p>
+                    </div>
+                </div>
             </div>
-            <p style="text-align: center; margin-top: 2rem; opacity: 0.7;">
-                *ViewTrans requires developer tools for installation and manual updates
-            </p>
         </div>
     </section>
 
