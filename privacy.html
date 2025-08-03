@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - ViewLingo</title>
-    <meta name="description" content="ViewLingo Privacy Policy - 100% on-device translation with zero data collection.">
+    <meta name="description" content="ViewLingo Privacy Policy - We don't collect any data. All translations happen on your device.">
     
     <style>
         * {
@@ -24,218 +24,255 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
         }
         
         header {
-            background: white;
-            padding: 2rem 0;
-            margin-bottom: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e9ecef;
         }
         
-        h1 {
-            font-size: 2.5rem;
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
             color: #667eea;
             margin-bottom: 1rem;
         }
         
-        .last-updated {
-            color: #666;
-            font-style: italic;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
         }
         
-        .content {
-            background: white;
-            padding: 3rem;
+        .last-updated {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .tldr {
+            background: #667eea;
+            color: white;
+            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .tldr h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tldr p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        section {
+            margin-bottom: 3rem;
         }
         
         h2 {
             font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: #333;
-            margin: 2rem 0 1rem 0;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         h3 {
             font-size: 1.3rem;
-            color: #444;
-            margin: 1.5rem 0 0.5rem 0;
+            margin-bottom: 1rem;
+            color: #495057;
         }
         
         p, li {
             margin-bottom: 1rem;
-            color: #555;
+            color: #495057;
+            line-height: 1.8;
         }
         
         ul {
-            margin-left: 2rem;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
         }
         
-        .highlight-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
+        .highlight {
+            background: #fff3cd;
+            padding: 1.5rem;
             border-radius: 10px;
-            margin: 2rem 0;
+            border-left: 4px solid #ffc107;
+            margin: 1.5rem 0;
+        }
+        
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .privacy-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
             text-align: center;
         }
         
-        .highlight-box h3 {
-            color: white;
+        .privacy-card .icon {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
         
-        .privacy-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+            text-align: center;
+            color: #6c757d;
         }
         
-        .back-link {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
+        a {
+            color: #667eea;
             text-decoration: none;
-            margin-top: 2rem;
-            transition: background 0.3s;
         }
         
-        .back-link:hover {
-            background: #5a6fd8;
-        }
-        
-        .contact-info {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            margin: 2rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 10px;
-            }
-            
-            .content {
-                padding: 2rem 1.5rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <div class="logo">ViewLingo</div>
             <h1>Privacy Policy</h1>
-            <div class="last-updated">Last updated: January 30, 2025</div>
+            <p class="last-updated">Last updated: January 30, 2025</p>
         </header>
-        
-        <div class="content">
-            <div class="highlight-box">
-                <div class="privacy-icon">🔒</div>
-                <h3>Privacy-First Design</h3>
-                <p><strong>ViewLingo processes all translations on your device. We never see, collect, store, or transmit your content.</strong></p>
+
+        <div class="tldr">
+            <h2>🔒 TL;DR - Your Privacy is Absolute</h2>
+            <p>ViewLingo doesn't collect, store, or transmit ANY data. All translations happen on your device. We can't see what you translate, and neither can anyone else.</p>
+        </div>
+
+        <section>
+            <h2>🚫 What We Don't Collect</h2>
+            <p>Let's be clear - ViewLingo collects <strong>absolutely nothing</strong>:</p>
+            
+            <div class="privacy-grid">
+                <div class="privacy-card">
+                    <div class="icon">📝</div>
+                    <h3>No Translation Data</h3>
+                    <p>We never see what you translate</p>
+                </div>
+                
+                <div class="privacy-card">
+                    <div class="icon">👤</div>
+                    <h3>No User Information</h3>
+                    <p>No accounts, no tracking, no profiles</p>
+                </div>
+                
+                <div class="privacy-card">
+                    <div class="icon">📊</div>
+                    <h3>No Analytics</h3>
+                    <p>We don't track usage or behavior</p>
+                </div>
+                
+                <div class="privacy-card">
+                    <div class="icon">🌐</div>
+                    <h3>No Network Requests</h3>
+                    <p>Everything works offline</p>
+                </div>
             </div>
+        </section>
+
+        <section>
+            <h2>🛡️ How ViewLingo Protects Your Privacy</h2>
             
-            <h2>Our Privacy Commitment</h2>
-            <p>ViewLingo is built with privacy as a core principle. We believe that your personal content should remain personal. This privacy policy explains how ViewLingo handles information when you use our screen translation application.</p>
-            
-            <h2>Information We DON'T Collect</h2>
-            <p>ViewLingo is designed to collect <strong>zero personal data</strong>. Specifically, we do not collect:</p>
-            <ul>
-                <li><strong>Translation Content:</strong> Any text you translate stays on your device</li>
-                <li><strong>Screen Content:</strong> Screenshots are processed locally and never transmitted</li>
-                <li><strong>Usage Analytics:</strong> We don't track how you use the app</li>
-                <li><strong>Personal Information:</strong> No names, emails, or contact details</li>
-                <li><strong>Device Information:</strong> No device identifiers or system information</li>
-                <li><strong>Location Data:</strong> We don't access or store location information</li>
-                <li><strong>Browsing History:</strong> We can't see what websites or applications you translate</li>
-            </ul>
-            
-            <h2>How ViewLingo Works</h2>
             <h3>100% On-Device Processing</h3>
-            <p>ViewLingo uses Apple's built-in Translation framework, which processes everything locally on your Mac:</p>
-            <ul>
-                <li>Screen content is captured using macOS ScreenCaptureKit</li>
-                <li>Text recognition happens via Apple's Vision framework</li>
-                <li>Translation is performed by Apple's on-device neural translation engine</li>
-                <li>Results are displayed directly in your viewfinder overlay</li>
-            </ul>
+            <p>All translations are performed using Apple's Translation framework, which runs entirely on your Mac. Your text never leaves your device, and we have no servers to send it to even if we wanted to (which we don't).</p>
             
             <h3>No Internet Required</h3>
-            <p>ViewLingo works completely offline. The app never connects to the internet for translation purposes. All language models are part of macOS and run entirely on your device.</p>
+            <p>Once you've downloaded the necessary language packs from Apple, ViewLingo works completely offline. You can translate sensitive documents, private emails, or confidential information with complete peace of mind.</p>
             
-            <h2>Permissions Required</h2>
-            <h3>Screen Recording Permission</h3>
-            <p>ViewLingo requires screen recording permission to capture the content within your viewfinder. This permission:</p>
+            <h3>No Third-Party Services</h3>
+            <p>We don't use any third-party analytics, crash reporting, or tracking services. ViewLingo is just you, your Mac, and Apple's built-in translation engine.</p>
+        </section>
+
+        <section>
+            <h2>📸 Screen Recording Permission</h2>
+            <p>ViewLingo requires Screen Recording permission to capture the text you want to translate. Here's what you need to know:</p>
+            
             <ul>
-                <li>Only captures the specific area you select with the viewfinder</li>
-                <li>Is processed immediately and never stored</li>
-                <li>Cannot be accessed by us or transmitted anywhere</li>
-                <li>Is required by macOS for any app that captures screen content</li>
+                <li>This permission is used <strong>only</strong> to capture text within the viewfinder you create</li>
+                <li>We only process the area you explicitly select</li>
+                <li>Captured images are processed locally and immediately discarded</li>
+                <li>Nothing is saved, stored, or transmitted</li>
             </ul>
             
-            <h2>Data Storage</h2>
-            <h3>Local Preferences Only</h3>
-            <p>ViewLingo stores only basic app preferences on your device, including:</p>
+            <div class="highlight">
+                <strong>Important:</strong> The Screen Recording permission is granted to ViewLingo by macOS, not to us as developers. We have no way to access your screen remotely.
+            </div>
+        </section>
+
+        <section>
+            <h2>🔐 Data Security</h2>
+            <p>Since we don't collect any data, there's nothing to secure on our end. However, ViewLingo follows best practices:</p>
+            
             <ul>
-                <li>Your language selection preferences</li>
-                <li>Viewfinder size and position settings</li>
-                <li>Display preferences (themes, overlay settings)</li>
-                <li>Feature toggle states (like Live Mode on/off)</li>
+                <li>All processing happens in your device's secure memory</li>
+                <li>No temporary files are created</li>
+                <li>No cache of translations is maintained</li>
+                <li>Each translation is isolated and immediately discarded after display</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🌍 Compliance</h2>
+            <p>ViewLingo is designed to exceed the requirements of privacy regulations worldwide:</p>
+            
+            <ul>
+                <li><strong>GDPR (Europe):</strong> We don't process any personal data</li>
+                <li><strong>CCPA (California):</strong> We don't collect any consumer information</li>
+                <li><strong>LGPD (Brazil):</strong> No data processing occurs</li>
+                <li><strong>PIPEDA (Canada):</strong> No personal information is handled</li>
             </ul>
             
-            <p>These preferences are stored locally using macOS UserDefaults and never leave your device.</p>
+            <p>Since we don't collect data, there's nothing to request, delete, or opt out of.</p>
+        </section>
+
+        <section>
+            <h2>👶 Children's Privacy</h2>
+            <p>ViewLingo doesn't collect data from anyone, including children. The app is safe for users of all ages, though it requires macOS 15.0 or later.</p>
+        </section>
+
+        <section>
+            <h2>🔄 Updates to This Policy</h2>
+            <p>We may update this privacy policy to reflect changes in the app or legal requirements. Any changes will be posted on this page with an updated revision date.</p>
             
-            <h3>No Translation History</h3>
-            <p>ViewLingo does not maintain a history of your translations. Each translation session is independent, and previous translations are not stored or remembered.</p>
+            <p>Our commitment remains the same: <strong>We will never collect, store, or transmit your data.</strong></p>
+        </section>
+
+        <section>
+            <h2>📧 Contact Us</h2>
+            <p>If you have any questions about this privacy policy or ViewLingo's privacy practices:</p>
             
-            <h2>Third-Party Services</h2>
-            <p>ViewLingo does not use any third-party analytics, advertising, or tracking services. The app is completely self-contained and does not communicate with external servers.</p>
-            
-            <div class="highlight-box">
-                <h3>🌐 App Store Distribution</h3>
-                <p>ViewLingo is distributed exclusively through the Mac App Store, which provides additional security through Apple's app sandboxing technology.</p>
-            </div>
-            
-            <h2>Children's Privacy</h2>
-            <p>ViewLingo does not collect personal information from anyone, including children under 13. Since we don't collect any data, there are no special considerations for children's privacy beyond this general protection.</p>
-            
-            <h2>Changes to This Policy</h2>
-            <p>If we make changes to this privacy policy, we will update the "Last updated" date at the top of this page. Since ViewLingo doesn't collect data, any changes would likely be clarifications or updates to reflect new features that maintain our privacy-first approach.</p>
-            
-            <h2>Security</h2>
-            <p>Because ViewLingo processes everything on-device and doesn't transmit data, traditional security concerns about data breaches don't apply. Your content never leaves your Mac, making it inherently secure.</p>
-            
-            <h3>App Store Security</h3>
-            <p>ViewLingo is distributed through the Mac App Store and runs in Apple's secure sandbox environment, providing additional protection against malicious behavior.</p>
-            
-            <div class="contact-info">
-                <h3>Questions or Concerns?</h3>
-                <p>If you have questions about this privacy policy or ViewLingo's privacy practices, please contact us:</p>
-                <ul>
-                    <li><strong>GitHub Issues:</strong> <a href="https://github.com/puritysb/ViewLingo/issues">https://github.com/puritysb/ViewLingo/issues</a></li>
-                    <li><strong>Developer:</strong> Serendipity Bound</li>
-                </ul>
-            </div>
-            
-            <h2>Compliance</h2>
-            <p>ViewLingo's privacy-first design means we comply with privacy regulations like GDPR, CCPA, and others by default - since we don't collect personal data, there's nothing to manage, delete, or transfer.</p>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="index.html" class="back-link">← Back to ViewLingo</a>
-            </div>
-        </div>
+            <ul>
+                <li>Email: <a href="mailto:puritysb@gmail.com">puritysb@gmail.com</a></li>
+                <li>GitHub Issues: <a href="https://github.com/puritysb/ViewLingo/issues">github.com/puritysb/ViewLingo/issues</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p><a href="index.html">← Back to ViewLingo</a></p>
+            <p style="margin-top: 1rem;">© 2025 Serendipity Bound. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Made with ❤️ and respect for your privacy</p>
+        </footer>
     </div>
 </body>
 </html>

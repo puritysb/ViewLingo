@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ViewLingo - Live Screen Translator for macOS</title>
-    <meta name="description" content="Point at any text on your Mac screen and see it translated instantly. $4.99 one-time purchase. 100% on-device privacy. Available on Mac App Store.">
-    <meta name="keywords" content="macos translation, screen translator, viewfinder translation, on-device translation, privacy translation">
+    <title>ViewLingo - macOS用リアルタイム画面翻訳</title>
+    <meta name="description" content="Mac画面上のあらゆるテキストを瞬時に翻訳。$4.99の一回購入。100%オンデバイスプライバシー。Mac App Storeで入手可能。">
+    <meta name="keywords" content="macOS翻訳, 画面翻訳, ビューファインダー翻訳, オンデバイス翻訳, プライバシー翻訳">
     
     <style>
         * {
@@ -98,38 +98,37 @@
         
         .cta-button {
             display: inline-block;
-            background: #fff;
+            background: white;
             color: #667eea;
-            padding: 15px 30px;
-            border-radius: 30px;
+            padding: 15px 40px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .price-tag {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 10px 20px;
-            margin: 20px auto;
+        .price {
             display: inline-block;
-            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-top: 1rem;
+            font-size: 1.1rem;
         }
         
-        .features {
+        .features-section {
             padding: 80px 0;
-            background: #fff;
+            background: white;
         }
         
-        .features h2 {
+        .features-section h2 {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
@@ -140,7 +139,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
-            margin-bottom: 4rem;
         }
         
         .feature-card {
@@ -298,20 +296,13 @@
             text-align: center;
         }
         
-        .footer-links {
-            margin-bottom: 2rem;
-        }
-        
-        .footer-links a {
-            color: white;
+        footer a {
+            color: #667eea;
             text-decoration: none;
-            margin: 0 1rem;
-            opacity: 0.8;
-            transition: opacity 0.3s;
         }
         
-        .footer-links a:hover {
-            opacity: 1;
+        footer a:hover {
+            text-decoration: underline;
         }
         
         .video-section {
@@ -375,12 +366,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .demo-grid {
-                gap: 2rem;
-            }
-            
-            .demo-media {
-                height: 200px;
+            .demo-section {
+                padding: 50px 0;
             }
             
             .video-grid {
@@ -394,15 +381,15 @@
         <nav class="container">
             <div class="logo">ViewLingo</div>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#privacy">Privacy</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="https://github.com/puritysb/ViewLingo/issues">Support</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#privacy">プライバシー</a></li>
+                <li><a href="#demo">デモ</a></li>
+                <li><a href="https://github.com/puritysb/ViewLingo/issues">サポート</a></li>
                 <li>
                     <select id="languageSelector" onchange="changeLanguage(this.value)" style="background: transparent; border: 1px solid #667eea; border-radius: 5px; padding: 5px 10px; color: #667eea; cursor: pointer;">
                         <option value="en">English</option>
                         <option value="ko">한국어</option>
-                        <option value="ja">日本語</option>
+                        <option value="ja" selected>日本語</option>
                         <option value="zh-hans">简体中文</option>
                         <option value="zh-hant">繁體中文</option>
                     </select>
@@ -414,55 +401,52 @@
     <section class="hero">
         <div class="container">
             <h1>ViewLingo</h1>
-            <div class="subtitle">AR Translation for Your Screen</div>
-            <p>Transform your Mac screen into a multilingual workspace with innovative viewfinder translation technology.</p>
-            
-            <div class="price-tag">$4.99 One-Time Purchase • No Subscriptions • Lifetime Updates</div>
-            
-            <a href="#" class="cta-button" onclick="alert('Coming Soon to Mac App Store!'); return false;">
-                Coming Soon to Mac App Store
-            </a>
+            <p class="subtitle">Mac画面上のあらゆるテキストを瞬時に翻訳</p>
+            <p>画面上のテキストをポイントするだけで、瞬時に翻訳が表示されます。<br>
+            クラウドを使用せず、100%オンデバイスで動作し、完全なプライバシーを保証します。</p>
+            <a href="https://apps.apple.com/app/viewlingo" class="cta-button">Mac App Storeでダウンロード</a>
+            <div class="price">$4.99 一回購入 • macOS 13.0+</div>
         </div>
     </section>
 
-    <section class="features" id="features">
+    <section id="features" class="features-section">
         <div class="container">
-            <h2>Powerful Features, Simple Design</h2>
+            <h2>革新的な翻訳体験</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Viewfinder Translation</h3>
-                    <p>Create a viewfinder over any text on your screen. Press fn+Control+Option and instantly start translating - websites, documents, videos, or apps.</p>
+                    <h3>ビューファインダー翻訳</h3>
+                    <p>画面のどの領域でも選択して即座に翻訳。ウェブサイト、ドキュメント、アプリ - すべてで動作します。</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Natural AR Overlay</h3>
-                    <p>Translations appear seamlessly overlaid on original text, maintaining context and readability. No more switching between apps.</p>
+                    <div class="feature-icon">🚀</div>
+                    <h3>ライブモード</h3>
+                    <p>YouTube字幕、ライブストリーム、動的コンテンツをリアルタイムで自動翻訳します。</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
-                    <h3>10 Language Support</h3>
-                    <p>Translate between English, Korean, Japanese, Chinese, Spanish, French, German, Russian, Italian, and Portuguese.</p>
+                    <h3>多言語サポート</h3>
+                    <p>日本語、韓国語、英語、中国語など主要言語をサポート。継続的に言語を追加しています。</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>Smart OCR Technology</h3>
-                    <p>Advanced text recognition accurately captures screen content, even from complex layouts and various fonts.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3>Live Translation Mode</h3>
-                    <p>Beta feature for continuously changing content like videos or live streams. Perfect for YouTube, presentations, and dynamic content.</p>
+                    <h3>超高速パフォーマンス</h3>
+                    <p>Appleの最新Neural Engineを活用し、ミリ秒単位の翻訳速度を提供します。</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
-                    <h3>Native macOS Design</h3>
-                    <p>Built specifically for macOS with attention to detail. Supports dark mode and follows Apple's design guidelines.</p>
+                    <h3>ARオーバーレイ</h3>
+                    <p>翻訳が元のテキストの上に自然に表示され、コンテキストを維持します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🍎</div>
+                    <h3>ネイティブmacOS</h3>
+                    <p>Appleのデザインガイドラインに従った美しく直感的なインターフェース。</p>
                 </div>
             </div>
         </div>
@@ -470,168 +454,151 @@
 
     <section class="video-section">
         <div class="container">
-            <h2>Watch ViewLingo in Action</h2>
+            <h2>実際の使用動画</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem; color: #666;">
-                See how easy it is to get started and experience the power of live translation
+                ViewLingoの始め方とライブ翻訳の力を体験する方法をご覧ください
             </p>
             <div class="video-grid">
                 <div class="video-item">
-                    <h3>Quick Setup Guide</h3>
-                    <video controls poster="assets/screenshots/viewlingo_1_hero.png">
-                        <source src="assets/videos/setup.mov" type="video/quicktime">
-                        <source src="assets/videos/setup.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                    <h3>クイックセットアップガイド</h3>
+                    <video controls poster="../assets/screenshots/viewlingo_1_hero.png">
+                        <source src="../assets/videos/setup.mov" type="video/quicktime">
+                        <source src="../assets/videos/setup.mp4" type="video/mp4">
+                        お使いのブラウザは動画タグをサポートしていません。
                     </video>
-                    <p>Get started with ViewLingo in under 2 minutes</p>
+                    <p>2分以内にViewLingoを始めましょう</p>
                 </div>
                 
                 <div class="video-item">
-                    <h3>Live Translation Demo</h3>
-                    <video controls poster="assets/screenshots/viewlingo_3_video.png">
-                        <source src="assets/videos/live.mov" type="video/quicktime">
-                        <source src="assets/videos/live.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                    <h3>ライブ翻訳デモ</h3>
+                    <video controls poster="../assets/screenshots/viewlingo_3_video.png">
+                        <source src="../assets/videos/live.mov" type="video/quicktime">
+                        <source src="../assets/videos/live.mp4" type="video/mp4">
+                        お使いのブラウザは動画タグをサポートしていません。
                     </video>
-                    <p>See Live Mode translate YouTube videos in real-time</p>
+                    <p>ライブモードがYouTubeビデオをリアルタイムで翻訳する様子</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="privacy-section" id="privacy">
+    <section id="privacy" class="privacy-section">
         <div class="container">
-            <h2>🔒 Privacy-First Translation</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your content never leaves your Mac. All translations happen on-device using Apple's built-in translation engine.</p>
+            <h2>プライバシーが最優先</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem;">ViewLingoはあなたのプライバシーを尊重します。すべての翻訳はMacでローカルに処理されます。</p>
             
             <div class="privacy-features">
                 <div class="privacy-item">
-                    <h3>🚫 Zero Data Collection</h3>
-                    <p>We don't see, store, or transmit your translations. What you translate stays with you.</p>
+                    <h3>🔒 100%オンデバイス</h3>
+                    <p>すべての翻訳がMacで直接処理されます。インターネット接続は不要です。</p>
                 </div>
                 
                 <div class="privacy-item">
-                    <h3>📶 No Internet Required</h3>
-                    <p>Works completely offline. Perfect for sensitive documents and confidential content.</p>
+                    <h3>🚫 データ収集なし</h3>
+                    <p>分析、追跡、データ収集は一切ありません。あなたのデータはあなたのものです。</p>
                 </div>
                 
                 <div class="privacy-item">
-                    <h3>🍎 Apple's Translation Engine</h3>
-                    <p>Powered by Apple's neural translation technology, running entirely on your device.</p>
+                    <h3>🛡️ 安全な翻訳</h3>
+                    <p>機密文書、個人的な会話、機密情報を安心して翻訳してください。</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <h3>✅ App Store検証済み</h3>
+                    <p>Appleの厳格なプライバシーレビューに合格した信頼できるアプリです。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="demo-section" id="demo">
+    <section id="demo" class="demo-section">
         <div class="container">
-            <h2>See ViewLingo in Action</h2>
+            <h2>ViewLingoの実際の使用例</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">
-                Watch how ViewLingo transforms your screen into a multilingual workspace
+                ViewLingoがどのように画面を多言語ワークスペースに変換するかをご覧ください
             </p>
             
             <div class="demo-grid">
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_1_hero.png" alt="Yahoo Japan News Translation">
+                        <img src="../assets/screenshots/viewlingo_1_hero.png" alt="Yahoo Japanニュース翻訳">
                     </div>
                     <div class="demo-content">
-                        <h3>Hero Shot - Yahoo Japan News</h3>
-                        <p>Just point at any text and see it translated. Works with news sites, articles, and any web content in any language.</p>
+                        <h3>ヒーローショット - Yahoo Japanニュース</h3>
+                        <p>テキストをポイントするだけで即座に翻訳されます。ニュースサイト、記事、あらゆるウェブコンテンツで動作します。</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_2_multiapp.png" alt="Discord Channel Translation">
+                        <img src="../assets/screenshots/viewlingo_2_multiapp.png" alt="Discordチャンネル翻訳">
                     </div>
                     <div class="demo-content">
-                        <h3>Multi-App Support - Discord</h3>
-                        <p>Works with Discord, Slack, and all your favorite apps. Translate chat messages, posts, and communications in real-time.</p>
+                        <h3>マルチアプリ対応 - Discord</h3>
+                        <p>Discord、Slackなど、お気に入りのアプリすべてで動作します。チャットメッセージ、投稿をリアルタイムで翻訳。</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_3_video.png" alt="YouTube Live Translation">
+                        <img src="../assets/screenshots/viewlingo_3_video.png" alt="YouTubeライブ翻訳">
                     </div>
                     <div class="demo-content">
-                        <h3>Video Translation - YouTube</h3>
-                        <p>Perfect for YouTube and video content. Live Mode automatically translates subtitles and on-screen text as they appear.</p>
+                        <h3>ビデオ翻訳 - YouTube</h3>
+                        <p>YouTubeやビデオコンテンツに最適。ライブモードが字幕と画面テキストを自動的に翻訳します。</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_4_document.png" alt="arXiv Paper Translation">
+                        <img src="../assets/screenshots/viewlingo_4_document.png" alt="arXiv論文翻訳">
                     </div>
                     <div class="demo-content">
-                        <h3>Document Translation - arXiv</h3>
-                        <p>Translate PDFs without leaving Preview. Perfect for academic papers, technical documents, and research materials.</p>
+                        <h3>ドキュメント翻訳 - arXiv</h3>
+                        <p>プレビューを離れることなくPDFを翻訳。学術論文、技術文書、研究資料に最適です。</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_5_settings.png" alt="Settings Interface">
+                        <img src="../assets/screenshots/viewlingo_5_settings.png" alt="設定インターフェース">
                     </div>
                     <div class="demo-content">
-                        <h3>Clean Settings</h3>
-                        <p>Beautiful native macOS interface. Configure languages, shortcuts, and preferences with an intuitive design.</p>
+                        <h3>クリーンな設定</h3>
+                        <p>美しいネイティブmacOSインターフェース。直感的なデザインで言語、ショートカット、環境設定を構成。</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_6_privacy.png" alt="Privacy-First Translation">
+                        <img src="../assets/screenshots/viewlingo_6_privacy.png" alt="プライバシー優先翻訳">
                     </div>
                     <div class="demo-content">
-                        <h3>Privacy-First Design</h3>
-                        <p>100% on-device = 100% private. Your translations never leave your Mac. No cloud, no tracking, just pure privacy.</p>
+                        <h3>プライバシー優先設計</h3>
+                        <p>100%オンデバイス = 100%プライベート。翻訳はMacを離れません。クラウドなし、追跡なし、純粋なプライバシー。</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 80px 0; text-align: center; background: white;">
-        <div class="container">
-            <h2 style="margin-bottom: 2rem;">Ready to Transform Your Screen?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Join thousands of users who are already breaking down language barriers with ViewLingo's intuitive viewfinder translation.
-            </p>
-            
-            <div style="margin-bottom: 3rem;">
-                <div style="font-size: 2rem; font-weight: bold; color: #667eea; margin-bottom: 1rem;">$4.99</div>
-                <div style="opacity: 0.7;">One-time purchase • No subscriptions • Lifetime updates</div>
-            </div>
-            
-            <a href="#" class="cta-button" style="margin-bottom: 2rem; display: inline-block;" onclick="alert('Coming Soon to Mac App Store!'); return false;">
-                Coming Soon to Mac App Store
-            </a>
-            
-            <div style="margin-top: 2rem;">
-                <p style="opacity: 0.6;">Requires macOS 15.0 or later</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="https://github.com/puritysb/ViewLingo/issues">Support</a>
-                <a href="https://github.com/puritysb/ViewLingo">GitHub</a>
-            </div>
             <p>&copy; 2025 Serendipity Bound. All rights reserved.</p>
-            <p style="opacity: 0.7; margin-top: 1rem;">Made with ❤️ for the macOS community</p>
+            <p style="margin-top: 1rem;">
+                <a href="privacy.html">プライバシーポリシー</a> • 
+                <a href="https://github.com/puritysb/ViewLingo/issues">サポート</a> • 
+                <a href="mailto:purityforsale@gmail.com">お問い合わせ</a>
+            </p>
         </div>
     </footer>
+    
     <script>
         function changeLanguage(lang) {
             if (lang === 'en') {
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
             } else {
-                window.location.href = lang + '/index.html';
+                window.location.href = '../' + lang + '/index.html';
             }
         }
         

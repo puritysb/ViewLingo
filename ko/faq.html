@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - ViewLingo</title>
+    <meta name="description" content="ViewLingo에 대해 자주 묻는 질문 - macOS용 화면 번역 앱">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+            padding-left: 1.5rem;
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .faq-question:hover {
+            color: #667eea;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .faq-answer ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-answer code {
+            background: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        
+        .expand-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #5a6fd8;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .faq-section {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>자주 묻는 질문</h1>
+            <div class="subtitle">ViewLingo에 대해 알아야 할 모든 것</div>
+        </header>
+        
+        <div class="faq-section">
+            <h2>🚀 시작하기</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    뷰파인더를 어떻게 생성하나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    뷰파인더를 생성하는 가장 빠른 방법:
+                    <ul>
+                        <li><strong>즉시 생성:</strong> <code>fn+Control+Option</code>을 눌러 마우스 위치에 즉시 뷰파인더를 생성합니다</li>
+                        <li><strong>대안:</strong> 메뉴 바 아이콘이나 앱 메뉴를 사용해서도 뷰파인더를 생성할 수 있습니다</li>
+                    </ul>
+                    뷰파인더는 이동하고 크기를 조절할 수 있는 반투명 창으로 나타납니다.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    뷰파인더를 어떻게 닫나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    여러 가지 방법으로 뷰파인더를 닫을 수 있습니다:
+                    <ul>
+                        <li><code>ESC</code> 키 누르기</li>
+                        <li>뷰파인더 아무 곳이나 트리플 클릭</li>
+                        <li>모서리의 닫기 버튼(×) 클릭</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo는 어떤 권한이 필요한가요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo는 뷰파인더 내의 콘텐츠를 캡처하기 위해 <strong>화면 녹화 권한</strong>이 필요합니다. 이는 화면 콘텐츠를 캡처하는 모든 앱에 대한 macOS 요구사항입니다.
+                    <div class="highlight">
+                        <strong>프라이버시 참고:</strong> ViewLingo는 뷰파인더 내의 특정 영역만 캡처하며 완전히 기기에서 처리합니다. 콘텐츠는 Mac을 떠나지 않습니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🌍 언어 및 번역</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    어떤 언어를 지원하나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo는 다음 10개 언어 간 번역을 지원합니다:
+                    <ul>
+                        <li>영어 (English)</li>
+                        <li>한국어</li>
+                        <li>일본어 (日本語)</li>
+                        <li>중국어 간체 (简体中文)</li>
+                        <li>중국어 번체 (繁體中文)</li>
+                        <li>스페인어 (Español)</li>
+                        <li>프랑스어 (Français)</li>
+                        <li>독일어 (Deutsch)</li>
+                        <li>러시아어 (Русский)</li>
+                        <li>이탈리아어 (Italiano)</li>
+                        <li>포르투갈어 (Português)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    번역 정확도는 어떤가요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo는 Apple의 내장 신경망 번역 엔진을 사용하여 다른 주요 번역 서비스와 비슷한 수준의 고품질 번역을 제공합니다. 정확도는 다음에 따라 달라집니다:
+                    <ul>
+                        <li>텍스트 선명도와 글꼴 품질</li>
+                        <li>언어 쌍 (일부 조합은 더 잘 작동합니다)</li>
+                        <li>문맥과 텍스트 유형 (간단한 문장 vs. 기술적 내용)</li>
+                    </ul>
+                    최상의 결과를 위해 텍스트가 화면에 선명하게 보이도록 하세요.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    오프라인에서도 번역할 수 있나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>네!</strong> ViewLingo는 완전히 오프라인에서 작동합니다. 모든 번역은 Apple의 내장 번역 엔진을 사용하여 기기에서 처리됩니다. 앱이 설치되면 인터넷 연결이 필요하지 않습니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>⚡ 기능 및 성능</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    실시간 번역 모드란 무엇인가요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    라이브 모드는 화면의 콘텐츠가 변경될 때 자동으로 재번역합니다. 다음과 같은 경우에 완벽합니다:
+                    <ul>
+                        <li>비디오 자막</li>
+                        <li>라이브 스트림</li>
+                        <li>동적 웹 콘텐츠</li>
+                        <li>스크롤되는 문서</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>⚠️ 성능 경고:</strong> 라이브 모드는 메모리 사용량을 크게 증가시키며 시스템 성능에 영향을 줄 수 있습니다. 기본적으로 비활성화되어 있으며 장시간 사용 시 주의가 필요합니다.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo가 Mac을 느리게 만드나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    일반적인 사용에서 ViewLingo는 시스템 성능에 최소한의 영향을 미칩니다:
+                    <ul>
+                        <li><strong>일반 모드:</strong> 매우 낮은 리소스 사용량, 번역 요청 시에만 처리</li>
+                        <li><strong>라이브 모드:</strong> 지속적인 처리로 인한 높은 리소스 사용량</li>
+                    </ul>
+                    이 앱은 macOS 15.0+에 최적화되어 있으며 Apple Silicon과 Intel Mac 모두에서 효율적으로 작동합니다.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    모든 앱에서 텍스트를 번역할 수 있나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>네!</strong> ViewLingo는 다음을 포함한 모든 애플리케이션이나 웹사이트의 텍스트를 번역할 수 있습니다:
+                    <ul>
+                        <li>웹 브라우저 (Safari, Chrome, Firefox)</li>
+                        <li>PDF 리더</li>
+                        <li>비디오 플레이어</li>
+                        <li>게임</li>
+                        <li>문서 및 프레젠테이션</li>
+                        <li>소셜 미디어 앱</li>
+                    </ul>
+                    뷰파인더는 소스 애플리케이션에 관계없이 화면에 표시되는 모든 것을 캡처합니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>💰 가격 및 구매</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo가 왜 $4.99인가요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo는 다음을 포함하는 일회성 구매입니다:
+                    <ul>
+                        <li>제한 없는 모든 기능</li>
+                        <li>10개 언어 팩 모두</li>
+                        <li>평생 업데이트</li>
+                        <li>구독이나 반복 요금 없음</li>
+                        <li>온디바이스 처리로 프리미엄 프라이버시</li>
+                    </ul>
+                    대부분의 번역 구독 서비스 한 달치보다 저렴하지만 영원히 소유할 수 있습니다.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    가족과 ViewLingo를 공유할 수 있나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>네!</strong> ViewLingo는 Apple의 가족 공유를 지원하므로 추가 비용 없이 최대 6명의 가족 구성원과 구매를 공유할 수 있습니다. 또한 모든 개인 Mac에 설치할 수 있습니다.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo가 만족스럽지 않으면 어떻게 하나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo는 Apple의 표준 환불 정책을 따릅니다. 앱이 요구사항을 충족하지 못하면 구매 후 14일 이내에 Apple을 통해 환불을 요청할 수 있습니다. 환불 처리를 위해 Apple 지원에 문의하세요.
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🔒 프라이버시 및 보안</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo에서 내 데이터는 안전한가요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>물론입니다!</strong> ViewLingo는 프라이버시를 핵심 원칙으로 설계되었습니다:
+                    <ul>
+                        <li>모든 번역은 기기에서 처리됩니다</li>
+                        <li>외부 서버로 데이터가 전송되지 않습니다</li>
+                        <li>콘텐츠를 수집, 저장, 전송하지 않습니다</li>
+                        <li>분석이나 추적이 없습니다</li>
+                        <li>완전히 오프라인으로 작동합니다</li>
+                    </ul>
+                    <div class="highlight">
+                        번역은 생각만큼 프라이빗합니다 - Mac을 떠나지 않습니다.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    화면 녹화 권한은 어떤가요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    화면 녹화 권한은 ViewLingo가 뷰파인더 내의 콘텐츠를 캡처할 수 있게 합니다. 이는:
+                    <ul>
+                        <li>모든 화면 캡처 기능에 대한 macOS 요구사항입니다</li>
+                        <li>선택한 특정 영역으로 제한됩니다</li>
+                        <li>즉시 처리되고 저장되지 않습니다</li>
+                        <li>원격으로 액세스하거나 전송할 수 없습니다</li>
+                    </ul>
+                    ViewLingo는 이 권한을 책임감 있게 번역 목적으로만 사용합니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🛠️ 문제 해결</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo가 텍스트를 제대로 인식하지 못합니다. 어떻게 해야 하나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    다음 해결책을 시도해보세요:
+                    <ul>
+                        <li><strong>텍스트 선명도 확인:</strong> 텍스트가 선명하게 보이고 흐릿하지 않은지 확인</li>
+                        <li><strong>뷰파인더 크기 조정:</strong> 전체 텍스트가 뷰파인더 내에 있는지 확인</li>
+                        <li><strong>조명 개선:</strong> OCR은 좋은 대비에서 더 잘 작동합니다</li>
+                        <li><strong>언어 설정 확인:</strong> 소스 언어가 지원되는지 확인</li>
+                        <li><strong>다른 글꼴 시도:</strong> 일부 장식 글꼴은 인식하기 어려울 수 있습니다</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    앱이 충돌하거나 멈춥니다. 어떻게 고치나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <ol>
+                        <li><strong>ViewLingo 재시작:</strong> 앱을 종료하고 다시 실행</li>
+                        <li><strong>macOS 버전 확인:</strong> macOS 15.0 이상을 실행 중인지 확인</li>
+                        <li><strong>라이브 모드 비활성화:</strong> 활성화된 경우 설정에서 라이브 모드를 끄기</li>
+                        <li><strong>Mac 재시작:</strong> 때때로 시스템 재시작이 도움이 됩니다</li>
+                        <li><strong>재설치:</strong> App Store에서 삭제하고 재설치</li>
+                    </ol>
+                    문제가 지속되면 <a href="https://github.com/puritysb/ViewLingo/issues" style="color: #667eea;">GitHub Issues 페이지</a>에 문제를 보고해주세요.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    버그를 보고하거나 기능을 요청하려면 어떻게 하나요?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    여러분의 피드백을 환영합니다! 다음을 할 수 있습니다:
+                    <ul>
+                        <li><strong>버그 보고:</strong> <a href="https://github.com/puritysb/ViewLingo/issues" style="color: #667eea;">GitHub Issues</a></li>
+                        <li><strong>기능 요청:</strong> <a href="https://github.com/puritysb/ViewLingo/discussions" style="color: #667eea;">GitHub Discussions</a></li>
+                        <li><strong>App Store 리뷰 남기기:</strong> 다른 사용자가 ViewLingo를 발견하는 데 도움이 됩니다</li>
+                    </ul>
+                    문제를 재현하기 위한 macOS 버전과 자세한 단계를 포함해주세요.
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="margin-bottom: 2rem; color: #666;">아직 궁금한 점이 있나요? 도와드리겠습니다!</p>
+            <a href="https://github.com/puritysb/ViewLingo/discussions" style="display: inline-block; background: #667eea; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; margin-right: 1rem;">질문하기</a>
+            <a href="index.html" class="back-link">← ViewLingo로 돌아가기</a>
+        </div>
+    </div>
+    
+    <script>
+        // Simple FAQ expand/collapse functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('expanded');
+                
+                const answer = item.querySelector('.faq-answer');
+                if (item.classList.contains('expanded')) {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
+                }
+            });
+        });
+        
+        // Initially hide all answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

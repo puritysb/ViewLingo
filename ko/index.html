@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ViewLingo - Live Screen Translator for macOS</title>
-    <meta name="description" content="Point at any text on your Mac screen and see it translated instantly. $4.99 one-time purchase. 100% on-device privacy. Available on Mac App Store.">
-    <meta name="keywords" content="macos translation, screen translator, viewfinder translation, on-device translation, privacy translation">
+    <title>ViewLingo - macOS용 실시간 화면 번역기</title>
+    <meta name="description" content="Mac 화면의 모든 텍스트를 즉시 번역하세요. $4.99 일회성 구매. 100% 온디바이스 프라이버시. Mac App Store에서 만나보세요.">
+    <meta name="keywords" content="맥OS 번역, 화면 번역기, 뷰파인더 번역, 온디바이스 번역, 프라이버시 번역">
     
     <style>
         * {
@@ -98,38 +98,37 @@
         
         .cta-button {
             display: inline-block;
-            background: #fff;
+            background: white;
             color: #667eea;
-            padding: 15px 30px;
-            border-radius: 30px;
+            padding: 15px 40px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .price-tag {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 10px 20px;
-            margin: 20px auto;
+        .price {
             display: inline-block;
-            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-top: 1rem;
+            font-size: 1.1rem;
         }
         
-        .features {
+        .features-section {
             padding: 80px 0;
-            background: #fff;
+            background: white;
         }
         
-        .features h2 {
+        .features-section h2 {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
@@ -140,7 +139,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
-            margin-bottom: 4rem;
         }
         
         .feature-card {
@@ -298,62 +296,13 @@
             text-align: center;
         }
         
-        .footer-links {
-            margin-bottom: 2rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-        }
-        
-        .video-section {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .video-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .video-item {
-            text-align: center;
-        }
-        
-        .video-item video {
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
-            width: 100%;
-            max-width: 600px;
-        }
-        
-        .video-item h3 {
+        footer a {
             color: #667eea;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            text-decoration: none;
         }
         
-        .video-item p {
-            color: #666;
-            font-size: 1.1rem;
+        footer a:hover {
+            text-decoration: underline;
         }
         
         @media (max-width: 768px) {
@@ -375,16 +324,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .demo-grid {
-                gap: 2rem;
-            }
-            
-            .demo-media {
-                height: 200px;
-            }
-            
-            .video-grid {
-                grid-template-columns: 1fr;
+            .demo-section {
+                padding: 50px 0;
             }
         }
     </style>
@@ -394,14 +335,14 @@
         <nav class="container">
             <div class="logo">ViewLingo</div>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#privacy">Privacy</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="https://github.com/puritysb/ViewLingo/issues">Support</a></li>
+                <li><a href="#features">기능</a></li>
+                <li><a href="#privacy">프라이버시</a></li>
+                <li><a href="#demo">데모</a></li>
+                <li><a href="https://github.com/puritysb/ViewLingo/issues">지원</a></li>
                 <li>
                     <select id="languageSelector" onchange="changeLanguage(this.value)" style="background: transparent; border: 1px solid #667eea; border-radius: 5px; padding: 5px 10px; color: #667eea; cursor: pointer;">
                         <option value="en">English</option>
-                        <option value="ko">한국어</option>
+                        <option value="ko" selected>한국어</option>
                         <option value="ja">日本語</option>
                         <option value="zh-hans">简体中文</option>
                         <option value="zh-hant">繁體中文</option>
@@ -414,55 +355,52 @@
     <section class="hero">
         <div class="container">
             <h1>ViewLingo</h1>
-            <div class="subtitle">AR Translation for Your Screen</div>
-            <p>Transform your Mac screen into a multilingual workspace with innovative viewfinder translation technology.</p>
-            
-            <div class="price-tag">$4.99 One-Time Purchase • No Subscriptions • Lifetime Updates</div>
-            
-            <a href="#" class="cta-button" onclick="alert('Coming Soon to Mac App Store!'); return false;">
-                Coming Soon to Mac App Store
-            </a>
+            <p class="subtitle">Mac 화면의 모든 텍스트를 즉시 번역하세요</p>
+            <p>화면의 어떤 텍스트든 가리키기만 하면 즉시 번역이 나타납니다.<br>
+            클라우드 없이 100% 온디바이스에서 작동하여 완벽한 프라이버시를 보장합니다.</p>
+            <a href="https://apps.apple.com/app/viewlingo" class="cta-button">Mac App Store에서 다운로드</a>
+            <div class="price">$4.99 일회성 구매 • macOS 13.0+</div>
         </div>
     </section>
 
-    <section class="features" id="features">
+    <section id="features" class="features-section">
         <div class="container">
-            <h2>Powerful Features, Simple Design</h2>
+            <h2>혁신적인 번역 경험</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Viewfinder Translation</h3>
-                    <p>Create a viewfinder over any text on your screen. Press fn+Control+Option and instantly start translating - websites, documents, videos, or apps.</p>
+                    <h3>뷰파인더 번역</h3>
+                    <p>화면의 어떤 영역이든 선택하여 즉시 번역하세요. 웹사이트, 문서, 앱 - 모든 곳에서 작동합니다.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Natural AR Overlay</h3>
-                    <p>Translations appear seamlessly overlaid on original text, maintaining context and readability. No more switching between apps.</p>
+                    <div class="feature-icon">🚀</div>
+                    <h3>라이브 모드</h3>
+                    <p>YouTube 자막, 라이브 스트림, 동적 콘텐츠를 실시간으로 자동 번역합니다.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
-                    <h3>10 Language Support</h3>
-                    <p>Translate between English, Korean, Japanese, Chinese, Spanish, French, German, Russian, Italian, and Portuguese.</p>
+                    <h3>다국어 지원</h3>
+                    <p>한국어, 영어, 일본어, 중국어 등 주요 언어를 지원합니다. 지속적으로 언어를 추가하고 있습니다.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>Smart OCR Technology</h3>
-                    <p>Advanced text recognition accurately captures screen content, even from complex layouts and various fonts.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3>Live Translation Mode</h3>
-                    <p>Beta feature for continuously changing content like videos or live streams. Perfect for YouTube, presentations, and dynamic content.</p>
+                    <h3>초고속 성능</h3>
+                    <p>Apple의 최신 Neural Engine을 활용하여 밀리초 단위의 번역 속도를 제공합니다.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
-                    <h3>Native macOS Design</h3>
-                    <p>Built specifically for macOS with attention to detail. Supports dark mode and follows Apple's design guidelines.</p>
+                    <h3>AR 오버레이</h3>
+                    <p>번역이 원본 텍스트 위에 자연스럽게 표시되어 컨텍스트를 유지합니다.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🍎</div>
+                    <h3>네이티브 macOS</h3>
+                    <p>Apple의 디자인 가이드라인을 따른 아름답고 직관적인 인터페이스입니다.</p>
                 </div>
             </div>
         </div>
@@ -470,168 +408,151 @@
 
     <section class="video-section">
         <div class="container">
-            <h2>Watch ViewLingo in Action</h2>
+            <h2>실제 사용 영상</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem; color: #666;">
-                See how easy it is to get started and experience the power of live translation
+                ViewLingo를 시작하고 라이브 번역의 힘을 경험하는 방법을 확인하세요
             </p>
             <div class="video-grid">
                 <div class="video-item">
-                    <h3>Quick Setup Guide</h3>
-                    <video controls poster="assets/screenshots/viewlingo_1_hero.png">
-                        <source src="assets/videos/setup.mov" type="video/quicktime">
-                        <source src="assets/videos/setup.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                    <h3>빠른 설정 가이드</h3>
+                    <video controls poster="../assets/screenshots/viewlingo_1_hero.png">
+                        <source src="../assets/videos/setup.mov" type="video/quicktime">
+                        <source src="../assets/videos/setup.mp4" type="video/mp4">
+                        지원하지 않는 브라우저입니다.
                     </video>
-                    <p>Get started with ViewLingo in under 2 minutes</p>
+                    <p>2분 이내에 ViewLingo를 시작하세요</p>
                 </div>
                 
                 <div class="video-item">
-                    <h3>Live Translation Demo</h3>
-                    <video controls poster="assets/screenshots/viewlingo_3_video.png">
-                        <source src="assets/videos/live.mov" type="video/quicktime">
-                        <source src="assets/videos/live.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                    <h3>라이브 번역 데모</h3>
+                    <video controls poster="../assets/screenshots/viewlingo_3_video.png">
+                        <source src="../assets/videos/live.mov" type="video/quicktime">
+                        <source src="../assets/videos/live.mp4" type="video/mp4">
+                        지원하지 않는 브라우저입니다.
                     </video>
-                    <p>See Live Mode translate YouTube videos in real-time</p>
+                    <p>라이브 모드가 YouTube 비디오를 실시간으로 번역하는 모습</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="privacy-section" id="privacy">
+    <section id="privacy" class="privacy-section">
         <div class="container">
-            <h2>🔒 Privacy-First Translation</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your content never leaves your Mac. All translations happen on-device using Apple's built-in translation engine.</p>
+            <h2>프라이버시가 최우선입니다</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem;">ViewLingo는 여러분의 프라이버시를 존중합니다. 모든 번역은 Mac에서 로컬로 처리됩니다.</p>
             
             <div class="privacy-features">
                 <div class="privacy-item">
-                    <h3>🚫 Zero Data Collection</h3>
-                    <p>We don't see, store, or transmit your translations. What you translate stays with you.</p>
+                    <h3>🔒 100% 온디바이스</h3>
+                    <p>모든 번역이 Mac에서 직접 처리됩니다. 인터넷 연결이 필요 없습니다.</p>
                 </div>
                 
                 <div class="privacy-item">
-                    <h3>📶 No Internet Required</h3>
-                    <p>Works completely offline. Perfect for sensitive documents and confidential content.</p>
+                    <h3>🚫 데이터 수집 없음</h3>
+                    <p>분석, 추적, 데이터 수집이 전혀 없습니다. 여러분의 데이터는 여러분의 것입니다.</p>
                 </div>
                 
                 <div class="privacy-item">
-                    <h3>🍎 Apple's Translation Engine</h3>
-                    <p>Powered by Apple's neural translation technology, running entirely on your device.</p>
+                    <h3>🛡️ 안전한 번역</h3>
+                    <p>민감한 문서, 개인 대화, 기밀 정보를 안심하고 번역하세요.</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <h3>✅ App Store 검증</h3>
+                    <p>Apple의 엄격한 프라이버시 검토를 통과한 신뢰할 수 있는 앱입니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="demo-section" id="demo">
+    <section id="demo" class="demo-section">
         <div class="container">
-            <h2>See ViewLingo in Action</h2>
+            <h2>ViewLingo 실제 사용 모습</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">
-                Watch how ViewLingo transforms your screen into a multilingual workspace
+                ViewLingo가 어떻게 화면을 다국어 작업 공간으로 변환하는지 확인하세요
             </p>
             
             <div class="demo-grid">
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_1_hero.png" alt="Yahoo Japan News Translation">
+                        <img src="../assets/screenshots/viewlingo_1_hero.png" alt="Yahoo Japan 뉴스 번역" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+1';">
                     </div>
                     <div class="demo-content">
-                        <h3>Hero Shot - Yahoo Japan News</h3>
-                        <p>Just point at any text and see it translated. Works with news sites, articles, and any web content in any language.</p>
+                        <h3>히어로 샷 - Yahoo Japan 뉴스</h3>
+                        <p>텍스트를 가리키기만 하면 즉시 번역됩니다. 뉴스 사이트, 기사, 모든 웹 콘텐츠에서 작동합니다.</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_2_multiapp.png" alt="Discord Channel Translation">
+                        <img src="../assets/screenshots/viewlingo_2_multiapp.png" alt="Discord 채널 번역" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+2';">
                     </div>
                     <div class="demo-content">
-                        <h3>Multi-App Support - Discord</h3>
-                        <p>Works with Discord, Slack, and all your favorite apps. Translate chat messages, posts, and communications in real-time.</p>
+                        <h3>멀티 앱 지원 - Discord</h3>
+                        <p>Discord, Slack 등 모든 즐겨찾는 앱에서 작동합니다. 채팅 메시지, 게시물을 실시간으로 번역하세요.</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_3_video.png" alt="YouTube Live Translation">
+                        <img src="../assets/screenshots/viewlingo_3_video.png" alt="YouTube 라이브 번역" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+3';">
                     </div>
                     <div class="demo-content">
-                        <h3>Video Translation - YouTube</h3>
-                        <p>Perfect for YouTube and video content. Live Mode automatically translates subtitles and on-screen text as they appear.</p>
+                        <h3>비디오 번역 - YouTube</h3>
+                        <p>YouTube와 동영상 콘텐츠에 완벽합니다. 라이브 모드가 자막과 화면 텍스트를 자동으로 번역합니다.</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_4_document.png" alt="arXiv Paper Translation">
+                        <img src="../assets/screenshots/viewlingo_4_document.png" alt="arXiv 논문 번역" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+4';">
                     </div>
                     <div class="demo-content">
-                        <h3>Document Translation - arXiv</h3>
-                        <p>Translate PDFs without leaving Preview. Perfect for academic papers, technical documents, and research materials.</p>
+                        <h3>문서 번역 - arXiv</h3>
+                        <p>미리보기를 떠나지 않고 PDF를 번역하세요. 학술 논문, 기술 문서, 연구 자료에 완벽합니다.</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_5_settings.png" alt="Settings Interface">
+                        <img src="../assets/screenshots/viewlingo_5_settings.png" alt="설정 인터페이스" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+5';">
                     </div>
                     <div class="demo-content">
-                        <h3>Clean Settings</h3>
-                        <p>Beautiful native macOS interface. Configure languages, shortcuts, and preferences with an intuitive design.</p>
+                        <h3>깔끔한 설정</h3>
+                        <p>아름다운 네이티브 macOS 인터페이스. 직관적인 디자인으로 언어, 단축키, 환경설정을 구성하세요.</p>
                     </div>
                 </div>
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="assets/screenshots/viewlingo_6_privacy.png" alt="Privacy-First Translation">
+                        <img src="../assets/screenshots/viewlingo_6_privacy.png" alt="프라이버시 우선 번역" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+6';">
                     </div>
                     <div class="demo-content">
-                        <h3>Privacy-First Design</h3>
-                        <p>100% on-device = 100% private. Your translations never leave your Mac. No cloud, no tracking, just pure privacy.</p>
+                        <h3>프라이버시 우선 설계</h3>
+                        <p>100% 온디바이스 = 100% 프라이빗. 번역이 Mac을 떠나지 않습니다. 클라우드 없음, 추적 없음, 순수한 프라이버시.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 80px 0; text-align: center; background: white;">
-        <div class="container">
-            <h2 style="margin-bottom: 2rem;">Ready to Transform Your Screen?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Join thousands of users who are already breaking down language barriers with ViewLingo's intuitive viewfinder translation.
-            </p>
-            
-            <div style="margin-bottom: 3rem;">
-                <div style="font-size: 2rem; font-weight: bold; color: #667eea; margin-bottom: 1rem;">$4.99</div>
-                <div style="opacity: 0.7;">One-time purchase • No subscriptions • Lifetime updates</div>
-            </div>
-            
-            <a href="#" class="cta-button" style="margin-bottom: 2rem; display: inline-block;" onclick="alert('Coming Soon to Mac App Store!'); return false;">
-                Coming Soon to Mac App Store
-            </a>
-            
-            <div style="margin-top: 2rem;">
-                <p style="opacity: 0.6;">Requires macOS 15.0 or later</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="https://github.com/puritysb/ViewLingo/issues">Support</a>
-                <a href="https://github.com/puritysb/ViewLingo">GitHub</a>
-            </div>
             <p>&copy; 2025 Serendipity Bound. All rights reserved.</p>
-            <p style="opacity: 0.7; margin-top: 1rem;">Made with ❤️ for the macOS community</p>
+            <p style="margin-top: 1rem;">
+                <a href="privacy.html">개인정보 보호정책</a> • 
+                <a href="https://github.com/puritysb/ViewLingo/issues">지원</a> • 
+                <a href="mailto:purityforsale@gmail.com">문의하기</a>
+            </p>
         </div>
     </footer>
+    
     <script>
         function changeLanguage(lang) {
             if (lang === 'en') {
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
             } else {
-                window.location.href = lang + '/index.html';
+                window.location.href = '../' + lang + '/index.html';
             }
         }
         

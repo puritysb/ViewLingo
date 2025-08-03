@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - ViewLingo</title>
+    <meta name="description" content="關於ViewLingo的常見問題 - macOS螢幕翻譯應用程式">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+            padding-left: 1.5rem;
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .faq-question:hover {
+            color: #667eea;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .faq-answer ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-answer code {
+            background: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        
+        .expand-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #5a6fd8;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .faq-section {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>常見問題</h1>
+            <div class="subtitle">關於ViewLingo您需要了解的一切</div>
+        </header>
+        
+        <div class="faq-section">
+            <h2>🚀 開始使用</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    如何建立取景器？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    建立取景器的最快方法：
+                    <ul>
+                        <li><strong>即時建立：</strong>按<code>fn+Control+Option</code>可在滑鼠位置即時建立取景器</li>
+                        <li><strong>替代方法：</strong>您也可以使用選單列圖示或應用程式選單來建立取景器</li>
+                    </ul>
+                    取景器將顯示為一個可以移動和調整大小的半透明視窗。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    如何關閉取景器？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    您可以透過幾種方式關閉取景器：
+                    <ul>
+                        <li>按<code>ESC</code>鍵</li>
+                        <li>在取景器任意位置三擊</li>
+                        <li>點擊角落的關閉按鈕（×）</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo需要哪些權限？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo需要<strong>螢幕錄製權限</strong>來擷取取景器內的內容。這是macOS對任何擷取螢幕內容的應用程式的要求。
+                    <div class="highlight">
+                        <strong>隱私說明：</strong>ViewLingo僅擷取取景器內的特定區域，並完全在您的裝置上處理。您的內容永遠不會離開您的Mac。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🌍 語言和翻譯</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    支援哪些語言？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo支援以下10種語言之間的翻譯：
+                    <ul>
+                        <li>英語 (English)</li>
+                        <li>韓語 (한국어)</li>
+                        <li>日語 (日本語)</li>
+                        <li>簡體中文 (简体中文)</li>
+                        <li>繁體中文</li>
+                        <li>西班牙語 (Español)</li>
+                        <li>法語 (Français)</li>
+                        <li>德語 (Deutsch)</li>
+                        <li>俄語 (Русский)</li>
+                        <li>義大利語 (Italiano)</li>
+                        <li>葡萄牙語 (Português)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    翻譯準確度如何？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo使用Apple的內建神經翻譯引擎，提供與其他主要翻譯服務相當的高品質翻譯。準確度取決於：
+                    <ul>
+                        <li>文字清晰度和字型品質</li>
+                        <li>語言對（某些組合效果更好）</li>
+                        <li>上下文和文字類型（簡單句子 vs. 技術內容）</li>
+                    </ul>
+                    為獲得最佳效果，請確保文字在螢幕上清晰可見。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    可以離線翻譯嗎？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>是的！</strong>ViewLingo完全離線工作。所有翻譯都使用Apple的內建翻譯引擎在您的裝置上進行。安裝應用程式後不需要網際網路連線。
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>⚡ 功能和效能</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    什麼是即時翻譯模式？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    即時模式會在螢幕內容變化時自動重新翻譯，非常適合：
+                    <ul>
+                        <li>影片字幕</li>
+                        <li>直播串流</li>
+                        <li>動態網頁內容</li>
+                        <li>捲動文件</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>⚠️ 效能警告：</strong>即時模式會顯著增加記憶體使用量，可能影響系統效能。預設情況下是停用的，長時間使用時應謹慎。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo會讓Mac變慢嗎？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    在正常使用下，ViewLingo對系統效能的影響很小：
+                    <ul>
+                        <li><strong>一般模式：</strong>資源使用率非常低，僅在您要求翻譯時處理</li>
+                        <li><strong>即時模式：</strong>由於持續處理，資源使用率較高</li>
+                    </ul>
+                    該應用程式針對macOS 15.0+進行了最佳化，在Apple Silicon和Intel Mac上都能高效運行。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    可以在任何應用程式中翻譯文字嗎？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>是的！</strong>ViewLingo可以翻譯任何應用程式或網站的文字，包括：
+                    <ul>
+                        <li>網頁瀏覽器（Safari、Chrome、Firefox）</li>
+                        <li>PDF閱讀器</li>
+                        <li>影片播放器</li>
+                        <li>遊戲</li>
+                        <li>文件和簡報</li>
+                        <li>社群媒體應用程式</li>
+                    </ul>
+                    取景器擷取螢幕上可見的任何內容，無論來源應用程式是什麼。
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>💰 價格和購買</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    為什麼ViewLingo售價$4.99？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo是一次性購買，包括：
+                    <ul>
+                        <li>所有功能無限制</li>
+                        <li>全部10種語言包</li>
+                        <li>終身更新</li>
+                        <li>無訂閱或重複收費</li>
+                        <li>裝置端處理的高級隱私</li>
+                    </ul>
+                    這比大多數翻譯訂閱服務一個月的費用還要便宜，但您可以永久擁有。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    可以與家人共享ViewLingo嗎？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>是的！</strong>ViewLingo支援Apple的家庭共享，因此您可以與最多6名家庭成員免費共享您的購買。您還可以在所有個人Mac上安裝。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    如果對ViewLingo不滿意怎麼辦？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    ViewLingo遵循Apple的標準退款政策。如果應用程式不符合您的需求，您可以在購買後14天內透過Apple請求退款。請聯絡Apple支援處理退款。
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🔒 隱私和安全</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    我的資料在ViewLingo中安全嗎？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>絕對安全！</strong>ViewLingo以隱私為核心原則設計：
+                    <ul>
+                        <li>所有翻譯都在您的裝置上進行</li>
+                        <li>不向外部伺服器傳送資料</li>
+                        <li>我們不收集、儲存或傳輸您的內容</li>
+                        <li>無分析或追蹤</li>
+                        <li>完全離線工作</li>
+                    </ul>
+                    <div class="highlight">
+                        您的翻譯就像您的思想一樣私密 - 它們永遠不會離開您的Mac。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    關於螢幕錄製權限呢？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    螢幕錄製權限允許ViewLingo擷取取景器內的內容。這是：
+                    <ul>
+                        <li>macOS對任何螢幕擷取功能的要求</li>
+                        <li>僅限於您選擇的特定區域</li>
+                        <li>立即處理，從不儲存</li>
+                        <li>無法遠端存取或傳輸</li>
+                    </ul>
+                    ViewLingo負責任地僅出於翻譯目的使用此權限。
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2>🛠️ 故障排除</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ViewLingo無法正確識別文字。我該怎麼辦？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    嘗試以下解決方案：
+                    <ul>
+                        <li><strong>檢查文字清晰度：</strong>確保文字清晰可見且不模糊</li>
+                        <li><strong>調整取景器大小：</strong>確保整個文字都在取景器內</li>
+                        <li><strong>改善照明：</strong>OCR在良好對比度下效果更好</li>
+                        <li><strong>檢查語言設定：</strong>確保來源語言受支援</li>
+                        <li><strong>嘗試不同字型：</strong>某些裝飾字型可能較難識別</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    應用程式當機或凍結。如何修復？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <ol>
+                        <li><strong>重新啟動ViewLingo：</strong>退出並重新啟動應用程式</li>
+                        <li><strong>檢查macOS版本：</strong>確保您執行的是macOS 15.0或更高版本</li>
+                        <li><strong>停用即時模式：</strong>如果啟用，請在設定中關閉即時模式</li>
+                        <li><strong>重新啟動Mac：</strong>有時系統重新啟動會有幫助</li>
+                        <li><strong>重新安裝：</strong>從App Store刪除並重新安裝</li>
+                    </ol>
+                    如果問題持續存在，請在我們的<a href="https://github.com/puritysb/ViewLingo/issues" style="color: #667eea;">GitHub Issues頁面</a>報告問題。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    如何報告錯誤或請求功能？
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    我們歡迎您的回饋！您可以：
+                    <ul>
+                        <li><strong>報告錯誤：</strong><a href="https://github.com/puritysb/ViewLingo/issues" style="color: #667eea;">GitHub Issues</a></li>
+                        <li><strong>請求功能：</strong><a href="https://github.com/puritysb/ViewLingo/discussions" style="color: #667eea;">GitHub Discussions</a></li>
+                        <li><strong>留下App Store評論：</strong>幫助其他使用者發現ViewLingo</li>
+                    </ul>
+                    請包含您的macOS版本和重現任何問題的詳細步驟。
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="margin-bottom: 2rem; color: #666;">還有問題嗎？我們隨時為您提供幫助！</p>
+            <a href="https://github.com/puritysb/ViewLingo/discussions" style="display: inline-block; background: #667eea; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; margin-right: 1rem;">提問</a>
+            <a href="index.html" class="back-link">← 返回ViewLingo</a>
+        </div>
+    </div>
+    
+    <script>
+        // Simple FAQ expand/collapse functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('expanded');
+                
+                const answer = item.querySelector('.faq-answer');
+                if (item.classList.contains('expanded')) {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
+                }
+            });
+        });
+        
+        // Initially hide all answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
