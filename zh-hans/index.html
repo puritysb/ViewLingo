@@ -49,6 +49,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: #667eea;
+            cursor: pointer;
         }
         
         .nav-links {
@@ -388,7 +389,7 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">ViewLingo</div>
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">ViewLingo</div>
             <ul class="nav-links">
                 <li><a href="#features">功能</a></li>
                 <li><a href="#privacy">隐私</a></li>
@@ -414,7 +415,7 @@
             <p>只需指向屏幕上的任何文本，即可立即看到翻译。<br>
             无需云端，100%本地运行，确保完全的隐私保护。</p>
             <a href="https://apps.apple.com/app/viewlingo" class="cta-button">在Mac App Store下载</a>
-            <div class="price">$4.99 一次性购买 • macOS 13.0+</div>
+            <div class="price">$4.99 一次性购买 • macOS 15.0+</div>
         </div>
     </section>
 
@@ -437,17 +438,17 @@
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <h3>多语言支持</h3>
-                    <p>支持中文、英语、日语、韩语等主要语言。持续添加更多语言。</p>
+                    <p>支持中文、英语、日语、韩语等主要语言。</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>超高速性能</h3>
-                    <p>利用Apple最新的Neural Engine，提供毫秒级翻译速度。</p>
+                    <h3>快速翻译</h3>
+                    <p>无需互联网连接也能快速获得翻译结果。</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
+                    <div class="feature-icon">🔍</div>
                     <h3>AR叠加层</h3>
                     <p>翻译自然地显示在原文本上方，保持上下文。</p>
                 </div>
@@ -469,13 +470,12 @@
             </p>
             <div class="video-grid">
                 <div class="video-item">
-                    <h3>快速设置指南</h3>
+                    <h3>入门指南</h3>
                     <video controls poster="../assets/screenshots/viewlingo_1_hero.png">
-                        <source src="../assets/videos/setup.mov" type="video/quicktime">
-                        <source src="../assets/videos/setup.mp4" type="video/mp4">
+                        <source src="../assets/videos/onboarding.mp4" type="video/mp4">
                         您的浏览器不支持视频标签。
                     </video>
-                    <p>2分钟内开始使用ViewLingo</p>
+                    <p>ViewLingo入门</p>
                 </div>
                 
                 <div class="video-item">
@@ -563,8 +563,8 @@
                         <img src="../assets/screenshots/viewlingo_4_document.png" alt="arXiv论文翻译">
                     </div>
                     <div class="demo-content">
-                        <h3>文档翻译 - arXiv</h3>
-                        <p>无需离开预览即可翻译PDF。非常适合学术论文、技术文档和研究材料。</p>
+                        <h3>任何文档即时翻译</h3>
+                        <p>即时翻译PDF、网页、文档等多种格式的文本。</p>
                     </div>
                 </div>
                 
@@ -580,11 +580,11 @@
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="../assets/screenshots/viewlingo_6_privacy.png" alt="隐私优先翻译">
+                        <img src="../assets/screenshots/viewlingo_5_settings2.png" alt="多种语言支持">
                     </div>
                     <div class="demo-content">
-                        <h3>隐私优先设计</h3>
-                        <p>100%本地运行 = 100%私密。您的翻译永远不会离开您的Mac。无云端、无跟踪，只有纯粹的隐私。</p>
+                        <h3>多种语言支持</h3>
+                        <p>用您喜欢的语言自由翻译。</p>
                     </div>
                 </div>
             </div>
