@@ -49,6 +49,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: #667eea;
+            cursor: pointer;
         }
         
         .nav-links {
@@ -137,7 +138,7 @@
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
         }
         
@@ -305,6 +306,48 @@
             text-decoration: underline;
         }
         
+        .video-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .video-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .video-item {
+            text-align: center;
+        }
+        
+        .video-item video {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .video-item h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .video-item p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -327,13 +370,17 @@
             .demo-section {
                 padding: 50px 0;
             }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">ViewLingo</div>
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">ViewLingo</div>
             <ul class="nav-links">
                 <li><a href="#features">기능</a></li>
                 <li><a href="#privacy">프라이버시</a></li>
@@ -356,10 +403,10 @@
         <div class="container">
             <h1>ViewLingo</h1>
             <p class="subtitle">Mac 화면의 모든 텍스트를 즉시 번역하세요</p>
-            <p>화면의 어떤 텍스트든 가리키기만 하면 즉시 번역이 나타납니다.<br>
-            클라우드 없이 100% 온디바이스에서 작동하여 완벽한 프라이버시를 보장합니다.</p>
+            <p>화면 위 텍스트를 선택하면 바로 번역됩니다.<br>
+            인터넷 연결 없이도 안전하게, 여러분의 Mac에서만 동작합니다.</p>
             <a href="https://apps.apple.com/app/viewlingo" class="cta-button">Mac App Store에서 다운로드</a>
-            <div class="price">$4.99 일회성 구매 • macOS 13.0+</div>
+            <div class="price">$4.99 일회성 구매 • macOS 15.0+</div>
         </div>
     </section>
 
@@ -382,17 +429,17 @@
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <h3>다국어 지원</h3>
-                    <p>한국어, 영어, 일본어, 중국어 등 주요 언어를 지원합니다. 지속적으로 언어를 추가하고 있습니다.</p>
+                    <p>한국어, 영어, 일본어, 중국어 등 주요 언어를 지원합니다.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>초고속 성능</h3>
-                    <p>Apple의 최신 Neural Engine을 활용하여 밀리초 단위의 번역 속도를 제공합니다.</p>
+                    <h3>빠른 번역</h3>
+                    <p>인터넷 연결 없이도 빠르게 번역 결과를 확인할 수 있습니다.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
+                    <div class="feature-icon">🔍</div>
                     <h3>AR 오버레이</h3>
                     <p>번역이 원본 텍스트 위에 자연스럽게 표시되어 컨텍스트를 유지합니다.</p>
                 </div>
@@ -400,7 +447,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🍎</div>
                     <h3>네이티브 macOS</h3>
-                    <p>Apple의 디자인 가이드라인을 따른 아름답고 직관적인 인터페이스입니다.</p>
+                    <p>macOS와 완벽하게 어울리는 인터페이스로 자연스러운 사용자 경험.</p>
                 </div>
             </div>
         </div>
@@ -414,13 +461,12 @@
             </p>
             <div class="video-grid">
                 <div class="video-item">
-                    <h3>빠른 설정 가이드</h3>
+                    <h3>온보딩 가이드</h3>
                     <video controls poster="../assets/screenshots/viewlingo_1_hero.png">
-                        <source src="../assets/videos/setup.mov" type="video/quicktime">
-                        <source src="../assets/videos/setup.mp4" type="video/mp4">
+                        <source src="../assets/videos/onboarding.mp4" type="video/mp4">
                         지원하지 않는 브라우저입니다.
                     </video>
-                    <p>2분 이내에 ViewLingo를 시작하세요</p>
+                    <p>ViewLingo 처음 시작하기</p>
                 </div>
                 
                 <div class="video-item">
@@ -488,7 +534,7 @@
                         <img src="../assets/screenshots/viewlingo_2_multiapp.png" alt="Discord 채널 번역" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+2';">
                     </div>
                     <div class="demo-content">
-                        <h3>멀티 앱 지원 - Discord</h3>
+                        <h3>다양한 앱에서 즉시 번역</h3>
                         <p>Discord, Slack 등 모든 즐겨찾는 앱에서 작동합니다. 채팅 메시지, 게시물을 실시간으로 번역하세요.</p>
                     </div>
                 </div>
@@ -508,8 +554,8 @@
                         <img src="../assets/screenshots/viewlingo_4_document.png" alt="arXiv 논문 번역" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+4';">
                     </div>
                     <div class="demo-content">
-                        <h3>문서 번역 - arXiv</h3>
-                        <p>미리보기를 떠나지 않고 PDF를 번역하세요. 학술 논문, 기술 문서, 연구 자료에 완벽합니다.</p>
+                        <h3>어떤 문서든 즉석에서 번역</h3>
+                        <p>PDF, 웹페이지, 문서 등 다양한 형식의 텍스트를 바로 번역할 수 있습니다.</p>
                     </div>
                 </div>
                 
@@ -525,11 +571,11 @@
                 
                 <div class="demo-item">
                     <div class="demo-media">
-                        <img src="../assets/screenshots/viewlingo_6_privacy.png" alt="프라이버시 우선 번역" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+6';">
+                        <img src="../assets/screenshots/viewlingo_5_settings2.png" alt="다양한 언어 지원" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400?text=Screenshot+6';">
                     </div>
                     <div class="demo-content">
-                        <h3>프라이버시 우선 설계</h3>
-                        <p>100% 온디바이스 = 100% 프라이빗. 번역이 Mac을 떠나지 않습니다. 클라우드 없음, 추적 없음, 순수한 프라이버시.</p>
+                        <h3>다양한 언어 지원</h3>
+                        <p>원하는 언어로 자유롭게 번역하세요.</p>
                     </div>
                 </div>
             </div>
