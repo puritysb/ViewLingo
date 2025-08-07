@@ -1,4 +1,4 @@
-# ViewLingo - AR Screen Translator for Mac (Coming Soon)
+# ViewLingo - AR Screen Translator for Mac
 
 Transform your Mac screen into a multilingual workspace with ViewLingo's innovative viewfinder translation technology.
 
