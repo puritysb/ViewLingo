@@ -3,12 +3,12 @@
 Transform your Mac screen into a multilingual workspace with ViewLingo's innovative viewfinder translation technology.
 
 [![macOS](https://img.shields.io/badge/macOS-15.0+-blue)](https://www.apple.com/macos/)
-[![Status](https://img.shields.io/badge/Status-In%20Development-yellow)](https://github.com/puritysb/ViewLingo)
+[![App Store](https://img.shields.io/badge/App%20Store-Available-green)](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20On--Device-brightgreen)](https://puritysb.github.io/ViewLingo/privacy)
 
 ## About ViewLingo
 
-ViewLingo is an upcoming Mac application that brings AR-style translation to your screen. Simply create a viewfinder over any text, and watch as translations appear naturally overlaid on the original content - perfect for reading foreign websites, watching international videos, or working with multilingual documents.
+ViewLingo is now available on the Mac App Store! Experience AR-style translation on your screen. Simply create a viewfinder over any text, and watch as translations appear naturally overlaid on the original content - perfect for reading foreign websites, watching international videos, or working with multilingual documents.
 
 ## Key Features
 
@@ -36,14 +36,14 @@ Translate between 10 major languages:
 - Screen Recording permission (for capturing screen content)
 - Apple Silicon or Intel Mac
 
-## Development Status
+## Available Now!
 
-ViewLingo is currently in active development. We're working hard to bring you a polished translation experience that respects your privacy while delivering powerful features.
+ViewLingo is now available on the Mac App Store! Get instant AR-style translation for your Mac screen.
 
-### Planned Release
-- **Platform**: Mac App Store
+### Get ViewLingo
+- **Platform**: [Mac App Store](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
 - **Pricing**: $4.99 (one-time purchase)
-- **Timeline**: Coming soon
+- **Version**: 1.1.0 with major performance improvements
 
 ## Technical Stack
 
@@ -73,7 +73,7 @@ Star this repository to get notified about updates and the official release anno
 
 ## License
 
-ViewLingo is proprietary software that will be available exclusively through the Mac App Store.
+ViewLingo is proprietary software available exclusively through the [Mac App Store](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12).
 
 ---
 

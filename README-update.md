@@ -5,7 +5,7 @@
 Transform your Mac screen into a multilingual workspace with ViewLingo's innovative viewfinder translation technology.
 
 [![macOS](https://img.shields.io/badge/macOS-15.0+-blue)](https://www.apple.com/macos/)
-[![Price](https://img.shields.io/badge/Price-$4.99-green)](https://apps.apple.com/app/viewlingo)
+[![Price](https://img.shields.io/badge/Price-$4.99-green)](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20On--Device-brightgreen)](https://puritysb.github.io/ViewLingo/privacy)
 
 ## ✨ What is ViewLingo?
@@ -50,7 +50,7 @@ Translate between: English, Korean, Japanese, Chinese (Simplified/Traditional), 
 
 ## 🚀 Quick Start
 
-1. **Download** ViewLingo from the [Mac App Store](https://apps.apple.com/app/viewlingo)
+1. **Download** ViewLingo from the [Mac App Store](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
 2. **Grant Permission** - Allow screen recording when prompted
 3. **Create Viewfinder** - Press `fn+Control+Option` to instantly create viewfinder
 4. **Start Translating** - Position the viewfinder over any text
@@ -149,7 +149,7 @@ ViewLingo is proprietary software available exclusively through the Mac App Stor
 
 **Ready to transform your screen into a multilingual workspace?**
 
-[![Download on the Mac App Store](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/app/viewlingo)
+[![Download on the Mac App Store](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
 
 ---
 <p align="center">
