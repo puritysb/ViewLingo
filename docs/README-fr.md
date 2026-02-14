@@ -31,11 +31,11 @@ ViewLingo transforme n'importe quel texte à l'écran en temps réel avec une su
 ### 🚀 Commencer
 1. Téléchargez depuis Mac App Store
 2. Autorisez l'enregistrement d'écran
-3. Appuyez sur `fn+Control+Option` pour créer un viseur
+3. Appuyez sur `Control+Shift+A` pour créer un viseur
 4. Pointez n'importe quel texte et voyez la traduction !
 
 ### ⌨️ Raccourcis Clavier
-- `fn+Control+Option` - Créer un nouveau viseur
+- `Control+Shift+A` - Créer un nouveau viseur
 - `ESC` ou triple-clic - Fermer le viseur
 - `Space` - Basculer le mode direct
 

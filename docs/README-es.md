@@ -31,11 +31,11 @@ ViewLingo transforma cualquier texto en pantalla en tiempo real con una superpos
 ### 🚀 Comenzar
 1. Descarga desde Mac App Store
 2. Permite el permiso de grabación de pantalla
-3. Presiona `fn+Control+Option` para crear un visor
+3. Presiona `Control+Shift+A` para crear un visor
 4. ¡Apunta a cualquier texto y ve la traducción!
 
 ### ⌨️ Atajos de Teclado
-- `fn+Control+Option` - Crear nuevo visor
+- `Control+Shift+A` - Crear nuevo visor
 - `ESC` o triple clic - Cerrar visor
 - `Space` - Alternar modo en vivo
 

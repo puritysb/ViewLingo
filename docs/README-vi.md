@@ -31,11 +31,11 @@ ViewLingo chuyển đổi bất kỳ văn bản nào trên màn hình theo thờ
 ### 🚀 Bắt Đầu
 1. Tải xuống từ Mac App Store
 2. Cho phép quyền ghi màn hình
-3. Nhấn `fn+Control+Option` để tạo kính ngắm
+3. Nhấn `Control+Shift+A` để tạo kính ngắm
 4. Chỉ vào bất kỳ văn bản nào và xem bản dịch!
 
 ### ⌨️ Phím Tắt
-- `fn+Control+Option` - Tạo kính ngắm mới
+- `Control+Shift+A` - Tạo kính ngắm mới
 - `ESC` hoặc nhấp ba lần - Đóng kính ngắm
 - `Space` - Chuyển đổi chế độ trực tiếp
 

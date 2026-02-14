@@ -31,11 +31,11 @@ ViewLingo는 화면의 모든 텍스트를 자연스러운 AR 오버레이로 �
 ### 🚀 시작하기
 1. Mac App Store에서 다운로드
 2. 화면 녹화 권한 허용
-3. `fn+Control+Option`을 눌러 뷰파인더 생성
+3. `Control+Shift+A`을 눌러 뷰파인더 생성
 4. 텍스트를 가리키면 번역 완료!
 
 ### ⌨️ 키보드 단축키
-- `fn+Control+Option` - 새 뷰파인더 생성
+- `Control+Shift+A` - 새 뷰파인더 생성
 - `ESC` 또는 세 번 클릭 - 뷰파인더 닫기
 - `Space` - 라이브 모드 전환
 

@@ -31,11 +31,11 @@ ViewLingo 以自然的 AR 叠加层实时转换屏幕上的任何文本 - 只需
 ### 🚀 开始使用
 1. 从 Mac App Store 下载
 2. 允许屏幕录制权限
-3. 按 `fn+Control+Option` 创建取景器
+3. 按 `Control+Shift+A` 创建取景器
 4. 指向任何文本即可翻译！
 
 ### ⌨️ 键盘快捷键
-- `fn+Control+Option` - 创建新取景器
+- `Control+Shift+A` - 创建新取景器
 - `ESC` 或三击 - 关闭取景器
 - `Space` - 切换实时模式
 

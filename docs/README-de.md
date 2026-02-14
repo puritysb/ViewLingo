@@ -31,11 +31,11 @@ ViewLingo verwandelt jeden Bildschirmtext in Echtzeit mit natürlicher AR-Überl
 ### 🚀 Erste Schritte
 1. Aus dem Mac App Store herunterladen
 2. Bildschirmaufnahme-Berechtigung erlauben
-3. `fn+Control+Option` drücken, um einen Sucher zu erstellen
+3. `Control+Shift+A` drücken, um einen Sucher zu erstellen
 4. Auf beliebigen Text zeigen und die Übersetzung sehen!
 
 ### ⌨️ Tastenkombinationen
-- `fn+Control+Option` - Neuen Sucher erstellen
+- `Control+Shift+A` - Neuen Sucher erstellen
 - `ESC` oder Dreifachklick - Sucher schließen
 - `Space` - Live-Modus umschalten
 
