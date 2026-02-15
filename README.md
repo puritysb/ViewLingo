@@ -42,7 +42,7 @@ Translate between 10+ languages:
 
 - **Platform**: [Mac App Store](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
 - **Pricing**: $4.99 (one-time purchase, lifetime updates)
-- **Version**: 2.0.0
+- **Version**: 2.1.0
 
 ## Technical Stack
 

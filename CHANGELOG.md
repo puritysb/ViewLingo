@@ -1,13 +1,12 @@
 # ViewLingo Changelog
 
-## Version 2.0.0 (February 2026)
+## Version 2.1.0 (February 2026)
 
 ### New Features
 - **Vertical Text Rendering**: Full CJK vertical text support with automatic direction detection and Latin text rotation
 - **Adaptive Font Sizing**: Smart font fitting for readable translations even with verbose language pairs (e.g., Japanese to English)
 - **Control Double-Tap Shortcut**: fn+Control double-tap to instantly create a viewfinder with previous size
 - **Table Layout Detection**: Automatic table structure recognition with preserved row/column layout
-- **QR Code Detection**: Automatically detect and display QR code URLs within the viewfinder
 
 ### Performance Improvements
 - Dramatically faster text rendering with optimized font fitting engine
@@ -16,13 +15,15 @@
 - Improved memory management and view pool efficiency
 
 ### Bug Fixes
+- Fixed Live mode text becoming invisible on dark backgrounds
+- Fixed Live mode overlay backgrounds showing dense gray instead of matching page content
 - Fixed Live mode empty text boxes and transparent background issues
 - Fixed pixel-to-point coordinate conversion for more accurate overlays
 - Fixed viewfinder corner clipping visual artifacts
 - Normalized overlay text alignment for cleaner appearance
 
 ### UI/UX Improvements
-- Improved overlay background opacity for better readability
+- Improved overlay background opacity (70%) for better readability
 - Clean rounded corners on all viewfinder layers
 - Multiple keyboard shortcut options (configurable in Settings)
 

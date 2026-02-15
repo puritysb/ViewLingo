@@ -2,7 +2,7 @@
 
 🌍 Language: **English** | [한국어](docs/PRIVACY-ko.md) | [日本語](docs/PRIVACY-ja.md) | [简体中文](docs/PRIVACY-zh-Hans.md) | [繁體中文](docs/PRIVACY-zh-Hant.md) | [ไทย](docs/PRIVACY-th.md) | [Español](docs/PRIVACY-es.md) | [Français](docs/PRIVACY-fr.md) | [Deutsch](docs/PRIVACY-de.md) | [Tiếng Việt](docs/PRIVACY-vi.md)
 
-**Last Updated: January 29, 2025**
+**Last Updated: February 15, 2026**
 
 ## Our Commitment to Your Privacy
 
