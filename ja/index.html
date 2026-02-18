@@ -6,7 +6,16 @@
     <title>ViewLingo - macOS用リアルタイム画面翻訳</title>
     <meta name="description" content="Mac画面上のあらゆるテキストを瞬時に翻訳。$4.99の一回購入。100%オンデバイスプライバシー。Mac App Storeで入手可能。">
     <meta name="keywords" content="macOS翻訳, 画面翻訳, ビューファインダー翻訳, オンデバイス翻訳, プライバシー翻訳">
-    
+    <meta property="og:title" content="ViewLingo – macOS用画面翻訳アプリ">
+    <meta property="og:description" content="画面上のあらゆるアプリ、動画、文書のテキストを指差すだけで即時翻訳 — 100%オンデバイス処理。">
+    <meta property="og:image" content="../assets/screenshots/viewlingo_1_hero.png">
+    <meta property="og:url" content="https://puritysb.github.io/ViewLingo/ja/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ViewLingo – macOS用画面翻訳アプリ">
+    <meta name="twitter:description" content="画面上のあらゆるアプリ、動画、文書のテキストを指差すだけで即時翻訳 — 100%オンデバイス処理。">
+    <meta name="twitter:image" content="../assets/screenshots/viewlingo_1_hero.png">
+
     <style>
         * {
             margin: 0;
@@ -410,12 +419,24 @@
 
     <section class="hero">
         <div class="container">
-            <h1>ViewLingo</h1>
-            <p class="subtitle">Mac画面上のあらゆるテキストを瞬時に翻訳</p>
-            <p>画面上のテキストをポイントするだけで、瞬時に翻訳が表示されます。<br>
-            クラウドを使用せず、100%オンデバイスで動作し、完全なプライバシーを保証します。</p>
-            <a href="https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12" class="cta-button">Mac App Storeでダウンロード</a>
+            <h1>画面のテキストを指差すだけで、自分の言語で読めます。</h1>
+            <p class="subtitle">macOS用画面翻訳アプリ — アプリ切り替え不要、クラウド不要。</p>
+            <p>ビューファインダーをドラッグして画面上のあらゆるコンテンツをカバーしてください。翻訳結果がその上に表示されます — プライベートに、即座に、オフラインで。</p>
+            <div style="font-size: 0.85rem; opacity: 0.75; margin-bottom: 1rem; letter-spacing: 0.05em;">v2.1.0 — 2026年2月</div>
+            <a href="https://apps.apple.com/app/id6749508592" class="cta-button">Mac App Storeでダウンロード</a>
             <div class="price">$4.99 一回購入 • macOS 15.0+</div>
+        </div>
+    </section>
+
+    <section style="background: #f0f4ff; border-top: 3px solid #667eea; padding: 2rem 0;">
+        <div class="container" style="text-align: center;">
+            <span style="background: #667eea; color: white; font-size: 0.8rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.1em;">v2.1.0 新機能</span>
+            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; font-size: 0.95rem; color: #444;">
+                <span>📐 縦書きテキスト対応</span>
+                <span>📊 表レイアウト検出</span>
+                <span>🔤 アダプティブフォントサイズ</span>
+                <span>🎮 ライブモード改善</span>
+            </div>
         </div>
     </section>
 
@@ -444,7 +465,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>高速翻訳</h3>
-                    <p>インターネット接続なしでも素早く翻訳結果を確認できます。</p>
+                    <p>サーバーへの往復なし。翻訳はMac上でローカルに実行され、必要な瞬間に即座に対応します。</p>
                 </div>
                 
                 <div class="feature-card">
@@ -460,15 +481,21 @@
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>表レイアウト検出</h3>
+                    <p>コンテンツの表レイアウトを自動的に認識し、行・列の構造を維持した整列された翻訳を提供します。</p>
+                </div>
+
+                <div class="feature-card">
                     <div class="feature-icon">🔤</div>
                     <h3>アダプティブフォント</h3>
                     <p>翻訳が原文より長くても、フォントサイズを自動調整して読みやすさを維持します。</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🍎</div>
-                    <h3>ネイティブmacOS</h3>
-                    <p>Appleのデザインガイドラインに従った美しく直感的なインターフェース。</p>
+                    <div class="feature-icon">📍</div>
+                    <h3>位置記憶</h3>
+                    <p>ViewLingoはアプリ再起動時にビューファインダーの位置を自動的に復元します。fn+Controlダブルタップで同じ位置にすぐ再生成できます。</p>
                 </div>
             </div>
         </div>
@@ -482,22 +509,21 @@
             </p>
             <div class="video-grid">
                 <div class="video-item">
-                    <h3>オンボーディングガイド</h3>
+                    <h3>セットアップ＆初回翻訳</h3>
                     <video controls poster="../assets/screenshots/viewlingo_1_hero.png">
-                        <source src="../assets/videos/onboarding.mp4" type="video/mp4">
-                        お使いのブラウザは動画タグをサポートしていません。
+                        <source src="../assets/videos/appstore-preview-A.mov" type="video/quicktime">
+                        Your browser does not support the video tag.
                     </video>
-                    <p>ViewLingoの始め方</p>
+                    <p>ViewLingoを始めて最初の翻訳を体験する</p>
                 </div>
-                
+
                 <div class="video-item">
-                    <h3>ライブ翻訳デモ</h3>
+                    <h3>ライブモードのデモ</h3>
                     <video controls poster="../assets/screenshots/viewlingo_3_video.png">
-                        <source src="../assets/videos/live.mov" type="video/quicktime">
-                        <source src="../assets/videos/live.mp4" type="video/mp4">
-                        お使いのブラウザは動画タグをサポートしていません。
+                        <source src="../assets/videos/appstore-preview-B.mov" type="video/quicktime">
+                        Your browser does not support the video tag.
                     </video>
-                    <p>ライブモードがYouTubeビデオをリアルタイムで翻訳する様子</p>
+                    <p>ライブモードがYouTube動画をリアルタイムで翻訳する様子をご確認ください</p>
                 </div>
             </div>
         </div>
@@ -545,7 +571,7 @@
                         <img src="../assets/screenshots/viewlingo_1_hero.png" alt="Yahoo Japanニュース翻訳">
                     </div>
                     <div class="demo-content">
-                        <h3>ヒーローショット - Yahoo Japanニュース</h3>
+                        <h3>日本語ニュースサイト</h3>
                         <p>テキストをポイントするだけで即座に翻訳されます。ニュースサイト、記事、あらゆるウェブコンテンツで動作します。</p>
                     </div>
                 </div>
@@ -555,7 +581,7 @@
                         <img src="../assets/screenshots/viewlingo_2_multiapp.png" alt="Discordチャンネル翻訳">
                     </div>
                     <div class="demo-content">
-                        <h3>マルチアプリ対応 - Discord</h3>
+                        <h3>Discord・Slackなどのチャットアプリ</h3>
                         <p>Discord、Slackなど、お気に入りのアプリすべてで動作します。チャットメッセージ、投稿をリアルタイムで翻訳。</p>
                     </div>
                 </div>
@@ -585,7 +611,7 @@
                         <img src="../assets/screenshots/viewlingo_5_settings.png" alt="設定インターフェース">
                     </div>
                     <div class="demo-content">
-                        <h3>クリーンな設定</h3>
+                        <h3>シンプルで直感的な設定</h3>
                         <p>美しいネイティブmacOSインターフェース。直感的なデザインで言語、ショートカット、環境設定を構成。</p>
                     </div>
                 </div>

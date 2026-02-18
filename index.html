@@ -6,7 +6,16 @@
     <title>ViewLingo - Live Screen Translator for macOS</title>
     <meta name="description" content="Point at any text on your Mac screen and see it translated instantly. $4.99 one-time purchase. 100% on-device privacy. Available on Mac App Store.">
     <meta name="keywords" content="macos translation, screen translator, viewfinder translation, on-device translation, privacy translation">
-    
+    <meta property="og:title" content="ViewLingo – On-screen translator for macOS">
+    <meta property="og:description" content="Point at text on any app, video, or document. Translations appear instantly — 100% on-device.">
+    <meta property="og:image" content="assets/screenshots/viewlingo_1_hero.png">
+    <meta property="og:url" content="https://puritysb.github.io/ViewLingo/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ViewLingo – On-screen translator for macOS">
+    <meta name="twitter:description" content="Point at text on any app, video, or document. Translations appear instantly — 100% on-device.">
+    <meta name="twitter:image" content="assets/screenshots/viewlingo_1_hero.png">
+
     <style>
         * {
             margin: 0;
@@ -422,15 +431,28 @@
 
     <section class="hero">
         <div class="container">
-            <h1>ViewLingo</h1>
-            <div class="subtitle">AR Translation for Your Screen</div>
-            <p>Transform your Mac screen into a multilingual workspace with innovative viewfinder translation technology.</p>
-            
+            <h1>Point at text, read in your language.</h1>
+            <div class="subtitle">On-screen translator for macOS — no app switching, no cloud.</div>
+            <p>Drag a viewfinder over any screen content. Translations appear right on top — privately, instantly, offline.</p>
+
+            <div style="font-size: 0.85rem; opacity: 0.75; margin-bottom: 1rem; letter-spacing: 0.05em;">v2.1.0 — February 2026</div>
             <div class="price-tag">$4.99 One-Time Purchase • No Subscriptions • Lifetime Updates</div>
             
-            <a href="https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12" class="cta-button">
+            <a href="https://apps.apple.com/app/id6749508592" class="cta-button">
                 Download on Mac App Store
             </a>
+        </div>
+    </section>
+
+    <section style="background: #f0f4ff; border-top: 3px solid #667eea; padding: 2rem 0;">
+        <div class="container" style="text-align: center;">
+            <span style="background: #667eea; color: white; font-size: 0.8rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.1em;">What's New in v2.1.0</span>
+            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; font-size: 0.95rem; color: #444;">
+                <span>📐 Vertical Text Support</span>
+                <span>📊 Table Layout Detection</span>
+                <span>🔤 Adaptive Font Sizing</span>
+                <span>🎮 Live Mode Improvements</span>
+            </div>
         </div>
     </section>
 
@@ -459,7 +481,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>Fast Translation</h3>
-                    <p>Get translation results quickly without internet connection.</p>
+                    <p>No round-trips to a server. Translation runs locally on your Mac — ready the moment you ask.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -475,15 +497,21 @@
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Table Detection</h3>
+                    <p>Automatically recognizes table layouts in content, preserving row and column structure for accurate, aligned translations.</p>
+                </div>
+
+                <div class="feature-card">
                     <div class="feature-icon">🔤</div>
                     <h3>Adaptive Font Sizing</h3>
                     <p>Translations automatically adjust font size for optimal readability, even when translated text is longer than the original.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Native macOS Design</h3>
-                    <p>Interface that perfectly matches macOS for natural user experience.</p>
+                    <div class="feature-icon">📍</div>
+                    <h3>Position Memory</h3>
+                    <p>ViewLingo remembers your viewfinder's location across restarts. Use fn+Control double-tap to recreate it at the exact same position instantly.</p>
                 </div>
             </div>
         </div>
@@ -497,20 +525,18 @@
             </p>
             <div class="video-grid">
                 <div class="video-item">
-                    <h3>Quick Setup Guide</h3>
+                    <h3>Setup &amp; First Translation</h3>
                     <video controls poster="assets/screenshots/viewlingo_1_hero.png">
-                        <source src="assets/videos/setup.mov" type="video/quicktime">
-                        <source src="assets/videos/setup.mp4" type="video/mp4">
+                        <source src="assets/videos/appstore-preview-A.mov" type="video/quicktime">
                         Your browser does not support the video tag.
                     </video>
-                    <p>Get started with ViewLingo</p>
+                    <p>Get started with ViewLingo in seconds</p>
                 </div>
-                
+
                 <div class="video-item">
-                    <h3>Live Translation Demo</h3>
+                    <h3>Live Mode in Action</h3>
                     <video controls poster="assets/screenshots/viewlingo_3_video.png">
-                        <source src="assets/videos/live.mov" type="video/quicktime">
-                        <source src="assets/videos/live.mp4" type="video/mp4">
+                        <source src="assets/videos/appstore-preview-B.mov" type="video/quicktime">
                         Your browser does not support the video tag.
                     </video>
                     <p>See Live Mode translate YouTube videos in real-time</p>
@@ -556,7 +582,7 @@
                         <img src="assets/screenshots/viewlingo_1_hero.png" alt="Yahoo Japan News Translation">
                     </div>
                     <div class="demo-content">
-                        <h3>Hero Shot - Yahoo Japan News</h3>
+                        <h3>Japanese News Sites</h3>
                         <p>Just point at any text and see it translated. Works with news sites, articles, and any web content in any language.</p>
                     </div>
                 </div>
@@ -566,7 +592,7 @@
                         <img src="assets/screenshots/viewlingo_2_multiapp.png" alt="Discord Channel Translation">
                     </div>
                     <div class="demo-content">
-                        <h3>Multi-App Support - Discord</h3>
+                        <h3>Chat Apps like Discord &amp; Slack</h3>
                         <p>Works with Discord, Slack, and all your favorite apps. Translate chat messages, posts, and communications in real-time.</p>
                     </div>
                 </div>
@@ -596,7 +622,7 @@
                         <img src="assets/screenshots/viewlingo_5_settings.png" alt="Settings Interface">
                     </div>
                     <div class="demo-content">
-                        <h3>Clean Settings</h3>
+                        <h3>Simple, Focused Settings</h3>
                         <p>Beautiful native macOS interface. Configure languages, shortcuts, and preferences with an intuitive design.</p>
                     </div>
                 </div>
@@ -618,7 +644,7 @@
         <div class="container">
             <h2 style="margin-bottom: 2rem;">Ready to Transform Your Screen?</h2>
             <p style="font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Join thousands of users who are already breaking down language barriers with ViewLingo's intuitive viewfinder translation.
+                Translate anything on your macOS screen — instantly, privately, without switching apps.
             </p>
             
             <div style="margin-bottom: 3rem;">
@@ -626,7 +652,7 @@
                 <div style="opacity: 0.7;">One-time purchase • No subscriptions • Lifetime updates</div>
             </div>
             
-            <a href="https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12" class="cta-button" style="margin-bottom: 2rem; display: inline-block;">
+            <a href="https://apps.apple.com/app/id6749508592" class="cta-button" style="margin-bottom: 2rem; display: inline-block;">
                 Download on Mac App Store
             </a>
             

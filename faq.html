@@ -438,6 +438,26 @@
             
             <div class="faq-item">
                 <div class="faq-question">
+                    I updated ViewLingo but it's not capturing anymore, even though permission is enabled.
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    This is a known macOS behavior. When an app is updated, macOS may invalidate its screen recording permission internally, even though System Settings still shows it as "enabled." To fix this:
+                    <ol>
+                        <li>Open <strong>System Settings > Privacy & Security > Screen Recording</strong></li>
+                        <li>Find <strong>ViewLingo</strong> in the list</li>
+                        <li>Remove it using the <strong>−</strong> (minus) button</li>
+                        <li>Add it back using the <strong>+</strong> (plus) button</li>
+                        <li>Restart ViewLingo</li>
+                    </ol>
+                    <div class="highlight">
+                        <strong>Why does this happen?</strong> macOS tracks each app version with a unique cryptographic hash (CDHash). After an update, the hash changes but the permission entry may still reference the old version. Removing and re-adding the permission refreshes this association.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
                     The app crashes or freezes. How do I fix this?
                     <span class="expand-icon">▼</span>
                 </div>
