@@ -406,6 +406,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/tokens.css">
+    <link rel="stylesheet" href="assets/demo-interactive.css">
 </head>
 <body>
     <header>
@@ -451,6 +453,14 @@
                 <span>Works offline</span>
                 <span>No account needed</span>
             </div>
+        </div>
+    </section>
+
+    <section class="try-demo" id="try" style="padding: 4rem 0 3.5rem;">
+        <div class="container" style="text-align: center;">
+            <h2>Try it in your browser</h2>
+            <p style="margin: 0 auto 2.2rem; max-width: 640px; color: #555;">Drag a viewfinder across the article, the same way you would on your Mac.</p>
+            <div data-vl-demo></div>
         </div>
     </section>
 
@@ -682,5 +692,6 @@
             document.getElementById('languageSelector').value = 'zh-hant';
         }
     </script>
+    <script src="assets/demo-interactive.js"></script>
 </body>
 </html>

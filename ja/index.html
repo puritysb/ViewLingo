@@ -394,6 +394,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../assets/tokens.css">
+    <link rel="stylesheet" href="../assets/demo-interactive.css">
 </head>
 <body>
     <header>
@@ -435,6 +437,14 @@
                 <span>オフラインで動作</span>
                 <span>アカウント不要</span>
             </div>
+        </div>
+    </section>
+
+    <section class="try-demo" id="try" style="padding: 4rem 0 3.5rem;">
+        <div class="container" style="text-align: center;">
+            <h2>ブラウザで試す</h2>
+            <p style="margin: 0 auto 2.2rem; max-width: 640px; color: #555;">Mac で操作するのと同じように、記事の上でビューファインダーをドラッグしてみてください。</p>
+            <div data-vl-demo></div>
         </div>
     </section>
 
@@ -649,5 +659,6 @@
             document.getElementById('languageSelector').value = 'zh-hant';
         }
     </script>
+    <script src="../assets/demo-interactive.js"></script>
 </body>
 </html>

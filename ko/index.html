@@ -394,6 +394,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../assets/tokens.css">
+    <link rel="stylesheet" href="../assets/demo-interactive.css">
 </head>
 <body>
     <header>
@@ -435,6 +437,14 @@
                 <span>오프라인 동작</span>
                 <span>계정 불필요</span>
             </div>
+        </div>
+    </section>
+
+    <section class="try-demo" id="try" style="padding: 4rem 0 3.5rem;">
+        <div class="container" style="text-align: center;">
+            <h2>브라우저에서 바로 체험하기</h2>
+            <p style="margin: 0 auto 2.2rem; max-width: 640px; color: #555;">Mac에서 하듯, 기사 위로 뷰파인더를 드래그해 보세요.</p>
+            <div data-vl-demo></div>
         </div>
     </section>
 
@@ -649,5 +659,6 @@
             document.getElementById('languageSelector').value = 'zh-hant';
         }
     </script>
+    <script src="../assets/demo-interactive.js"></script>
 </body>
 </html>

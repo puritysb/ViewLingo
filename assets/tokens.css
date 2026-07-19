@@ -1,0 +1,53 @@
+/* ViewLingo — Design Tokens
+ *
+ * 생성물이다. 손으로 고치지 말 것.
+ * 정본: ViewLingo-dev  ViewLingo/Shared/UI/DesignSystem/DesignSystem.swift (enum DS)
+ * 갱신: uv run python3 scripts/export_design_tokens.py
+ *
+ * 앱이 제품이고 사이트가 따라간다. 값을 바꾸려면 Swift 를 먼저 고친다.
+ */
+
+:root {
+  /* === Color === */
+  --c-accent:                 #007aff;  /* systemBlue */
+  --c-success:                #34c759;  /* systemGreen — 성공/권한 허용 */
+  --c-warning:                #ff9500;  /* systemOrange — 조치 필요 */
+  --c-danger:                 #d93333;  /* 파괴적 액션 (GeneralSettingsView:603) */
+  --c-live-red:               #ff3b30;  /* #FF3B30 (CaptureFinderWindow+LiveUI:109) */
+  --c-live-yellow:            #ffcc00;  /* #FFCC00 — 준비 중 (…+LiveUI:252) */
+  --c-brand-green-light:      #87dc82;
+  --c-brand-green-mid:        #4eaf60;
+  --c-brand-green-deep:       #216033;
+  --c-surface-light-top:      #fafaff;
+  --c-surface-light-bottom:   #f2f5fc;
+
+  /* === Radius === */
+  --r-pill:         4px;  /* 칩/태그/오버레이 텍스트 배경 (LanguageSelector) */
+  --r-card-small:   6px;  /* 권한 행 (PermissionStatusView:155) */
+  --r-card:         8px;  /* 버튼/카드 (PermissionStatusView:73) */
+  --r-group-box:    10px;  /* GroupBox 컨테이너 (ModernGroupBoxStyle:596) */
+  --r-control:      12px;  /* 팝오버/Live 토글 (CaptureFinderWindow+LiveUI:67) */
+  --r-window:       16px;  /* 캡처 윈도우 (CaptureFinderWindow+VisualFeedback) */
+
+  /* === Spacing === */
+  --s-xs:   4px;
+  --s-s:    6px;
+  --s-m:    8px;
+  --s-l:    12px;
+  --s-xl:   16px;
+
+  /* === Type scale === */
+  --fs-caption:         10px;  /* 설명/캡션 (.secondary) */
+  --fs-meta:            11px;  /* 보조 */
+  --fs-row-title:       12px;  /* 행 제목 */
+  --fs-body:            13px;  /* 본문/메뉴 아이템 */
+  --fs-section-label:   13px;  /* 섹션 라벨 (.semibold) */
+}
+
+/* 의도적 제외 (Swift 에는 있으나 CSS 로 옮기지 않음)
+ *   groupBoxFillDark: NSColor.controlBackgroundColor 파생 — 시스템 동적 색, CSS 대응 없음
+ *   groupBoxStrokeDark: Color.primary 파생 — 시스템 동적 색
+ *   groupBoxFillLight: Color.white.opacity() — 웹은 rgba 로 직접 표현
+ *   groupBoxStrokeLight: Color.blue.opacity() — 시스템 블루 파생
+ *   groupBoxShadowLight: Color.black.opacity() — 웹은 box-shadow 로 직접 표현
+ */
