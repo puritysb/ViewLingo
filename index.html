@@ -27,7 +27,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2b7a45 0%, #1b5130 100%);
             min-height: 100vh;
         }
         
@@ -57,7 +57,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #667eea;
+            color: #2b7a45;
         }
         
         .nav-links {
@@ -74,7 +74,7 @@
         }
         
         .nav-links a:hover {
-            color: #667eea;
+            color: #2b7a45;
         }
         
         .hero {
@@ -108,7 +108,7 @@
         .cta-button {
             display: inline-block;
             background: #fff;
-            color: #667eea;
+            color: #2b7a45;
             padding: 15px 30px;
             border-radius: 30px;
             text-decoration: none;
@@ -177,7 +177,7 @@
         }
         
         .privacy-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2b7a45 0%, #1b5130 100%);
             color: white;
             padding: 80px 0;
             text-align: center;
@@ -270,7 +270,7 @@
         
         .demo-content h3 {
             margin-bottom: 1rem;
-            color: #667eea;
+            color: #2b7a45;
             font-size: 1.4rem;
         }
         
@@ -355,7 +355,7 @@
         }
         
         .video-item h3 {
-            color: #667eea;
+            color: #2b7a45;
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -408,6 +408,7 @@
     </style>
     <link rel="stylesheet" href="assets/tokens.css">
     <link rel="stylesheet" href="assets/demo-interactive.css">
+    <link rel="stylesheet" href="assets/hero.css">
 </head>
 <body>
     <header>
@@ -419,7 +420,7 @@
                 <li><a href="#demo">Demo</a></li>
                 <li><a href="https://github.com/puritysb/ViewLingo/issues">Support</a></li>
                 <li>
-                    <select id="languageSelector" onchange="changeLanguage(this.value)" style="background: transparent; border: 1px solid #667eea; border-radius: 5px; padding: 5px 10px; color: #667eea; cursor: pointer;">
+                    <select id="languageSelector" onchange="changeLanguage(this.value)" style="background: transparent; border: 1px solid #2b7a45; border-radius: 5px; padding: 5px 10px; color: #2b7a45; cursor: pointer;">
                         <option value="en">English</option>
                         <option value="ko">한국어</option>
                         <option value="ja">日本語</option>
@@ -442,10 +443,21 @@
             <a href="https://apps.apple.com/app/id6749508592" class="cta-button">
                 Download on Mac App Store
             </a>
+        
+            <div class="hero-media">
+                <button class="hero-media__frame" type="button" data-hero-media
+                        data-video="assets/videos/appstore-preview-A.mp4"
+                        data-video-fallback="assets/videos/appstore-preview-A.mov"
+                        aria-label="Play the demo video">
+                    <img src="assets/hero-poster.jpg" alt="ViewLingo translating a French article in place, with the original text still visible" width="1160" height="600" loading="eager">
+                    <span class="hero-media__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                </button>
+                <p class="hero-media__cap">30-second demo. Recorded on a Mac — no editing of the translations.</p>
+            </div>
         </div>
     </section>
 
-    <section style="background: #f0f4ff; border-top: 3px solid #667eea; padding: 2rem 0;">
+    <section style="background: #f1f7f2; border-top: 3px solid #2b7a45; padding: 2rem 0;">
         <div class="container" style="text-align: center;">
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; font-size: 0.95rem; color: #444;">
                 <span>macOS 15 or later</span>
@@ -469,43 +481,43 @@
             <h2>What it does</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
+                    <div class="feature-icon"><svg viewBox="0 0 32 32" width="40" height="40" fill="none" stroke="#2b7a45" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10V6.5A2.5 2.5 0 016.5 4H10M22 4h3.5A2.5 2.5 0 0128 6.5V10M28 22v3.5a2.5 2.5 0 01-2.5 2.5H22M10 28H6.5A2.5 2.5 0 014 25.5V22"/><path d="M12.5 20l3.5-9 3.5 9M13.7 17.2h4.6"/></svg></div>
                     <h3>Viewfinder Translation</h3>
                     <p>Create a viewfinder over any text on your screen. Press fn + Control + Option and instantly start translating - websites, documents, videos, or apps.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">✨</div>
+                    <div class="feature-icon"><svg viewBox="0 0 32 32" width="40" height="40" fill="none" stroke="#2b7a45" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="18" height="12" rx="2"/><rect x="10" y="13" width="18" height="12" rx="2" fill="#eaf4ec"/><path d="M14 19h10M14 22h6"/></svg></div>
                     <h3>Natural AR Overlay</h3>
                     <p>Translations are drawn over the original text, keeping layout and reading order intact. No switching between apps.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
+                    <div class="feature-icon"><svg viewBox="0 0 32 32" width="40" height="40" fill="none" stroke="#2b7a45" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M16 4c3.5 4 3.5 20 0 24M16 4c-3.5 4-3.5 20 0 24M4.6 12h22.8M4.6 20h22.8"/></svg></div>
                     <h3>10+ Language Support</h3>
                     <p>Translate between English, Korean, Japanese, Chinese, Spanish, French, German, Thai, Vietnamese, and more.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon"><svg viewBox="0 0 32 32" width="40" height="40" fill="none" stroke="#2b7a45" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 3L7 18h7l-1.5 11L23 14h-7z"/></svg></div>
                     <h3>Fast Translation</h3>
                     <p>No round-trips to a server. Translation runs locally on your Mac — ready the moment you ask.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
+                    <div class="feature-icon"><svg viewBox="0 0 32 32" width="40" height="40" fill="none" stroke="#2b7a45" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10V6.5A2.5 2.5 0 016.5 4H10M22 4h3.5A2.5 2.5 0 0128 6.5V10M28 22v3.5a2.5 2.5 0 01-2.5 2.5H22M10 28H6.5A2.5 2.5 0 014 25.5V22"/><circle cx="16" cy="16" r="3.2" fill="#e5484d" stroke="none"/><path d="M21.5 11.5a6.4 6.4 0 010 9M10.5 20.5a6.4 6.4 0 010-9"/></svg></div>
                     <h3>Live Translation Mode</h3>
-                    <p>Real-time translation for continuously changing content like videos or live streams. Perfect for YouTube, presentations, and dynamic content.</p>
+                    <p>Real-time translation for continuously changing content like videos or live streams. Made for YouTube, presentations, and other changing content.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">📐</div>
+                    <div class="feature-icon"><svg viewBox="0 0 32 32" width="40" height="40" fill="none" stroke="#2b7a45" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5v22M21 5v16"/><path d="M8 8h6M8 13h6M8 18h6M18 8h6M18 13h6"/><path d="M21 21l-2.5 3.5h5L21 21z" fill="#2b7a45" stroke="none"/></svg></div>
                     <h3>Vertical Text Support</h3>
                     <p>Natively handles vertical text in Japanese, Chinese, and Korean. Translations render in the correct writing direction automatically.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🔤</div>
+                    <div class="feature-icon"><svg viewBox="0 0 32 32" width="40" height="40" fill="none" stroke="#2b7a45" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22l6-14 6 14M6.2 17.6h7.6"/><path d="M27 15.5a3.5 3.5 0 00-6 2.5v1a3.5 3.5 0 006 2.5V15.5zM27 14v8"/></svg></div>
                     <h3>Adaptive Font Sizing</h3>
                     <p>Translations automatically adjust font size for optimal readability, even when translated text is longer than the original.</p>
                 </div>
@@ -646,7 +658,7 @@
             </p>
             
             <div style="margin-bottom: 3rem;">
-                <div style="font-size: 2rem; font-weight: bold; color: #667eea; margin-bottom: 1rem;">$4.99</div>
+                <div style="font-size: 2rem; font-weight: bold; color: #2b7a45; margin-bottom: 1rem;">$4.99</div>
                 <div style="opacity: 0.7;">One-time purchase • No subscriptions • Lifetime updates</div>
             </div>
             
@@ -693,5 +705,6 @@
         }
     </script>
     <script src="assets/demo-interactive.js"></script>
+    <script src="assets/hero.js"></script>
 </body>
 </html>

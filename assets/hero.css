@@ -1,0 +1,63 @@
+/* 히어로 미디어 — 정지 이미지로 먼저 보여주고, 클릭하면 영상으로 바뀐다.
+ * 자동재생을 쓰지 않는 이유: 첫 화면 로딩을 무겁게 하지 않기 위해서다.
+ * 포스터는 90KB, 영상(4.5MB)은 사용자가 원할 때만 내려받는다. */
+
+.hero-media {
+  max-width: 900px;
+  margin: 2.6rem auto 0;
+}
+
+.hero-media__frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: var(--r-window, 16px);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  line-height: 0;
+}
+.hero-media__frame:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+.hero-media__frame img,
+.hero-media__frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-media__btn {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 74px; height: 74px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.hero-media__frame:hover .hero-media__btn { transform: translate(-50%, -50%) scale(1.06); }
+.hero-media__btn svg { width: 26px; height: 26px; margin-left: 4px; fill: #1b5130; }
+
+.hero-media__cap {
+  margin-top: var(--s-l, 12px);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .hero-media { margin-top: 1.8rem; }
+  .hero-media__btn { width: 58px; height: 58px; }
+  .hero-media__btn svg { width: 20px; height: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media__frame:hover .hero-media__btn { transform: translate(-50%, -50%); }
+}
