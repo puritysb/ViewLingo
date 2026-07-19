@@ -33,7 +33,7 @@
         'Translations here are written in advance. The app translates any text, on-device, with Apple\u2019s translation engine.',
         'The app works over any window on your Mac \u2014 browsers, PDFs, video, apps \u2014 not just this one article.',
         'Live Mode keeps re-translating as the screen changes, which a static page cannot show.',
-        'Timing follows a real measurement: about 1 second end to end for a screen of text, most of it spent on recognition. Your Mac, the amount of text and whether a translation is already cached will change it.'
+        'Timing here shows the recognition phase, measured at just under a second for a screen of text. Fresh translations then arrive in batches and can take several seconds the first time; text the app has seen before appears almost instantly.'
       ]
     },
     ko: {
@@ -44,7 +44,7 @@
         '여기 번역문은 미리 작성해 둔 것입니다. 실제 앱은 Apple 번역 엔진으로 어떤 텍스트든 기기 안에서 번역합니다.',
         '실제 앱은 이 기사뿐 아니라 Mac의 모든 창에서 동작합니다 \u2014 브라우저, PDF, 영상, 앱.',
         'Live 모드는 화면이 바뀔 때마다 계속 다시 번역합니다. 정적인 웹페이지로는 재현할 수 없습니다.',
-        '표시 속도는 실측치를 따릅니다. 한 화면 분량 기준 전체 약 1초이며 대부분이 문자 인식에 쓰입니다. Mac 사양, 텍스트 양, 번역 캐시 적중 여부에 따라 달라집니다.'
+        '여기 표시 속도는 문자 인식 단계의 실측치(한 화면 기준 1초 미만)입니다. 처음 보는 텍스트의 번역은 이후 배치 단위로 도착하며 몇 초가 걸릴 수 있고, 한 번 번역한 텍스트는 거의 즉시 나타납니다.'
       ]
     },
     ja: {
@@ -55,7 +55,7 @@
         'ここの訳文はあらかじめ用意したものです。実際のアプリは Apple の翻訳エンジンで、どんなテキストも端末内で翻訳します。',
         '実際のアプリはこの記事だけでなく、Mac 上のあらゆるウインドウで動作します \u2014 ブラウザ、PDF、動画、アプリ。',
         'Live モードは画面が変わるたびに翻訳し直します。静的なページでは再現できません。',
-        '表示速度は実測値に基づいています。1 画面分でおよそ 1 秒、その大半は文字認識に費やされます。Mac の性能、テキスト量、翻訳キャッシュの有無によって変わります。'
+        'ここの表示速度は文字認識段階の実測値（1 画面で 1 秒弱）です。初めてのテキストの翻訳はその後バッチ単位で届き、数秒かかることがあります。一度翻訳したテキストはほぼ即座に表示されます。'
       ]
     },
     'zh-hans': {
@@ -66,7 +66,7 @@
         '此处译文为预先写好的内容。实际应用使用 Apple 翻译引擎，在设备端翻译任意文本。',
         '实际应用可用于 Mac 上的任意窗口 \u2014 浏览器、PDF、视频、各类应用 \u2014 不限于这篇文章。',
         'Live 模式会随画面变化持续重新翻译，静态网页无法呈现。',
-        '此处速度基于实测：一屏文字端到端约 1 秒，其中大部分用于文字识别。实际速度取决于您的 Mac、文本量以及翻译是否已缓存。'
+        '此处速度为文字识别阶段的实测值（一屏文字不到 1 秒）。首次翻译的文本随后按批次显示，可能需要几秒；应用翻译过的文本几乎立即显示。'
       ]
     },
     'zh-hant': {
@@ -77,7 +77,7 @@
         '此處譯文為預先寫好的內容。實際應用程式使用 Apple 翻譯引擎，在裝置端翻譯任意文字。',
         '實際應用程式可用於 Mac 上的任意視窗 \u2014 瀏覽器、PDF、影片、各類應用程式 \u2014 不限於這篇文章。',
         'Live 模式會隨畫面變化持續重新翻譯，靜態網頁無法呈現。',
-        '此處速度基於實測：一畫面文字端到端約 1 秒，其中大部分用於文字辨識。實際速度取決於您的 Mac、文字量以及翻譯是否已快取。'
+        '此處速度為文字辨識階段的實測值（一畫面文字不到 1 秒）。首次翻譯的文字隨後按批次顯示，可能需要幾秒；應用程式翻譯過的文字幾乎立即顯示。'
       ]
     }
   };
