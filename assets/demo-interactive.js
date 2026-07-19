@@ -33,7 +33,7 @@
         'Translations here are written in advance. The app translates any text, on-device, with Apple\u2019s translation engine.',
         'The app works over any window on your Mac \u2014 browsers, PDFs, video, apps \u2014 not just this one article.',
         'Live Mode keeps re-translating as the screen changes, which a static page cannot show.',
-        'Timing here is approximate. Real speed depends on your Mac and the amount of text.'
+        'Timing follows a real measurement: about 1 second end to end for a screen of text, most of it spent on recognition. Your Mac, the amount of text and whether a translation is already cached will change it.'
       ]
     },
     ko: {
@@ -44,7 +44,7 @@
         '여기 번역문은 미리 작성해 둔 것입니다. 실제 앱은 Apple 번역 엔진으로 어떤 텍스트든 기기 안에서 번역합니다.',
         '실제 앱은 이 기사뿐 아니라 Mac의 모든 창에서 동작합니다 \u2014 브라우저, PDF, 영상, 앱.',
         'Live 모드는 화면이 바뀔 때마다 계속 다시 번역합니다. 정적인 웹페이지로는 재현할 수 없습니다.',
-        '여기 표시 속도는 근사치입니다. 실제 속도는 Mac 사양과 텍스트 양에 따라 달라집니다.'
+        '표시 속도는 실측치를 따릅니다. 한 화면 분량 기준 전체 약 1초이며 대부분이 문자 인식에 쓰입니다. Mac 사양, 텍스트 양, 번역 캐시 적중 여부에 따라 달라집니다.'
       ]
     },
     ja: {
@@ -55,7 +55,7 @@
         'ここの訳文はあらかじめ用意したものです。実際のアプリは Apple の翻訳エンジンで、どんなテキストも端末内で翻訳します。',
         '実際のアプリはこの記事だけでなく、Mac 上のあらゆるウインドウで動作します \u2014 ブラウザ、PDF、動画、アプリ。',
         'Live モードは画面が変わるたびに翻訳し直します。静的なページでは再現できません。',
-        '表示速度は目安です。実際の速度は Mac の性能とテキスト量によって変わります。'
+        '表示速度は実測値に基づいています。1 画面分でおよそ 1 秒、その大半は文字認識に費やされます。Mac の性能、テキスト量、翻訳キャッシュの有無によって変わります。'
       ]
     },
     'zh-hans': {
@@ -66,7 +66,7 @@
         '此处译文为预先写好的内容。实际应用使用 Apple 翻译引擎，在设备端翻译任意文本。',
         '实际应用可用于 Mac 上的任意窗口 \u2014 浏览器、PDF、视频、各类应用 \u2014 不限于这篇文章。',
         'Live 模式会随画面变化持续重新翻译，静态网页无法呈现。',
-        '此处速度为近似值。实际速度取决于您的 Mac 与文本量。'
+        '此处速度基于实测：一屏文字端到端约 1 秒，其中大部分用于文字识别。实际速度取决于您的 Mac、文本量以及翻译是否已缓存。'
       ]
     },
     'zh-hant': {
@@ -77,7 +77,7 @@
         '此處譯文為預先寫好的內容。實際應用程式使用 Apple 翻譯引擎，在裝置端翻譯任意文字。',
         '實際應用程式可用於 Mac 上的任意視窗 \u2014 瀏覽器、PDF、影片、各類應用程式 \u2014 不限於這篇文章。',
         'Live 模式會隨畫面變化持續重新翻譯，靜態網頁無法呈現。',
-        '此處速度為近似值。實際速度取決於您的 Mac 與文字量。'
+        '此處速度基於實測：一畫面文字端到端約 1 秒，其中大部分用於文字辨識。實際速度取決於您的 Mac、文字量以及翻譯是否已快取。'
       ]
     }
   };
@@ -326,13 +326,17 @@
 
     if (!pending.length) return;
 
-    // OCR + 번역 지연을 재현. 세그먼트마다 조금씩 어긋나게 채워 실제 감각에 가깝게 한다.
+    // 실측 기반 타이밍. 앱의 PerformanceLogger 기록(수동 캡처, 24세그먼트/395자)에서:
+    //   OCR 780ms + 렌더링 17ms = 전체 약 1050ms
+    // OCR 이 대부분을 차지하므로 스켈레톤이 그만큼 유지된 뒤 번역이 채워진다.
+    // 실제 속도는 Mac 사양·텍스트 양·번역 캐시 적중 여부에 따라 달라진다.
+    var OCR_MS = 780;
     pending.forEach(function (item, n) {
       setTimeout(function () {
         item.node.textContent = item.text;
         item.node.classList.remove('vl-overlay--pending');
         item.node.classList.add('vl-overlay--filled');
-      }, 260 + n * 90);
+      }, OCR_MS + n * 80);
     });
   }
 
