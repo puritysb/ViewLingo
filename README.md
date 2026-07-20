@@ -36,7 +36,7 @@ Translate between 10+ languages:
 
 - macOS 15.0 (Sequoia) or later
 - Screen Recording permission (for capturing screen content)
-- Apple Silicon or Intel Mac
+- Apple Silicon recommended (runs on Intel, but noticeably slower)
 
 ## Get ViewLingo
 
