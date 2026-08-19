@@ -3,7 +3,7 @@
 Transform your Mac screen into a multilingual workspace with ViewLingo's innovative viewfinder translation technology.
 
 [![macOS](https://img.shields.io/badge/macOS-15.0+-blue)](https://www.apple.com/macos/)
-[![App Store](https://img.shields.io/badge/App%20Store-Available-green)](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
+[![App Store](https://img.shields.io/badge/App%20Store-Available-green)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20On--Device-brightgreen)](https://puritysb.github.io/ViewLingo/privacy)
 
 ## About ViewLingo
@@ -40,7 +40,7 @@ Translate between 10+ languages:
 
 ## Get ViewLingo
 
-- **Platform**: [Mac App Store](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
+- **Platform**: [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 - **Pricing**: $4.99 (one-time purchase, lifetime updates)
 - **Version**: 2.1.0
 
@@ -67,7 +67,7 @@ Translate between 10+ languages:
 
 ## License
 
-ViewLingo is proprietary software available exclusively through the [Mac App Store](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12).
+ViewLingo is proprietary software available exclusively through the [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12).
 
 ---
 

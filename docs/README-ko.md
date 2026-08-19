@@ -2,7 +2,7 @@
 
 🌍 Language: [English](../README.md) | **한국어** | [日本語](README-ja.md) | [简体中文](README-zh-Hans.md) | [繁體中文](README-zh-Hant.md) | [ไทย](README-th.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Tiếng Việt](README-vi.md)
 
-[![Mac App Store에서 다운로드](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/kr/app/viewlingo-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%99%94%EB%A9%B4-%EB%B2%88%EC%97%AD%EA%B8%B0/id6749508592?mt=12)
+[![Mac App Store에서 다운로드](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 
 ## 🎯 화면의 어떤 텍스트든 가리키면 즉시 번역
 
