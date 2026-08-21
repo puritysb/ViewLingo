@@ -13,7 +13,7 @@ ViewLingo transforma cualquier texto en pantalla en tiempo real con una superpos
 - ⚡ **Modo en Vivo**: Traduce automáticamente contenido cambiante (YouTube, presentaciones, etc.)
 - 🎨 **Superposición AR**: Las traducciones aparecen naturalmente sobre el texto original
 - 🔒 **Privacidad Primero**: Traducción 100% en el dispositivo con modelos integrados de macOS
-- 🌍 **10 Idiomas**: Coreano, Inglés, Japonés, Chino, Tailandés, Español, Francés, Alemán, Vietnamita
+- 🌍 **Todos los idiomas que macOS puede traducir**: incluidos ruso, turco, árabe y más
 
 ### 📸 Capturas de Pantalla
 
@@ -31,13 +31,13 @@ ViewLingo transforma cualquier texto en pantalla en tiempo real con una superpos
 ### 🚀 Comenzar
 1. Descarga desde Mac App Store
 2. Permite el permiso de grabación de pantalla
-3. Presiona `Control+Shift+A` para crear un visor
+3. Presiona `fn+Control+Option` para crear un visor
 4. ¡Apunta a cualquier texto y ve la traducción!
 
 ### ⌨️ Atajos de Teclado
-- `Control+Shift+A` - Crear nuevo visor
+- `fn+Control+Option` - Crear nuevo visor
 - `ESC` o triple clic - Cerrar visor
-- `Space` - Alternar modo en vivo
+- Botón **Live** en el visor - Alternar modo en vivo
 
 ### 📋 Requisitos del Sistema
 - macOS 15.0 o posterior

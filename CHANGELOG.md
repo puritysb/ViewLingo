@@ -1,5 +1,38 @@
 # ViewLingo Changelog
 
+## Version 2.3.0 (July 2026)
+
+### Languages
+- Language lists now show each language's own name alongside its name in your app language (e.g. "ไทย (Thai)")
+- Fixed a stale cache that could hide supported languages behind a short fallback list — the likely cause of "please add Russian/Turkish" reports for languages that already worked
+- Language pack installs are now picked up as soon as you return from System Settings
+- Source-language list shows one row per language instead of one per regional variant (nine rows for English alone)
+- Japanese is no longer mistaken for Traditional Chinese — everyday kanji no longer count as evidence of Chinese
+
+### Performance
+- First translation is faster: translation models now warm up at app launch with your actual language configuration
+- Translations stream in as they finish instead of waiting for the whole capture, so dense screens fill in progressively
+- Live Mode is calmer on video: capture pacing and re-translation debounce adapt to sustained high-change content, reducing flicker and heat
+- Live Mode only re-translates changed segments; cached results render immediately
+
+### Improvements
+- When a missing language pack silently blocks translation, ViewLingo now says which languages are needed and offers to open the settings
+- The rating prompt no longer appears on top of a fresh translation
+
+## Version 2.2.0 (May 2026)
+
+### Performance
+- Faster capture: the viewfinder region is captured directly instead of cropping a full-screen shot
+- Parallelized batch translation
+- Live Mode: adaptive capture cadence, fewer redundant overlay refreshes
+- Settings window renders only the active tab
+
+### Bug Fixes
+- Wrapped lines of a sentence are merged before translation, while lists, menus and tables keep their structure
+- Live Mode overlays stay readable on varied content (stricter contrast threshold, minimum background opacity)
+- Viewfinder windows no longer hide behind other app UI in more cases
+- Fixed false translation-cache hits from over-aggressive key normalization
+
 ## Version 2.1.0 (February 2026)
 
 ### New Features

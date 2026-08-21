@@ -13,12 +13,12 @@ ViewLingo is available on the Mac App Store! Experience AR-style translation on 
 ## Key Features
 
 ### Viewfinder Translation
-Create a resizable viewfinder that translates any text on your screen with `Control+Shift+A`. The translation appears as a natural overlay, maintaining the context of the original content. Use `fn+Control double-tap` to quickly create a viewfinder with your previous size.
+Create a resizable viewfinder that translates any text on your screen with `fn+Control+Option` (configurable in Settings). The translation appears as a natural overlay, maintaining the context of the original content. Use `fn+Control double-tap` to quickly create a viewfinder with your previous size.
 
 ### Multi-Language Support
-Translate between 10+ languages:
-- English, Korean, Japanese, Chinese (Simplified & Traditional)
-- Spanish, French, German, Thai, Vietnamese
+ViewLingo uses the translation engine built into macOS, so it supports **every language your Mac can translate** — English, Korean, Japanese, Chinese, Spanish, French, German, Thai, Vietnamese, Russian, Turkish, Arabic and more. When Apple adds a language, it becomes available without an app update.
+
+Language packs download once from **System Settings › General › Language & Region › Translation Languages**; after that, translation runs entirely offline.
 
 ### Complete Privacy
 - **100% On-Device**: Powered by Apple's built-in translation engine
@@ -42,7 +42,6 @@ Translate between 10+ languages:
 
 - **Platform**: [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 - **Pricing**: $4.99 (one-time purchase, lifetime updates)
-- **Version**: 2.1.0
 
 ## Technical Stack
 

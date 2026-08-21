@@ -13,7 +13,7 @@ ViewLingo transforme n'importe quel texte à l'écran en temps réel avec une su
 - ⚡ **Mode Direct** : Traduit automatiquement le contenu changeant (YouTube, présentations, etc.)
 - 🎨 **Superposition AR** : Les traductions apparaissent naturellement sur le texte original
 - 🔒 **Confidentialité d'abord** : Traduction 100% sur l'appareil avec les modèles intégrés de macOS
-- 🌍 **10 Langues** : Coréen, Anglais, Japonais, Chinois, Thaï, Espagnol, Français, Allemand, Vietnamien
+- 🌍 **Toutes les langues que macOS peut traduire** : y compris le russe, le turc, l'arabe et plus
 
 ### 📸 Captures d'écran
 
@@ -31,13 +31,13 @@ ViewLingo transforme n'importe quel texte à l'écran en temps réel avec une su
 ### 🚀 Commencer
 1. Téléchargez depuis Mac App Store
 2. Autorisez l'enregistrement d'écran
-3. Appuyez sur `Control+Shift+A` pour créer un viseur
+3. Appuyez sur `fn+Control+Option` pour créer un viseur
 4. Pointez n'importe quel texte et voyez la traduction !
 
 ### ⌨️ Raccourcis Clavier
-- `Control+Shift+A` - Créer un nouveau viseur
+- `fn+Control+Option` - Créer un nouveau viseur
 - `ESC` ou triple-clic - Fermer le viseur
-- `Space` - Basculer le mode direct
+- Bouton **Live** du viseur - Basculer le mode direct
 
 ### 📋 Configuration Requise
 - macOS 15.0 ou plus récent

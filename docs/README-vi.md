@@ -13,7 +13,7 @@ ViewLingo chuyển đổi bất kỳ văn bản nào trên màn hình theo thờ
 - ⚡ **Chế Độ Trực Tiếp**: Tự động dịch nội dung thay đổi (YouTube, bài thuyết trình, v.v.)
 - 🎨 **Lớp Phủ AR**: Bản dịch xuất hiện tự nhiên trên văn bản gốc
 - 🔒 **Ưu Tiên Quyền Riêng Tư**: Dịch 100% trên thiết bị với các mô hình tích hợp của macOS
-- 🌍 **10 Ngôn Ngữ**: Tiếng Hàn, Anh, Nhật, Trung, Thái, Tây Ban Nha, Pháp, Đức, Việt
+- 🌍 **Mọi ngôn ngữ macOS có thể dịch**: bao gồm tiếng Nga, Thổ Nhĩ Kỳ, Ả Rập và nhiều hơn nữa
 
 ### 📸 Ảnh Chụp Màn Hình
 
@@ -31,13 +31,13 @@ ViewLingo chuyển đổi bất kỳ văn bản nào trên màn hình theo thờ
 ### 🚀 Bắt Đầu
 1. Tải xuống từ Mac App Store
 2. Cho phép quyền ghi màn hình
-3. Nhấn `Control+Shift+A` để tạo kính ngắm
+3. Nhấn `fn+Control+Option` để tạo kính ngắm
 4. Chỉ vào bất kỳ văn bản nào và xem bản dịch!
 
 ### ⌨️ Phím Tắt
-- `Control+Shift+A` - Tạo kính ngắm mới
+- `fn+Control+Option` - Tạo kính ngắm mới
 - `ESC` hoặc nhấp ba lần - Đóng kính ngắm
-- `Space` - Chuyển đổi chế độ trực tiếp
+- Nút **Live** trên kính ngắm - Chuyển đổi chế độ trực tiếp
 
 ### 📋 Yêu Cầu Hệ Thống
 - macOS 15.0 trở lên

@@ -13,7 +13,7 @@ ViewLingo verwandelt jeden Bildschirmtext in Echtzeit mit natürlicher AR-Überl
 - ⚡ **Live-Modus**: Automatische Übersetzung sich ändernder Inhalte (YouTube, Präsentationen, etc.)
 - 🎨 **AR-Überlagerung**: Übersetzungen erscheinen natürlich über dem Originaltext
 - 🔒 **Datenschutz zuerst**: 100% On-Device-Übersetzung mit integrierten macOS-Modellen
-- 🌍 **10 Sprachen**: Koreanisch, Englisch, Japanisch, Chinesisch, Thai, Spanisch, Französisch, Deutsch, Vietnamesisch
+- 🌍 **Alle Sprachen, die macOS übersetzen kann**: einschließlich Russisch, Türkisch, Arabisch und mehr
 
 ### 📸 Screenshots
 
@@ -31,13 +31,13 @@ ViewLingo verwandelt jeden Bildschirmtext in Echtzeit mit natürlicher AR-Überl
 ### 🚀 Erste Schritte
 1. Aus dem Mac App Store herunterladen
 2. Bildschirmaufnahme-Berechtigung erlauben
-3. `Control+Shift+A` drücken, um einen Sucher zu erstellen
+3. `fn+Control+Option` drücken, um einen Sucher zu erstellen
 4. Auf beliebigen Text zeigen und die Übersetzung sehen!
 
 ### ⌨️ Tastenkombinationen
-- `Control+Shift+A` - Neuen Sucher erstellen
+- `fn+Control+Option` - Neuen Sucher erstellen
 - `ESC` oder Dreifachklick - Sucher schließen
-- `Space` - Live-Modus umschalten
+- **Live**-Taste am Sucher - Live-Modus umschalten
 
 ### 📋 Systemanforderungen
 - macOS 15.0 oder neuer
