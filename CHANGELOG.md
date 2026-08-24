@@ -1,5 +1,20 @@
 # ViewLingo Changelog
 
+## Version 2.4.0 (August 2026)
+
+### Viewfinder
+- **Lock mode**: lock the viewfinder from the menu bar and every click and drag passes through to the app underneath — scroll the page or use video controls while Live translation keeps running on top. Esc once unlocks, twice closes
+- Resizing now only happens in a narrow band along the border, so moving the viewfinder no longer turns into resizing
+- The viewfinder no longer sits over the macOS menu bar
+
+### Languages & Setup
+- The language-pack download prompt only appears for languages on your list, and remembers when you decline
+- First-run setup no longer blocks until every language pack is installed — start with what you have and download packs in-app
+
+### Live Mode
+- Fixed a case where a translation that had just finished was discarded instead of shown
+- Overlays now adapt to dark content: on dark video or dark-mode pages, the translation band renders dark with light text instead of a light band with black text
+
 ## Version 2.3.0 (July 2026)
 
 ### Languages
