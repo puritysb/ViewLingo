@@ -1,6 +1,8 @@
 /* ViewLingo homepage styles.
-   Extracted verbatim from the former inline <style> block; the mobile
-   `.nav-links { display: none }` rule moved to common.css as a slide-in menu. */
+   Shared by the English homepage and all four localized homepages, which now
+   use the same class names and footer structure.
+   The mobile `.nav-links { display: none }` rule lives in common.css as a
+   slide-in menu instead. */
 
 * {
     margin: 0;
@@ -292,6 +294,17 @@ footer {
     text-align: center;
 }
 
+/* The copyright line's link sat at the browser default blue on this #333
+   footer, and the localized pages used the brand green there -- both far
+   below a readable contrast. `.footer-links a` is more specific and still wins. */
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 .footer-links {
     margin-bottom: 2rem;
 }
@@ -381,6 +394,10 @@ footer {
     
     .demo-media {
         height: 200px;
+    }
+    
+    .demo-section {
+        padding: 50px 0;
     }
     
     .video-grid {

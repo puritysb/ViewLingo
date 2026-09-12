@@ -23,17 +23,7 @@
     <meta name="twitter:description" content="화면 위 어떤 앱이든, 영상이든, 문서든 텍스트를 가리키면 즉시 번역 — 100% 기기 내 처리.">
     <meta name="twitter:image" content="https://puritysb.github.io/ViewLingo/assets/screenshots/viewlingo_1_hero.png">
 
-    <link rel="stylesheet" href="../css/home-intl.css">
-    <style>
-        /* Korean video captions need a narrower minimum column than the shared sheet. */
-        .video-grid {
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        }
-
-        .video-item video {
-            max-width: 500px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../assets/tokens.css">
     <link rel="stylesheet" href="../assets/demo-interactive.css">
@@ -92,7 +82,7 @@
             <p class="subtitle">macOS용 화면 번역기 — 앱 전환 없이, 클라우드 없이.</p>
             <p>뷰파인더를 드래그해 화면 위 어떤 콘텐츠든 덮어 보세요. 번역 결과가 바로 위에 나타납니다 — 비공개로, 즉시, 오프라인으로.</p>
             <a href="https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=web&mt=12" class="cta-button">Mac App Store에서 다운로드</a>
-            <div class="price">$4.99 일회성 구매 • 구독 없음 • 평생 업데이트</div>
+            <div class="price-tag">$4.99 일회성 구매 • 구독 없음 • 평생 업데이트</div>
         
             <div class="hero-media">
                 <button class="hero-media__frame" type="button" data-hero-media
@@ -135,7 +125,7 @@
         </div>
     </section>
 
-    <section id="features" class="features-section">
+    <section id="features" class="features">
         <div class="container">
             <h2>이런 일을 합니다</h2>
             <div class="features-grid">
@@ -318,13 +308,15 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025-2026 <a href="https://foundby.kr/" target="_blank" rel="noopener">Serendipity Bound</a>. All rights reserved.</p>
-            <p style="margin-top: 1rem;">
-                <a href="privacy.html">개인정보 보호정책</a> • 
-                <a href="https://github.com/puritysb/ViewLingo/issues">지원</a> • 
-                <a href="mailto:purityforsale@gmail.com">문의하기</a>
-            </p>
+            <div class="footer-links">
+            <a href="faq.html">FAQ</a>
+            <a href="privacy.html">개인정보 보호정책</a>
+            <a href="https://github.com/puritysb/ViewLingo/issues">지원</a>
+            <a href="https://github.com/puritysb/ViewLingo">GitHub</a>
+            <a href="mailto:purityforsale@gmail.com">문의하기</a>
         </div>
+        <p>&copy; 2025-2026 <a href="https://foundby.kr/" target="_blank" rel="noopener">Serendipity Bound</a>. All rights reserved.</p>
+            </div>
     </footer>
     
     <script src="../js/common.js"></script>
