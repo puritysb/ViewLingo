@@ -6,245 +6,18 @@
     <title>User Guide - ViewLingo</title>
     <meta name="description" content="Complete user guide for ViewLingo - learn how to translate any on-screen text with viewfinder technology">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #2b7a45 0%, #1b5130 100%);
-            color: white;
-            padding: 3rem 0;
-            margin-bottom: 3rem;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .guide-section {
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .guide-section h2 {
-            color: #2b7a45;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #2b7a45;
-            padding-bottom: 0.5rem;
-        }
-        
-        .guide-section h3 {
-            color: #333;
-            margin: 2rem 0 1rem 0;
-            font-size: 1.3rem;
-        }
-        
-        .step-by-step {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .step {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        .step:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .step-number {
-            background: #2b7a45;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-            margin-right: 1rem;
-        }
-        
-        .step-content h4 {
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-        
-        .step-content p {
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        
-        .keyboard-shortcut {
-            background: #333;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-family: 'SF Mono', Monaco, monospace;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin: 0 2px;
-        }
-        
-        .tip-box {
-            background: linear-gradient(135deg, #28a74520, #20c99720);
-            border-left: 4px solid #28a745;
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-        }
-        
-        .warning-box {
-            background: linear-gradient(135deg, #ffc10720, #ff851120);
-            border-left: 4px solid #ffc107;
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .feature-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #2b7a45;
-        }
-        
-        .feature-card h4 {
-            color: #2b7a45;
-            margin-bottom: 0.5rem;
-        }
-        
-        .screenshot-placeholder {
-            background: #e9ecef;
-            border: 2px dashed #dee2e6;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            margin: 1rem 0;
-            color: #6c757d;
-        }
-        
-        .back-link {
-            display: inline-block;
-            background: #2b7a45;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-top: 2rem;
-            transition: background 0.3s;
-        }
-        
-        .back-link:hover {
-            background: #5a6fd8;
-        }
-        
-        .navigation {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .navigation h3 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .navigation ul {
-            list-style: none;
-            columns: 2;
-            gap: 2rem;
-        }
-        
-        .navigation li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .navigation a {
-            color: #2b7a45;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .navigation a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 10px;
-            }
-            
-            .guide-section {
-                padding: 1.5rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .navigation ul {
-                columns: 1;
-            }
-            
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/guide.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="container">
         <header>
             <h1>ViewLingo User Guide</h1>
             <div class="subtitle">Master the art of screen translation</div>
         </header>
+
+        <main id="main-content">
         
         <div class="navigation">
             <h3>📋 Quick Navigation</h3>
@@ -703,6 +476,8 @@
             <a href="https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=web&mt=12" style="display: inline-block; background: #2b7a45; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; margin-right: 1rem;">Download ViewLingo</a>
             <a href="index.html" class="back-link">← Back to Home</a>
         </div>
+        </main>
     </div>
+    <script src="js/common.js"></script>
 </body>
 </html>

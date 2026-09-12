@@ -23,385 +23,42 @@
     <meta name="twitter:description" content="화면 위 어떤 앱이든, 영상이든, 문서든 텍스트를 가리키면 즉시 번역 — 100% 기기 내 처리.">
     <meta name="twitter:image" content="https://puritysb.github.io/ViewLingo/assets/screenshots/viewlingo_1_hero.png">
 
+    <link rel="stylesheet" href="../css/home-intl.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #2b7a45 0%, #1b5130 100%);
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2b7a45;
-            cursor: pointer;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #2b7a45;
-        }
-        
-        .hero {
-            padding: 120px 0 80px;
-            text-align: center;
-            color: white;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.8;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #2b7a45;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .price {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 30px;
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .features-section {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .features-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-        }
-        
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 15px;
-            background: #f8f9fa;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .privacy-section {
-            background: linear-gradient(135deg, #2b7a45 0%, #1b5130 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .privacy-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .privacy-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .privacy-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-        }
-        
-        .demo-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        
-        .demo-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-        
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .demo-item {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .demo-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .demo-media {
-            width: 100%;
-            height: 250px;
-            background: #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid #dee2e6;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .demo-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .demo-media video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .demo-placeholder {
-            color: #6c757d;
-            font-size: 1.1rem;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .demo-content {
-            padding: 2rem;
-        }
-        
-        .demo-content h3 {
-            margin-bottom: 1rem;
-            color: #2b7a45;
-            font-size: 1.4rem;
-        }
-        
-        .demo-content p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(102, 126, 234, 0.9);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .play-button:hover {
-            background: rgba(102, 126, 234, 1);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        footer a {
-            color: #2b7a45;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        .video-section {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .video-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
+        /* Korean video captions need a narrower minimum column than the shared sheet. */
         .video-grid {
-            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
         }
-        
-        .video-item {
-            text-align: center;
-        }
-        
+
         .video-item video {
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
-            width: 100%;
             max-width: 500px;
-        }
-        
-        .video-item h3 {
-            color: #2b7a45;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .video-item p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        @media (max-width: 1024px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .privacy-features,
-            .demo-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .demo-section {
-                padding: 50px 0;
-            }
-            
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../assets/tokens.css">
     <link rel="stylesheet" href="../assets/demo-interactive.css">
     <link rel="stylesheet" href="../assets/hero.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ViewLingo",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 15.0 이상",
+      "inLanguage": "ko",
+      "url": "https://puritysb.github.io/ViewLingo/ko/",
+      "description": "Mac 화면의 모든 텍스트를 즉시 번역하세요. $4.99 일회성 구매. 100% 온디바이스 프라이버시. Mac App Store에서 만나보세요.",
+      "offers": {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Serendipity Bound"
+      }
+    }
+    </script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>

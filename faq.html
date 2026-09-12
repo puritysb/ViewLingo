@@ -6,156 +6,18 @@
     <title>FAQ - ViewLingo</title>
     <meta name="description" content="Frequently asked questions about ViewLingo - screen translation app for macOS">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #2b7a45 0%, #1b5130 100%);
-            color: white;
-            padding: 3rem 0;
-            margin-bottom: 3rem;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .faq-section {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .faq-section h2 {
-            color: #2b7a45;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #2b7a45;
-            padding-bottom: 0.5rem;
-        }
-        
-        .faq-item {
-            margin-bottom: 2rem;
-            border-left: 4px solid #2b7a45;
-            padding-left: 1.5rem;
-        }
-        
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 0.8rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .faq-question:hover {
-            color: #2b7a45;
-        }
-        
-        .faq-answer {
-            color: #555;
-            line-height: 1.7;
-        }
-        
-        .faq-answer ul {
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-        
-        .faq-answer li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .faq-answer code {
-            background: #f1f3f5;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: 'SF Mono', Monaco, monospace;
-        }
-        
-        .expand-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-        }
-        
-        .faq-item.expanded .expand-icon {
-            transform: rotate(180deg);
-        }
-        
-        .back-link {
-            display: inline-block;
-            background: #2b7a45;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-top: 2rem;
-            transition: background 0.3s;
-        }
-        
-        .back-link:hover {
-            background: #5a6fd8;
-        }
-        
-        .highlight {
-            background: linear-gradient(135deg, #2b7a4520, #1b513020);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            border-left: 4px solid #2b7a45;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 10px;
-            }
-            
-            .faq-section {
-                padding: 1.5rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="container">
         <header>
             <h1>Frequently Asked Questions</h1>
             <div class="subtitle">Everything you need to know about ViewLingo</div>
         </header>
+
+        <main id="main-content">
         
         <div class="faq-section">
             <h2>🚀 Getting Started</h2>
@@ -515,6 +377,7 @@
             <a href="https://github.com/puritysb/ViewLingo/discussions" style="display: inline-block; background: #2b7a45; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; margin-right: 1rem;">Ask a Question</a>
             <a href="index.html" class="back-link">← Back to ViewLingo</a>
         </div>
+        </main>
     </div>
     
     <script>
