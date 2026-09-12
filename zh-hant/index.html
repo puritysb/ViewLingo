@@ -11,6 +11,12 @@
     <meta property="og:image" content="https://puritysb.github.io/ViewLingo/assets/screenshots/viewlingo_1_hero.png">
     <meta property="og:url" content="https://puritysb.github.io/ViewLingo/zh-hant/">
     <link rel="canonical" href="https://puritysb.github.io/ViewLingo/zh-hant/">
+    <link rel="alternate" hreflang="en" href="https://puritysb.github.io/ViewLingo/">
+    <link rel="alternate" hreflang="ko" href="https://puritysb.github.io/ViewLingo/ko/">
+    <link rel="alternate" hreflang="ja" href="https://puritysb.github.io/ViewLingo/ja/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://puritysb.github.io/ViewLingo/zh-hans/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://puritysb.github.io/ViewLingo/zh-hant/">
+    <link rel="alternate" hreflang="x-default" href="https://puritysb.github.io/ViewLingo/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ViewLingo – macOS 螢幕翻譯器">
@@ -372,9 +378,6 @@
                 font-size: 1.2rem;
             }
             
-            .nav-links {
-                display: none;
-            }
             
             .features-grid {
                 grid-template-columns: 1fr;
@@ -394,13 +397,15 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../assets/tokens.css">
     <link rel="stylesheet" href="../assets/demo-interactive.css">
     <link rel="stylesheet" href="../assets/hero.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
     <header>
-        <nav class="container">
+        <nav class="container" aria-label="Primary">
             <a href="index.html" class="logo" style="text-decoration: none;">ViewLingo</a>
             <ul class="nav-links">
                 <li><a href="#features">功能</a></li>
@@ -409,7 +414,7 @@
                 <li><a href="faq.html">常見問題</a></li>
                 <li><a href="https://github.com/puritysb/ViewLingo/issues">支援</a></li>
                 <li>
-                    <select id="languageSelector" onchange="changeLanguage(this.value)" style="background: transparent; border: 1px solid #2b7a45; border-radius: 5px; padding: 5px 10px; color: #2b7a45; cursor: pointer;">
+                    <select id="languageSelector" aria-label="選擇網站語言" style="background: transparent; border: 1px solid #2b7a45; border-radius: 5px; padding: 5px 10px; color: #2b7a45; cursor: pointer;">
                         <option value="en">English</option>
                         <option value="ko">한국어</option>
                         <option value="ja">日本語</option>
@@ -420,6 +425,8 @@
             </ul>
         </nav>
     </header>
+
+    <main id="main-content">
 
     <section class="hero">
         <div class="container">
@@ -649,6 +656,8 @@
         </div>
     </section>
 
+    </main>
+
     <footer>
         <div class="container">
             <p>&copy; 2025-2026 <a href="https://foundby.kr/" target="_blank" rel="noopener">Serendipity Bound</a>. All rights reserved.</p>
@@ -660,27 +669,7 @@
         </div>
     </footer>
     
-    <script>
-        function changeLanguage(lang) {
-            if (lang === 'en') {
-                window.location.href = '../index.html';
-            } else {
-                window.location.href = '../' + lang + '/index.html';
-            }
-        }
-        
-        // Detect current language from URL
-        const path = window.location.pathname;
-        if (path.includes('/ko/')) {
-            document.getElementById('languageSelector').value = 'ko';
-        } else if (path.includes('/ja/')) {
-            document.getElementById('languageSelector').value = 'ja';
-        } else if (path.includes('/zh-hans/')) {
-            document.getElementById('languageSelector').value = 'zh-hans';
-        } else if (path.includes('/zh-hant/')) {
-            document.getElementById('languageSelector').value = 'zh-hant';
-        }
-    </script>
+    <script src="../js/common.js"></script>
     <script src="../assets/demo-interactive.js"></script>
     <script src="../assets/hero.js"></script>
 </body>

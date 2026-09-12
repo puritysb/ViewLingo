@@ -1,0 +1,115 @@
+/* ViewLingo shared styles: accessibility and mobile navigation.
+   Brand palette matches the inline page styles (#2b7a45 green). */
+
+/* Skip link: first tab stop, visible only when focused. */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 1100;
+    padding: 10px 16px;
+    background: #2b7a45;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0 0 6px 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+/* Screen-reader-only text. */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Keyboard focus only: pointer clicks keep their existing appearance. */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid #2b7a45;
+    outline-offset: 2px;
+}
+
+/* Hamburger button. Hidden on desktop, shown by the mobile query below. */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #2b7a45;
+    margin: 3px 0;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Replaces the former `display: none`, which removed the whole menu --
+       including the language selector -- from every phone-width screen. */
+    .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 80px 20px 20px;
+        margin: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-toggle span,
+    .nav-links {
+        transition: none;
+    }
+}
