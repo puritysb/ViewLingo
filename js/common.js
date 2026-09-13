@@ -1,8 +1,49 @@
 /* ViewLingo shared behaviour: mobile navigation, language selector, smooth scroll.
-   Loaded by the homepage and every localized homepage. */
+   Loaded by public home, FAQ, privacy and guide pages. No visitor data is collected. */
 
 (function () {
     'use strict';
+
+    // Only registered, non-personal campaign names may cross the store boundary.
+    var CAMPAIGNS = ['vl_google_us_l01', 'vl_qa_260913'];
+    function campaignLink(href, currentURL) {
+        var current = new URL(currentURL);
+        var values = current.searchParams.getAll('campaign');
+        if (values.length !== 1 || CAMPAIGNS.indexOf(values[0]) === -1 || href.charAt(0) === '#') {
+            return href;
+        }
+        var target;
+        try { target = new URL(href, current); } catch (error) { return href; }
+        if (target.origin === 'https://apps.apple.com' &&
+            target.pathname === '/app/apple-store/id6749508592') {
+            return 'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + values[0] + '&mt=8';
+        }
+        if (target.origin === current.origin && (
+            /^\/ViewLingo\/(?:index\.html|guide\.html|faq\.html|privacy\.html)?$/.test(target.pathname) ||
+            /^\/ViewLingo\/(?:ko|ja|zh-hans|zh-hant)\/(?:index\.html|faq\.html|privacy\.html)?$/.test(target.pathname))) {
+            target.searchParams.set('campaign', values[0]);
+            return target.href;
+        }
+        return href;
+    }
+
+    // Node's built-in test runner can exercise URL boundaries without a browser or dependencies.
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = { campaignLink: campaignLink };
+    }
+    if (typeof document === 'undefined') { return; }
+
+    var campaignOnly = document.currentScript && document.currentScript.hasAttribute('data-campaign-only');
+
+    function setUpCampaignLinks() {
+        document.querySelectorAll('a[href]').forEach(function (link) {
+            if (!link.hasAttribute('download')) {
+                var href = link.getAttribute('href');
+                var updated = campaignLink(href, window.location.href);
+                if (updated !== href) { link.setAttribute('href', updated); }
+            }
+        });
+    }
 
     var LOCALES = ['ko', 'ja', 'zh-hans', 'zh-hant'];
 
@@ -23,7 +64,8 @@
        would leave the site entirely. */
     function changeLanguage(lang) {
         var prefix = currentLocale() === 'en' ? '' : '../';
-        window.location.href = lang === 'en' ? prefix + 'index.html' : prefix + lang + '/index.html';
+        var target = lang === 'en' ? prefix + 'index.html' : prefix + lang + '/index.html';
+        window.location.href = campaignLink(target, window.location.href);
     }
 
     function setUpLanguageSelector() {
@@ -119,6 +161,8 @@
     }
 
     function init() {
+        setUpCampaignLinks();
+        if (campaignOnly) { return; }
         setUpLanguageSelector();
         setUpMobileMenu();
         setUpSmoothScroll();
