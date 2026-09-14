@@ -5,7 +5,7 @@
     'use strict';
 
     // Only registered, non-personal campaign names may cross the store boundary.
-    var CAMPAIGNS = ['vl_google_us_l01', 'vl_qa_260913'];
+    var CAMPAIGNS = ['vl_google_us_l01', 'vl_dg_us_01', 'vl_dg_qa_01', 'vl_qa_260913'];
     function campaignLink(href, currentURL) {
         var current = new URL(currentURL);
         var values = current.searchParams.getAll('campaign');

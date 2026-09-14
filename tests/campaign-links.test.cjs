@@ -63,3 +63,15 @@ test('page initialization rewrites actual HTML anchors and skips downloads', () 
         }
     }
 });
+
+
+test('Demand Gen identifiers stay separate from Search through language and guide navigation', () => {
+    for (const id of ['vl_dg_us_01', 'vl_dg_qa_01']) {
+        const landing = root + '?campaign=' + id;
+        const korean = campaignLink('ko/index.html', landing);
+        const guide = campaignLink('../guide.html', korean);
+        assert.equal(new URL(guide).searchParams.get('campaign'), id);
+        assert.equal(campaignLink(store, guide),
+            'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + id + '&mt=8');
+    }
+});
