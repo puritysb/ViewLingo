@@ -1,5 +1,5 @@
 /* ViewLingo shared behaviour: mobile navigation, language selector, smooth scroll.
-   Loaded by public home, FAQ, privacy and guide pages. No visitor data is collected. */
+   Loaded by public home, FAQ, privacy and guide pages. Optional website measurement is isolated in measurement.js. */
 
 (function () {
     'use strict';
