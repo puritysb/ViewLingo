@@ -32,11 +32,13 @@
         v.appendChild(s2);
       }
 
-      btn.innerHTML = '';
-      btn.appendChild(v);
-      btn.style.cursor = 'default';
-      // 버튼이 영상 컨트롤을 가리지 않도록 역할을 해제한다
-      btn.removeAttribute('aria-label');
+      // Native controls must not be nested inside an interactive button.
+      var frame = document.createElement('div');
+      frame.className = btn.className;
+      frame.style.cursor = 'default';
+      frame.appendChild(v);
+      btn.replaceWith(frame);
+      v.focus();
       // 실제 클릭은 사용자 제스처이므로 소리와 함께 재생된다.
       // 브라우저 정책으로 막히면 음소거로라도 재생해 화면이 멈춰 보이지 않게 한다.
       var play = v.play();

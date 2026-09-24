@@ -1,0 +1,29 @@
+/* Conversion-focused homepage: one promise, actual evidence, clear purchase path. */
+.acquisition-hero{background:#f5f4ec;color:#173e35;text-align:left;padding:140px 0 72px}
+.acquisition-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center;max-width:1440px;padding-inline:40px}
+.acquisition-hero .eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 22px}
+.acquisition-hero h1{font-size:clamp(2.5rem,4.3vw,4.5rem);line-height:1.06;letter-spacing:-.045em;text-shadow:none;max-width:650px;margin:0 0 24px}
+.acquisition-hero .acquisition-intro{font-size:1.2rem;line-height:1.65;margin:0 0 28px;max-width:520px;color:#40594f}
+.acquisition-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.acquisition-hero .cta-button,.purchase-fit .cta-button{background:#173e35;color:#fff;font-size:1rem;padding:15px 22px;border-radius:8px;box-shadow:none;white-space:normal}
+.demo-link{font-size:.95rem;font-weight:650;color:#173e35;text-underline-offset:5px}
+.acquisition-hero .purchase-note{font-size:.9rem;font-weight:650;margin:20px 0 8px}
+.acquisition-hero .compatibility{font-size:.82rem;color:#53685e;margin:0;max-width:450px}
+.acquisition-hero .hero-media{margin:0;max-width:none;min-width:0}
+.acquisition-hero .hero-media__frame{border-radius:14px;box-shadow:0 18px 50px #173e3526;border:1px solid #173e3520;background:#173e35}
+.hero-media figcaption{font-size:.76rem;line-height:1.5;color:#53685e;margin:14px 5px 0;text-align:center}
+.acquisition-steps,.acquisition-proof{background:#fff;padding:64px 0;color:#173e35}
+.acquisition-steps h2,.acquisition-proof h2{font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.03em;margin-bottom:32px;text-align:left}
+.acquisition-steps ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:step}
+.step-number{font-size:.8rem;color:#597167;font-weight:700;letter-spacing:.1em}
+.acquisition-steps h3{font-size:1.3rem;margin:12px 0 8px}.acquisition-steps p{color:#53685e}
+.acquisition-proof{background:#edf2eb}.proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.proof-grid article{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px #173e3508}
+.proof-grid img{display:block;width:100%;height:auto;aspect-ratio:1.6;object-fit:contain;background:#173e35}
+.proof-grid h3{padding:22px 22px 10px;font-size:1.2rem}.proof-grid p{padding:0 22px 26px;color:#53685e;font-size:.95rem}
+.purchase-fit{display:flex;align-items:center;gap:32px;justify-content:space-between;margin-top:36px;padding:28px;border:1px solid #bccbbc;border-radius:12px}
+.purchase-fit div{max-width:730px}.purchase-fit h3{font-size:1.1rem;margin-bottom:8px}.purchase-fit p{font-size:.92rem;color:#53685e}.purchase-fit a{flex-shrink:0}
+.illustration-note{font-size:.85rem;color:#53685e;margin-top:16px}
+#real-demo,#proof{scroll-margin-top:100px}
+@media(max-width:1000px){.acquisition-layout{grid-template-columns:1fr;gap:36px}.acquisition-hero{padding-top:110px}.acquisition-copy{max-width:760px}.acquisition-hero h1{max-width:760px}.acquisition-hero .acquisition-intro{max-width:650px}.purchase-fit{align-items:flex-start;flex-direction:column}}
+@media(max-width:640px){.acquisition-layout{padding-inline:22px}.acquisition-hero{padding-bottom:42px}.acquisition-hero h1{font-size:2.6rem}.acquisition-hero .acquisition-intro{font-size:1.05rem}.acquisition-actions{gap:16px}.acquisition-steps,.acquisition-proof{padding:42px 0}.acquisition-steps ol,.proof-grid{grid-template-columns:1fr;gap:24px}.acquisition-steps ol{gap:26px}.purchase-fit{padding:22px}.acquisition-hero .hero-media__frame{border-radius:8px}}
