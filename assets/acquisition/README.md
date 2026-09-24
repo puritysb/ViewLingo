@@ -9,3 +9,5 @@ The homepage uses actual ViewLingo screen recordings and screenshots. Editorial 
 - Small photo edges in the document screenshot originate from Aleksandar Pasaric's image under the [Pexels license](https://www.pexels.com/license/).
 
 These are selected examples, not an all-content or all-language accuracy guarantee. English demonstrations are used on all five localized page shells. This change is prepared on a review branch; publication is a separate step.
+
+The Overview opening was revised to the earlier Korean night-street recording, source `preview-impact.mp4` at 25–29 seconds. It shows a completed selected-region result with older app UI. Some peripheral text is imperfect; the scene does not claim that every sign is translated accurately. The hero poster is updated to this opening, and the captions now disclose Korean and Japanese to English. The original photo provenance and paid-use rights need to be rechecked before publication.
