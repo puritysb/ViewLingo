@@ -1,5 +1,48 @@
 # ViewLingo Changelog
 
+## Version 2.5.0 (September 2026)
+
+### Languages
+- Search languages in Settings by their name in your app language, their own name, or their code, and add them straight from the results
+- Your chosen regional English target (for example British English) is kept instead of falling back to a default
+- Regional source variants that recognize text the same way are shown as one choice; Simplified and Traditional Chinese stay separate
+- Clearer guidance for choosing screen languages and downloading language packs in Settings and first-run setup
+
+### Live Mode & Display
+- When the original text changes, the previous Live translation is removed instead of being reused for the new text
+- Translucent translated text is drawn once, with a cleaner outline, so letters no longer look doubled
+
+## Version 2.4.4 (September 2026)
+
+- Close, Retry and Live stay available when a selected area contains no text
+- More reliable switching between Live translation, Retry and resizing
+- Settings, permission prompts and language-pack downloads stay reachable while a translation window is open
+- Setup restores your progress and language choices, including after a cancelled download
+
+## Version 2.4.3 (September 2026)
+
+- Fixed removed text sometimes remaining visible during Live translation
+- Target-language regional variants are organized into submenus, keeping every supported choice
+- New shortcut test, and a way to reopen Quick Start without resetting settings
+- Quick Start can start a translation directly, with clearer Screen Recording permission guidance
+
+## Version 2.4.2 (September 2026)
+
+- Better recognition of small and vertical text in wide selections
+- Escape reliably cancels screen-region selection
+- Translated text is no longer shrunk when there is enough room
+- Stronger text contrast on translucent overlays, including small text
+- More consistent results when text changes during Live translation
+
+## Version 2.4.1 (September 2026)
+
+- Better readability on dark screens and when the background changes during Live translation
+- Old translations no longer stay visible after the text disappears from the screen
+- Automatically detected languages keep their result instead of being translated again and again
+- Better paragraph wrapping, with access to the full text of longer translations
+- Optional masking of the original text that respects your transparency settings
+- Less waiting when the translation service stops responding, with an automatic retry
+
 ## Version 2.4.0 (August 2026)
 
 ### Viewfinder
