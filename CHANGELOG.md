@@ -1,5 +1,17 @@
 # ViewLingo Changelog
 
+## Version 2.5.1 (September 28, 2026)
+
+- Fewer brief translation pauses caused by temporary delays
+- Progress indicators and overlays are cleared when a translation fails
+- Quick Start stays on the correct display, including secondary and full-screen displays
+- The shortcut test distinguishes observed secure input, such as a password field, from a shortcut that was not detected
+- Fixed interface text and layout in Settings, the menu bar and onboarding; added Brazilian Portuguese interface support
+- Improved automatic recovery when a previously working language pair is reported unavailable
+
+The long-sleep translation failure in [#24](https://github.com/puritysb/ViewLingo/issues/24) is still under investigation;
+this release has not been confirmed to resolve that reported condition.
+
 ## Version 2.5.0 (September 2026)
 
 ### Languages
