@@ -15,8 +15,9 @@ Found a bug? Please help us fix it:
 1. **Search existing issues** to avoid duplicates
 2. **Use our issue template** for complete information
 3. **Include these details:**
-   - macOS version (e.g., macOS 15.1)
-   - ViewLingo version
+   - macOS version (Apple menu › About This Mac)
+   - ViewLingo version (Settings › General › App Info)
+   - Mac model (Apple silicon or Intel)
    - Steps to reproduce the problem
    - Expected vs actual behavior
    - Screenshots if relevant

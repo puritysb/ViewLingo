@@ -1,6 +1,8 @@
 # ViewLingo - AR Screen Translator for Mac
 
-Transform your Mac screen into a multilingual workspace with ViewLingo's innovative viewfinder translation technology.
+Read any text on your Mac screen in your language, right where it appears.
+
+🌍 Language: **English** | [한국어](docs/README-ko.md) | [日本語](docs/README-ja.md) | [简体中文](docs/README-zh-Hans.md) | [繁體中文](docs/README-zh-Hant.md) | [ไทย](docs/README-th.md) | [Español](docs/README-es.md) | [Français](docs/README-fr.md) | [Deutsch](docs/README-de.md) | [Tiếng Việt](docs/README-vi.md)
 
 [![macOS](https://img.shields.io/badge/macOS-15.0+-blue)](https://www.apple.com/macos/)
 [![App Store](https://img.shields.io/badge/App%20Store-Available-green)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
@@ -8,58 +10,63 @@ Transform your Mac screen into a multilingual workspace with ViewLingo's innovat
 
 ## About ViewLingo
 
-ViewLingo is available on the Mac App Store! Experience AR-style translation on your screen. Simply create a viewfinder over any text, and watch as translations appear naturally overlaid on the original content - perfect for reading foreign websites, watching international videos, or working with multilingual documents.
+Drag a viewfinder over a game, video, photo, PDF or app window. ViewLingo recognizes the text and lays the translation directly over the original, like AR for your screen. No copying, no switching apps, and nothing leaves your Mac.
 
 ## Key Features
 
 ### Viewfinder Translation
-Create a resizable viewfinder that translates any text on your screen with `fn+Control+Option` (configurable in Settings). The translation appears as a natural overlay, maintaining the context of the original content. Use `fn+Control double-tap` to quickly create a viewfinder with your previous size.
+Press `fn + Control + Option` (configurable in Settings) and drag over the text you want to read. Double-tap `fn + Control` to drop a viewfinder right at your pointer. Move or resize it at any time and the translation follows.
 
-### Multi-Language Support
-ViewLingo uses the translation engine built into macOS, so it supports **every language your Mac can translate** — English, Korean, Japanese, Chinese, Spanish, French, German, Thai, Vietnamese, Russian, Turkish, Arabic and more. When Apple adds a language, it becomes available without an app update.
+### In-Place AR Overlay
+Translations are drawn over the original text, fitted to its layout and colors, with automatic font sizing so longer translations stay readable. When space is tight, hover to see the full translation.
 
-Language packs download once from **System Settings › General › Language & Region › Translation Languages**; after that, translation runs entirely offline.
+### Live Mode
+Turn on Live and ViewLingo follows changing text in video subtitles, games, slides and streams, and holds steady when the screen doesn't change. Lock the viewfinder to click and scroll through it while translation keeps running on top.
 
-### Complete Privacy
-- **100% On-Device**: Powered by Apple's built-in translation engine
-- **No Internet Required**: All translations happen locally on your Mac
-- **Zero Data Collection**: Your content never leaves your device
+### Controls That Stay Out of the Way
+Live, Retry and Close sit just outside your selection, so they never cover the text you're reading.
 
-### Advanced Capabilities
-- **Live Translation Mode**: Real-time translation for videos, live streams, and dynamic content
-- **Vertical Text Support**: Full CJK vertical text rendering with automatic direction detection
-- **Adaptive Font Sizing**: Readable translations even for verbose language pairs (e.g., Japanese to English)
-- **QR Code Detection**: Automatically detect and display QR code URLs
-- **Smart Text Recognition**: Advanced OCR with color analysis for natural overlay appearance
+### Vertical Text
+Vertical Japanese, Chinese and Korean text is recognized and translated.
+
+### Languages From Your Mac
+ViewLingo offers every language that both your Mac's text recognition and Apple Translation support, so the list grows with macOS. Setup walks you through downloading each language pack once; after that, translation works offline.
+
+### Private by Design
+- **100% on-device**: Apple Vision recognizes the text and Apple Translation translates it, on your Mac
+- **Works offline**: No internet connection needed once language packs are downloaded
+- **No account, no analytics, no tracking**: Your screen content never leaves your device
+- **One permission**: Screen Recording, used only for the area you select
+- **Local history**: Translation history stays on your Mac; choose how long to keep it or clear it anytime
 
 ## System Requirements
 
-- macOS 15.0 (Sequoia) or later
-- Screen Recording permission (for capturing screen content)
-- Apple Silicon recommended (runs on Intel, but noticeably slower)
+- macOS 15.0 or later
+- Universal app for Apple silicon and Intel Macs
+- Screen Recording permission
 
 ## Get ViewLingo
 
 - **Platform**: [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
-- **Pricing**: $4.99 (one-time purchase, lifetime updates)
+- **Pricing**: $4.99 one-time purchase, no subscription
+- **App languages**: English, Korean, Japanese, Simplified and Traditional Chinese, Thai, Vietnamese, German, French, Spanish and Brazilian Portuguese
 
-## Technical Stack
+## Built With Apple Technologies
 
-- **Language**: Swift 6.0
-- **Frameworks**:
-  - Apple Vision Framework (OCR)
-  - Apple Translation Framework (On-device translation)
-  - ScreenCaptureKit (Screen capture)
-- **UI**: SwiftUI & AppKit
+- Apple Vision (text recognition)
+- Apple Translation (on-device translation)
+- ScreenCaptureKit (screen capture)
+- SwiftUI and AppKit
 
 ## Support
 
 - **Bug Reports**: [Open an issue](https://github.com/puritysb/ViewLingo/issues)
+- **Questions and ideas**: [GitHub Discussions](https://github.com/puritysb/ViewLingo/discussions)
 - **Website**: [puritysb.github.io/ViewLingo](https://puritysb.github.io/ViewLingo/)
 
 ## Documentation
 
-- **[Official Website](https://puritysb.github.io/ViewLingo)** - Product information and updates
+- **[Official Website](https://puritysb.github.io/ViewLingo)** - Product information
 - **[User Guide](https://puritysb.github.io/ViewLingo/guide)** - Complete usage guide
 - **[FAQ](https://puritysb.github.io/ViewLingo/faq)** - Frequently asked questions
 - **[Privacy Policy](https://puritysb.github.io/ViewLingo/privacy)** - Our commitment to your privacy
