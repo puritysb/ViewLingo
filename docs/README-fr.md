@@ -33,7 +33,7 @@ Faites glisser un viseur sur un jeu, une vidéo, une photo, un PDF ou n'importe 
 - `fn+Control+Option` - Créer un nouveau viseur (modifiable dans les réglages)
 - Double touche sur `fn+Control` - Ouvrir instantanément un viseur sous le pointeur
 - `ESC` ou triple-clic - Fermer le viseur
-- Bouton **Live** à côté du viseur - Activer ou désactiver le mode Live (à activer d'abord dans les réglages)
+- Bouton **Live** à côté du viseur - Activer ou désactiver le mode Live
 
 ### 📋 Configuration Requise
 - macOS 15.0 ou version ultérieure

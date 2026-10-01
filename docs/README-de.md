@@ -33,7 +33,7 @@ Ziehen Sie einen Sucher über ein Spiel, ein Video, ein Foto, ein PDF oder ein b
 - `fn+Control+Option` - Neuen Sucher erstellen (in den Einstellungen änderbar)
 - Zweimal `fn+Control` tippen - Sucher sofort an der Zeigerposition öffnen
 - `ESC` oder Dreifachklick - Sucher schließen
-- **Live**-Taste neben dem Sucher - Live-Modus ein- oder ausschalten (vorher in den Einstellungen aktivieren)
+- **Live**-Taste neben dem Sucher - Live-Modus ein- oder ausschalten
 
 ### 📋 Systemanforderungen
 - macOS 15.0 oder neuer

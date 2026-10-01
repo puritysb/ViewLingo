@@ -33,7 +33,7 @@ Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng d
 - `fn+Control+Option` - Tạo khung ngắm mới (có thể đổi trong Cài đặt)
 - Chạm hai lần `fn+Control` - Mở khung ngắm ngay tại vị trí con trỏ
 - `ESC` hoặc nhấp ba lần - Đóng khung ngắm
-- Nút **Live** cạnh khung ngắm - Bật/tắt chế độ Live (bật chế độ Live trong Cài đặt trước)
+- Nút **Live** cạnh khung ngắm - Bật/tắt chế độ Live
 
 ### 📋 Yêu Cầu Hệ Thống
 - macOS 15.0 trở lên

@@ -33,7 +33,7 @@ Arrastra un visor sobre un juego, un video, una foto, un PDF o cualquier ventana
 - `fn+Control+Option` - Crear un nuevo visor (configurable en Ajustes)
 - Doble toque en `fn+Control` - Abrir un visor al instante donde está el puntero
 - `ESC` o triple clic - Cerrar el visor
-- Botón **Live** junto al visor - Activar o desactivar el modo Live (actívalo antes en Ajustes)
+- Botón **Live** junto al visor - Activar o desactivar el modo Live
 
 ### 📋 Requisitos del Sistema
 - macOS 15.0 o posterior
