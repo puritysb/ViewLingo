@@ -4,44 +4,41 @@
 
 [![Télécharger sur Mac App Store](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 
-## 🎯 Pointez n'importe quel texte, traduisez instantanément
+## 🎯 Lisez le texte de votre écran dans votre langue, là où il s'affiche
 
-ViewLingo transforme n'importe quel texte à l'écran en temps réel avec une superposition AR naturelle - pointez simplement votre viseur et regardez la magie opérer.
+Faites glisser un viseur sur un jeu, une vidéo, une photo, un PDF ou n'importe quelle fenêtre. ViewLingo reconnaît le texte et affiche la traduction directement sur l'original, comme de la réalité augmentée pour votre écran. Pas de copier-coller, pas de changement d'app, et rien ne quitte votre Mac.
 
 ### ✨ Fonctionnalités Principales
-- 🔍 **Traduction par Viseur** : Pointez n'importe quelle zone de l'écran pour traduire instantanément
-- ⚡ **Mode Direct** : Traduit automatiquement le contenu changeant (YouTube, présentations, etc.)
-- 🎨 **Superposition AR** : Les traductions apparaissent naturellement sur le texte original
-- 🔒 **Confidentialité d'abord** : Traduction 100% sur l'appareil avec les modèles intégrés de macOS
-- 🌍 **Toutes les langues que macOS peut traduire** : y compris le russe, le turc, l'arabe et plus
-
-### 📸 Captures d'écran
-
-<p align="center">
-  <img src="images/viewfinder-demo.png" width="400" alt="Traduction par Viseur">
-  <img src="images/live-mode.png" width="400" alt="Mode Direct">
-</p>
+- 🔍 **Traduction par viseur** : Appuyez sur `fn+Control+Option` et faites glisser sur le texte à lire. Touchez deux fois `fn+Control` pour ouvrir un viseur directement sous le pointeur. Déplacez-le ou redimensionnez-le : la traduction suit.
+- 🎨 **Superposition AR sur place** : La traduction s'affiche sur le texte d'origine, adaptée à sa mise en page et à ses couleurs, avec une taille de police ajustée automatiquement pour que même les traductions longues restent lisibles. Quand la place manque, survolez-la pour voir la traduction complète.
+- ⚡ **Mode Live** : Suit le texte qui change dans les sous-titres, les jeux, les diapositives et les diffusions en direct, et reste stable quand l'écran ne bouge pas. Verrouillez le viseur pour cliquer et faire défiler en dessous pendant que la traduction reste affichée.
+- 🎛️ **Des commandes qui ne gênent pas** : Live, Réessayer et Fermer se placent juste à l'extérieur de votre sélection, sans jamais masquer le texte que vous lisez.
+- 📐 **Texte vertical** : Reconnaît et traduit le japonais, le chinois et le coréen écrits verticalement.
+- 🌍 **Les langues de votre Mac** : Toutes les langues prises en charge à la fois par la reconnaissance de texte (OCR) de votre Mac et par Apple Translation, une liste qui s'enrichit avec macOS. La configuration initiale vous guide pour télécharger chaque pack de langue une seule fois ; ensuite, tout fonctionne hors ligne.
+- 🔒 **Confidentialité dès la conception** : 100 % sur l'appareil, sans compte, sans statistiques ni suivi. Une seule autorisation : l'enregistrement de l'écran.
 
 ### 💡 Prix Simple et Honnête
-- **$4.99** achat unique
-- Pas d'abonnement, pas de frais cachés
-- Utilise le moteur de traduction intégré de macOS
-- Pas besoin d'internet
+- **4,99 $** en achat unique
+- Pas d'abonnement, pas de frais cachés, pas de compte
+- Utilise le moteur de traduction d'Apple intégré à votre Mac
+- Aucune connexion Internet nécessaire une fois les packs de langue téléchargés
 
 ### 🚀 Commencer
-1. Téléchargez depuis Mac App Store
-2. Autorisez l'enregistrement d'écran
-3. Appuyez sur `fn+Control+Option` pour créer un viseur
-4. Pointez n'importe quel texte et voyez la traduction !
+1. Téléchargez ViewLingo sur le Mac App Store
+2. Suivez la configuration initiale pour autoriser l'enregistrement de l'écran et télécharger les packs de langue
+3. Appuyez sur `fn+Control+Option` et faites glisser sur le texte à traduire
+4. Lisez la traduction directement sur l'original !
 
 ### ⌨️ Raccourcis Clavier
-- `fn+Control+Option` - Créer un nouveau viseur
+- `fn+Control+Option` - Créer un nouveau viseur (modifiable dans les réglages)
+- Double touche sur `fn+Control` - Ouvrir instantanément un viseur sous le pointeur
 - `ESC` ou triple-clic - Fermer le viseur
-- Bouton **Live** du viseur - Basculer le mode direct
+- Bouton **Live** à côté du viseur - Activer ou désactiver le mode Live
 
 ### 📋 Configuration Requise
-- macOS 15.0 ou plus récent
-- Permission d'enregistrement d'écran requise
+- macOS 15.0 ou version ultérieure
+- App universelle pour les Mac Apple silicon et Intel
+- Autorisation d'enregistrement de l'écran
 
 ### 📮 Support et Commentaires
 - 🐛 Signaler des bugs : [Issues](https://github.com/puritysb/ViewLingo/issues)
@@ -49,13 +46,14 @@ ViewLingo transforme n'importe quel texte à l'écran en temps réel avec une su
 - 📧 Email : puritysb@gmail.com
 
 ### 🔐 Confidentialité
-ViewLingo ne collecte aucune donnée personnelle. Toutes les traductions sont traitées sur votre appareil. Consultez notre [Politique de Confidentialité](PRIVACY-fr.md) pour plus de détails.
+ViewLingo ne collecte ni ne transmet aucune donnée personnelle. La reconnaissance de texte et la traduction se font sur votre appareil, et l'historique des traductions reste uniquement sur votre Mac : vous choisissez sa durée de conservation et pouvez l'effacer à tout moment. Consultez notre [Politique de Confidentialité](https://puritysb.github.io/ViewLingo/privacy) pour plus de détails.
 
 ### 🌟 Pourquoi ViewLingo ?
-- **Instantané** : Pas de copier-coller, pas de changement d'application
-- **Naturel** : La superposition AR préserve la mise en page originale
+- **Instantané** : Pas de copier-coller, pas de changement d'app
+- **Naturel** : La traduction se superpose en respectant la mise en page d'origine
 - **Privé** : Le contenu de votre écran ne quitte jamais votre Mac
-- **Hors ligne** : Fonctionne sans connexion internet
+- **Hors ligne** : Une fois les packs de langue installés, aucune connexion n'est nécessaire
+- **Dans votre langue** : Interface disponible en 11 langues, dont le français
 
 ---
 
@@ -64,7 +62,7 @@ Fait avec ❤️ pour les apprenants de langues et les citoyens du monde
 </p>
 
 <p align="center">
-  <a href="PRIVACY-fr.md">Politique de Confidentialité</a> •
-  <a href="SUPPORT-fr.md">Support</a> •
+  <a href="https://puritysb.github.io/ViewLingo/privacy">Politique de Confidentialité</a> •
+  <a href="../SUPPORT.md">Support</a> •
   <a href="https://github.com/puritysb/ViewLingo/releases">Notes de Version</a>
 </p>

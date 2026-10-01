@@ -1,12 +1,12 @@
 # ViewLingo Privacy Policy
 
-🌍 Language: **English** | [한국어](docs/PRIVACY-ko.md) | [日本語](docs/PRIVACY-ja.md) | [简体中文](docs/PRIVACY-zh-Hans.md) | [繁體中文](docs/PRIVACY-zh-Hant.md) | [ไทย](docs/PRIVACY-th.md) | [Español](docs/PRIVACY-es.md) | [Français](docs/PRIVACY-fr.md) | [Deutsch](docs/PRIVACY-de.md) | [Tiếng Việt](docs/PRIVACY-vi.md)
+🌍 Language: **English** | [한국어](docs/PRIVACY-ko.md) | [日本語](https://puritysb.github.io/ViewLingo/ja/privacy.html) | [简体中文](https://puritysb.github.io/ViewLingo/zh-hans/privacy.html) | [繁體中文](https://puritysb.github.io/ViewLingo/zh-hant/privacy.html)
 
-**Last Updated: February 15, 2026**
+**Last Updated: October 1, 2026**
 
 ## Our Commitment to Your Privacy
 
-ViewLingo is designed with your privacy in mind. We believe that powerful translation tools shouldn't come at the cost of your personal data. That's why ViewLingo operates entirely on your device without collecting, storing, or transmitting any of your information.
+ViewLingo is designed with your privacy in mind. We believe that powerful translation tools shouldn't come at the cost of your personal data. That's why ViewLingo operates entirely on your device without collecting or transmitting any of your information. Your translation history stays on your Mac.
 
 ## Data Collection
 
@@ -20,19 +20,19 @@ When you use ViewLingo's translation features:
 
 - Screen captures are used solely for text recognition and translation
 - All image processing happens locally on your Mac
-- Captured images are processed in memory and immediately discarded after text extraction
+- Captured images are processed locally; the only copy kept is in your on-device translation history (see below)
 - No screen data ever leaves your device
 - We cannot see what you translate or when you use the app
 
 ## Translation History
 
-ViewLingo includes an optional translation history feature for your convenience:
+ViewLingo keeps a translation history on your Mac for your convenience:
 
 - Translation history is stored locally on your device only
 - Screenshots and translated text are saved in your app's local storage
 - You have full control to delete individual records or clear all history at any time
-- This data is never synced to the cloud or backed up externally
-- History data remains on your device even if you delete and reinstall the app
+- ViewLingo never uploads or syncs this data to any server
+- You choose how long history is kept (3, 7 or 30 days, or unlimited); older records are deleted automatically
 - No one else can access your translation history
 
 ## Permissions
@@ -80,7 +80,7 @@ If we ever update this privacy policy, we will:
 You have complete control over your data:
 - Delete translation history anytime within the app
 - Revoke screen recording permission in System Settings
-- Uninstall the app to remove all local data
+- Delete individual records or clear all history in the app
 
 ## Open Source Commitment
 
