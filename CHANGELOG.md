@@ -1,5 +1,27 @@
 # ViewLingo Changelog
 
+## Version 2.5.2 (October 2026)
+
+### Live Mode & Display
+- Live translations stay perfectly still while the screen doesn't change, and swap cleanly the moment it does
+- Every viewfinder now shows the Live button from the start
+- Live, Retry and Close sit in a compact bar just outside the viewfinder, so they never cover the text you are reading ([#27](https://github.com/puritysb/ViewLingo/issues/27)); Live turns red while it is running
+- Long translations keep their paragraph layout, and previous text is fully cleared on every update
+- Live stays aligned when you move a viewfinder between displays with different resolutions
+- Long, busy Live sessions stay well within their memory limit
+
+### Recognition
+- Tables, menus and label-and-value layouts are translated cell by cell
+- Sharper Japanese and Korean recognition on macOS 27
+- Malay text is recognized and translated reliably
+
+### Setup & Settings
+- Step-by-step help for turning on Screen Recording, and the Quick Start guide opens right under the menu bar on Macs with a crowded menu bar
+- Translation history now follows the 7-day retention shown in Settings: if you never changed this setting, entries older than 7 days are removed. Choose "Unlimited" in Settings to keep everything
+- New "Rate ViewLingo…" menu item; the app may occasionally ask for a rating after you close a viewfinder
+
+The long-sleep translation failure in [#24](https://github.com/puritysb/ViewLingo/issues/24) is still under investigation.
+
 ## Version 2.5.1 (September 28, 2026)
 
 - Fewer brief translation pauses caused by temporary delays
