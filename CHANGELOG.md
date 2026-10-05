@@ -1,6 +1,6 @@
 # ViewLingo Changelog
 
-## Version 2.5.2 (October 2026)
+## Version 2.5.2 (October 2, 2026)
 
 ### Live Mode & Display
 - Live translations stay perfectly still while the screen doesn't change, and swap cleanly the moment it does
