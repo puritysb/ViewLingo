@@ -1,4 +1,24 @@
-# Homepage evidence media — September 2026
+# Homepage evidence media
+
+## Current set — October 6, 2026
+
+`20261006/` supplies the five localized homepages and English game guide. Each locale
+has a short actual-app preview, its exact two-second poster frame, and three stills.
+Japanese pages demonstrate Korean to Japanese; the others demonstrate Japanese to
+the page language. The privacy card is editorial product information, not a capture.
+
+The video/audio streams are copied from the visually approved 2.5.3 (32) Store media
+without re-encoding or changing speed. Posters and stills are proportionally resized.
+Scene cuts omit waits and unsettled results; these clips do not benchmark translation
+latency. Translation pixels are not repainted. Captures use the Debug candidate;
+they do not claim that 2.5.3 is already publicly released or prove Store-installed runtime.
+
+`20261006/manifest.json` records SHA-256 values of source media and published derivatives.
+Original game artwork is AI-assisted and owned by the developer. Older promotional
+files are retained for existing links/history but are no longer referenced by these pages.
+
+## Historical September set
+
 
 The homepage uses actual ViewLingo screen recordings and screenshots. Editorial headings, crops and proportional scaling surround the captured content. Translation text is not repainted or animated in postproduction.
 

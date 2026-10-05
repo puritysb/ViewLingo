@@ -1,0 +1,77 @@
+{
+  "en-US": {
+    "sourcePreviewSHA256": "72f1163adbd2369285edfe2aaf4223e96c4b50be4392f2b9f0acad3be0798a90",
+    "sourceScreenshotSHA256": [
+      "91bc6bc72499e6d918bf6e59df9d79a3578e80e22a4635ed9239dc5d14e659f1",
+      "cbd2cd670969cd1333725ab75caab9b14dfd0efd42c309bd81378a12be77a0e1",
+      "d266e1cf52dab82fd02fb93eacdf6fd4973765f8060e05f317d3df7ce4ffbf56"
+    ],
+    "files": {
+      "poster.jpg": "2e28c7a7453f6c19a51976034260968cbe5b4e4a2b3c93c3caee9e93520c780b",
+      "scene-1.jpg": "4d2ead233bc0d8a7f143a02b3a0c80f763c7da92a9c44485d0c343a6dea5778e",
+      "scene-2.jpg": "0da2c8924ea7ad8d5c9c630743017e4b7f19f1a0302676c561d30afa5788227d",
+      "demo.mp4": "723cb030e0f2bae11766fa813a5913b000eedb1ae0b2d0e51d42099e96dbb386",
+      "scene-3.jpg": "3b19d1ee7557d2781305d465b4b92d329ff9dedf1b653f932ede2508af94ea48"
+    }
+  },
+  "ko": {
+    "sourcePreviewSHA256": "37485a73b7eb9745d087beb29c8b3b0999a06af1b8ed1c583029db16f09e15b7",
+    "sourceScreenshotSHA256": [
+      "b564672bd9cd4cb592e98d00d5b8950dd5fe28add3fa3923cfa47ca5757deffd",
+      "e5b0e3f953ae27d28e04916df83b3000a8e8fe7d418f51e75ed446dba3fb248a",
+      "a0c221759641fc4bf22860bc75589b4f407416030c8149604fd122e52a97b64b"
+    ],
+    "files": {
+      "poster.jpg": "8a864110f4b6c74fedb7f6fab7a2ba96578b663473b182385d5df6b0db942b59",
+      "scene-1.jpg": "33725c143ec8b90de50ae31f44cf92a708c449b8246ab2f42da6a27fc640bb82",
+      "scene-2.jpg": "cca44c3e1c5d8627bbbfd08a9dfdb7d022d520864ab6e222a41bd9b7580ba5d1",
+      "demo.mp4": "c349366a921efdaa77b98f6faf9de784982c994ff3824618acec11eb45af608e",
+      "scene-3.jpg": "d4867dde77de80d597bdcfaa95e4f3fb2c2975ad6ad3a400ef8fea99ec162e5b"
+    }
+  },
+  "ja": {
+    "sourcePreviewSHA256": "5fb7fc20520eda3b17809d427902c670a728c22ab7e9e2c3c5647079bd2b1826",
+    "sourceScreenshotSHA256": [
+      "0597b79ab9e1be13f8e57ae54e2f19846efc115004c10fb03dcaf3f158a8751e",
+      "178c844845f27cf1284ff0bfac7ea4e8c1a09dd3677be17777a068f0f838e139",
+      "5edfbfddb5b64937e9eca0664bb999bca54f1036988eded406ff422246e91998"
+    ],
+    "files": {
+      "poster.jpg": "6b50e48519af43d2bea5d4dcb51296d0bb6b9fc12f63864d1c2df080341faf57",
+      "scene-1.jpg": "95de7458be338f69e86036ce2f229cd9e6e656e4e86aaa7de7d2cd40a3d1ac2f",
+      "scene-2.jpg": "2f02fe2199738d0bb933bb8b192cd3749cd3c0aeb440f38bbbedc24085ca4770",
+      "demo.mp4": "0520759a3ba31e6dd03425114b81e3d76043b60f863159bddde56098b53ff1fb",
+      "scene-3.jpg": "ebe05e939f44f9c22d75372d4c7edc227027dad2350bc04d122dfa72be3939fe"
+    }
+  },
+  "zh-Hans": {
+    "sourcePreviewSHA256": "d96c80834108997a04795258fd7b5544bbb29b6eeaa0861a6664b9e8863acdd1",
+    "sourceScreenshotSHA256": [
+      "d8d60bfbeda72c582578456a789bd6841e3c0795ce01204cc1e3d73c3dc3202d",
+      "70c5edf79aee362f66fcbced4027da1c07319c3877ecd1458dffcc4d4a227ba7",
+      "debb8756792b7fabf13d30242ff0e00b48bed12f20ed340fe2491e61206b5f8b"
+    ],
+    "files": {
+      "poster.jpg": "a1b664c74b7afcbc670b3ad6bb0c45110e7df8b34b62c4189a9fbdf0b6de885f",
+      "scene-1.jpg": "d0f842906f522217f5007aa5955c46724a5638866d6dbd7c6f1b44f163733dd0",
+      "scene-2.jpg": "46dc028778c25c7bd3e2fd658a463b6d9e8653e7ddd126544b73c63a307b1cf9",
+      "demo.mp4": "d63c60f0253f3c2d3206803321cc8376ba9277b5973108de88d80a2391e9e056",
+      "scene-3.jpg": "23f0943868a252f020ec003ffd3ca1e70df57d99040eb52fafa55a950435a3d8"
+    }
+  },
+  "zh-Hant": {
+    "sourcePreviewSHA256": "768f9dcb22cb85548e1e689807f9b59dc8fa4e869ca2e1a4883486c50bc22a51",
+    "sourceScreenshotSHA256": [
+      "b9da1b5e582a1a37be0d6406855ece249da1bba21817f35a9eb5080852afd7c9",
+      "d1d6b0bc51f5a6a2385d35372ce04597530e539a809ed5eeac8d9ab5f91da67c",
+      "023a0bc276f9f71aee5a5539e5b3c9bb1958ac373a858693b882b2747fde5214"
+    ],
+    "files": {
+      "poster.jpg": "2bd2aa7a908c3b8c6ba5dd39b7aef420b8a4ce3d5a6722670d5a5791d7af46b2",
+      "scene-1.jpg": "cc188d603f2ac77015815d377766aae656daf1c2522884c33fe338eb38124f57",
+      "scene-2.jpg": "ed8f4008e7bba4dd617d929a37154caff9053da5a0c28cd0a3ac2e57f0040dcd",
+      "demo.mp4": "c80feb40f831ee00cf45aeb2d7c727977a27a4996036d20a147e6799e4ea4928",
+      "scene-3.jpg": "a8f1888c9135cb5d53ad3e7029d87fdb671bfcc85018ba3afb1342fae883f6f8"
+    }
+  }
+}
