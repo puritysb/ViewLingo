@@ -18,7 +18,7 @@ Faites glisser un viseur sur un jeu, une vidéo, une photo, un PDF ou n'importe 
 - 🔒 **Confidentialité dès la conception** : 100 % sur l'appareil, sans compte, sans statistiques ni suivi. Une seule autorisation : l'enregistrement de l'écran.
 
 ### 💡 Prix Simple et Honnête
-- **4,99 $** en achat unique
+- Achat unique, sans abonnement. Consultez le prix dans votre région sur l’App Store.
 - Pas d'abonnement, pas de frais cachés, pas de compte
 - Utilise le moteur de traduction d'Apple intégré à votre Mac
 - Aucune connexion Internet nécessaire une fois les packs de langue téléchargés

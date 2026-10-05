@@ -18,7 +18,7 @@ Arrastra un visor sobre un juego, un video, una foto, un PDF o cualquier ventana
 - 🔒 **Privacidad desde el diseño**: 100 % en el dispositivo, sin cuenta, sin analíticas ni rastreo. Solo necesita un permiso: grabación de pantalla.
 
 ### 💡 Precio Simple y Honesto
-- **$4.99** compra única
+- Compra única, sin suscripción. Consulta el precio de tu región en el App Store.
 - Sin suscripciones, sin costos ocultos, sin cuenta
 - Usa el motor de traducción de Apple integrado en tu Mac
 - Sin internet una vez descargados los paquetes de idioma

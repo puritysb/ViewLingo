@@ -48,7 +48,7 @@ ViewLingo offers every language that both your Mac's text recognition and Apple 
 ## Get ViewLingo
 
 - **Platform**: [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
-- **Pricing**: $4.99 one-time purchase, no subscription
+- **Pricing**: One-time purchase, no subscription. Check the App Store for pricing in your region.
 - **App languages**: English, Korean, Japanese, Simplified and Traditional Chinese, Thai, Vietnamese, German, French, Spanish and Brazilian Portuguese
 
 ## See it in use

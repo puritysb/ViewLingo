@@ -18,7 +18,7 @@ Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng d
 - 🔒 **Riêng tư ngay từ thiết kế**: Xử lý 100% trên thiết bị, không cần tài khoản, không phân tích, không theo dõi. Chỉ cần một quyền duy nhất: Ghi màn hình.
 
 ### 💡 Giá Đơn Giản và Minh Bạch
-- **$4.99** mua một lần
+- Mua một lần, không cần đăng ký. Xem giá tại khu vực của bạn trên App Store.
 - Không thuê bao, không phí ẩn, không cần tài khoản
 - Dùng công cụ dịch của Apple có sẵn trên máy Mac
 - Không cần Internet sau khi đã tải gói ngôn ngữ

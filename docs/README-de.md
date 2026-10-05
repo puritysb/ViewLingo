@@ -18,7 +18,7 @@ Ziehen Sie einen Sucher über ein Spiel, ein Video, ein Foto, ein PDF oder ein b
 - 🔒 **Datenschutz von Grund auf**: 100 % auf dem Gerät, kein Konto, keine Analysen, kein Tracking. Nur eine Berechtigung: Bildschirmaufnahme.
 
 ### 💡 Einfache und ehrliche Preise
-- **4,99 $** als Einmalkauf
+- Einmalkauf, kein Abonnement. Den Preis für deine Region findest du im App Store.
 - Kein Abo, keine versteckten Kosten, kein Konto
 - Nutzt die in Ihren Mac integrierte Übersetzungs-Engine von Apple
 - Nach dem Laden der Sprachpakete kein Internet erforderlich
