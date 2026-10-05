@@ -1,0 +1,30 @@
+/* Editorial layout for an evidence-led game translation guide. */
+.guide-hero { max-width: 1000px; padding-top: 48px; padding-bottom: 44px; }
+.back-link { display: inline-block; margin-bottom: 42px; color: #53685e; font-size: .85rem; text-decoration: none; }
+.eyebrow { color: #53685e; text-transform: uppercase; letter-spacing: .1em; font-size: .75rem; font-weight: 650; margin-bottom: 18px; }
+.guide-hero h1 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); letter-spacing: -.05em; line-height: 1.05; margin-bottom: 28px; }
+.guide-lead { max-width: 720px; font-size: 1.15rem; color: #53685e; margin-bottom: 20px; }
+.text-link { font-weight: 600; font-size: .95rem; }
+.guide-demo { max-width: 1120px; }
+.guide-demo video { display: block; width: 100%; background: #173e35; border: 1px solid #dce5dc; border-radius: 18px; }
+.guide-demo figcaption { text-align: center; font-size: .8rem; color: #53685e; margin: 18px 0 0; }
+.guide-body { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 64px; max-width: 1120px; padding-block: 80px; }
+.guide-contents { align-self: start; position: sticky; top: 112px; font-size: .85rem; }
+.guide-contents p { text-transform: uppercase; font-size: .7rem; letter-spacing: .1em; font-weight: 700; margin-bottom: 18px; }
+.guide-contents a { display: block; padding: 10px 0; color: #53685e; text-decoration: none; }
+.guide-contents a:hover { color: #173e35; text-decoration: underline; }
+.guide-article section { margin-bottom: 56px; padding-bottom: 48px; border-bottom: 1px solid #e4e9e4; scroll-margin-top: 108px; }
+.section-number { display: block; font-size: .75rem; letter-spacing: .1em; font-weight: 650; color: #53685e; margin-bottom: 18px; }
+.guide-article h2 { font-size: clamp(1.6rem, 2.5vw, 2rem); letter-spacing: -.03em; margin-bottom: 24px; }
+.guide-article p { margin-bottom: 20px; color: #40594f; }
+.guide-note { background: #f5f6f2; border-left: 3px solid #91ab96; border-radius: 0 10px 10px 0; padding: 22px; font-size: .95rem; }
+kbd { font: inherit; font-size: .82em; border: 1px solid #ccd8ce; border-bottom-width: 2px; padding: 2px 5px; border-radius: 4px; background: #f5f6f2; white-space: nowrap; }
+.guide-troubleshooting div { margin-bottom: 24px; }
+.guide-troubleshooting dt { font-weight: 650; margin-bottom: 8px; }
+.guide-troubleshooting dd { color: #53685e; }
+.guide-article .guide-purchase { background: #edf2eb; border: 1px solid #dce5dc; border-radius: 16px; padding: 32px; margin-bottom: 0; }
+.guide-price { font-size: 1.75rem; font-weight: 700; }
+.guide-price span { display: block; font-size: .85rem; font-weight: 400; }
+.guide-article .guide-meta { font-size: .8rem; margin: 18px 0 0; color: #53685e; }
+@media (max-width: 900px) { .guide-body { grid-template-columns: 1fr; gap: 36px; padding-block: 48px; } .guide-contents { position: static; border-bottom: 1px solid #e4e9e4; padding-bottom: 24px; } }
+@media (max-width: 600px) { .guide-hero h1 { font-size: 2.2rem; } .guide-hero { padding-top: 28px; } .back-link { margin-bottom: 28px; } .guide-lead { font-size: 1.05rem; } .guide-article .guide-purchase { padding: 24px; } }

@@ -19,7 +19,7 @@
             return 'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + values[0] + '&mt=8';
         }
         if (target.origin === current.origin && (
-            /^\/ViewLingo\/(?:index\.html|guide\.html|faq\.html|privacy\.html)?$/.test(target.pathname) ||
+            /^\/ViewLingo\/(?:index\.html|guide\.html|faq\.html|privacy\.html|translate-japanese-games-on-mac\.html)?$/.test(target.pathname) ||
             /^\/ViewLingo\/(?:ko|ja|zh-hans|zh-hant)\/(?:index\.html|faq\.html|privacy\.html)?$/.test(target.pathname))) {
             target.searchParams.set('campaign', values[0]);
             return target.href;
@@ -131,6 +131,13 @@
             if (event.key === 'Escape' && navLinks.classList.contains('active')) {
                 close();
                 toggle.focus();
+            }
+        });
+
+        // A mobile drawer must not leave desktop scrolling locked after resize.
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                close();
             }
         });
     }

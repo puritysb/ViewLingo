@@ -42,12 +42,28 @@ test('external sites, other apps, files and fragment navigation stay untouched',
     }
 });
 
+test('game guide preserves registered attribution through guide, locale and store navigation', () => {
+    const page = root + 'translate-japanese-games-on-mac.html';
+    const landing = campaignLink(page + '#setup', qa);
+    assert.equal(landing, page + '?campaign=vl_qa_260913#setup');
+    const korean = campaignLink('ko/index.html', landing);
+    assert.equal(korean, root + 'ko/index.html?campaign=vl_qa_260913');
+    const back = campaignLink('../translate-japanese-games-on-mac.html', korean);
+    assert.equal(back, page + '?campaign=vl_qa_260913');
+    const guideStore = store.replace('ct=web', 'ct=web_game_guide');
+    assert.equal(campaignLink(guideStore, page), guideStore);
+    assert.match(campaignLink(guideStore, back), /ct=vl_qa_260913&mt=8$/);
+    for (const target of [page + '.bak', page.replace('/ViewLingo/', '/other/')]) {
+        assert.equal(campaignLink(target, qa), target);
+    }
+});
+
 test('page initialization rewrites actual HTML anchors and skips downloads', () => {
     const code = fs.readFileSync(path.join(__dirname, '../js/common.js'), 'utf8');
     for (const locale of ['', 'ko/', 'ja/', 'zh-hans/', 'zh-hant/']) {
-        for (const page of ['index.html', 'faq.html', 'privacy.html', ...(locale ? [] : ['guide.html'])]) {
+        for (const page of ['index.html', 'faq.html', 'privacy.html', ...(locale ? [] : ['guide.html', 'translate-japanese-games-on-mac.html'])]) {
             const html = fs.readFileSync(path.join(__dirname, '..', locale, page), 'utf8');
-            assert.match(html, /src="(?:\.\.\/)?js\/common\.js"/);
+            assert.match(html, /src="(?:\.\.\/)?js\/common\.js(?:\?v=\d+)?"/);
             const links = [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)].map(m => ({
                 href: m[1], getAttribute() { return this.href; },
                 setAttribute(name, value) { this.href = value; }, hasAttribute() { return false; }

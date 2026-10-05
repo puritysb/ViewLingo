@@ -51,6 +51,15 @@ ViewLingo offers every language that both your Mac's text recognition and Apple 
 - **Pricing**: $4.99 one-time purchase, no subscription
 - **App languages**: English, Korean, Japanese, Simplified and Traditional Chinese, Thai, Vietnamese, German, French, Spanish and Brazilian Portuguese
 
+## See it in use
+
+- [Translate Japanese games on a Mac](https://puritysb.github.io/ViewLingo/translate-japanese-games-on-mac.html): actual recording, language setup, Live mode and practical limits.
+- [User guide](https://puritysb.github.io/ViewLingo/guide.html) and [FAQ](https://puritysb.github.io/ViewLingo/faq.html).
+
+Website maintainers: homepages share `css/home.css` and `css/acquisition.css`; navigation and the native language selector use `css/common.css`. Keep the five localized homepage structures aligned. `assets/tokens.css` is generated from the app and must not be edited by hand. Update shared asset version queries when publishing CSS or script changes. The public URL inventory is `sitemap.xml`; publishing it does not confirm search-engine indexing.
+
+Run website regression checks with `node --test tests/*.test.cjs` and `git diff --check`. Inspect desktop and mobile layouts in the browser. The game guide preserves registered incoming campaigns; otherwise its Store links use the fixed `web_game_guide` campaign label. This is aggregate App Store attribution, not app telemetry or a purchase event sent to Google.
+
 ## Built With Apple Technologies
 
 - Apple Vision (text recognition)
