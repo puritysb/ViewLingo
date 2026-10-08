@@ -1,0 +1,4 @@
+.editorial-image { margin: 28px 0; }
+.editorial-image img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid #dce5dc; }
+.editorial-image figcaption { margin-top: 12px; font-size: .85rem; color: #53685e; }
+.guide-article a { overflow-wrap: anywhere; }
