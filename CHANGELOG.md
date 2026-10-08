@@ -1,5 +1,17 @@
 # ViewLingo Changelog
 
+## Version 2.5.3 (October 7, 2026 KST)
+
+- Added Russian interface, permission text and App Store localization
+- Improved language settings, localized history, translation-style previews and support links
+- Made the first-translation guide clearer and gave Quick Start keyboard focus
+- Fixed opening Settings from the menu bar; kept the capture shortcut on one line
+- Quick Start and the optional rating link are in Settings > General
+- Improved eligibility for review requests while retaining frequency limits and avoiding interruptions
+
+Translation, OCR, Live mode and privacy behavior are unchanged from 2.5.2.
+The long-sleep translation failure in [#24](https://github.com/puritysb/ViewLingo/issues/24) remains under investigation.
+
 ## Version 2.5.2 (October 2, 2026)
 
 ### Live Mode & Display

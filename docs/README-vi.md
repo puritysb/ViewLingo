@@ -53,7 +53,7 @@ ViewLingo không thu thập hay truyền đi bất kỳ dữ liệu cá nhân n�
 - **Tự nhiên**: Bản dịch phủ lên theo đúng bố cục gốc
 - **Riêng tư**: Nội dung màn hình không bao giờ rời khỏi máy Mac
 - **Ngoại tuyến**: Có gói ngôn ngữ là dùng được không cần Internet
-- **Bằng ngôn ngữ của bạn**: Giao diện có 11 ngôn ngữ, gồm cả tiếng Việt
+- **Bằng ngôn ngữ của bạn**: Giao diện có 12 ngôn ngữ, gồm cả tiếng Việt
 
 ---
 

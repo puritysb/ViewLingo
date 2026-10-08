@@ -53,7 +53,7 @@ ViewLingo ne collecte ni ne transmet aucune donnée personnelle. La reconnaissan
 - **Naturel** : La traduction se superpose en respectant la mise en page d'origine
 - **Privé** : Le contenu de votre écran ne quitte jamais votre Mac
 - **Hors ligne** : Une fois les packs de langue installés, aucune connexion n'est nécessaire
-- **Dans votre langue** : Interface disponible en 11 langues, dont le français
+- **Dans votre langue** : Interface disponible en 12 langues, dont le français
 
 ---
 

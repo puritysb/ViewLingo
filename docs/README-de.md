@@ -53,7 +53,7 @@ ViewLingo sammelt und überträgt keinerlei persönliche Daten. Texterkennung un
 - **Natürlich**: Die Übersetzung liegt im Layout des Originals darüber
 - **Privat**: Ihr Bildschirminhalt verlässt niemals Ihren Mac
 - **Offline**: Mit geladenen Sprachpaketen kein Internet nötig
-- **In Ihrer Sprache**: Oberfläche in 11 Sprachen, darunter Deutsch
+- **In Ihrer Sprache**: Oberfläche in 12 Sprachen, darunter Deutsch
 
 ---
 

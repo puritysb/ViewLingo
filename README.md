@@ -49,7 +49,7 @@ ViewLingo offers every language that both your Mac's text recognition and Apple 
 
 - **Platform**: [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 - **Pricing**: One-time purchase, no subscription. Check the App Store for pricing in your region.
-- **App languages**: English, Korean, Japanese, Simplified and Traditional Chinese, Thai, Vietnamese, German, French, Spanish and Brazilian Portuguese
+- **App languages**: English, Korean, Japanese, Simplified and Traditional Chinese, Thai, Vietnamese, German, French, Spanish, Brazilian Portuguese and Russian
 
 ## See it in use
 

@@ -53,7 +53,7 @@ ViewLingo no recopila ni transmite ningún dato personal. El reconocimiento de t
 - **Natural**: La traducción se superpone respetando el diseño original
 - **Privado**: El contenido de tu pantalla nunca sale de tu Mac
 - **Sin conexión**: Con los paquetes de idioma descargados, funciona sin internet
-- **En tu idioma**: Interfaz disponible en 11 idiomas, incluido el español
+- **En tu idioma**: Interfaz disponible en 12 idiomas, incluido el español
 
 ---
 
