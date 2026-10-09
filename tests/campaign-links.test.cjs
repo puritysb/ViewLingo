@@ -91,3 +91,14 @@ test('Demand Gen identifiers stay separate from Search through language and guid
             'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + id + '&mt=8');
     }
 });
+
+test('Japanese LY Search uses one campaign through FAQ, locales and Store without forwarding click IDs', () => {
+    const landing = root + 'ja/?campaign=vl_ly_jp_s01&yclid=private-test&utm_content=copy_a';
+    const faq = campaignLink('faq.html', landing);
+    const english = campaignLink('../index.html', faq);
+    const japanese = campaignLink('ja/index.html', english);
+    assert.equal(new URL(japanese).search, '?campaign=vl_ly_jp_s01');
+    assert.equal(campaignLink(store, japanese),
+        'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=vl_ly_jp_s01&mt=8');
+    assert.equal(campaignLink(store, root + 'ja/?campaign=vl_ly_jp_s01&campaign=unknown'), store);
+});
