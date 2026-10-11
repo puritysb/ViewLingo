@@ -1,5 +1,13 @@
 # ViewLingo Changelog
 
+## Version 2.5.4 (October 9, 2026 KST)
+
+- Updated App Store previews to show area selection, translation and Live updates at real speed
+- Added before/after screenshots and restored document, selection and Live-subtitle examples
+
+This release updates the Store media. App behavior, translation, OCR and privacy are unchanged from 2.5.3.
+The long-sleep translation failure in [#24](https://github.com/puritysb/ViewLingo/issues/24) remains under investigation.
+
 ## Version 2.5.3 (October 7, 2026 KST)
 
 - Added Russian interface, permission text and App Store localization
