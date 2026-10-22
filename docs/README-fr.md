@@ -43,7 +43,7 @@ Faites glisser un viseur sur un jeu, une vidéo, une photo, un PDF ou n'importe 
 ### 📮 Support et Commentaires
 - 🐛 Signaler des bugs : [Issues](https://github.com/puritysb/ViewLingo/issues)
 - 💡 Demander des fonctionnalités : [Discussions](https://github.com/puritysb/ViewLingo/discussions)
-- 📧 Email : puritysb@gmail.com
+- 📧 Email : admin@foundby.kr
 
 ### 🔐 Confidentialité
 ViewLingo ne collecte ni ne transmet aucune donnée personnelle. La reconnaissance de texte et la traduction se font sur votre appareil, et l'historique des traductions reste uniquement sur votre Mac : vous choisissez sa durée de conservation et pouvez l'effacer à tout moment. Consultez notre [Politique de Confidentialité](https://puritysb.github.io/ViewLingo/privacy) pour plus de détails.

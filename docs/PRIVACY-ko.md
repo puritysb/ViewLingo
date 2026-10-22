@@ -1,6 +1,6 @@
 # ViewLingo 개인정보 처리방침
 
-**최종 업데이트: 2026년 10월 1일**
+**최종 업데이트: 2026년 10월 23일**
 
 ## 개인정보 보호에 대한 약속
 
@@ -89,7 +89,7 @@ ViewLingo의 소스 코드는 독점적이지만, 개인정보 보호 관행은 
 개인정보 관련 질문이나 우려사항:
 
 - GitHub Issues: [https://github.com/puritysb/ViewLingo/issues](https://github.com/puritysb/ViewLingo/issues)
-- 이메일: puritysb@gmail.com
+- 이메일: admin@foundby.kr
 
 ## 요약
 

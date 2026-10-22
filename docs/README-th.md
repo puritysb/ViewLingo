@@ -43,7 +43,7 @@
 ### 📮 การสนับสนุนและคำติชม
 - 🐛 รายงานข้อผิดพลาด: [Issues](https://github.com/puritysb/ViewLingo/issues)
 - 💡 ขอคุณสมบัติใหม่: [Discussions](https://github.com/puritysb/ViewLingo/discussions)
-- 📧 อีเมล: puritysb@gmail.com
+- 📧 อีเมล: admin@foundby.kr
 
 ### 🔐 ความเป็นส่วนตัว
 ViewLingo ไม่เก็บรวบรวมหรือส่งข้อมูลส่วนบุคคลใดๆ การจดจำข้อความและการแปลทั้งหมดเกิดขึ้นบนอุปกรณ์ของคุณ และประวัติการแปลจะเก็บไว้บน Mac เท่านั้น คุณเลือกระยะเวลาเก็บและล้างได้ทุกเมื่อ ดูรายละเอียดใน[นโยบายความเป็นส่วนตัว](https://puritysb.github.io/ViewLingo/privacy)

@@ -43,7 +43,7 @@ Arrastra un visor sobre un juego, un video, una foto, un PDF o cualquier ventana
 ### 📮 Soporte y Comentarios
 - 🐛 Reportar errores: [Issues](https://github.com/puritysb/ViewLingo/issues)
 - 💡 Solicitar funciones: [Discussions](https://github.com/puritysb/ViewLingo/discussions)
-- 📧 Email: puritysb@gmail.com
+- 📧 Email: admin@foundby.kr
 
 ### 🔐 Privacidad
 ViewLingo no recopila ni transmite ningún dato personal. El reconocimiento de texto y la traducción se realizan en tu dispositivo, y el historial de traducciones se guarda solo en tu Mac: tú eliges cuánto tiempo conservarlo y puedes borrarlo cuando quieras. Consulta nuestra [Política de Privacidad](https://puritysb.github.io/ViewLingo/privacy) para más detalles.

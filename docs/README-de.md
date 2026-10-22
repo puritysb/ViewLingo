@@ -43,7 +43,7 @@ Ziehen Sie einen Sucher über ein Spiel, ein Video, ein Foto, ein PDF oder ein b
 ### 📮 Support und Feedback
 - 🐛 Fehler melden: [Issues](https://github.com/puritysb/ViewLingo/issues)
 - 💡 Funktionen anfordern: [Discussions](https://github.com/puritysb/ViewLingo/discussions)
-- 📧 E-Mail: puritysb@gmail.com
+- 📧 E-Mail: admin@foundby.kr
 
 ### 🔐 Datenschutz
 ViewLingo sammelt und überträgt keinerlei persönliche Daten. Texterkennung und Übersetzung laufen auf Ihrem Gerät, und der Übersetzungsverlauf bleibt ausschließlich auf Ihrem Mac – Sie bestimmen, wie lange er aufbewahrt wird, und können ihn jederzeit löschen. Details finden Sie in unserer [Datenschutzerklärung](https://puritysb.github.io/ViewLingo/privacy).
