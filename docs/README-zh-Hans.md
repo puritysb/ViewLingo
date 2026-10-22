@@ -43,7 +43,7 @@
 ### 📮 支持与反馈
 - 🐛 错误报告：[Issues](https://github.com/puritysb/ViewLingo/issues)
 - 💡 功能请求：[Discussions](https://github.com/puritysb/ViewLingo/discussions)
-- 📧 邮箱：puritysb@gmail.com
+- 📧 邮箱：admin@foundby.kr
 
 ### 🔐 隐私
 ViewLingo 不收集、也不传输任何个人数据。文字识别和翻译全部在设备上完成，翻译历史只保存在你的 Mac 上，保留时长由你决定，随时可以清除。详情请参阅我们的[隐私政策](https://puritysb.github.io/ViewLingo/zh-hans/privacy.html)。

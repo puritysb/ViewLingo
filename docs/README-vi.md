@@ -43,7 +43,7 @@ Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng d
 ### 📮 Hỗ Trợ & Phản Hồi
 - 🐛 Báo cáo lỗi: [Issues](https://github.com/puritysb/ViewLingo/issues)
 - 💡 Yêu cầu tính năng: [Discussions](https://github.com/puritysb/ViewLingo/discussions)
-- 📧 Email: puritysb@gmail.com
+- 📧 Email: admin@foundby.kr
 
 ### 🔐 Quyền Riêng Tư
 ViewLingo không thu thập hay truyền đi bất kỳ dữ liệu cá nhân nào. Việc nhận dạng chữ và dịch đều diễn ra trên thiết bị của bạn, còn lịch sử dịch chỉ được lưu trên máy Mac: bạn tự chọn thời gian lưu và có thể xóa bất cứ lúc nào. Xem [Chính Sách Quyền Riêng Tư](https://puritysb.github.io/ViewLingo/privacy) của chúng tôi để biết chi tiết.

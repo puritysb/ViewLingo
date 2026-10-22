@@ -2,7 +2,7 @@
 
 🌍 Language: **English** | [한국어](docs/PRIVACY-ko.md) | [日本語](https://puritysb.github.io/ViewLingo/ja/privacy.html) | [简体中文](https://puritysb.github.io/ViewLingo/zh-hans/privacy.html) | [繁體中文](https://puritysb.github.io/ViewLingo/zh-hant/privacy.html)
 
-**Last Updated: October 1, 2026**
+**Last Updated: October 23, 2026**
 
 ## Our Commitment to Your Privacy
 
@@ -91,7 +91,7 @@ While ViewLingo's source code is proprietary, our privacy practices are transpar
 For any privacy-related questions or concerns:
 
 - GitHub Issues: [https://github.com/puritysb/ViewLingo/issues](https://github.com/puritysb/ViewLingo/issues)
-- Email: puritysb@gmail.com
+- Email: admin@foundby.kr
 
 ## Summary
 

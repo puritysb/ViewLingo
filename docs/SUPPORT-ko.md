@@ -93,7 +93,7 @@ ViewLingo를 더 좋게 만들 아이디어가 있나요? 듣고 싶습니다!
 
 - **GitHub Issues**: [버그 및 기술적 문제](https://github.com/puritysb/ViewLingo/issues)
 - **GitHub Discussions**: [기능 및 일반 토론](https://github.com/puritysb/ViewLingo/discussions)
-- **이메일**: puritysb@gmail.com (개인적인 문의만)
+- **이메일**: admin@foundby.kr (개인적인 문의만)
 
 ## 🔧 문제 해결 체크리스트
 
