@@ -3,11 +3,11 @@ const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
 const source = fs.readFileSync('js/measurement.js', 'utf8');
-function harness({choice, qa=false, blocked=false}={}) {
+function harness({choice, qa=false, blocked=false, lang='en'}={}) {
   const listeners={}, nodes=[], scripts=[], events=[], timers=[], values={};
   if(choice) values.viewlingo_ad_measurement_v1=JSON.stringify({choice,expires:Date.now()+10000});
   function node(tag){return {tag,children:[],setAttribute(){},appendChild(n){this.children.push(n);return n;},addEventListener(k,f){this[k]=f;},querySelector(){return this.children.flatMap(x=>x.children||[]).find(x=>x.tag==='button');},focus(){}};}
-  const document={documentElement:{lang:'en'},title:'ViewLingo',readyState:'complete',cookie:'',head:{appendChild:n=>scripts.push(n)},body:{appendChild:n=>nodes.push(n)},createElement:node,querySelector:()=>null,addEventListener:(k,f)=>listeners[k]=f,dispatchEvent:e=>events.push(e.detail)};
+  const document={documentElement:{lang},title:'ViewLingo',readyState:'complete',cookie:'',head:{appendChild:n=>scripts.push(n)},body:{appendChild:n=>nodes.push(n)},createElement:node,querySelector:()=>null,addEventListener:(k,f)=>listeners[k]=f,dispatchEvent:e=>events.push(e.detail)};
   const location={href:'https://puritysb.github.io/ViewLingo/?campaign=vl_dg_us_01&email=private',hostname:qa?'localhost':'puritysb.github.io',reload(){location.reloaded=true;},assign(url){location.destination=url;}};
   const context={document,location,navigator:{globalPrivacyControl:blocked},window:{},URL,Date,CustomEvent:function(type,arg){this.detail=arg.detail;},localStorage:{getItem:k=>values[k],setItem:(k,v)=>values[k]=v},setTimeout:f=>timers.push(f)};
   vm.runInNewContext(source,context);
@@ -19,3 +19,16 @@ test('consent loads one tag and emits distinct zero-value visit and click events
 test('saved choice and withdrawal reload stop future events',()=>{const h=harness({choice:'granted'});assert.equal(h.scripts.length,1);h.decline();assert.equal(h.context.location.reloaded,true);const n=h.commands().length;h.click();assert.equal(h.commands().length,n);});
 test('QA measures the interaction path without sending to Google',()=>{const h=harness({qa:true});h.accept();h.click();assert.equal(h.scripts.length,0);assert.deepEqual(h.events.map(x=>x.event),['visit','store']);});
 test('browser privacy signal overrides even saved consent',()=>{const h=harness({blocked:true,choice:'granted'});h.accept();h.click();assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);});
+test('Chinese page language tags resolve the existing localized consent copy',()=>{
+  for(const [folder,language,title,decline] of [['zh-hans','zh-Hans','可选广告衡量','拒绝'],['zh-hant','zh-Hant','選用廣告評估','拒絕']]){
+    for(const page of ['index','privacy','faq']){
+      const html=fs.readFileSync(`${folder}/${page}.html`,'utf8');
+      const lang=html.match(/<html\s+lang="([^"]+)"/)[1];
+      assert.equal(lang,language,`${folder}/${page}.html`);
+      const h=harness({lang});
+      assert.equal(h.nodes[0].children[0].textContent,title);
+      assert.equal(h.nodes[0].children[2].children[1].textContent,decline);
+      assert.equal(h.scripts.length,0);
+    }
+  }
+});

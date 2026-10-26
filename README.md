@@ -6,11 +6,11 @@ Read any text on your Mac screen in your language, right where it appears.
 
 [![macOS](https://img.shields.io/badge/macOS-15.0+-blue)](https://www.apple.com/macos/)
 [![App Store](https://img.shields.io/badge/App%20Store-Available-green)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
-[![Privacy](https://img.shields.io/badge/Privacy-100%25%20On--Device-brightgreen)](https://puritysb.github.io/ViewLingo/privacy)
+[![Privacy](https://img.shields.io/badge/Privacy-Local%20by%20default-brightgreen)](https://puritysb.github.io/ViewLingo/privacy.html)
 
 ## About ViewLingo
 
-Drag a viewfinder over a game, video, photo, PDF or app window. ViewLingo recognizes the text and lays the translation directly over the original, like AR for your screen. No copying, no switching apps, and nothing leaves your Mac.
+Drag a viewfinder over a game, video, photo, PDF or app window. ViewLingo recognizes the text and lays the translation directly over the original, like AR for your screen. No copying or switching apps. Regular capture and Live translation use Apple on your Mac.
 
 ## Key Features
 
@@ -30,14 +30,17 @@ Live, Retry and Close sit just outside your selection, so they never cover the t
 Vertical Japanese, Chinese and Korean text is recognized and translated.
 
 ### Languages From Your Mac
-ViewLingo offers every language that both your Mac's text recognition and Apple Translation support, so the list grows with macOS. Setup walks you through downloading each language pack once; after that, translation works offline.
+ViewLingo offers every language that both your Mac's text recognition and Apple Translation support, so the list grows with macOS. Setup walks you through downloading each language pack once; after that, default Apple translation works offline.
 
 ### Private by Design
-- **100% on-device**: Apple Vision recognizes the text and Apple Translation translates it, on your Mac
-- **Works offline**: No internet connection needed once language packs are downloaded
-- **No account, no analytics, no tracking**: Your screen content never leaves your device
+- **Apple by default**: Text recognition, regular capture translation and Live run on your Mac
+- **Default translation works offline**: Apple needs no internet connection after language packs are downloaded
+- **No app analytics or tracking**: Default Apple translation requires no account
 - **One permission**: Screen Recording, used only for the area you select
-- **Local history**: Translation history stays on your Mac; choose how long to keep it or clear it anytime
+- **Local history**: History and screenshots are stored on your Mac; choose how long to keep them or clear them anytime
+
+### Optional DeepL comparison in 3.0
+ViewLingo 2.x remains local. When 3.0 is available, you can save your own DeepL API key in macOS Keychain, consent to sharing text and explicitly request a separate comparison. Only the selected original, up to five previous passages from the same capture and five selected glossary terms are sent. Screenshots, window titles and the full history are never sent. Opening settings or editing a project does not send text. Provider data terms, fees and limits apply separately from ViewLingo; do not send personal or confidential text with Free / Developer. See the [Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html) before enabling it.
 
 ## System Requirements
 
@@ -48,7 +51,7 @@ ViewLingo offers every language that both your Mac's text recognition and Apple 
 ## Get ViewLingo
 
 - **Platform**: [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
-- **Pricing**: One-time purchase, no subscription. Check the App Store for pricing in your region.
+- **Pricing**: One-time app purchase, no ViewLingo subscription. Check the App Store for regional pricing; optional DeepL API usage is separate.
 - **App languages**: English, Korean, Japanese, Simplified and Traditional Chinese, Thai, Vietnamese, German, French, Spanish, Brazilian Portuguese and Russian
 
 ## See it in use
@@ -78,7 +81,7 @@ Run website regression checks with `node --test tests/*.test.cjs` and `git diff 
 - **[Official Website](https://puritysb.github.io/ViewLingo)** - Product information
 - **[User Guide](https://puritysb.github.io/ViewLingo/guide)** - Complete usage guide
 - **[FAQ](https://puritysb.github.io/ViewLingo/faq)** - Frequently asked questions
-- **[Privacy Policy](https://puritysb.github.io/ViewLingo/privacy)** - Our commitment to your privacy
+- **[Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html)** - Our commitment to your privacy
 
 ## License
 

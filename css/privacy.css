@@ -58,11 +58,13 @@ h1 {
 }
 
 .tldr h2 {
+    color: inherit;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .tldr p {
+    color: inherit;
     font-size: 1.2rem;
     opacity: 0.95;
 }

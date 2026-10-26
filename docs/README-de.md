@@ -6,7 +6,7 @@
 
 ## 🎯 Bildschirmtext in Ihrer Sprache lesen – genau dort, wo er steht
 
-Ziehen Sie einen Sucher über ein Spiel, ein Video, ein Foto, ein PDF oder ein beliebiges App-Fenster. ViewLingo erkennt den Text und legt die Übersetzung direkt über das Original – wie Augmented Reality für Ihren Bildschirm. Kein Kopieren, kein App-Wechsel, und nichts verlässt Ihren Mac.
+Ziehen Sie einen Sucher über ein Spiel, ein Video, ein Foto, ein PDF oder ein beliebiges App-Fenster. ViewLingo erkennt den Text und legt die Übersetzung direkt über das Original – wie Augmented Reality für Ihren Bildschirm. Kein Kopieren und kein App-Wechsel.
 
 ### ✨ Hauptfunktionen
 - 🔍 **Sucher-Übersetzung**: Drücken Sie `fn+Control+Option` und ziehen Sie über den Text, den Sie lesen möchten. Tippen Sie zweimal auf `fn+Control`, um sofort einen Sucher an der Zeigerposition zu öffnen. Verschieben oder skalieren Sie ihn – die Übersetzung folgt.
@@ -14,14 +14,14 @@ Ziehen Sie einen Sucher über ein Spiel, ein Video, ein Foto, ein PDF oder ein b
 - ⚡ **Live-Modus**: Folgt wechselndem Text in Untertiteln, Spielen, Folien und Livestreams und bleibt ruhig, wenn sich der Bildschirm nicht ändert. Sperren Sie den Sucher, um darunter zu klicken und zu scrollen, während die Übersetzung sichtbar bleibt.
 - 🎛️ **Bedienelemente, die nichts verdecken**: Live, Wiederholen und Schließen sitzen direkt außerhalb Ihrer Auswahl und verdecken nie den Text, den Sie gerade lesen.
 - 📐 **Vertikaler Text**: Erkennt und übersetzt vertikal gesetztes Japanisch, Chinesisch und Koreanisch.
-- 🌍 **Die Sprachen Ihres Mac**: Alle Sprachen, die sowohl die Texterkennung (OCR) Ihres Mac als auch Apple Translation unterstützen – die Liste wächst mit macOS. Die Ersteinrichtung führt Sie durch den einmaligen Download jedes Sprachpakets; danach übersetzen Sie offline.
-- 🔒 **Datenschutz von Grund auf**: 100 % auf dem Gerät, kein Konto, keine Analysen, kein Tracking. Nur eine Berechtigung: Bildschirmaufnahme.
+- 🌍 **Die Sprachen Ihres Mac**: Alle Sprachen, die sowohl die Texterkennung (OCR) Ihres Mac als auch Apple Translation unterstützen – die Liste wächst mit macOS. Die Ersteinrichtung führt Sie durch den einmaligen Download jedes Sprachpakets; danach funktioniert die standardmäßige Apple-Übersetzung offline.
+- 🔒 **Datenschutz von Grund auf**: Standardmäßig übersetzt Apple lokal. Die App hat keine Analysen und kein Tracking. Sie benötigt die Berechtigung zur Bildschirmaufnahme. Hinweise zum optionalen externen Vergleich in 3.0 stehen unten.
 
 ### 💡 Einfache und ehrliche Preise
 - Einmalkauf, kein Abonnement. Den Preis für deine Region findest du im App Store.
-- Kein Abo, keine versteckten Kosten, kein Konto
+- Für Apple-Übersetzungen ist kein Konto nötig. Der optionale DeepL-Vergleich in 3.0 erfordert Ihr eigenes API-Konto; Gebühren und Limits des Anbieters gelten separat.
 - Nutzt die in Ihren Mac integrierte Übersetzungs-Engine von Apple
-- Nach dem Laden der Sprachpakete kein Internet erforderlich
+- Die standardmäßige Apple-Übersetzung funktioniert nach dem Laden der Sprachpakete offline.
 
 ### 🚀 Erste Schritte
 1. ViewLingo aus dem Mac App Store laden
@@ -46,13 +46,13 @@ Ziehen Sie einen Sucher über ein Spiel, ein Video, ein Foto, ein PDF oder ein b
 - 📧 E-Mail: admin@foundby.kr
 
 ### 🔐 Datenschutz
-ViewLingo sammelt und überträgt keinerlei persönliche Daten. Texterkennung und Übersetzung laufen auf Ihrem Gerät, und der Übersetzungsverlauf bleibt ausschließlich auf Ihrem Mac – Sie bestimmen, wie lange er aufbewahrt wird, und können ihn jederzeit löschen. Details finden Sie in unserer [Datenschutzerklärung](https://puritysb.github.io/ViewLingo/privacy).
+Normale Aufnahmen und Live verwenden Apple auf Ihrem Mac; 2.x bleibt lokal. Sobald 3.0 verfügbar ist, können Sie Ihren eigenen DeepL-API-Schlüssel im Schlüsselbund speichern und nach Ihrer Zustimmung einen separaten Vergleich anfordern. Gesendet werden nur der ausgewählte Originaltext, höchstens fünf vorherige Passagen derselben Aufnahme und fünf ausgewählte Begriffe. Bilder, Fenstertitel und der gesamte Verlauf werden nicht gesendet. Verlauf und Projekte bleiben lokal; die App sammelt keine Telemetrie. Prüfen Sie die Datenbedingungen des Anbieters und senden Sie mit Free / Developer keine personenbezogenen oder vertraulichen Texte. Einzelheiten enthält die [Datenschutzerklärung](https://puritysb.github.io/ViewLingo/privacy.html).
 
 ### 🌟 Warum ViewLingo?
 - **Sofort**: Kein Kopieren und Einfügen, kein App-Wechsel
 - **Natürlich**: Die Übersetzung liegt im Layout des Originals darüber
-- **Privat**: Ihr Bildschirminhalt verlässt niemals Ihren Mac
-- **Offline**: Mit geladenen Sprachpaketen kein Internet nötig
+- **Privat**: Apple übersetzt standardmäßig lokal; externe Vergleiche brauchen Ihre Zustimmung und ausdrückliche Anforderung
+- **Offline**: Die standardmäßige Apple-Übersetzung benötigt nach dem Laden der Sprachpakete kein Internet
 - **In Ihrer Sprache**: Oberfläche in 12 Sprachen, darunter Deutsch
 
 ---

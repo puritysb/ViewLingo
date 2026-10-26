@@ -1,0 +1,147 @@
+{
+  "versionScope": "3.0 privacy information over retained earlier Apple capture footage; not a fresh 3.0 runtime capture.",
+  "publicationApproved": true,
+  "locales": {
+    "en-US": {
+      "sourceAppStoreVersion": "2.6.1",
+      "sourceAssetID": "a5ed7127-4932-4742-8d00-0c876faef910",
+      "sourceSHA256": "615cd901ed9147455c17b256dd6ffd36e54a2d8ade20ab3a768aea94e24d43c7",
+      "sourceResolution": [
+        960,
+        540
+      ],
+      "outputResolution": [
+        960,
+        540
+      ],
+      "sourceKind": "Recovered Apple playback derivative of the existing moving Apple-default demonstration.",
+      "referenceStoreCandidateSHA256": "a6197c7ab08798c82aec434085975346d5f8ad1fa785da91512f73c9183d3921",
+      "privacyCardSHA256": "6e8e2c97385a158cbaeb42ee86f9a2ac6ff1ecf868cf3062ff0231bf9b3d57ef",
+      "privacyReplacementStartSeconds": 18.4,
+      "duration": 20.9,
+      "posterSeconds": 2,
+      "earlierStills": "scene-1.jpg and scene-2.jpg retained byte-for-byte from 20261006",
+      "formatAndDecodeVerified": true,
+      "files": {
+        "demo.mp4": "abcf339aa1fdee7cc28302c0bb41bed3f7ebf291daef936037bf18d6a96e4ee5",
+        "poster.jpg": "17877dd89ff37cfca47c8a66c5654e4bdccda2bfb10482b87deb41817d44137f",
+        "scene-1.jpg": "4d2ead233bc0d8a7f143a02b3a0c80f763c7da92a9c44485d0c343a6dea5778e",
+        "scene-2.jpg": "0da2c8924ea7ad8d5c9c630743017e4b7f19f1a0302676c561d30afa5788227d",
+        "scene-3.jpg": "767a3aedcf60f6227a3e08d47c472e574f6d30d8e5f2714bd47a46175fdcbc38"
+      }
+    },
+    "ko": {
+      "sourceAppStoreVersion": "2.6.1",
+      "sourceAssetID": "7341732a-886f-4f91-9307-9c49292b38c8",
+      "sourceSHA256": "07a5f980be257963eef7dc4cb3ee1ee0a0ab5adbe275457df9d92f819cee9788",
+      "sourceResolution": [
+        960,
+        540
+      ],
+      "outputResolution": [
+        960,
+        540
+      ],
+      "sourceKind": "Recovered Apple playback derivative of the existing moving Apple-default demonstration.",
+      "referenceStoreCandidateSHA256": "8f56098b694ee535ba35f91f74df0174af25ac4b4678f438c2df6ec405ecf079",
+      "privacyCardSHA256": "889c89af2bf0db1db937f3dc77c6dbaeb7c21bdcb5e2df2df6a07fda31b74542",
+      "privacyReplacementStartSeconds": 17.8,
+      "duration": 20.3,
+      "posterSeconds": 2,
+      "earlierStills": "scene-1.jpg and scene-2.jpg retained byte-for-byte from 20261006",
+      "formatAndDecodeVerified": true,
+      "files": {
+        "demo.mp4": "1fb3d636eccced728bc42a13bf0dac6accaaa73ee6632012dc190c0f2bbbee36",
+        "poster.jpg": "cafd3ed6d3cfebdb49fadcf4884677452f8f7bb8a2e45f93cb7ae03114b7681d",
+        "scene-1.jpg": "33725c143ec8b90de50ae31f44cf92a708c449b8246ab2f42da6a27fc640bb82",
+        "scene-2.jpg": "cca44c3e1c5d8627bbbfd08a9dfdb7d022d520864ab6e222a41bd9b7580ba5d1",
+        "scene-3.jpg": "b576e0d01447d31c61bb2373bf5fde10860329bf6f0a21cbe09c4b8d9479cba6"
+      }
+    },
+    "ja": {
+      "sourceAppStoreVersion": "2.6.1",
+      "sourceAssetID": "c7bdde4d-83fe-459d-b36b-38bc86ff4522",
+      "sourceSHA256": "b3af9cd473b86625e9cea87191d8d2db73c7a2667d432ca5ec6c1120fa70d5a0",
+      "sourceResolution": [
+        960,
+        540
+      ],
+      "outputResolution": [
+        960,
+        540
+      ],
+      "sourceKind": "Recovered Apple playback derivative of the existing moving Apple-default demonstration.",
+      "referenceStoreCandidateSHA256": "5e3ade84d30fb253a1f977d3b7b12617c72d393c0d20888969476f189bc567c2",
+      "privacyCardSHA256": "2df002464fbc21a43ded45046b5c619ced030204a810117e7d7e9ec183fc90fe",
+      "privacyReplacementStartSeconds": 19.8,
+      "duration": 22.3,
+      "posterSeconds": 2,
+      "earlierStills": "scene-1.jpg and scene-2.jpg retained byte-for-byte from 20261006",
+      "formatAndDecodeVerified": true,
+      "files": {
+        "demo.mp4": "d73a152d26de75e00902a88d956ca77202286b812c611e9eaf0e2a104f0b60a0",
+        "poster.jpg": "91fd14c25efc535261e6b7d1014177b394e75e81ed65632a606ecde5f19264e6",
+        "scene-1.jpg": "95de7458be338f69e86036ce2f229cd9e6e656e4e86aaa7de7d2cd40a3d1ac2f",
+        "scene-2.jpg": "2f02fe2199738d0bb933bb8b192cd3749cd3c0aeb440f38bbbedc24085ca4770",
+        "scene-3.jpg": "e9150604863f9f7df8c7148a9e4d129dc119591cacc4706c109806be3c2be54c"
+      }
+    },
+    "zh-Hans": {
+      "sourceAppStoreVersion": "2.6.1",
+      "sourceAssetID": "b4c4895e-223f-4aaf-8474-e9b3561fa902",
+      "sourceSHA256": "f78910ab9db94a436f22caf6c845b3e0d365c2b48effae3b714f0d94ea1f2ac5",
+      "sourceResolution": [
+        960,
+        540
+      ],
+      "outputResolution": [
+        960,
+        540
+      ],
+      "sourceKind": "Recovered Apple playback derivative of the existing moving Apple-default demonstration.",
+      "referenceStoreCandidateSHA256": "c0386f8cb015ebced0b2bfc62577a9ac53032079937ec42651e95662cdba44a0",
+      "privacyCardSHA256": "d152847464491a7f9f540643365e17d2d50b8078f884731b1ce920ad3eea02a2",
+      "privacyReplacementStartSeconds": 13.5,
+      "duration": 16.0,
+      "posterSeconds": 2,
+      "earlierStills": "scene-1.jpg and scene-2.jpg retained byte-for-byte from 20261006",
+      "formatAndDecodeVerified": true,
+      "files": {
+        "demo.mp4": "6a41c7c432080421aee9e56e8c00f675f2fe2d71ffa728813d0a1c105782a75b",
+        "poster.jpg": "f79d0faf11a9c2457cc495a12cd2ead86c50d1709a221ad876f7d28f851a4cb7",
+        "scene-1.jpg": "d0f842906f522217f5007aa5955c46724a5638866d6dbd7c6f1b44f163733dd0",
+        "scene-2.jpg": "46dc028778c25c7bd3e2fd658a463b6d9e8653e7ddd126544b73c63a307b1cf9",
+        "scene-3.jpg": "9b2b2c9e2a23615bd48b4b925c114ee7f58c76cfbd9a7585f5a00590ea32efe1"
+      }
+    },
+    "zh-Hant": {
+      "sourceAppStoreVersion": "2.6.1",
+      "sourceAssetID": "af450b93-7130-486a-b940-edd3a9ccbddb",
+      "sourceSHA256": "e0d347804c34f341daa63a9a40e82e637806a319c8dda422760ca083cb5d4336",
+      "sourceResolution": [
+        960,
+        540
+      ],
+      "outputResolution": [
+        960,
+        540
+      ],
+      "sourceKind": "Recovered Apple playback derivative of the existing moving Apple-default demonstration.",
+      "referenceStoreCandidateSHA256": "ff9103ec22c4d2efa0748d1b8339ad4459424f3556c3e64cffe0c9160582dcb1",
+      "privacyCardSHA256": "1a19c95b7027e5b7c355639c6b06242faf1bb47ef5073399e3b5ca418a271601",
+      "privacyReplacementStartSeconds": 17.8,
+      "duration": 20.3,
+      "posterSeconds": 2,
+      "earlierStills": "scene-1.jpg and scene-2.jpg retained byte-for-byte from 20261006",
+      "formatAndDecodeVerified": true,
+      "files": {
+        "demo.mp4": "f08495beb5550fb65db1f632b9d4f9150bbbbad8d63b853bc1cb56e728c6a00f",
+        "poster.jpg": "f0841dbae3d1e78fde229a0c65e9da3071dbbcf28b0bc41c676cef753a47271e",
+        "scene-1.jpg": "cc188d603f2ac77015815d377766aae656daf1c2522884c33fe338eb38124f57",
+        "scene-2.jpg": "ed8f4008e7bba4dd617d929a37154caff9053da5a0c28cd0a3ac2e57f0040dcd",
+        "scene-3.jpg": "d4dc16232ab6fbfa20ed8c2923aec14cf41c83d01f2f76d397e2bd08dd02a36a"
+      }
+    }
+  },
+  "publicationScope": "Public website assets with future-qualified 3.0 copy; no App Store release claim."
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,9 +64,7 @@
                 </div>
                 <div class="faq-answer">
                     ViewLingo需要<strong>屏幕录制权限</strong>来捕获取景器内的内容。这是macOS对任何捕获屏幕内容的应用的要求。
-                    <div class="highlight">
-                        <strong>隐私说明：</strong>ViewLingo仅捕获取景器内的特定区域，并完全在您的设备上处理。您的内容永远不会离开您的Mac。
-                    </div>
+                    <div class="highlight"><strong>隐私说明：</strong>捕捉图像在Mac上处理。3.0可选DeepL比较仅发送您主动选择并同意的文本，不发送截图。</div>
                 </div>
             </div>
         </div>
@@ -90,7 +88,9 @@
                     <span class="expand-icon">▼</span>
                 </div>
                 <div class="faq-answer">
-                    ViewLingo 使用 Apple 内置的神经网络翻译引擎，直接在您的 Mac 上提供自然、高质量的翻译。想获得最佳效果，可以留意以下几点：
+                    <p>ViewLingo 默认在您的 Mac 上使用 Apple 内置翻译引擎。翻译质量会随源语言与目标语言的组合、场景、文字识别（OCR）准确性及可用上下文而变化。简短对话、名称和专业术语可能出现误译。</p>
+                    <p>我们正在为 3.0 准备可选的 DeepL 比较功能，使用您自己的 API 密钥。只有在您明确同意并主动请求翻译后，才会发送您选定的原文、上下文和术语。常规捕捉与 Live 仍使用 Apple。您可以比较结果后判断，但不能保证 DeepL 对每段文字都翻译得更好。</p>
+                    想改善翻译效果，可以留意以下几点：
                     <ul>
                         <li>清晰易读的文字识别最可靠</li>
                         <li>框选完整的句子，能为翻译提供更多上下文</li>
@@ -105,9 +105,7 @@
                     可以离线翻译吗？
                     <span class="expand-icon">▼</span>
                 </div>
-                <div class="faq-answer">
-                    <strong>是的！</strong>ViewLingo完全离线工作。所有翻译都使用Apple的内置翻译引擎在您的设备上进行。下载好语言包后，无需任何互联网连接。
-                </div>
+                <div class="faq-answer"><strong>Apple翻译可以。</strong> 常规捕捉和Live在下载语言包后可离线使用。3.0推出后可选的DeepL比较需要互联网、您自己的API账户及明确同意。</div>
             </div>
         </div>
         
@@ -180,13 +178,13 @@
                     <p>请在 App Store 查看您所在地区的当前价格。</p>
                     ViewLingo是一次性购买，包括：
                     <ul>
-                        <li>所有功能无限制</li>
+                        <li>使用Apple翻译的常规捕捉和Live</li>
                         <li>支持您的 Mac 所支持的全部语言，使用 Apple 免费提供的语言包</li>
-                        <li>无需注册账户</li>
-                        <li>无订阅或重复收费</li>
-                        <li>设备端处理的高级隐私</li>
+                        <li>Apple翻译无需注册账户</li>
+                        <li>ViewLingo不收取订阅费</li>
+                        <li>默认Apple翻译在本地处理</li>
                     </ul>
-                    价格还不到许多翻译订阅服务一个月的费用，而且买下就归您所有。
+                    3.0推出后可选的DeepL比较需要您自己的API账户。DeepL用量费用及限额独立于应用购买。
                 </div>
             </div>
             
@@ -219,19 +217,7 @@
                     我的数据在ViewLingo中安全吗？
                     <span class="expand-icon">▼</span>
                 </div>
-                <div class="faq-answer">
-                    <strong>绝对安全！</strong>ViewLingo以隐私为核心原则设计：
-                    <ul>
-                        <li>所有翻译都在您的设备上进行</li>
-                        <li>不向外部服务器发送数据</li>
-                        <li>我们从不收集或传输您的内容，翻译记录只保存在您的 Mac 上</li>
-                        <li>无分析或跟踪</li>
-                        <li>完全离线工作</li>
-                    </ul>
-                    <div class="highlight">
-                        您的翻译就像您的思想一样私密 - 它们永远不会离开您的Mac。
-                    </div>
-                </div>
+                <div class="faq-answer"><p>常规捕捉和Live使用Apple在本地处理，应用没有分析或跟踪功能。3.0推出后可选的DeepL比较默认关闭，需要您自己的API密钥、同意及主动翻译操作。发送前请检查原文、同次捕捉中最多5段先前文本和5个术语。不发送截图、窗口标题或完整记录。提供商的数据条款及费用适用；请勿通过Free / Developer发送个人信息或机密内容。</p><p><a href="privacy.html">阅读隐私政策</a></p></div>
             </div>
             
             <div class="faq-item">
@@ -239,16 +225,7 @@
                     关于屏幕录制权限呢？
                     <span class="expand-icon">▼</span>
                 </div>
-                <div class="faq-answer">
-                    屏幕录制权限允许ViewLingo捕获取景器内的内容。这是：
-                    <ul>
-                        <li>macOS对任何屏幕捕获功能的要求</li>
-                        <li>仅限于您选择的特定区域</li>
-                        <li>在您的 Mac 上处理；保存在翻译记录中的截取画面也绝不会离开 Mac</li>
-                        <li>无法远程访问或传输</li>
-                    </ul>
-                    ViewLingo负责任地仅出于翻译目的使用此权限。
-                </div>
+                <div class="faq-answer"><p>屏幕录制权限让应用仅捕捉您选择的区域。图像识别在Mac上完成。捕捉图像留在本地，可选DeepL比较也只发送选定文本。开发者无法通过该权限远程访问您的屏幕。</p></div>
             </div>
         </div>
         
@@ -266,7 +243,7 @@
                         <li><strong>ViewLingo 会检测到这种情况</strong>，并帮助您下载缺少的语言包。</li>
                         <li><strong>手动安装：</strong>系统设置 › 通用 › 语言与地区 › 翻译语言，下载您需要的语言。</li>
                         <li>不需要下载全部语言，只需您实际阅读的语言和您自己的语言。</li>
-                        <li>下载后返回 ViewLingo 重新捕捉即可。之后翻译完全离线运行。</li>
+                        <li>下载后返回 ViewLingo 重新捕捉即可。之后Apple翻译可离线运行。</li>
                     </ul>
                 </div>
             </div>

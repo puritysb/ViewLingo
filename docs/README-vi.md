@@ -6,7 +6,7 @@
 
 ## 🎯 Đọc chữ trên màn hình bằng ngôn ngữ của bạn, ngay tại chỗ
 
-Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng dụng nào. ViewLingo nhận dạng chữ và đặt bản dịch ngay trên văn bản gốc, như AR cho màn hình của bạn. Không cần sao chép, không cần chuyển ứng dụng, và không gì rời khỏi máy Mac.
+Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng dụng nào. ViewLingo nhận dạng chữ và đặt bản dịch ngay trên văn bản gốc, như AR cho màn hình của bạn. Không cần sao chép hay chuyển ứng dụng.
 
 ### ✨ Tính Năng Chính
 - 🔍 **Dịch bằng khung ngắm**: Nhấn `fn+Control+Option` rồi kéo qua đoạn chữ bạn muốn đọc. Chạm hai lần `fn+Control` để mở khung ngắm ngay tại vị trí con trỏ. Di chuyển hay đổi kích thước, bản dịch đều theo kịp.
@@ -14,14 +14,14 @@ Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng d
 - ⚡ **Chế độ Live**: Theo sát chữ thay đổi trong phụ đề video, game, trang trình chiếu và livestream, đồng thời giữ ổn định khi màn hình không đổi. Khóa khung ngắm để nhấp và cuộn nội dung bên dưới trong khi bản dịch vẫn hiển thị.
 - 🎛️ **Nút điều khiển không che chữ**: Live, Thử lại và Đóng nằm ngay bên ngoài vùng chọn, nên không bao giờ che chữ bạn đang đọc.
 - 📐 **Chữ dọc**: Nhận dạng và dịch tiếng Nhật, tiếng Trung, tiếng Hàn viết dọc.
-- 🌍 **Ngôn ngữ máy Mac của bạn hỗ trợ**: Cung cấp mọi ngôn ngữ được cả tính năng nhận dạng văn bản (OCR) của Mac và Apple Translation hỗ trợ, danh sách mở rộng cùng macOS. Phần thiết lập ban đầu hướng dẫn bạn tải mỗi gói ngôn ngữ một lần; sau đó dịch hoàn toàn ngoại tuyến.
-- 🔒 **Riêng tư ngay từ thiết kế**: Xử lý 100% trên thiết bị, không cần tài khoản, không phân tích, không theo dõi. Chỉ cần một quyền duy nhất: Ghi màn hình.
+- 🌍 **Ngôn ngữ máy Mac của bạn hỗ trợ**: Cung cấp mọi ngôn ngữ được cả tính năng nhận dạng văn bản (OCR) của Mac và Apple Translation hỗ trợ, danh sách mở rộng cùng macOS. Phần thiết lập ban đầu hướng dẫn bạn tải mỗi gói ngôn ngữ một lần; sau đó bản dịch Apple mặc định hoạt động ngoại tuyến.
+- 🔒 **Riêng tư ngay từ thiết kế**: Bản dịch Apple mặc định được xử lý trên máy. Ứng dụng không phân tích hay theo dõi việc sử dụng và cần quyền Ghi màn hình. Xem thông tin về so sánh bên ngoài tùy chọn trong 3.0 bên dưới.
 
 ### 💡 Giá Đơn Giản và Minh Bạch
 - Mua một lần, không cần đăng ký. Xem giá tại khu vực của bạn trên App Store.
-- Không thuê bao, không phí ẩn, không cần tài khoản
+- Dịch bằng Apple không cần tài khoản. So sánh DeepL tùy chọn trong 3.0 cần tài khoản API riêng của bạn; phí và giới hạn của nhà cung cấp được áp dụng riêng.
 - Dùng công cụ dịch của Apple có sẵn trên máy Mac
-- Không cần Internet sau khi đã tải gói ngôn ngữ
+- Bản dịch Apple mặc định hoạt động ngoại tuyến sau khi tải gói ngôn ngữ.
 
 ### 🚀 Bắt Đầu
 1. Tải ViewLingo từ Mac App Store
@@ -46,13 +46,13 @@ Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng d
 - 📧 Email: admin@foundby.kr
 
 ### 🔐 Quyền Riêng Tư
-ViewLingo không thu thập hay truyền đi bất kỳ dữ liệu cá nhân nào. Việc nhận dạng chữ và dịch đều diễn ra trên thiết bị của bạn, còn lịch sử dịch chỉ được lưu trên máy Mac: bạn tự chọn thời gian lưu và có thể xóa bất cứ lúc nào. Xem [Chính Sách Quyền Riêng Tư](https://puritysb.github.io/ViewLingo/privacy) của chúng tôi để biết chi tiết.
+Chụp thông thường và Live dùng Apple trên Mac; phiên bản 2.x tiếp tục xử lý cục bộ. Khi 3.0 được phát hành, bạn có thể lưu khóa API DeepL riêng vào Chuỗi khóa, đồng ý rồi chủ động yêu cầu so sánh riêng. Chỉ gửi nguyên văn đã chọn, tối đa năm đoạn trước đó trong cùng ảnh chụp và năm thuật ngữ đã chọn. Không gửi hình ảnh, tiêu đề cửa sổ hay toàn bộ lịch sử. Lịch sử và dự án được lưu cục bộ; ứng dụng không thu thập dữ liệu đo từ xa. Hãy xem điều khoản dữ liệu của nhà cung cấp và không gửi nội dung cá nhân hoặc bí mật bằng Free / Developer. Xem [Chính sách quyền riêng tư](https://puritysb.github.io/ViewLingo/privacy.html).
 
 ### 🌟 Tại Sao Chọn ViewLingo?
 - **Tức thì**: Không cần sao chép-dán, không cần chuyển ứng dụng
 - **Tự nhiên**: Bản dịch phủ lên theo đúng bố cục gốc
-- **Riêng tư**: Nội dung màn hình không bao giờ rời khỏi máy Mac
-- **Ngoại tuyến**: Có gói ngôn ngữ là dùng được không cần Internet
+- **Riêng tư**: Apple mặc định xử lý cục bộ; so sánh bên ngoài cần sự đồng ý và yêu cầu rõ ràng của bạn
+- **Ngoại tuyến**: Bản dịch Apple mặc định không cần Internet sau khi tải gói ngôn ngữ
 - **Bằng ngôn ngữ của bạn**: Giao diện có 12 ngôn ngữ, gồm cả tiếng Việt
 
 ---

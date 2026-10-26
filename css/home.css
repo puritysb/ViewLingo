@@ -73,6 +73,7 @@ nav { display: flex; justify-content: space-between; align-items: center; min-he
 .languages strong { color: #173e35; font-weight: 600; }
 .languages p:last-child { font-size: .9rem; }
 .privacy-section { padding-block: 88px; background: #173e35; color: #fff; }
+.privacy-section a { color: #fff; text-decoration: underline; }
 .privacy-section .section-intro { max-width: 660px; font-size: 1.1rem; color: #d6e3dc; }
 .privacy-features { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin-top: 44px; }
 .privacy-item { padding-top: 22px; border-top: 1px solid #537068; }

@@ -1,6 +1,27 @@
 # Homepage evidence media
 
-## Current set — October 6, 2026
+## Prepared 3.0 privacy update — October 27, 2026
+
+`20261027/` supplies the five localized homepages and English game guide after publication.
+The moving Apple-default demos retain the actual original → translation → Live footage from
+existing 2.6.1 Store previews (original 2.5.x captures). The recovered Apple playback sources
+are 960×540; website videos stay at that resolution and are not presented as native 1920×1080
+capture or a fresh 3.0 runtime demonstration. A new localized privacy end card replaces the
+entire previous local-only claim. It clearly distinguishes default Apple processing from
+optional DeepL text sharing using the user's own API key. Public page copy makes 3.0
+availability conditional until release.
+
+The first two stills are retained byte-for-byte from `20261006/`. The third is a newly rendered
+editorial privacy card. Posters are the exact two-second frame of each new demo. Captured
+translation text is never repainted. `20261027/manifest.json` records the source Store asset IDs,
+source/output hashes, resolution, privacy transition and retained still provenance. Local
+format/decode verification does not prove website deployment or Store submission approval.
+
+Reproduction source: `AppStore-Materials/release-3.0.0-media/prepare_website.py` in ViewLingo-dev.
+All previous assets remain available for historical links. No historical approval is carried
+forward to these changed files automatically.
+
+## Historical set — October 6, 2026
 
 `20261006/` supplies the five localized homepages and English game guide. Each locale
 has a short actual-app preview, its exact two-second poster frame, and three stills.
