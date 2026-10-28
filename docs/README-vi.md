@@ -12,7 +12,7 @@ Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng d
 - 🔍 **Dịch bằng khung ngắm**: Nhấn `fn+Control+Option` rồi kéo qua đoạn chữ bạn muốn đọc. Chạm hai lần `fn+Control` để mở khung ngắm ngay tại vị trí con trỏ. Di chuyển hay đổi kích thước, bản dịch đều theo kịp.
 - 🎨 **Lớp phủ AR ngay tại chỗ**: Bản dịch hiện trên văn bản gốc, khớp với bố cục và màu sắc, cỡ chữ tự điều chỉnh để cả bản dịch dài vẫn dễ đọc. Khi thiếu chỗ, chỉ cần di con trỏ lên để xem toàn bộ bản dịch.
 - ⚡ **Chế độ Live**: Theo sát chữ thay đổi trong phụ đề video, game, trang trình chiếu và livestream, đồng thời giữ ổn định khi màn hình không đổi. Khóa khung ngắm để nhấp và cuộn nội dung bên dưới trong khi bản dịch vẫn hiển thị.
-- 🎛️ **Nút điều khiển không che chữ**: Live, Thử lại và Đóng nằm ngay bên ngoài vùng chọn, nên không bao giờ che chữ bạn đang đọc.
+- 🎛️ **Thanh công cụ gọn gàng**: Dễ thao tác Live, Thử lại và Đóng. Trong 3.0, vùng chọn toàn màn hình đặt thanh công cụ vào phía trong và chừa mép để thay đổi kích thước.
 - 📐 **Chữ dọc**: Nhận dạng và dịch tiếng Nhật, tiếng Trung, tiếng Hàn viết dọc.
 - 🌍 **Ngôn ngữ máy Mac của bạn hỗ trợ**: Cung cấp mọi ngôn ngữ được cả tính năng nhận dạng văn bản (OCR) của Mac và Apple Translation hỗ trợ, danh sách mở rộng cùng macOS. Phần thiết lập ban đầu hướng dẫn bạn tải mỗi gói ngôn ngữ một lần; sau đó bản dịch Apple mặc định hoạt động ngoại tuyến.
 - 🔒 **Riêng tư ngay từ thiết kế**: Bản dịch Apple mặc định được xử lý trên máy. Ứng dụng không phân tích hay theo dõi việc sử dụng và cần quyền Ghi màn hình. Xem thông tin về so sánh bên ngoài tùy chọn trong 3.0 bên dưới.

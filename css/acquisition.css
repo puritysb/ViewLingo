@@ -56,3 +56,18 @@
     .purchase-fit { padding: 22px; }
     .reading-guide { align-items: flex-start; flex-direction: column; gap: 16px; }
 }
+
+/* Supplemental 3.0 evidence; preserve the existing capture/Live hero video. */
+.v3-preview { padding-block: 72px; background: #102c2a; color: #f4fbf7; }
+.v3-preview .eyebrow { color: #81e8bd; margin-bottom: 16px; }
+.v3-preview h2 { color: inherit; font-size: clamp(1.9rem, 3.2vw, 2.7rem); letter-spacing: -.03em; margin-bottom: 20px; }
+.v3-intro { max-width: 850px; color: #d2e5dc; }
+.v3-benefits { margin: 24px 0 32px; padding-left: 22px; color: #d2e5dc; }
+.v3-benefits li { margin-bottom: 10px; }
+.v3-media { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: start; }
+.v3-media figure { min-width: 0; margin: 0; }
+.v3-media video, .v3-media img { display: block; width: 100%; height: auto; border: 1px solid #53776b; border-radius: 12px; background: #102c2a; }
+.v3-media video:focus-visible, .v3-media a:focus-visible { outline: 3px solid #81e8bd; outline-offset: 4px; }
+.v3-media figcaption { color: #c2d9cf; font-size: .8rem; line-height: 1.6; margin-top: 12px; }
+.v3-note { color: #c2d9cf; font-size: .86rem; line-height: 1.8; margin-top: 28px; max-width: 1000px; }
+@media (max-width: 800px) { .v3-media { grid-template-columns: 1fr; } .v3-preview { padding-block: 48px; } }

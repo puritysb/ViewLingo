@@ -23,8 +23,8 @@ Translations are drawn over the original text, fitted to its layout and colors, 
 ### Live Mode
 Turn on Live and ViewLingo follows changing text in video subtitles, games, slides and streams, and holds steady when the screen doesn't change. Lock the viewfinder to click and scroll through it while translation keeps running on top.
 
-### Controls That Stay Out of the Way
-Live, Retry and Close sit just outside your selection, so they never cover the text you're reading.
+### Compact Viewfinder Controls
+Compact viewfinder controls keep Live, Retry and Close within reach. In 3.0, full-screen selections use an inset toolbar with room for edge resizing.
 
 ### Vertical Text
 Vertical Japanese, Chinese and Korean text is recognized and translated.
@@ -40,7 +40,7 @@ ViewLingo offers every language that both your Mac's text recognition and Apple 
 - **Local history**: History and screenshots are stored on your Mac; choose how long to keep them or clear them anytime
 
 ### Optional DeepL comparison in 3.0
-ViewLingo 2.x remains local. When 3.0 is available, you can save your own DeepL API key in macOS Keychain, consent to sharing text and explicitly request a separate comparison. Only the selected original, up to five previous passages from the same capture and five selected glossary terms are sent. Screenshots, window titles and the full history are never sent. Opening settings or editing a project does not send text. Provider data terms, fees and limits apply separately from ViewLingo; do not send personal or confidential text with Free / Developer. See the [Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html) before enabling it.
+ViewLingo 2.x remains local. When 3.0 is available, you can save your own DeepL API key in macOS Keychain, consent to sharing text and explicitly request a separate comparison. Only the selected original, up to five previous passages from the same capture and five selected glossary terms are sent. Screenshots, window titles and the full history are never sent. Opening settings or editing a glossary does not send text. Provider data terms, fees and limits apply separately from ViewLingo; do not send personal or confidential text with Free / Developer. See the [Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html) before enabling it.
 
 ## System Requirements
 
