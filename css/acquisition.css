@@ -71,3 +71,23 @@
 .v3-media figcaption { color: #c2d9cf; font-size: .8rem; line-height: 1.6; margin-top: 12px; }
 .v3-note { color: #c2d9cf; font-size: .86rem; line-height: 1.8; margin-top: 28px; max-width: 1000px; }
 @media (max-width: 800px) { .v3-media { grid-template-columns: 1fr; } .v3-preview { padding-block: 48px; } }
+
+/* Native 3.0 onboarding supplements the existing product and DeepL examples. */
+.v3-onboarding { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; align-items: center; margin-top: 48px; padding-top: 40px; border-top: 1px solid #53776b; }
+.v3-onboarding-copy { min-width: 0; }
+.v3-app-icon { display: block; width: 100px; height: 100px; margin-bottom: 20px; }
+.v3-onboarding h3 { color: #f4fbf7; font-size: clamp(1.4rem, 2.4vw, 1.85rem); line-height: 1.4; margin-bottom: 18px; }
+.v3-onboarding p { color: #d2e5dc; line-height: 1.8; }
+.v3-onboarding .v3-onboarding-note { font-size: .84rem; color: #c2d9cf; margin-top: 18px; }
+.v3-onboarding figure { min-width: 0; margin: 0; }
+.v3-onboarding figure img { display: block; width: 100%; height: auto; border: 1px solid #53776b; border-radius: 12px; }
+.v3-onboarding figcaption { color: #c2d9cf; font-size: .8rem; line-height: 1.6; margin-top: 12px; }
+.v3-onboarding a:focus-visible { display: block; outline: 3px solid #81e8bd; outline-offset: 4px; border-radius: 12px; }
+@media (max-width: 800px) { .v3-onboarding { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; padding-top: 32px; } }
+
+/* Latest optional-to-play showreel; earlier product and comparison videos remain below. */
+.v3-showreel { margin: 0 0 36px; scroll-margin-top: 96px; }
+.v3-showreel h3 { color: #f4fbf7; font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin-bottom: 18px; }
+.v3-showreel video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 1px solid #53776b; border-radius: 12px; background: #102c2a; }
+.v3-showreel video:focus-visible { outline: 3px solid #81e8bd; outline-offset: 4px; }
+.v3-showreel figcaption { color: #c2d9cf; font-size: .84rem; line-height: 1.8; margin-top: 12px; max-width: 1000px; }
