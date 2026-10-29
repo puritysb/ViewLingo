@@ -1,0 +1,80 @@
+{
+  "source": "Selected actual movie/Live, document and game footage from previously submitted locale-specific montages. Original encoded video and audio streams are retained without re-encoding; the old general privacy card and old-icon ending are excluded.",
+  "assets": [
+    {
+      "locale": "en-US",
+      "source_commit": "3c1510dc9ca07a87de99430847f571920701780f",
+      "source": "AppStore-Materials/submitted-media/hero-2026/01-hero-motion-en-US.mov",
+      "source_sha256": "d4f305205748fad16ef40a61a7399f040f4c9067abd2fd7d9ce9094d7773883b",
+      "file": "assets/acquisition/20261029-localized/en-US/use-cases.mp4",
+      "sha256": "cf0238a266eadfbccdd2ef0723f0d2e95466b3a321fca995d7c1917394fd2a0b",
+      "poster": "assets/acquisition/20261029-localized/en-US/use-cases-poster.jpg",
+      "poster_timecode": "00:00:07:02",
+      "bytes": 12226941,
+      "source_duration_seconds": 28.75,
+      "selected_end_seconds": 24.0,
+      "preserved_source_video_packets": 722,
+      "old_privacy_and_brand_ending_excluded": true
+    },
+    {
+      "locale": "ko",
+      "source_commit": "3c1510dc9ca07a87de99430847f571920701780f",
+      "source": "AppStore-Materials/submitted-media/hero-2026/01-hero-motion-ko.mov",
+      "source_sha256": "1bc09dfee252eb9a9958d399a36822456f2427f30a634bdbd0e2f95a6a387733",
+      "file": "assets/acquisition/20261029-localized/ko/use-cases.mp4",
+      "sha256": "af652d29e681b570f5d39074c657638caa5c3b8b4bb82feb7641950decfbfe9b",
+      "poster": "assets/acquisition/20261029-localized/ko/use-cases-poster.jpg",
+      "poster_timecode": "00:00:04:24",
+      "bytes": 11691186,
+      "source_duration_seconds": 26.5,
+      "selected_end_seconds": 21.75,
+      "preserved_source_video_packets": 655,
+      "old_privacy_and_brand_ending_excluded": true
+    },
+    {
+      "locale": "ja",
+      "source_commit": "3c1510dc9ca07a87de99430847f571920701780f",
+      "source": "AppStore-Materials/submitted-media/hero-2026/01-hero-motion-ja.mov",
+      "source_sha256": "dc832bf50e10dedbe610a17eee323d381f65c3c7b69a5f8b58da56b11941c1b9",
+      "file": "assets/acquisition/20261029-localized/ja/use-cases.mp4",
+      "sha256": "5338e123845e1156c36e2fc27570a03a3af8ff194a867704df73301982fc7727",
+      "poster": "assets/acquisition/20261029-localized/ja/use-cases-poster.jpg",
+      "poster_timecode": "00:00:06:01",
+      "bytes": 11493121,
+      "source_duration_seconds": 27.75,
+      "selected_end_seconds": 23.0,
+      "preserved_source_video_packets": 692,
+      "old_privacy_and_brand_ending_excluded": true
+    },
+    {
+      "locale": "zh-Hans",
+      "source_commit": "3c1510dc9ca07a87de99430847f571920701780f",
+      "source": "AppStore-Materials/submitted-media/hero-2026/01-hero-motion-zh-Hans.mov",
+      "source_sha256": "eec4e2386ebb5a6f858cd661caaac12aa641daaab4008a6e448542abb3d27832",
+      "file": "assets/acquisition/20261029-localized/zh-Hans/use-cases.mp4",
+      "sha256": "2f02a7e65107d9b85669d972d358e8edaa35d28e33da0b1638b13f1994e104d8",
+      "poster": "assets/acquisition/20261029-localized/zh-Hans/use-cases-poster.jpg",
+      "poster_timecode": "00:00:05:09",
+      "bytes": 12151334,
+      "source_duration_seconds": 27.0,
+      "selected_end_seconds": 22.25,
+      "preserved_source_video_packets": 670,
+      "old_privacy_and_brand_ending_excluded": true
+    },
+    {
+      "locale": "zh-Hant",
+      "source_commit": "3c1510dc9ca07a87de99430847f571920701780f",
+      "source": "AppStore-Materials/submitted-media/hero-2026/01-hero-motion-zh-Hant.mov",
+      "source_sha256": "be4f202555037c28a8c522ec0198c5ddfed3ee10b272341f049333abcb0c3759",
+      "file": "assets/acquisition/20261029-localized/zh-Hant/use-cases.mp4",
+      "sha256": "2e6651c21037c5ac8f75befedbe53d5d7e486691054f9561005349349e2ef632",
+      "poster": "assets/acquisition/20261029-localized/zh-Hant/use-cases-poster.jpg",
+      "poster_timecode": "00:00:05:02",
+      "bytes": 12457387,
+      "source_duration_seconds": 26.75,
+      "selected_end_seconds": 22.0,
+      "preserved_source_video_packets": 662,
+      "old_privacy_and_brand_ending_excluded": true
+    }
+  ]
+}

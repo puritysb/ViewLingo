@@ -142,3 +142,39 @@ summary:focus-visible,
         transition: none;
     }
 }
+
+/* Native anchor navigation keeps URL fragments and browser Back working. */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.image-preview-link { display: block; position: relative; cursor: zoom-in; border-radius: 12px; }
+.image-preview-badge {
+    position: absolute; bottom: 12px; right: 12px; padding: 7px 12px;
+    border: 1px solid #ffffff70; border-radius: 999px;
+    background: #102c2aee; color: #fff; font-size: .78rem; font-weight: 600;
+    line-height: 1.4; pointer-events: none; box-shadow: 0 2px 12px #0003;
+}
+.media-viewer {
+    box-sizing: border-box; width: min(1200px, calc(100vw - 32px)); max-width: none;
+    max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px);
+    margin: auto; padding: 16px; border: 1px solid #9dc9b970; border-radius: 20px;
+    background: #102c2a; color: #f4fbf7; box-shadow: 0 24px 80px #0008;
+}
+.media-viewer[open] { display: flex; flex-direction: column; gap: 12px; }
+.media-viewer::backdrop { background: #071613d9; backdrop-filter: blur(8px); }
+.media-viewer-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-shrink: 0; }
+.media-viewer-header h2 { margin: 0; color: inherit; font-size: 1rem; line-height: 1.5; }
+.media-viewer-close {
+    flex-shrink: 0; min-height: 44px; padding: 8px 18px; border: 1px solid #8cb8a9;
+    border-radius: 999px; background: #e8f8f1; color: #102c2a; font: inherit;
+    font-weight: 600; cursor: pointer;
+}
+.media-viewer-close:hover { background: #fff; }
+.media-viewer-close:focus-visible { outline: 3px solid #81e8bd; outline-offset: 3px; }
+.media-viewer-image { display: block; width: 100%; min-height: 0; object-fit: contain; border-radius: 8px; }
+.media-viewer-caption { margin: 0; flex-shrink: 0; font-size: .85rem; line-height: 1.5; color: #e2f3eb; }
+.media-viewer-note { margin: 0; flex-shrink: 0; color: #b6d3c6; font-size: .75rem; line-height: 1.5; }
+@media (max-width: 600px) {
+    .media-viewer { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); padding: 12px; border-radius: 16px; }
+    .image-preview-badge { bottom: 8px; right: 8px; font-size: .72rem; }
+}

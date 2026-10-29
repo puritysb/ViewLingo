@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const source = fs.readFileSync('js/common.js', 'utf8');
 
-function harness() {
+function harness(pathname = '/ViewLingo/ko/') {
     function node() {
         const classes = new Set();
         return {
@@ -31,7 +31,7 @@ function harness() {
         createElement: () => button,
         addEventListener: (event, fn) => { docEvents[event] = fn; }
     };
-    const window = { innerWidth: 390, matchMedia: () => ({ matches: true }),
+    const window = { location: { pathname }, innerWidth: 390, matchMedia: () => ({ matches: true }),
         addEventListener: (event, fn) => { winEvents[event] = fn; } };
     vm.runInNewContext(source, { URL, document, window });
     return { links, button, document, window, docEvents, winEvents,
@@ -63,4 +63,24 @@ test('resizing an open mobile drawer to desktop restores document scrolling', ()
     assert.equal(h.document.body.style.overflow, '');
     assert.equal(h.button.attributes['aria-expanded'], 'false');
     assert.equal(h.links.classList.contains('active'), false);
+});
+
+
+test('mobile menu names match each homepage language', () => {
+    for (const [locale, label] of Object.entries({
+        en: 'Navigation menu', ko: '탐색 메뉴', ja: 'ナビゲーションメニュー',
+        'zh-hans': '导航菜单', 'zh-hant': '導覽選單'
+    })) {
+        const h = harness(locale === 'en' ? '/ViewLingo/' : `/ViewLingo/${locale}/`);
+        assert.equal(h.button.attributes['aria-label'], label);
+    }
+});
+
+
+test('image preview transition closes navigation and releases its scroll lock', () => {
+    const h = harness(); h.toggle();
+    h.docEvents['viewlingo:before-image-preview']();
+    assert.equal(h.links.classList.contains('active'), false);
+    assert.equal(h.button.attributes['aria-expanded'], 'false');
+    assert.equal(h.document.body.style.overflow, '');
 });

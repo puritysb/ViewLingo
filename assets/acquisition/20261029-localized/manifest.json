@@ -1,0 +1,317 @@
+[
+  {
+    "locale": "en-US",
+    "showreel": "assets/acquisition/20261029-localized/en-US/showreel.mp4",
+    "sha256": "d509be20bc994211975522876724feb215824854cefe62b522035903794986a8",
+    "duration": 27.023242,
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "settings": "assets/acquisition/20261029-localized/en-US/settings.jpg",
+    "settingsSHA256": "d2b51f4361a8f698c284768681dbc5a66c42d31f678fa9f39ec2fe8df8fdbe21",
+    "settingsSourceHashes": {
+      "language": "be7208dda75cfece761b012eb077c737147ef44735f03ef5cf617bda025e748f",
+      "translation": "14d5f5ce34e0ab022bfdafdc93cbb0b4deae2b02da851fa080e0adc26714d8a0"
+    },
+    "settingsScope": "Actual native 3.0 settings UI from build 41, example preferences, cropped and uniformly scaled, no app pixels repainted",
+    "segments": [
+      {
+        "start": 0,
+        "end": 2,
+        "scope": "Editorial brand intro"
+      },
+      {
+        "start": 2,
+        "end": 9.5,
+        "scope": "Retained actual game translation to en-US",
+        "sourceRange": [
+          0.3,
+          7.8
+        ],
+        "sourceSHA256": "615cd901ed9147455c17b256dd6ffd36e54a2d8ade20ab3a768aea94e24d43c7",
+        "speed": 1.0
+      },
+      {
+        "start": 9.5,
+        "end": 15.5,
+        "scope": "Retained Live example translating Japanese demo captions to English"
+      },
+      {
+        "start": 15.5,
+        "end": 20.5,
+        "scope": "Actual localized 3.0 onboarding interaction in en-US"
+      },
+      {
+        "start": 20.5,
+        "end": 27,
+        "scope": "Actual native translation settings still in en-US"
+      }
+    ],
+    "fullDecodePassed": true,
+    "posterTime": 1,
+    "posterSHA256": "6fd818442535f7a3197fa982dbb89a8f201f022b87e417649ff59d47acec296c",
+    "settingsCaption": "Language and translation settings · Actual English UI",
+    "visualReview": {
+      "status": "passed with documented source-language and earlier-UI limitations",
+      "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
+      "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
+    }
+  },
+  {
+    "locale": "ko",
+    "showreel": "assets/acquisition/20261029-localized/ko/showreel.mp4",
+    "sha256": "d0cd5ef73ef615bcad0fe06726c83385411fc78ecef0fdcb7c3164c71ad745a7",
+    "duration": 27.023242,
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "settings": "assets/acquisition/20261029-localized/ko/settings.jpg",
+    "settingsSHA256": "b11b8086129aadbf0bf883cc3ea04433d4e5350f9118c30ebd868c754efe0472",
+    "settingsSourceHashes": {
+      "language": "144a8c16c021828f56446826e0444412affe613f408401139844dd454a64bae3",
+      "translation": "c7f0666ab8d3fd5484c488a11a81b79f380eac747f2c6b0936cc17bed92a6062"
+    },
+    "settingsScope": "Actual native 3.0 settings UI from build 41, example preferences, cropped and uniformly scaled, no app pixels repainted",
+    "segments": [
+      {
+        "start": 0,
+        "end": 2,
+        "scope": "Editorial brand intro"
+      },
+      {
+        "start": 2,
+        "end": 9.5,
+        "scope": "Retained actual game translation to ko",
+        "sourceRange": [
+          0.3,
+          7.8
+        ],
+        "sourceSHA256": "07a5f980be257963eef7dc4cb3ee1ee0a0ab5adbe275457df9d92f819cee9788",
+        "speed": 1.0
+      },
+      {
+        "start": 9.5,
+        "end": 15.5,
+        "scope": "Retained Live example translating Japanese demo captions to English"
+      },
+      {
+        "start": 15.5,
+        "end": 20.5,
+        "scope": "Actual localized 3.0 onboarding interaction in ko"
+      },
+      {
+        "start": 20.5,
+        "end": 27,
+        "scope": "Actual native translation settings still in ko"
+      }
+    ],
+    "fullDecodePassed": true,
+    "posterTime": 1,
+    "posterSHA256": "1bbe9b30e8f3b91578b7e1b117035134e933e6d50d8f07a74712c8b21e90b2ac",
+    "settingsCaption": "언어와 번역 설정 · 실제 한국어 UI",
+    "visualReview": {
+      "status": "passed with documented source-language and earlier-UI limitations",
+      "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
+      "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
+    }
+  },
+  {
+    "locale": "ja",
+    "showreel": "assets/acquisition/20261029-localized/ja/showreel.mp4",
+    "sha256": "9dfceb785320ae966423847f6a831a68c4fa3fb4e167516c4267b86237d85198",
+    "duration": 27.023242,
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "settings": "assets/acquisition/20261029-localized/ja/settings.jpg",
+    "settingsSHA256": "6b8b5b365a292d1ecea5cd932c2d6c8173ec9cd478afe42d330a9ba7e719434b",
+    "settingsSourceHashes": {
+      "language": "423a0df43d6e9a70fe7fab88210a9ad4e1b1dd11a24dac28a1314220b2973c57",
+      "translation": "351b45482e6358fad26c6e0c7d340eb222e11f9ebd3835bbc9ff341ffa595957"
+    },
+    "settingsScope": "Actual native 3.0 settings UI from build 41, example preferences, cropped and uniformly scaled, no app pixels repainted",
+    "segments": [
+      {
+        "start": 0,
+        "end": 2,
+        "scope": "Editorial brand intro"
+      },
+      {
+        "start": 2,
+        "end": 9.5,
+        "scope": "Retained actual game translation to ja",
+        "sourceRange": [
+          2.5,
+          10.0
+        ],
+        "sourceSHA256": "b3af9cd473b86625e9cea87191d8d2db73c7a2667d432ca5ec6c1120fa70d5a0",
+        "speed": 1.0
+      },
+      {
+        "start": 9.5,
+        "end": 20.5,
+        "scope": "Retained actual Japanese Live subtitle, document and game montage; original UI remains unchanged",
+        "source": "AppStore-Materials/submitted-media/hero-2026/01-hero-motion-ja.mov",
+        "sourceRange": [
+          6,
+          17
+        ],
+        "sourceSHA256": "dc832bf50e10dedbe610a17eee323d381f65c3c7b69a5f8b58da56b11941c1b9",
+        "speed": 1.0,
+        "renderInputSHA256": "3d2ec9164daca3cf47a5d1048249abaa1df11a7316cce885b06f8bdaecde2c26",
+        "sourceCommit": "3c1510dc9ca07a87de99430847f571920701780f",
+        "sourceNote": "Original submitted video; render input was a frame-identical MP4 remux. Website secondary montage may trim its obsolete closing cards."
+      },
+      {
+        "start": 20.5,
+        "end": 27,
+        "scope": "Actual native translation settings still in ja"
+      }
+    ],
+    "fullDecodePassed": true,
+    "posterTime": 1,
+    "onboarding": {
+      "file": "assets/acquisition/20261029-localized/ja/onboarding.png",
+      "sha256": "4e4f9691ba10371972fd2cc9fd0afb79d6f64fa625b9d141c2969aab9d1b8852",
+      "scope": "Unmodified native onboarding usage-tips page, build 41; no simulated provider result"
+    },
+    "posterSHA256": "d4b249eb5e30a997c2402855c72818a4955f6bc3912e2877c9b7e3f1cb486820",
+    "settingsCaption": "言語と翻訳の設定 · 実際の日本語UI",
+    "visualReview": {
+      "status": "passed with documented source-language and earlier-UI limitations",
+      "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
+      "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
+    }
+  },
+  {
+    "locale": "zh-Hans",
+    "showreel": "assets/acquisition/20261029-localized/zh-Hans/showreel.mp4",
+    "sha256": "a9eaebf0c10a711984790a03272269f98c0ce27e6d50098212a159bef55407db",
+    "duration": 27.023242,
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "settings": "assets/acquisition/20261029-localized/zh-Hans/settings.jpg",
+    "settingsSHA256": "6c14988e9da8dafae23057002fc3396eaa1755e2c225b79dfc47f93b6725384b",
+    "settingsSourceHashes": {
+      "language": "2e2e8ba6ccb1d8106a939886ac0fe29d2971732417591bcd10e340f669591e66",
+      "translation": "5dcb7212e05ce197b37dfbd58080aa4813b6125db467cad1191e6549fc8ccd30"
+    },
+    "settingsScope": "Actual native 3.0 settings UI from build 41, example preferences, cropped and uniformly scaled, no app pixels repainted",
+    "segments": [
+      {
+        "start": 0,
+        "end": 2,
+        "scope": "Editorial brand intro"
+      },
+      {
+        "start": 2,
+        "end": 9.5,
+        "scope": "Retained actual game translation to zh-Hans",
+        "sourceRange": [
+          0.3,
+          7.8
+        ],
+        "sourceSHA256": "f78910ab9db94a436f22caf6c845b3e0d365c2b48effae3b714f0d94ea1f2ac5",
+        "speed": 1.0
+      },
+      {
+        "start": 9.5,
+        "end": 15.5,
+        "scope": "Retained Live example translating Japanese demo captions to English"
+      },
+      {
+        "start": 15.5,
+        "end": 20.5,
+        "scope": "Retained actual game Live translation in Simplified Chinese",
+        "source": "AppStore-Materials/submitted-media/hero-2026/01-hero-motion-zh-Hans.mov",
+        "sourceRange": [
+          16,
+          21
+        ],
+        "sourceSHA256": "eec4e2386ebb5a6f858cd661caaac12aa641daaab4008a6e448542abb3d27832",
+        "speed": 1.0,
+        "renderInputSHA256": "773b86bbaddeb2116adac21c1a781c7ebdbd409eab81e967ecd54a568f08c394",
+        "sourceCommit": "3c1510dc9ca07a87de99430847f571920701780f",
+        "sourceNote": "Original submitted video; render input was a frame-identical MP4 remux. Website secondary montage may trim its obsolete closing cards."
+      },
+      {
+        "start": 20.5,
+        "end": 27,
+        "scope": "Actual native translation settings still in zh-Hans"
+      }
+    ],
+    "fullDecodePassed": true,
+    "posterTime": 1,
+    "onboarding": {
+      "file": "assets/acquisition/20261029-localized/zh-Hans/onboarding.png",
+      "sha256": "a698874afef76652f72b7d47c8cf81e9af2f488876e0ad89203ad64909520c46",
+      "scope": "Unmodified native onboarding usage-tips page, build 41; no simulated provider result"
+    },
+    "posterSHA256": "060b0f843f1f7aa94623851e80dfd3ec220e489eb2fa9435e53a2da5e8dbc2f2",
+    "settingsCaption": "语言与翻译设置 · 实际简体中文界面",
+    "visualReview": {
+      "status": "passed with documented source-language and earlier-UI limitations",
+      "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
+      "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
+    }
+  },
+  {
+    "locale": "zh-Hant",
+    "showreel": "assets/acquisition/20261029-localized/zh-Hant/showreel.mp4",
+    "sha256": "f45fb1b7c7272fd22f4bf3dcef196a6d338cc1ed9036299d0622d30a5ae827c5",
+    "duration": 27.023242,
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "settings": "assets/acquisition/20261029-localized/zh-Hant/settings.jpg",
+    "settingsSHA256": "a9ea6827053e170c6fa83b5e86323f4467c13074811f20f33475d74d9d04e8f4",
+    "settingsSourceHashes": {
+      "language": "b517e77d8dcf11628b5f9502cdde87bcbefc975d85ce75b88e481639c0fc8c21",
+      "translation": "bec1cfcc71bb1a07269ef44b8cbffaaf7396af6fb0945e188351c725887ec410"
+    },
+    "settingsScope": "Actual native 3.0 settings UI from build 41, example preferences, cropped and uniformly scaled, no app pixels repainted",
+    "segments": [
+      {
+        "start": 0,
+        "end": 2,
+        "scope": "Editorial brand intro"
+      },
+      {
+        "start": 2,
+        "end": 9.5,
+        "scope": "Retained actual game translation to zh-Hant",
+        "sourceRange": [
+          0.3,
+          7.8
+        ],
+        "sourceSHA256": "e0d347804c34f341daa63a9a40e82e637806a319c8dda422760ca083cb5d4336",
+        "speed": 1.0
+      },
+      {
+        "start": 9.5,
+        "end": 15.5,
+        "scope": "Retained Live example translating Japanese demo captions to English"
+      },
+      {
+        "start": 15.5,
+        "end": 20.5,
+        "scope": "Actual localized 3.0 onboarding interaction in zh-Hant"
+      },
+      {
+        "start": 20.5,
+        "end": 27,
+        "scope": "Actual native translation settings still in zh-Hant"
+      }
+    ],
+    "fullDecodePassed": true,
+    "posterTime": 1,
+    "posterSHA256": "92b8244f7356efe276f81c9d4fa07515223f4f311f50f60171e3cf53ef973514",
+    "settingsCaption": "語言與翻譯設定 · 實際繁體中文介面",
+    "visualReview": {
+      "status": "passed with documented source-language and earlier-UI limitations",
+      "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
+      "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
+    }
+  }
+]

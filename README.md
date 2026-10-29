@@ -61,6 +61,8 @@ ViewLingo 2.x remains local. When 3.0 is available, you can save your own DeepL 
 
 Website maintainers: homepages share `css/home.css` and `css/acquisition.css`; navigation and the native language selector use `css/common.css`. Keep the five localized homepage structures aligned. `assets/tokens.css` is generated from the app and must not be edited by hand. Update shared asset version queries when publishing CSS or script changes. The public URL inventory is `sitemap.xml`; publishing it does not confirm search-engine indexing.
 
+Image thumbnails use a native dialog from `js/media.js`: Close, Escape and the backdrop return to the same page and restore focus. Media playback is exclusive, including the dynamically created hero video. FAQ answers use native disclosures; the interactive illustration has a keyboard-accessible example button and is explicitly not a performance benchmark.
+
 Run website regression checks with `node --test tests/*.test.cjs` and `git diff --check`. Inspect desktop and mobile layouts in the browser. The game guide preserves registered incoming campaigns; otherwise its Store links use the fixed `web_game_guide` campaign label. This is aggregate App Store attribution, not app telemetry or a purchase event sent to Google.
 
 ## Built With Apple Technologies

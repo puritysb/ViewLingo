@@ -26,58 +26,58 @@
 
   var UI = {
     en: {
-      hint: 'Drag across the article to translate', reset: 'Reset',
+      hint: 'Drag across the article to translate', reset: 'Reset', example: 'Show example translation',
       note: 'This is a simulation, not the app.',
       diffTitle: 'How the real app differs',
       diffs: [
         'Translations here are written in advance. The app translates any text, on-device, with Apple\u2019s translation engine.',
         'The app works over any window on your Mac \u2014 browsers, PDFs, video, apps \u2014 not just this one article.',
         'Live Mode keeps re-translating as the screen changes, which a static page cannot show.',
-        'Timing here shows the recognition phase, measured at just under a second for a screen of text. Fresh translations then arrive in batches and can take several seconds the first time; text the app has seen before appears almost instantly.'
+        'The timing is illustrative. Actual speed varies with your Mac, the text and language pair; the first translation can take longer.'
       ]
     },
     ko: {
-      hint: '기사 위를 드래그해 보세요', reset: '다시 하기',
+      hint: '기사 위를 드래그해 보세요', reset: '다시 하기', example: '예시 번역 보기',
       note: '이 화면은 시뮬레이션이며 실제 앱이 아닙니다.',
       diffTitle: '실제 앱과 다른 점',
       diffs: [
         '여기 번역문은 미리 작성해 둔 것입니다. 실제 앱은 Apple 번역 엔진으로 어떤 텍스트든 기기 안에서 번역합니다.',
         '실제 앱은 이 기사뿐 아니라 Mac의 모든 창에서 동작합니다 \u2014 브라우저, PDF, 영상, 앱.',
         'Live 모드는 화면이 바뀔 때마다 계속 다시 번역합니다. 정적인 웹페이지로는 재현할 수 없습니다.',
-        '여기 표시 속도는 문자 인식 단계의 실측치(한 화면 기준 1초 미만)입니다. 처음 보는 텍스트의 번역은 이후 배치 단위로 도착하며 몇 초가 걸릴 수 있고, 한 번 번역한 텍스트는 거의 즉시 나타납니다.'
+        '이 예시의 표시 시간은 연출입니다. 실제 속도는 Mac, 화면 글자와 언어 조합에 따라 다르며 첫 번역은 더 오래 걸릴 수 있습니다.'
       ]
     },
     ja: {
-      hint: '記事の上をドラッグしてみてください', reset: 'リセット',
+      hint: '記事の上をドラッグしてみてください', reset: 'リセット', example: '翻訳の例を見る',
       note: 'これはシミュレーションであり、実際のアプリではありません。',
       diffTitle: '実際のアプリとの違い',
       diffs: [
         'ここの訳文はあらかじめ用意したものです。実際のアプリは Apple の翻訳エンジンで、どんなテキストも端末内で翻訳します。',
         '実際のアプリはこの記事だけでなく、Mac 上のあらゆるウインドウで動作します \u2014 ブラウザ、PDF、動画、アプリ。',
         'Live モードは画面が変わるたびに翻訳し直します。静的なページでは再現できません。',
-        'ここの表示速度は文字認識段階の実測値（1 画面で 1 秒弱）です。初めてのテキストの翻訳はその後バッチ単位で届き、数秒かかることがあります。一度翻訳したテキストはほぼ即座に表示されます。'
+        '表示時間はデモ用の演出です。実際の速度はMac、画面の文字、言語の組み合わせによって異なり、初回の翻訳にはより時間がかかる場合があります。'
       ]
     },
     'zh-hans': {
-      hint: '在文章上拖动试试', reset: '重置',
+      hint: '在文章上拖动试试', reset: '重置', example: '查看示例翻译',
       note: '这是模拟演示，并非实际应用。',
       diffTitle: '与实际应用的区别',
       diffs: [
         '此处译文为预先写好的内容。实际应用使用 Apple 翻译引擎，在设备端翻译任意文本。',
         '实际应用可用于 Mac 上的任意窗口 \u2014 浏览器、PDF、视频、各类应用 \u2014 不限于这篇文章。',
         'Live 模式会随画面变化持续重新翻译，静态网页无法呈现。',
-        '此处速度为文字识别阶段的实测值（一屏文字不到 1 秒）。首次翻译的文本随后按批次显示，可能需要几秒；应用翻译过的文本几乎立即显示。'
+        '这里的显示时间仅作演示。实际速度取决于Mac、屏幕文字及语言组合，首次翻译可能需要更长时间。'
       ]
     },
     'zh-hant': {
-      hint: '在文章上拖曳試試', reset: '重設',
+      hint: '在文章上拖曳試試', reset: '重設', example: '查看範例翻譯',
       note: '這是模擬示範，並非實際應用程式。',
       diffTitle: '與實際應用程式的差異',
       diffs: [
         '此處譯文為預先寫好的內容。實際應用程式使用 Apple 翻譯引擎，在裝置端翻譯任意文字。',
         '實際應用程式可用於 Mac 上的任意視窗 \u2014 瀏覽器、PDF、影片、各類應用程式 \u2014 不限於這篇文章。',
         'Live 模式會隨畫面變化持續重新翻譯，靜態網頁無法呈現。',
-        '此處速度為文字辨識階段的實測值（一畫面文字不到 1 秒）。首次翻譯的文字隨後按批次顯示，可能需要幾秒；應用程式翻譯過的文字幾乎立即顯示。'
+        '這裡的顯示時間僅作示範。實際速度取決於Mac、畫面文字及語言組合，首次翻譯可能需要更長時間。'
       ]
     }
   };
@@ -178,9 +178,14 @@
     langs.appendChild(el('span', 'vl-demo__arrow', '→'));
     langs.appendChild(el('span', 'vl-demo__pill', LABEL[dstLang]));
     bar.appendChild(langs);
+    var actions = el('div', 'vl-demo__actions');
+    var example = el('button', 'vl-demo__example', ui.example);
+    example.type = 'button';
+    actions.appendChild(example);
     var reset = el('button', 'vl-demo__reset', ui.reset);
     reset.type = 'button';
-    bar.appendChild(reset);
+    actions.appendChild(reset);
+    bar.appendChild(actions);
     root.appendChild(bar);
 
     // 화면
@@ -193,6 +198,7 @@
     screen.appendChild(chrome);
 
     var content = el('div', 'vl-demo__content');
+    content.setAttribute('lang', srcLang);
     var segs = [];
     data.source.forEach(function (text, i) {
       var s = el('span', 'vl-seg vl-seg--' + data.kind[i], text);
@@ -220,11 +226,9 @@
     diff.appendChild(ul);
     root.appendChild(diff);
 
-    wire(root, screen, content, rect, segs, translations);
-    reset.addEventListener('click', function () {
-      clearOverlays(screen);
-      root.classList.remove('vl-demo--used');
-    });
+    var controls = wire(root, screen, content, rect, segs, translations, dstLang);
+    reset.addEventListener('click', controls.reset);
+    example.addEventListener('click', controls.showExample);
   }
 
   function el(tag, cls, text) {
@@ -239,20 +243,45 @@
     for (var i = 0; i < old.length; i++) old[i].remove();
   }
 
-  function wire(root, screen, content, rect, segs, translations) {
+  function wire(root, screen, content, rect, segs, translations, dstLang) {
     var dragging = false, x0 = 0, y0 = 0;
+    var timers = [], lastWidth = screen.clientWidth;
+
+    function reset() {
+      dragging = false;
+      timers.forEach(clearTimeout);
+      timers = [];
+      clearOverlays(screen);
+      rect.style.display = 'none';
+      rect.classList.remove('vl-demo__rect--locked');
+      root.classList.remove('vl-demo--used');
+    }
+
+    function showExample() {
+      reset();
+      var sb = screen.getBoundingClientRect();
+      var b = content.getBoundingClientRect();
+      var r = { left: b.left - sb.left, top: b.top - sb.top,
+        right: b.right - sb.left, bottom: b.bottom - sb.top };
+      place(rect, r.left, r.top, r.right - r.left, r.bottom - r.top);
+      rect.style.display = 'block';
+      rect.classList.add('vl-demo__rect--locked');
+      root.classList.add('vl-demo--used');
+      timers = reveal(screen, segs, translations, r, dstLang);
+    }
 
     function local(ev) {
       var b = screen.getBoundingClientRect();
       var p = ev.touches ? ev.touches[0] : ev;
-      return { x: p.clientX - b.left, y: p.clientY - b.top };
+      return { x: Math.max(0, Math.min(b.width, p.clientX - b.left)),
+        y: Math.max(0, Math.min(b.height, p.clientY - b.top)) };
     }
 
     function start(ev) {
       if (ev.button != null && ev.button !== 0) return;
       var p = local(ev);
+      reset();
       dragging = true; x0 = p.x; y0 = p.y;
-      clearOverlays(screen);
       rect.style.display = 'block';
       place(rect, x0, y0, 0, 0);
       root.classList.add('vl-demo--used');
@@ -275,7 +304,7 @@
       };
       if (r.right - r.left < 24 || r.bottom - r.top < 16) { rect.style.display = 'none'; return; }
       rect.classList.add('vl-demo__rect--locked');  // 앱처럼 뷰파인더가 남는다
-      reveal(screen, segs, translations, r);
+      timers = reveal(screen, segs, translations, r, dstLang);
     }
 
     screen.addEventListener('mousedown', start);
@@ -284,6 +313,15 @@
     screen.addEventListener('touchstart', start, { passive: true });
     screen.addEventListener('touchmove', move, { passive: false });
     screen.addEventListener('touchend', end);
+    screen.addEventListener('touchcancel', reset);
+    window.addEventListener('blur', function () { if (dragging) reset(); });
+    window.addEventListener('resize', function () {
+      if (screen.clientWidth !== lastWidth) {
+        lastWidth = screen.clientWidth;
+        reset();
+      }
+    });
+    return { reset: reset, showExample: showExample };
   }
 
   function place(node, l, t, w, h) {
@@ -293,7 +331,7 @@
 
   /* 앱의 파이프라인을 시간차로 재현한다.
      캡처 직후 스켈레톤이 뜨고, OCR·번역이 끝나면 텍스트가 채워진다. */
-  function reveal(screen, segs, translations, r) {
+  function reveal(screen, segs, translations, r, dstLang) {
     var sb = screen.getBoundingClientRect();
     var pending = [];
 
@@ -309,6 +347,7 @@
       if (ix1 - ix0 < 6 || iy1 - iy0 < 5) return;
 
       var o = el('div', 'vl-overlay vl-overlay--pending');
+      o.setAttribute('lang', dstLang);
       o.style.left = box.left + 'px';
       o.style.top = box.top + 'px';
       o.style.width = (box.right - box.left) + 'px';
@@ -324,15 +363,10 @@
       pending.push({ node: o, text: translations[i] });
     });
 
-    if (!pending.length) return;
-
-    // 실측 기반 타이밍. 앱의 PerformanceLogger 기록(수동 캡처, 24세그먼트/395자)에서:
-    //   OCR 780ms + 렌더링 17ms = 전체 약 1050ms
-    // OCR 이 대부분을 차지하므로 스켈레톤이 그만큼 유지된 뒤 번역이 채워진다.
-    // 실제 속도는 Mac 사양·텍스트 양·번역 캐시 적중 여부에 따라 달라진다.
+    // Illustrative timing only; this simulation does not measure the app.
     var OCR_MS = 780;
-    pending.forEach(function (item, n) {
-      setTimeout(function () {
+    return pending.map(function (item, n) {
+      return setTimeout(function () {
         item.node.textContent = item.text;
         item.node.classList.remove('vl-overlay--pending');
         item.node.classList.add('vl-overlay--filled');

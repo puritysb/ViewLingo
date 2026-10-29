@@ -71,7 +71,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 44px;
+    list-style: none;
 }
+
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::marker { content: ''; }
 
 .faq-question:hover {
     color: #2b7a45;
@@ -103,7 +108,7 @@ h1 {
     transition: transform 0.3s;
 }
 
-.faq-item.expanded .expand-icon {
+.faq-item[open] .expand-icon {
     transform: rotate(180deg);
 }
 

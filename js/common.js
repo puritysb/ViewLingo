@@ -91,7 +91,9 @@
         var toggle = document.createElement('button');
         toggle.className = 'menu-toggle';
         toggle.type = 'button';
-        toggle.setAttribute('aria-label', 'Toggle navigation menu');
+        var menuLabels = { en: 'Navigation menu', ko: '탐색 메뉴', ja: 'ナビゲーションメニュー',
+            'zh-hans': '导航菜单', 'zh-hant': '導覽選單' };
+        toggle.setAttribute('aria-label', menuLabels[currentLocale()] || menuLabels.en);
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-controls', navLinks.id || 'primary-navigation');
         toggle.innerHTML = '<span></span><span></span><span></span>';
@@ -106,6 +108,10 @@
             toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         }
+
+        document.addEventListener('viewlingo:before-image-preview', function () {
+            if (navLinks.classList.contains('active')) { close(); }
+        });
 
         toggle.addEventListener('click', function (event) {
             event.stopPropagation();
@@ -142,37 +148,11 @@
         });
     }
 
-    function setUpSmoothScroll() {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            return;
-        }
-        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-            link.addEventListener('click', function (event) {
-                var href = this.getAttribute('href');
-                if (!href || href === '#') {
-                    return;
-                }
-                var target = document.querySelector(href);
-                if (!target) {
-                    return;
-                }
-                event.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                /* Move keyboard focus with the viewport. */
-                if (!target.hasAttribute('tabindex')) {
-                    target.setAttribute('tabindex', '-1');
-                }
-                target.focus({ preventScroll: true });
-            });
-        });
-    }
-
     function init() {
         setUpCampaignLinks();
         if (campaignOnly) { return; }
         setUpLanguageSelector();
         setUpMobileMenu();
-        setUpSmoothScroll();
     }
 
     if (document.readyState === 'loading') {

@@ -38,7 +38,7 @@
 .reading-guide p { font-size: .93rem; color: #53685e; }
 .reading-guide a { flex-shrink: 0; font-weight: 600; font-size: .9rem; }
 .illustration-note { font-size: .85rem; color: #53685e; margin-top: 16px; }
-#real-demo, #proof { scroll-margin-top: 96px; }
+#real-demo, #proof { scroll-margin-top: 0; }
 @media (max-width: 1080px) { .acquisition-layout { gap: 32px; } .acquisition-hero h1 { font-size: 3rem; } }
 @media (max-width: 900px) {
     .acquisition-layout { grid-template-columns: 1fr; gap: 36px; }
@@ -86,7 +86,7 @@
 @media (max-width: 800px) { .v3-onboarding { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; padding-top: 32px; } }
 
 /* Latest optional-to-play showreel; earlier product and comparison videos remain below. */
-.v3-showreel { margin: 0 0 36px; scroll-margin-top: 96px; }
+.v3-showreel { margin: 0 0 36px; }
 .v3-showreel h3 { color: #f4fbf7; font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin-bottom: 18px; }
 .v3-showreel video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 1px solid #53776b; border-radius: 12px; background: #102c2a; }
 .v3-showreel video:focus-visible { outline: 3px solid #81e8bd; outline-offset: 4px; }

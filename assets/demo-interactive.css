@@ -46,9 +46,17 @@
 
 .vl-demo__arrow { opacity: 0.5; }
 
-.vl-demo__reset {
+.vl-demo__actions {
   margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vl-demo__example,
+.vl-demo__reset {
   padding: 6px 14px;
+  min-height: 44px;
   border: 1px solid #d5dbe4;
   border-radius: var(--r-card);
   background: #fff;
@@ -57,8 +65,9 @@
   color: #333;
   cursor: pointer;
 }
-.vl-demo__reset:hover { background: #f4f7fb; }
-.vl-demo__reset:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+.vl-demo__example { border-color: #2b7a45; color: #216033; font-weight: 600; }
+.vl-demo__example:hover, .vl-demo__reset:hover { background: #f4f7fb; }
+.vl-demo__example:focus-visible, .vl-demo__reset:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
 
 /* ── 가짜 화면 ── */
 .vl-demo__screen {
