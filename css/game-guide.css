@@ -1,7 +1,7 @@
 /* Editorial layout for an evidence-led game translation guide. */
 .guide-hero { max-width: 1000px; padding-top: 48px; padding-bottom: 44px; }
 .back-link { display: inline-block; margin-bottom: 42px; color: #53685e; font-size: .85rem; text-decoration: none; }
-.eyebrow { color: #53685e; text-transform: uppercase; letter-spacing: .1em; font-size: .75rem; font-weight: 650; margin-bottom: 18px; }
+.eyebrow { color: #53685e; text-transform: none; letter-spacing: .1em; font-size: .75rem; font-weight: 650; margin-bottom: 18px; }
 .guide-hero h1 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); letter-spacing: -.05em; line-height: 1.05; margin-bottom: 28px; }
 .guide-lead { max-width: 720px; font-size: 1.15rem; color: #53685e; margin-bottom: 20px; }
 .text-link { font-weight: 600; font-size: .95rem; }

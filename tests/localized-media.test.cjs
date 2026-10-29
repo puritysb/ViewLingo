@@ -11,7 +11,7 @@ test('each homepage uses its own hero, showreel, use-case video and settings lan
     for (const [locale, file] of Object.entries(locales)) {
         const html = fs.readFileSync(file, 'utf8');
         assert.match(html, new RegExp(`data-video="[^\"]*20261027/${locale}/demo.mp4"`), file);
-        const sources = [...html.matchAll(/<source src="([^\"]+)"/g)].map(match => match[1]);
+        const sources = [...html.matchAll(/<source src="([^\"]+)"/g)].map(match => match[1].split('?')[0]);
         assert.equal(sources.length, 2, file);
         for (const name of ['showreel.mp4', 'use-cases.mp4']) {
             assert(sources.some(src => src.endsWith(`${mediaRoot}/${locale}/${name}`)), `${file}: ${name}`);
@@ -37,6 +37,8 @@ test('published localized showreels and settings match their reviewed manifest',
         assert.equal(digest(row.settings), row.settingsSHA256, row.locale);
         assert.equal(digest(`${mediaRoot}/${row.locale}/poster.jpg`), row.posterSHA256, row.locale);
         assert.equal(row.fullDecodePassed, true);
+        assert.equal(row.brandName, 'ViewLingo');
+        assert.equal(row.editorialBrandLabel, 'ViewLingo 3.0');
         assert.equal(row.width, 1920);
         assert.equal(row.height, 1080);
         assert(row.duration >= 26.9 && row.duration < 28, row.locale);
@@ -49,7 +51,32 @@ test('all localized homepages load the shared media viewer and updated interacti
     for (const file of Object.values(locales)) {
         const html = fs.readFileSync(file, 'utf8');
         for (const asset of ['js/media.js', 'js/common.js', 'css/common.css', 'css/acquisition.css', 'assets/demo-interactive.js', 'assets/demo-interactive.css']) {
-            assert(html.includes(`${asset}?v=2026102902`), `${file}: ${asset}`);
+            const revision = asset === 'css/acquisition.css' ? '2026102903' : '2026102902';
+            assert(html.includes(`${asset}?v=${revision}`), `${file}: ${asset}`);
         }
+    }
+});
+
+test('changed baked-brand media bypasses the previous published browser cache', () => {
+    for (const [locale, file] of Object.entries(locales)) {
+        const html = fs.readFileSync(file, 'utf8');
+        for (const name of ['showreel.mp4', 'settings.jpg']) {
+            assert(html.includes(`${mediaRoot}/${locale}/${name}?v=2026102903`), `${file}: ${name}`);
+        }
+    }
+});
+
+test('restored use-case montages match reviewed files and exclude obsolete privacy endings', () => {
+    const montage = JSON.parse(fs.readFileSync(`${mediaRoot}/use-cases-manifest.json`, 'utf8'));
+    assert.deepEqual(montage.assets.map(row => row.locale).sort(), Object.keys(locales).sort());
+    for (const row of montage.assets) {
+        assert.equal(row.file, `${mediaRoot}/${row.locale}/use-cases.mp4`);
+        const bytes = fs.readFileSync(row.file);
+        assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), row.sha256, row.locale);
+        assert.equal(bytes.length, row.bytes, row.locale);
+        assert.equal(row.old_privacy_and_brand_ending_excluded, true, row.locale);
+        assert(row.selected_end_seconds >= 15, row.locale);
+        assert.equal(row.source_duration_seconds - row.selected_end_seconds, 4.75, row.locale);
+        assert(row.preserved_source_video_packets > 0, row.locale);
     }
 });

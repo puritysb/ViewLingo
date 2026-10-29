@@ -59,6 +59,8 @@ ViewLingo 2.x remains local. When 3.0 is available, you can save your own DeepL 
 - [Translate Japanese games on a Mac](https://puritysb.github.io/ViewLingo/translate-japanese-games-on-mac.html): actual recording, language setup, Live mode and practical limits.
 - [User guide](https://puritysb.github.io/ViewLingo/guide.html) and [FAQ](https://puritysb.github.io/ViewLingo/faq.html).
 
+The displayed product name is **ViewLingo** in every language, including wordmarks, badges and editorial video/image text. Do not transform the brand to uppercase. Technical identifiers and historical capture pixels retain their original spelling.
+
 Website maintainers: homepages share `css/home.css` and `css/acquisition.css`; navigation and the native language selector use `css/common.css`. Keep the five localized homepage structures aligned. `assets/tokens.css` is generated from the app and must not be edited by hand. Update shared asset version queries when publishing CSS or script changes. The public URL inventory is `sitemap.xml`; publishing it does not confirm search-engine indexing.
 
 Image thumbnails use a native dialog from `js/media.js`: Close, Escape and the backdrop return to the same page and restore focus. Media playback is exclusive, including the dynamically created hero video. FAQ answers use native disclosures; the interactive illustration has a keyboard-accessible example button and is explicitly not a performance benchmark.

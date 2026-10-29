@@ -2,7 +2,7 @@
 .acquisition-hero { background: #f5f4ec; padding: 76px 0 68px; }
 .acquisition-layout { display: grid; grid-template-columns: .88fr 1.12fr; gap: 48px; align-items: center; max-width: 1248px; }
 .acquisition-copy { min-width: 0; }
-.eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: #53685e; margin-bottom: 22px; }
+.eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: none; font-weight: 700; color: #53685e; margin-bottom: 22px; }
 .acquisition-hero h1 { font-size: clamp(2.5rem, 4.2vw, 4.1rem); line-height: 1.1; letter-spacing: -.045em; margin-bottom: 24px; }
 .acquisition-hero h1 > span { display: block; }
 .acquisition-intro { font-size: 1.1rem; color: #40594f; margin-bottom: 28px; max-width: 540px; }

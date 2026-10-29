@@ -2,13 +2,13 @@
   {
     "locale": "en-US",
     "showreel": "assets/acquisition/20261029-localized/en-US/showreel.mp4",
-    "sha256": "d509be20bc994211975522876724feb215824854cefe62b522035903794986a8",
+    "sha256": "eff28de7ac22199652e27c9d8f98898537c399cdaee50f8f352ed1eb3109cd43",
     "duration": 27.023242,
     "width": 1920,
     "height": 1080,
     "fps": "30/1",
     "settings": "assets/acquisition/20261029-localized/en-US/settings.jpg",
-    "settingsSHA256": "d2b51f4361a8f698c284768681dbc5a66c42d31f678fa9f39ec2fe8df8fdbe21",
+    "settingsSHA256": "9f468ec8ba90b4e7494c250fa43b0cc0f76b793a22e4563061f2c0815feea768",
     "settingsSourceHashes": {
       "language": "be7208dda75cfece761b012eb077c737147ef44735f03ef5cf617bda025e748f",
       "translation": "14d5f5ce34e0ab022bfdafdc93cbb0b4deae2b02da851fa080e0adc26714d8a0"
@@ -55,18 +55,21 @@
       "status": "passed with documented source-language and earlier-UI limitations",
       "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
       "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
-    }
+    },
+    "brandName": "ViewLingo",
+    "editorialBrandLabel": "ViewLingo 3.0",
+    "mediaRevision": "2026102903"
   },
   {
     "locale": "ko",
     "showreel": "assets/acquisition/20261029-localized/ko/showreel.mp4",
-    "sha256": "d0cd5ef73ef615bcad0fe06726c83385411fc78ecef0fdcb7c3164c71ad745a7",
+    "sha256": "254d0762677e3b960b67a7c1ca4afa7f08c92544e1edb4b6364990fe76eb448a",
     "duration": 27.023242,
     "width": 1920,
     "height": 1080,
     "fps": "30/1",
     "settings": "assets/acquisition/20261029-localized/ko/settings.jpg",
-    "settingsSHA256": "b11b8086129aadbf0bf883cc3ea04433d4e5350f9118c30ebd868c754efe0472",
+    "settingsSHA256": "3fc82b92e0a09f3bb6128bf9cb08f51fc545e81616adea043505ab190d6e2ee4",
     "settingsSourceHashes": {
       "language": "144a8c16c021828f56446826e0444412affe613f408401139844dd454a64bae3",
       "translation": "c7f0666ab8d3fd5484c488a11a81b79f380eac747f2c6b0936cc17bed92a6062"
@@ -113,18 +116,21 @@
       "status": "passed with documented source-language and earlier-UI limitations",
       "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
       "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
-    }
+    },
+    "brandName": "ViewLingo",
+    "editorialBrandLabel": "ViewLingo 3.0",
+    "mediaRevision": "2026102903"
   },
   {
     "locale": "ja",
     "showreel": "assets/acquisition/20261029-localized/ja/showreel.mp4",
-    "sha256": "9dfceb785320ae966423847f6a831a68c4fa3fb4e167516c4267b86237d85198",
+    "sha256": "1527e9df946fb5c5f6ad073be923fedc0ac266fc4c6cf054c81f7c51f4eae728",
     "duration": 27.023242,
     "width": 1920,
     "height": 1080,
     "fps": "30/1",
     "settings": "assets/acquisition/20261029-localized/ja/settings.jpg",
-    "settingsSHA256": "6b8b5b365a292d1ecea5cd932c2d6c8173ec9cd478afe42d330a9ba7e719434b",
+    "settingsSHA256": "601cd31991f5bbb10933cd9e090c60ab1df892dddc8550c291b7057e8c240536",
     "settingsSourceHashes": {
       "language": "423a0df43d6e9a70fe7fab88210a9ad4e1b1dd11a24dac28a1314220b2973c57",
       "translation": "351b45482e6358fad26c6e0c7d340eb222e11f9ebd3835bbc9ff341ffa595957"
@@ -181,18 +187,21 @@
       "status": "passed with documented source-language and earlier-UI limitations",
       "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
       "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
-    }
+    },
+    "brandName": "ViewLingo",
+    "editorialBrandLabel": "ViewLingo 3.0",
+    "mediaRevision": "2026102903"
   },
   {
     "locale": "zh-Hans",
     "showreel": "assets/acquisition/20261029-localized/zh-Hans/showreel.mp4",
-    "sha256": "a9eaebf0c10a711984790a03272269f98c0ce27e6d50098212a159bef55407db",
+    "sha256": "7020a1f372d48e06c4368b6cc3d43f2e465b4c1ec80d47b30b07c2934fc33892",
     "duration": 27.023242,
     "width": 1920,
     "height": 1080,
     "fps": "30/1",
     "settings": "assets/acquisition/20261029-localized/zh-Hans/settings.jpg",
-    "settingsSHA256": "6c14988e9da8dafae23057002fc3396eaa1755e2c225b79dfc47f93b6725384b",
+    "settingsSHA256": "c6d9c019b3abbe1e60663dcd528539ce4fa3d93311bdfe520ef4f611f6c1e637",
     "settingsSourceHashes": {
       "language": "2e2e8ba6ccb1d8106a939886ac0fe29d2971732417591bcd10e340f669591e66",
       "translation": "5dcb7212e05ce197b37dfbd58080aa4813b6125db467cad1191e6549fc8ccd30"
@@ -254,18 +263,21 @@
       "status": "passed with documented source-language and earlier-UI limitations",
       "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
       "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
-    }
+    },
+    "brandName": "ViewLingo",
+    "editorialBrandLabel": "ViewLingo 3.0",
+    "mediaRevision": "2026102903"
   },
   {
     "locale": "zh-Hant",
     "showreel": "assets/acquisition/20261029-localized/zh-Hant/showreel.mp4",
-    "sha256": "f45fb1b7c7272fd22f4bf3dcef196a6d338cc1ed9036299d0622d30a5ae827c5",
+    "sha256": "c23bc09da61d75be78e38e6ce7ed823b834eb8cdf556ebf080ff94e1844c8435",
     "duration": 27.023242,
     "width": 1920,
     "height": 1080,
     "fps": "30/1",
     "settings": "assets/acquisition/20261029-localized/zh-Hant/settings.jpg",
-    "settingsSHA256": "a9ea6827053e170c6fa83b5e86323f4467c13074811f20f33475d74d9d04e8f4",
+    "settingsSHA256": "5bae0cb3ca6592d8d33df8c1f62a0c7d87ea10336cfe91fed6ff1e9b50907dcd",
     "settingsSourceHashes": {
       "language": "b517e77d8dcf11628b5f9502cdde87bcbefc975d85ce75b88e481639c0fc8c21",
       "translation": "bec1cfcc71bb1a07269ef44b8cbffaaf7396af6fb0945e188351c725887ec410"
@@ -312,6 +324,9 @@
       "status": "passed with documented source-language and earlier-UI limitations",
       "reviewed": "Original and completed game text, retained Live/montage motion, localized settings, first-frame poster; no app text repainted",
       "knownScope": "Some original text remains visible beside historical overlays; primary English Live example is disclosed except Japanese local Live edit"
-    }
+    },
+    "brandName": "ViewLingo",
+    "editorialBrandLabel": "ViewLingo 3.0",
+    "mediaRevision": "2026102903"
   }
 ]

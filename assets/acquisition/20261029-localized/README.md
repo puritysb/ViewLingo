@@ -53,3 +53,12 @@ original/result frames, localized settings and posters. Output is 1920×1080,
 30fps H.264 with silent AAC stereo; these silent, edited examples do not benchmark
 translation latency. Posters are the exact one-second frames. Files and hashes
 are guarded by `node --test tests/localized-media.test.cjs`.
+
+## Brand spelling
+
+New editorial badges and settings-card labels use **ViewLingo 3.0**, matching the
+canonical product name in the website README. Uppercase styling must not change
+the product spelling. This correction changes only editorial branding outside
+the native app imagery; clip timing, capture content, posters and legacy montage
+streams remain unchanged. Media revision `2026102903` refreshes cached video and
+image URLs. The prior published render is preserved in the private edit history.
