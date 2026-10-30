@@ -10,7 +10,7 @@
     var qa = location.hostname === 'localhost' || location.hostname === '127.0.0.1' ||
         new URL(location.href).searchParams.get('measurement_qa') === '1';
     var blocked = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
-    var granted = false, started = false, visited = false, storeSent = false, yahooStarted = false;
+    var granted = false, started = false, visited = false, storeSent = false, yahooStarted = false, landingSent = false;
     var lang = document.documentElement.lang.toLowerCase();
     var texts = {
         en: ['Optional ad measurement', 'Allow Google Ads to measure visits and App Store button clicks, and Yahoo Ads (LINE Yahoo) to measure App Store button clicks for registered Yahoo campaigns? After you allow, their scripts may use cookies and receive page/campaign and advertising identifiers, IP address and browser/network information. Store clicks have value 0 and are not purchases. No app screens, translation content or entered text is sent. Your choice covers both providers and lasts 180 days.', 'Allow', 'Decline', 'Ad measurement settings', 'Privacy policy'],
@@ -58,12 +58,29 @@
             if (key === 'campaign') {
                 var store = window.ViewLingoCampaign.link('https://apps.apple.com/app/id6749508592?ct=web', url.href);
                 if (new URL(store).searchParams.get('ct') === 'web') valid = false;
+            } else if (qa && key === 'measurement_qa' && value === '1') {
+                // Local QA contract only; qa still blocks all provider commands and loaders.
             } else if (key !== 'yclid' || value.length > 256 || !/^(?:YSS\.(?:\d+\.)?[\w-]+|YSCPA\.[\w-]+|YJAD\.\d{10}\.[\w.-]+)$/.test(value)) valid = false;
         });
         return valid;
     }
     function safeYahooContext() {
         return !!yahooCampaign() && safeYahooURL(location.href, false) && safeYahooURL(document.referrer || '', true);
+    }
+    // Local instrumentation contract only: no receiver, storage or network is added.
+    // A deployment needs an explicitly approved collector before these are collected metrics.
+    function funnelEvent(kind) {
+        if (!granted || blocked || !safeYahooContext()) return;
+        if (kind === 'landing_arrival') {
+            var page = new URL(location.href);
+            if (!/^\/ViewLingo\/(?:(?:ko|ja|zh-hans|zh-hant)\/)?(?:index\.html)?$/.test(page.pathname)) return;
+            if (document.referrer && new URL(document.referrer).origin === page.origin) return;
+            if (landingSent) return;
+            landingSent = true;
+        }
+        document.dispatchEvent(new CustomEvent('viewlingo:funnel', {detail: {
+            event: kind, campaign: yahooCampaign(), value: 0, scope: 'consented_document'
+        }}));
     }
     function yahooTag() { window.yjDataLayer.push(arguments); }
     function enableYahoo() {
@@ -106,6 +123,7 @@
         if (kind === 'store') {
             if (storeSent) { if (callback) callback(); return; }
             storeSent = true;
+            funnelEvent('store_cta_click');
             yahooStore();
         }
         // QA executes the consent/event path without loading either provider or sending requests.
@@ -141,6 +159,7 @@
             }
         }
         enableYahoo();
+        funnelEvent('landing_arrival');
         if (!visited) { visited = true; event('visit'); }
     }
     function revoke() {
