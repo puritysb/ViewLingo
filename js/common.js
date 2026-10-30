@@ -19,8 +19,9 @@
         var target;
         try { target = new URL(href, current); } catch (error) { return href; }
         if (target.origin === 'https://apps.apple.com' &&
-            /^\/app\/(?:apple-store\/)?id6749508592$/.test(target.pathname)) {
-            return 'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + campaign + '&mt=12';
+            /^\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592$/.test(target.pathname)) {
+            var storePath = target.pathname.indexOf('/jp/') === 0 ? '/jp/app/id6749508592' : '/app/apple-store/id6749508592';
+            return 'https://apps.apple.com' + storePath + '?pt=128040795&ct=' + campaign + '&mt=12';
         }
         if (target.origin === current.origin && (
             /^\/ViewLingo\/(?:index\.html|guide\.html|faq\.html|privacy\.html|featuring\.html|translate-japanese-games-on-mac\.html)?$/.test(target.pathname) ||

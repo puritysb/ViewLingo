@@ -51,7 +51,7 @@ test('all localized homepages load the shared media viewer and updated interacti
     for (const file of Object.values(locales)) {
         const html = fs.readFileSync(file, 'utf8');
         for (const asset of ['js/media.js', 'js/common.js', 'css/common.css', 'css/acquisition.css', 'assets/demo-interactive.js', 'assets/demo-interactive.css']) {
-            const revision = asset === 'css/acquisition.css' ? '2026102903' : asset === 'js/common.js' ? '2026103001' : '2026102902';
+            const revision = asset === 'css/acquisition.css' ? '2026102903' : asset === 'js/common.js' ? '2026103002' : '2026102902';
             assert(html.includes(`${asset}?v=${revision}`), `${file}: ${asset}`);
         }
     }

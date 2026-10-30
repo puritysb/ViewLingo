@@ -73,7 +73,7 @@ test('page initialization rewrites actual HTML anchors and skips downloads', () 
             vm.runInNewContext(code, { URL, window: { location: { href: root + locale + page + '?campaign=vl_qa_260913' } },
                 document: { readyState: 'complete', currentScript: { hasAttribute: () => true },
                     querySelectorAll: () => [...links, download] } });
-            for (const link of links.filter(l => l.href.includes('apps.apple.com/app/apple-store/id6749508592'))) {
+            for (const link of links.filter(l => /apps\.apple\.com\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592/.test(l.href))) {
                 assert.match(link.href, /ct=vl_qa_260913&mt=12$/);
             }
         }
@@ -112,8 +112,9 @@ test('LY Display old and new landing URLs use the same short campaign on every p
                 const html = fs.readFileSync(path.join(__dirname, '..', locale, page), 'utf8');
                 for (const match of html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)) {
                     const href = match[1].replace(/&amp;/g, '&');
-                    if (!/^https:\/\/apps.apple.com\/app\/(?:apple-store\/)?id6749508592/.test(href)) continue;
+                    if (!/^https:\/\/apps.apple.com\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592/.test(href)) continue;
                     const target = new URL(campaignLink(href, current));
+                    assert.equal(target.pathname.startsWith('/jp/'), locale === 'ja/');
                     assert.equal(target.search, '?pt=128040795&ct=vl_ly_jp_d01&mt=12');
                 }
                 for (const destination of ['../index.html', root + 'ja/', root + 'featuring.html']) {
@@ -134,4 +135,14 @@ test('Display input boundaries reject duplicates, lookalikes and unregistered to
         'campaign=vl_ly_jp_d01_extra', 'campaign=VL_LY_JP_D01', 'campaign=constructor']) {
         assert.equal(campaignLink(store, root + '?' + query), store);
     }
+});
+
+
+test('Japanese storefront choice is retained without changing other languages',()=>{
+  const jp='https://apps.apple.com/jp/app/id6749508592?pt=128040795&ct=web&mt=12';
+  for(const campaign of ['vl_ly_jp_s01','vl_ly_jp_d01']){
+    assert.equal(campaignLink(jp,root+'ja/?campaign='+campaign),
+      'https://apps.apple.com/jp/app/id6749508592?pt=128040795&ct='+campaign+'&mt=12');
+    assert.equal(new URL(campaignLink(store,root+'?campaign='+campaign)).pathname,'/app/apple-store/id6749508592');
+  }
 });

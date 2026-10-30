@@ -94,7 +94,10 @@
         button(t[2], function () { remember('granted'); box.hidden = true; enable(); });
         button(t[3], function () { remember('denied'); box.hidden = true; revoke(); });
         var policy = document.createElement('a'); policy.href = 'privacy.html'; policy.textContent = t[5]; actions.appendChild(policy);
-        document.body.appendChild(box);
+        // Keep the choice in document flow so no CTA or compatibility text is covered.
+        var main = document.querySelector('main');
+        if (main) main.parentNode.insertBefore(box, main);
+        else document.body.appendChild(box);
         var settings = document.createElement('button'); settings.type = 'button'; settings.className = 'measurement-settings'; settings.textContent = t[4];
         settings.addEventListener('click', function () { box.hidden = false; box.querySelector('button').focus(); });
         (document.querySelector('footer') || document.body).appendChild(settings);
@@ -105,7 +108,7 @@
             if (!link || e.defaultPrevented) return;
             var url;
             try { url = new URL(link.href, location.href); } catch (_) { return; }
-            if (url.origin === 'https://apps.apple.com' && /^\/app\/(?:apple-store\/)?id6749508592$/.test(url.pathname)) {
+            if (url.origin === 'https://apps.apple.com' && /^\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592$/.test(url.pathname)) {
                 if (granted && !blocked && !qa && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey &&
                     (!link.target || link.target === '_self') && e.button === 0) {
                     e.preventDefault();
