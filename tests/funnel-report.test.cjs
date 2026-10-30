@@ -49,3 +49,12 @@ test('explicit paid-app evidence permits a campaign period cost ratio; zero deno
   const zero=report(input({spend:observed(1000,{currency:'JPY'}),paid_app_purchases:{...purchases,value:0}}))[0];
   assert.equal(zero.ratios.costPerPaidAppPurchase.reason,'zero_denominator');
 });
+test('separate consent populations cannot be represented as a Store conversion rate',()=>{
+  const metrics={landing_arrivals:observed(10,{coverage:'yahoo_landing_additional_consent'}),
+    store_cta_clicks:observed(3,{coverage:'yahoo_store_existing_consent'}),apple_product_page_views:observed(2)};
+  const r=report(input(metrics))[0];
+  assert.equal(r.ratios.storeCtaPerLanding.reason,'different_coverage');
+  assert.equal(r.ratios.productPagePerStoreCta.reason,'unverified_coverage');
+  const same=report(input({...metrics,store_cta_clicks:observed(3,{coverage:'yahoo_landing_additional_consent'})}))[0];
+  assert.equal(same.ratios.storeCtaPerLanding.value,0.3);
+});

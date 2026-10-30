@@ -48,10 +48,12 @@ function compare(a, b) {
   if (!a.period.final || !b.period.final) return 'provisional_period';
   return null;
 }
-function ratio(a, b, money = false) {
+function ratio(a, b, money = false, matchingCoverage = false) {
   const reason = compare(a, b);
   if (reason) return {value: null, reason};
   if (money && a.currency !== b.currency) return {value: null, reason: 'different_currencies'};
+  if (matchingCoverage && (!a.coverage || !b.coverage)) return {value: null, reason: 'unverified_coverage'};
+  if (matchingCoverage && a.coverage !== b.coverage) return {value: null, reason: 'different_coverage'};
   if (b.value <= 0) return {value: null, reason: 'zero_denominator'};
   return {value: a.value / b.value, reason: null};
 }
@@ -76,8 +78,8 @@ function report(input) {
       ratios: {
         adCtr: ratio(m.ad_clicks, m.impressions),
         landingPerAdClick: ratio(m.landing_arrivals, m.ad_clicks),
-        storeCtaPerLanding: ratio(m.store_cta_clicks, m.landing_arrivals),
-        productPagePerStoreCta: ratio(m.apple_product_page_views, m.store_cta_clicks),
+        storeCtaPerLanding: ratio(m.store_cta_clicks, m.landing_arrivals, false, true),
+        productPagePerStoreCta: ratio(m.apple_product_page_views, m.store_cta_clicks, false, true),
         paidAppPurchasePerAdClick: ratio(m.paid_app_purchases, m.ad_clicks),
         costPerPaidAppPurchase: ratio(m.spend, m.paid_app_purchases),
         costPerPayingUser: ratio(m.spend, m.paying_users),
