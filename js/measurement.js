@@ -99,7 +99,11 @@
         if (main) main.parentNode.insertBefore(box, main);
         else document.body.appendChild(box);
         var settings = document.createElement('button'); settings.type = 'button'; settings.className = 'measurement-settings'; settings.textContent = t[4];
-        settings.addEventListener('click', function () { box.hidden = false; box.querySelector('button').focus(); });
+        settings.addEventListener('click', function () {
+            box.hidden = false;
+            box.scrollIntoView({block: 'start', behavior: 'instant'});
+            box.querySelector('button').focus({preventScroll: true});
+        });
         (document.querySelector('footer') || document.body).appendChild(settings);
         var choice = saved(); box.hidden = !!choice || blocked;
         if (choice === 'granted') enable();
