@@ -3,11 +3,12 @@ const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
 const source = fs.readFileSync('js/measurement.js', 'utf8');
-function harness({choice, qa=false, blocked=false, dnt=false, lang='en', oldChoice, referrer='', href='https://puritysb.github.io/ViewLingo/?campaign=vl_dg_us_01&email=private'}={}) {
+function harness({choice, landingChoice, qa=false, blocked=false, dnt=false, lang='en', oldChoice, referrer='', href='https://puritysb.github.io/ViewLingo/?campaign=vl_dg_us_01&email=private'}={}) {
   const listeners={}, nodes=[], scripts=[], events=[], funnelEvents=[], timers=[], values={};
   if(choice) values.viewlingo_ad_measurement_v2=JSON.stringify({choice,expires:Date.now()+10000});
   if(oldChoice) values.viewlingo_ad_measurement_v1=JSON.stringify({choice:oldChoice,expires:Date.now()+10000});
-  function node(tag){return {tag,children:[],setAttribute(){},appendChild(n){this.children.push(n);return n;},addEventListener(k,f){this[k]=f;},querySelector(){return this.children.flatMap(x=>x.children||[]).find(x=>x.tag==='button');},focus(){}};}
+  if(landingChoice) values.viewlingo_yahoo_landing_v1=JSON.stringify({choice:landingChoice,expires:Date.now()+10000});
+  function node(tag){return {tag,children:[],setAttribute(){},appendChild(n){this.children.push(n);return n;},addEventListener(k,f){this[k]=f;},querySelector(){return this.children.flatMap(x=>x.children||[]).find(x=>x.tag==='button');},focus(){},scrollIntoView(){}};}
   const document={referrer,getElementById:()=>null,documentElement:{lang},title:'ViewLingo',readyState:'complete',cookie:'',head:{appendChild:n=>scripts.push(n)},body:{appendChild:n=>nodes.push(n)},createElement:node,querySelector:()=>null,addEventListener:(k,f)=>listeners[k]=f,dispatchEvent:e=>(e.type==='viewlingo:funnel'?funnelEvents:events).push(e.detail)};
   const location={href,hostname:qa?'localhost':'puritysb.github.io',reload(){location.reloaded=true;},assign(url){location.destination=url;}};
   const context={document,location,navigator:{globalPrivacyControl:blocked,doNotTrack:dnt?'1':'0'},window:{},URL,Date,CustomEvent:function(type,arg){this.type=type;this.detail=arg.detail;},localStorage:{getItem:k=>values[k]??null,setItem:(k,v)=>values[k]=v},setTimeout:f=>timers.push(f)};
@@ -16,7 +17,7 @@ function harness({choice, qa=false, blocked=false, dnt=false, lang='en', oldChoi
   vm.runInNewContext(fs.readFileSync('js/common.js','utf8'),{...context, document:{readyState:'complete',currentScript:{hasAttribute:()=>true},querySelectorAll:()=>[]}});
   vm.runInNewContext(source,context);
   const buttons=nodes[0].children[2].children;
-  return {context, scripts, events, funnelEvents, nodes, timers, yahoo:()=>Array.from(context.window.yjDataLayer||[],a=>a[0]), accept:()=>buttons[0].click(),decline:()=>buttons[1].click(),click(href='https://apps.apple.com/app/apple-store/id6749508592'){const e={target:{closest:()=>({href})},button:0,preventDefault(){this.defaultPrevented=true;}};listeners.click(e);return e;},commands:()=>Array.from(context.window.dataLayer||[],a=>Array.from(a))};
+  return {context, scripts, events, funnelEvents, nodes, timers, values, acceptLanding:()=>nodes[1].children[2].children[0].click(),declineLanding:()=>nodes[1].children[2].children[1].click(),settings:()=>nodes[2].click(), yahoo:()=>Array.from(context.window.yjDataLayer||[],a=>a[0]), accept:()=>buttons[0].click(),decline:()=>buttons[1].click(),click(href='https://apps.apple.com/app/apple-store/id6749508592'){const e={target:{closest:()=>({href})},button:0,preventDefault(){this.defaultPrevented=true;}};listeners.click(e);return e;},commands:()=>Array.from(context.window.dataLayer||[],a=>Array.from(a))};
 }
 test('no tag or conversion before consent, including decline and store navigation',()=>{const h=harness();h.click();h.decline();assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);});
 test('consent loads one tag and emits distinct zero-value visit and click events',()=>{const h=harness();h.accept();h.accept();h.click();assert.equal(h.scripts.length,1);const c=h.commands().filter(x=>x[0]==='event');assert.equal(c.length,2);assert.match(c[0][2].send_to,/IRJz/);assert.match(c[1][2].send_to,/ZHS8/);assert.ok(c.every(x=>x[2].value===0));const config=h.commands().find(x=>x[0]==='config')[2];assert.ok(!config.page_location.includes('email'));assert.equal(config.allow_ad_personalization_signals,false);assert.equal(h.context.location.destination,undefined);h.timers[0]();assert.match(h.context.location.destination,/apps.apple.com/);});
@@ -136,7 +137,7 @@ test('local funnel contract distinguishes a consented entry from internal page n
     for(const locale of ['', 'ja/', 'ko/', 'zh-hans/', 'zh-hant/']) {
       const h=harness({qa:true,href:`https://puritysb.github.io/ViewLingo/${locale}?campaign=${campaign}`});
       h.click();assert.equal(h.funnelEvents.length,0);
-      h.accept();h.accept();h.click();h.click();
+      h.accept();h.acceptLanding();h.acceptLanding();h.accept();h.acceptLanding();h.click();h.click();
       assert.deepEqual(h.funnelEvents.map(e=>e.event),['landing_arrival','store_cta_click']);
       assert.ok(h.funnelEvents.every(e=>e.campaign===(campaign==='vl_ly_jp_s01'?campaign:'vl_ly_jp_d01')&&e.value===0));
       assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);assert.equal(h.yahoo().length,0);
@@ -145,7 +146,7 @@ test('local funnel contract distinguishes a consented entry from internal page n
   for(const [href,referrer] of [
     [yahooURL('vl_ly_jp_s01'),'https://puritysb.github.io/ViewLingo/ja/faq.html?campaign=vl_ly_jp_s01'],
     ['https://puritysb.github.io/ViewLingo/ja/faq.html?campaign=vl_ly_jp_s01','']]) {
-    const h=harness({qa:true,href,referrer});h.accept();h.click();
+    const h=harness({qa:true,href,referrer});h.accept();h.acceptLanding();h.click();
     assert.deepEqual(h.funnelEvents.map(e=>e.event),['store_cta_click']);
   }
 });
@@ -156,17 +157,17 @@ test('local funnel contract preserves refusal, withdrawal, GPC and URL privacy; 
     {href:yahooURL('vl_ly_jp_s01')+'&email=secret'},
     {href:yahooURL('vl_ly_jp_s01'),referrer:'https://example.com/?secret=input'},
     {href:yahooURL('unknown')}]) {
-    const h=harness({...params,qa:true});h.accept();h.click();assert.equal(h.funnelEvents.length,0);
+    const h=harness({...params,qa:true});h.accept();h.acceptLanding();h.click();assert.equal(h.funnelEvents.length,0);
   }
   const denied=harness({qa:true,choice:'denied',href:yahooURL('vl_ly_jp_s01')});denied.click();assert.equal(denied.funnelEvents.length,0);
-  const h=harness({qa:true,href:yahooURL('vl_ly_jp_d01')});h.accept();h.decline();h.click();
+  const h=harness({qa:true,href:yahooURL('vl_ly_jp_d01')});h.accept();h.acceptLanding();h.decline();h.click();
   assert.equal(h.funnelEvents.length,1);
   assert.deepEqual(Object.keys(h.funnelEvents[0]).sort(),['campaign','event','scope','value']);
   assert.ok(!JSON.stringify(h.funnelEvents).match(/purchase|yclid|https|secret/));
 });
 test('public QA parameter exercises the local entry contract without any provider requests',()=>{
   const h=harness({href:yahooURL('vl_ly_jp_s01')+'&measurement_qa=1'});
-  h.accept();h.click();
+  h.accept();h.acceptLanding();h.click();
   assert.deepEqual(h.funnelEvents.map(e=>e.event),['landing_arrival','store_cta_click']);
   assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);assert.equal(h.yahoo().length,0);
 });

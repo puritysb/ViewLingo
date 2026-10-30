@@ -6,6 +6,7 @@
     // A Google-only grant never authorizes the additional Yahoo recipient.
     var KEY = 'viewlingo_ad_measurement_v2';
     var OLD_KEY = 'viewlingo_ad_measurement_v1';
+    var LANDING_KEY = 'viewlingo_yahoo_landing_v1';
     var TTL = 180 * 24 * 60 * 60 * 1000;
     var qa = location.hostname === 'localhost' || location.hostname === '127.0.0.1' ||
         new URL(location.href).searchParams.get('measurement_qa') === '1';
@@ -20,6 +21,25 @@
         'zh-hant': ['選用廣告評估', '是否允許 Google Ads 評估網頁造訪及 App Store 按鈕點擊，並允許 Yahoo Ads（LINE Yahoo）評估已登記 Yahoo 廣告活動的 App Store 按鈕點擊？允許後，兩家的指令碼可能使用 Cookie，接收頁面、廣告活動和廣告識別碼、IP 位址及瀏覽器和網路資訊。前往 Store 是價值為0的輔助指標，並非購買。不傳送 App 螢幕、翻譯內容或輸入的文字。此選擇適用於兩家提供者，保留180天。', '允許', '拒絕', '廣告評估設定', '隱私權政策']
     };
     var t = texts[lang] || texts.en;
+    var landingTexts = {
+        en: ['Additional Yahoo visit measurement', 'Also allow Yahoo Ads (LINE Yahoo) to measure your arrival on a registered campaign landing page? This adds a zero-value visit event, not a purchase. Yahoo may receive campaign/advertising identifiers, IP address and browser/network information. Your existing Store-click choice stays unchanged. This separate choice lasts 180 days.', 'Allow visit measurement', 'No visit measurement'],
+        ko: ['Yahoo 방문 측정 추가 동의', 'Yahoo Ads(LINE Yahoo)가 등록된 캠페인 랜딩 도달도 측정하도록 허용할까요? 가치 0의 방문 이벤트가 추가되며 구매가 아닙니다. Yahoo가 캠페인·광고 식별자, IP 주소와 브라우저·네트워크 정보를 받을 수 있습니다. 기존 Store 클릭 선택은 유지됩니다. 이 별도 선택은 180일간 저장됩니다.', '방문 측정 허용', '방문 측정 거부'],
+        ja: ['Yahooの訪問測定への追加同意', 'Yahoo広告（LINEヤフー）が登録済みキャンペーンのページへの到達も測定することを許可しますか？価値0の訪問イベントを追加します。購入ではありません。Yahooはキャンペーン・広告識別子、IPアドレス、ブラウザ・ネットワーク情報を受け取る場合があります。Storeクリックの既存の選択は変わりません。この別の選択は180日間保存します。', '訪問測定を許可', '訪問測定を拒否'],
+        'zh-hans': ['另行同意Yahoo访问衡量', '是否也允许Yahoo Ads（LINE Yahoo）衡量您到达已登记广告系列页面的情况？这会增加价值为0的访问事件，并非购买。Yahoo可能接收广告系列及广告标识符、IP地址和浏览器及网络信息。原有Store点击选择保持不变。此单独选择保留180天。', '允许访问衡量', '拒绝访问衡量'],
+        'zh-hant': ['另行同意Yahoo造訪評估', '是否也允許Yahoo Ads（LINE Yahoo）評估您到達已登記廣告活動頁面的情況？這會增加價值為0的造訪事件，並非購買。Yahoo可能接收廣告活動及廣告識別碼、IP位址和瀏覽器及網路資訊。原有Store點擊選擇保持不變。此獨立選擇保留180天。', '允許造訪評估', '拒絕造訪評估']
+    };
+    var lt = landingTexts[lang] || landingTexts.en;
+    function savedLanding() {
+        try {
+            var value = JSON.parse(localStorage.getItem(LANDING_KEY));
+            return value && value.expires > Date.now() && /^(granted|denied)$/.test(value.choice) ? value.choice : null;
+        } catch (_) { return null; }
+    }
+    var landingGranted = savedLanding() === 'granted', landingBox;
+    function rememberLanding(choice) {
+        landingGranted = choice === 'granted';
+        try { localStorage.setItem(LANDING_KEY, JSON.stringify({choice: choice, expires: Date.now() + TTL})); } catch (_) {}
+    }
     function saved() {
         try {
             var value = JSON.parse(localStorage.getItem(KEY));
@@ -67,11 +87,11 @@
     function safeYahooContext() {
         return !!yahooCampaign() && safeYahooURL(location.href, false) && safeYahooURL(document.referrer || '', true);
     }
-    // Local instrumentation contract only: no receiver, storage or network is added.
-    // A deployment needs an explicitly approved collector before these are collected metrics.
+    // Landing permission is a separate purpose. Existing Store consent never grants it.
     function funnelEvent(kind) {
         if (!granted || blocked || !safeYahooContext()) return;
         if (kind === 'landing_arrival') {
+            if (!landingGranted) return;
             var page = new URL(location.href);
             if (!/^\/ViewLingo\/(?:(?:ko|ja|zh-hans|zh-hant)\/)?(?:index\.html)?$/.test(page.pathname)) return;
             if (document.referrer && new URL(document.referrer).origin === page.origin) return;
@@ -81,6 +101,7 @@
         document.dispatchEvent(new CustomEvent('viewlingo:funnel', {detail: {
             event: kind, campaign: yahooCampaign(), value: 0, scope: 'consented_document'
         }}));
+        if (kind === 'landing_arrival') yahooLanding();
     }
     function yahooTag() { window.yjDataLayer.push(arguments); }
     function enableYahoo() {
@@ -116,6 +137,33 @@
         if (!safeYahooContext()) return;
         enableYahoo();
         if (yahooStarted) yahooTag(tag);
+    }
+    function yahooLanding() {
+        if (!granted || !landingGranted || blocked || !safeYahooContext()) return;
+        var campaign = yahooCampaign();
+        var tag = campaign === 'vl_ly_jp_s01' ? {
+            type: 'yss_conversion', config: {
+                yahoo_conversion_id: '1001415750', yahoo_conversion_label: '7ZqyCOKHhq8dELel-PZE', yahoo_conversion_value: '0'
+            }
+        } : {
+            type: 'yjad_conversion', config: {
+                yahoo_ydn_conv_io: 'bXRYjY70W0R9CKTd5ivIRA..', yahoo_ydn_conv_label: 'P2MNJGRW9YB00BZUKQ1388965',
+                yahoo_ydn_conv_transaction_id: '', yahoo_ydn_conv_value: '0'
+            }
+        };
+        if (qa) {
+            document.dispatchEvent(new CustomEvent('viewlingo:measurement-qa', {detail: {event: 'landing', provider: 'yahoo', campaign: campaign, tag: tag}}));
+            return;
+        }
+        enableYahoo();
+        if (yahooStarted) yahooTag(tag);
+    }
+    function removeQueuedLanding() {
+        var queue = window.yjDataLayer || [];
+        for (var i = queue.length - 1; i >= 0; i--) {
+            var config = queue[i] && queue[i][0] && queue[i][0].config;
+            if (config && (config.yahoo_conversion_label === '7ZqyCOKHhq8dELel-PZE' || config.yahoo_ydn_conv_label === 'P2MNJGRW9YB00BZUKQ1388965')) queue.splice(i, 1);
+        }
     }
     function event(kind, callback) {
         if (!granted || blocked) return;
@@ -160,10 +208,12 @@
         }
         enableYahoo();
         funnelEvent('landing_arrival');
+        if (landingBox) landingBox.hidden = blocked || !yahooCampaign() || !!savedLanding();
         if (!visited) { visited = true; event('visit'); }
     }
     function revoke() {
         granted = false;
+        if (landingBox) landingBox.hidden = true;
         // Reload unloads the tag entirely. No denied-mode pings are sent after withdrawal.
         document.cookie.split(';').forEach(function (part) {
             var name = part.trim().split('=')[0];
@@ -185,8 +235,8 @@
         var title = document.createElement('strong'); title.textContent = t[0]; box.appendChild(title);
         var body = document.createElement('p'); body.textContent = t[1]; box.appendChild(body);
         var actions = document.createElement('div'); actions.className = 'measurement-actions'; box.appendChild(actions);
-        function button(label, handler) {
-            var b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.addEventListener('click', handler); actions.appendChild(b); return b;
+        function button(label, handler, parent) {
+            var b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.addEventListener('click', handler); (parent || actions).appendChild(b); return b;
         }
         button(t[2], function () { remember('granted'); box.hidden = true; enable(); });
         button(t[3], function () { remember('denied'); box.hidden = true; revoke(); });
@@ -197,9 +247,25 @@
         var main = document.querySelector('main');
         if (main) main.parentNode.insertBefore(box, main);
         else document.body.appendChild(box);
+        landingBox = document.createElement('section'); landingBox.className = 'measurement-consent';
+        landingBox.setAttribute('aria-label', lt[0]); landingBox.hidden = true;
+        var landingTitle = document.createElement('strong'); landingTitle.textContent = lt[0]; landingBox.appendChild(landingTitle);
+        var landingBody = document.createElement('p'); landingBody.textContent = lt[1]; landingBox.appendChild(landingBody);
+        var landingActions = document.createElement('div'); landingActions.className = 'measurement-actions'; landingBox.appendChild(landingActions);
+        button(lt[2], function () {
+            if (!granted || blocked) return;
+            rememberLanding('granted'); landingBox.hidden = true; funnelEvent('landing_arrival');
+        }, landingActions);
+        button(lt[3], function () {
+            rememberLanding('denied'); landingBox.hidden = true; removeQueuedLanding();
+        }, landingActions);
+        var landingPolicy = document.createElement('a'); landingPolicy.href = policy.href; landingPolicy.textContent = t[5]; landingActions.appendChild(landingPolicy);
+        if (main) main.parentNode.insertBefore(landingBox, main);
+        else document.body.appendChild(landingBox);
         var settings = document.createElement('button'); settings.type = 'button'; settings.className = 'measurement-settings'; settings.textContent = t[4];
         settings.addEventListener('click', function () {
             box.hidden = false;
+            landingBox.hidden = !granted || blocked || !yahooCampaign();
             box.scrollIntoView({block: 'start', behavior: 'instant'});
             box.querySelector('button').focus({preventScroll: true});
         });
