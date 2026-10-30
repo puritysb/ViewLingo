@@ -93,7 +93,9 @@
         }
         button(t[2], function () { remember('granted'); box.hidden = true; enable(); });
         button(t[3], function () { remember('denied'); box.hidden = true; revoke(); });
-        var policy = document.createElement('a'); policy.href = 'privacy.html'; policy.textContent = t[5]; actions.appendChild(policy);
+        var policy = document.createElement('a');
+        policy.href = window.ViewLingoCampaign ? window.ViewLingoCampaign.link('privacy.html', location.href) : 'privacy.html';
+        policy.textContent = t[5]; actions.appendChild(policy);
         // Keep the choice in document flow so no CTA or compatibility text is covered.
         var main = document.querySelector('main');
         if (main) main.parentNode.insertBefore(box, main);

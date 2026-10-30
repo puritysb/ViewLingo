@@ -38,6 +38,9 @@
     }
     if (typeof document === 'undefined') { return; }
 
+    // Dynamic UI uses the same registered campaign boundary as static links.
+    window.ViewLingoCampaign = {link: campaignLink};
+
     var campaignOnly = document.currentScript && document.currentScript.hasAttribute('data-campaign-only');
 
     function setUpCampaignLinks() {

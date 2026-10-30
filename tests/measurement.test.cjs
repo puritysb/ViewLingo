@@ -3,13 +3,16 @@ const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
 const source = fs.readFileSync('js/measurement.js', 'utf8');
-function harness({choice, qa=false, blocked=false, lang='en'}={}) {
+function harness({choice, qa=false, blocked=false, lang='en', href='https://puritysb.github.io/ViewLingo/?campaign=vl_dg_us_01&email=private'}={}) {
   const listeners={}, nodes=[], scripts=[], events=[], timers=[], values={};
   if(choice) values.viewlingo_ad_measurement_v1=JSON.stringify({choice,expires:Date.now()+10000});
   function node(tag){return {tag,children:[],setAttribute(){},appendChild(n){this.children.push(n);return n;},addEventListener(k,f){this[k]=f;},querySelector(){return this.children.flatMap(x=>x.children||[]).find(x=>x.tag==='button');},focus(){}};}
   const document={documentElement:{lang},title:'ViewLingo',readyState:'complete',cookie:'',head:{appendChild:n=>scripts.push(n)},body:{appendChild:n=>nodes.push(n)},createElement:node,querySelector:()=>null,addEventListener:(k,f)=>listeners[k]=f,dispatchEvent:e=>events.push(e.detail)};
-  const location={href:'https://puritysb.github.io/ViewLingo/?campaign=vl_dg_us_01&email=private',hostname:qa?'localhost':'puritysb.github.io',reload(){location.reloaded=true;},assign(url){location.destination=url;}};
+  const location={href,hostname:qa?'localhost':'puritysb.github.io',reload(){location.reloaded=true;},assign(url){location.destination=url;}};
   const context={document,location,navigator:{globalPrivacyControl:blocked},window:{},URL,Date,CustomEvent:function(type,arg){this.detail=arg.detail;},localStorage:{getItem:k=>values[k],setItem:(k,v)=>values[k]=v},setTimeout:f=>timers.push(f)};
+  context.window.location=location;
+  // Initialize common.js first, before the consent UI creates its policy anchor.
+  vm.runInNewContext(fs.readFileSync('js/common.js','utf8'),{...context, document:{readyState:'complete',currentScript:{hasAttribute:()=>true},querySelectorAll:()=>[]}});
   vm.runInNewContext(source,context);
   const buttons=nodes[0].children[2].children;
   return {context, scripts, events, nodes, timers, accept:()=>buttons[0].click(),decline:()=>buttons[1].click(),click(href='https://apps.apple.com/app/apple-store/id6749508592'){const e={target:{closest:()=>({href})},button:0,preventDefault(){this.defaultPrevented=true;}};listeners.click(e);return e;},commands:()=>Array.from(context.window.dataLayer||[],a=>Array.from(a))};
@@ -39,5 +42,30 @@ test('duplicate Store clicks across CTA variants produce one zero-value movement
     const h=harness({qa});h.accept();h.click();h.click('https://apps.apple.com/app/id6749508592');
     if(qa) assert.equal(h.events.filter(x=>x.event==='store').length,1);
     else assert.equal(h.commands().filter(x=>x[0]==='event'&&/ZHS8/.test(x[2].send_to)).length,1);
+  }
+});
+
+
+test('late-created consent policy link retains LY attribution through privacy, home and Store',()=>{
+  for(const campaign of ['vl_ly_jp_s01','vl_ly_jp_d01','vl_ly_jp_macfan_display_20261030']){
+    const expected=campaign==='vl_ly_jp_s01'?campaign:'vl_ly_jp_d01';
+    for(const locale of ['', 'ja/', 'ko/', 'zh-hans/', 'zh-hant/']){
+      const h=harness({qa:true,href:'https://puritysb.github.io/ViewLingo/'+locale+'index.html?campaign='+campaign+'&measurement_qa=1&yclid=private'});
+      const policy=h.nodes[0].children[2].children[2].href;
+      assert.equal(new URL(policy).search,'?campaign='+expected);
+      const home=h.context.window.ViewLingoCampaign.link('index.html',policy);
+      const store=h.context.window.ViewLingoCampaign.link('https://apps.apple.com/jp/app/id6749508592?pt=128040795&ct=web&mt=12',home);
+      assert.equal(new URL(store).search,'?pt=128040795&ct='+expected+'&mt=12');
+      assert.equal(h.scripts.length,0);
+      assert.equal(h.commands().length,0);
+    }
+  }
+});
+
+test('dynamic policy links preserve campaign input validation and never forward arbitrary inputs',()=>{
+  for(const query of ['campaign=unknown','campaign=vl_ly_jp_d01&campaign=vl_ly_jp_s01','email=private']){
+    const h=harness({qa:true,href:'https://puritysb.github.io/ViewLingo/ja/?'+query});
+    assert.equal(h.nodes[0].children[2].children[2].href,'privacy.html');
+    assert.equal(h.scripts.length,0);
   }
 });
