@@ -32,3 +32,12 @@ test('Chinese page language tags resolve the existing localized consent copy',()
     }
   }
 });
+
+
+test('duplicate Store clicks across CTA variants produce one zero-value movement per page',()=>{
+  for(const qa of [true,false]){
+    const h=harness({qa});h.accept();h.click();h.click('https://apps.apple.com/app/id6749508592');
+    if(qa) assert.equal(h.events.filter(x=>x.event==='store').length,1);
+    else assert.equal(h.commands().filter(x=>x[0]==='event'&&/ZHS8/.test(x[2].send_to)).length,1);
+  }
+});

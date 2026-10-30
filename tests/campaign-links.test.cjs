@@ -10,8 +10,8 @@ const qa = root + '?campaign=vl_qa_260913&utm_source=google&gclid=private-test';
 
 test('store link forwards only registered campaign and fixed provider, never click identifiers', () => {
     assert.equal(campaignLink(store, qa),
-        'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=vl_qa_260913&mt=8');
-    assert.match(campaignLink(store, root + '?campaign=vl_google_us_l01'), /ct=vl_google_us_l01&mt=8$/);
+        'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=vl_qa_260913&mt=12');
+    assert.match(campaignLink(store, root + '?campaign=vl_google_us_l01'), /ct=vl_google_us_l01&mt=12$/);
     for (const query of ['', '?campaign=unknown', '?ct=vl_qa_260913',
         '?campaign=vl_qa_260913&campaign=unknown', '?campaign=__proto__']) {
         assert.equal(campaignLink(store, root + query), store);
@@ -52,7 +52,7 @@ test('game guide preserves registered attribution through guide, locale and stor
     assert.equal(back, page + '?campaign=vl_qa_260913');
     const guideStore = store.replace('ct=web', 'ct=web_game_guide');
     assert.equal(campaignLink(guideStore, page), guideStore);
-    assert.match(campaignLink(guideStore, back), /ct=vl_qa_260913&mt=8$/);
+    assert.match(campaignLink(guideStore, back), /ct=vl_qa_260913&mt=12$/);
     for (const target of [page + '.bak', page.replace('/ViewLingo/', '/other/')]) {
         assert.equal(campaignLink(target, qa), target);
     }
@@ -74,7 +74,7 @@ test('page initialization rewrites actual HTML anchors and skips downloads', () 
                 document: { readyState: 'complete', currentScript: { hasAttribute: () => true },
                     querySelectorAll: () => [...links, download] } });
             for (const link of links.filter(l => l.href.includes('apps.apple.com/app/apple-store/id6749508592'))) {
-                assert.match(link.href, /ct=vl_qa_260913&mt=8$/);
+                assert.match(link.href, /ct=vl_qa_260913&mt=12$/);
             }
         }
     }
@@ -88,7 +88,7 @@ test('Demand Gen identifiers stay separate from Search through language and guid
         const guide = campaignLink('../guide.html', korean);
         assert.equal(new URL(guide).searchParams.get('campaign'), id);
         assert.equal(campaignLink(store, guide),
-            'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + id + '&mt=8');
+            'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + id + '&mt=12');
     }
 });
 
@@ -99,6 +99,39 @@ test('Japanese LY Search uses one campaign through FAQ, locales and Store withou
     const japanese = campaignLink('ja/index.html', english);
     assert.equal(new URL(japanese).search, '?campaign=vl_ly_jp_s01');
     assert.equal(campaignLink(store, japanese),
-        'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=vl_ly_jp_s01&mt=8');
+        'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=vl_ly_jp_s01&mt=12');
     assert.equal(campaignLink(store, root + 'ja/?campaign=vl_ly_jp_s01&campaign=unknown'), store);
+});
+
+
+test('LY Display old and new landing URLs use the same short campaign on every public CTA', () => {
+    for (const id of ['vl_ly_jp_d01', 'vl_ly_jp_macfan_display_20261030']) {
+        for (const locale of ['', 'ko/', 'ja/', 'zh-hans/', 'zh-hant/']) {
+            for (const page of ['index.html', 'faq.html', 'privacy.html', ...(locale ? [] : ['guide.html', 'featuring.html', 'translate-japanese-games-on-mac.html'])]) {
+                const current = root + locale + page + '?campaign=' + id + '&yclid=private-test';
+                const html = fs.readFileSync(path.join(__dirname, '..', locale, page), 'utf8');
+                for (const match of html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)) {
+                    const href = match[1].replace(/&amp;/g, '&');
+                    if (!/^https:\/\/apps.apple.com\/app\/(?:apple-store\/)?id6749508592/.test(href)) continue;
+                    const target = new URL(campaignLink(href, current));
+                    assert.equal(target.search, '?pt=128040795&ct=vl_ly_jp_d01&mt=12');
+                }
+                for (const destination of ['../index.html', root + 'ja/', root + 'featuring.html']) {
+                    const target = new URL(campaignLink(destination, current), current);
+                    if (target.pathname.startsWith('/ViewLingo/')) {
+                        assert.equal(target.searchParams.get('campaign'), 'vl_ly_jp_d01');
+                        assert.ok(!target.search.includes('yclid'));
+                    }
+                }
+            }
+        }
+    }
+});
+
+test('Display input boundaries reject duplicates, lookalikes and unregistered tokens', () => {
+    for (const query of ['campaign=vl_ly_jp_d01&campaign=vl_ly_jp_d01',
+        'campaign=vl_ly_jp_macfan_display_20261030&campaign=vl_ly_jp_d01',
+        'campaign=vl_ly_jp_d01_extra', 'campaign=VL_LY_JP_D01', 'campaign=constructor']) {
+        assert.equal(campaignLink(store, root + '?' + query), store);
+    }
 });

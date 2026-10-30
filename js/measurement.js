@@ -8,7 +8,7 @@
     var qa = location.hostname === 'localhost' || location.hostname === '127.0.0.1' ||
         new URL(location.href).searchParams.get('measurement_qa') === '1';
     var blocked = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
-    var granted = false, started = false, visited = false;
+    var granted = false, started = false, visited = false, storeSent = false;
     var lang = document.documentElement.lang.toLowerCase();
     var texts = {
         en: ['Optional ad measurement', 'Allow Google Ads to measure visits and App Store button clicks using cookies and advertising identifiers? Google receives browser and network information. This does not measure purchases or collect screen or translation content from the app. Your choice lasts 180 days.', 'Allow', 'Decline', 'Ad measurement settings', 'Privacy policy'],
@@ -30,6 +30,11 @@
     function gtag() { window.dataLayer.push(arguments); }
     function event(kind, callback) {
         if (!granted || blocked) return;
+        // A double click or a second CTA on this page is one Store movement, not a purchase.
+        if (kind === 'store') {
+            if (storeSent) { if (callback) callback(); return; }
+            storeSent = true;
+        }
         // QA executes the same consent/event path, but never loads Google or emits a request.
         if (qa) {
             document.dispatchEvent(new CustomEvent('viewlingo:measurement-qa', {detail: {event: kind, send_to: ID + '/' + LABELS[kind]}}));
@@ -100,7 +105,7 @@
             if (!link || e.defaultPrevented) return;
             var url;
             try { url = new URL(link.href, location.href); } catch (_) { return; }
-            if (url.origin === 'https://apps.apple.com' && url.pathname === '/app/apple-store/id6749508592') {
+            if (url.origin === 'https://apps.apple.com' && /^\/app\/(?:apple-store\/)?id6749508592$/.test(url.pathname)) {
                 if (granted && !blocked && !qa && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey &&
                     (!link.target || link.target === '_self') && e.button === 0) {
                     e.preventDefault();

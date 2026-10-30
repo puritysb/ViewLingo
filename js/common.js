@@ -5,23 +5,27 @@
     'use strict';
 
     // Only registered, non-personal campaign names may cross the store boundary.
-    var CAMPAIGNS = ['vl_google_us_l01', 'vl_dg_us_01', 'vl_dg_qa_01', 'vl_qa_260913', 'vl_ly_jp_s01'];
+    var CAMPAIGNS = ['vl_google_us_l01', 'vl_dg_us_01', 'vl_dg_qa_01', 'vl_qa_260913', 'vl_ly_jp_s01', 'vl_ly_jp_d01'];
+    // Preserve already published ad URLs while staying below Apple's 30-character limit.
+    var LEGACY_DISPLAY = 'vl_ly_jp_macfan_display_20261030';
     function campaignLink(href, currentURL) {
         var current = new URL(currentURL);
         var values = current.searchParams.getAll('campaign');
-        if (values.length !== 1 || CAMPAIGNS.indexOf(values[0]) === -1 || href.charAt(0) === '#') {
+        var campaign = values.length === 1 ? values[0] : '';
+        if (campaign === LEGACY_DISPLAY) { campaign = 'vl_ly_jp_d01'; }
+        if (CAMPAIGNS.indexOf(campaign) === -1 || href.charAt(0) === '#') {
             return href;
         }
         var target;
         try { target = new URL(href, current); } catch (error) { return href; }
         if (target.origin === 'https://apps.apple.com' &&
-            target.pathname === '/app/apple-store/id6749508592') {
-            return 'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + values[0] + '&mt=8';
+            /^\/app\/(?:apple-store\/)?id6749508592$/.test(target.pathname)) {
+            return 'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=' + campaign + '&mt=12';
         }
         if (target.origin === current.origin && (
-            /^\/ViewLingo\/(?:index\.html|guide\.html|faq\.html|privacy\.html|translate-japanese-games-on-mac\.html)?$/.test(target.pathname) ||
+            /^\/ViewLingo\/(?:index\.html|guide\.html|faq\.html|privacy\.html|featuring\.html|translate-japanese-games-on-mac\.html)?$/.test(target.pathname) ||
             /^\/ViewLingo\/(?:ko|ja|zh-hans|zh-hant)\/(?:index\.html|faq\.html|privacy\.html)?$/.test(target.pathname))) {
-            target.searchParams.set('campaign', values[0]);
+            target.searchParams.set('campaign', campaign);
             return target.href;
         }
         return href;
