@@ -46,7 +46,7 @@
 - 📧 邮箱：admin@foundby.kr
 
 ### 🔐 隐私
-常规捕捉和Live使用Mac上的Apple翻译，2.x继续在本地运行。3.0推出后，您可将自己的DeepL API密钥存入钥匙串，同意后主动请求单独比较。仅发送选定原文、同次捕捉中最多5段先前文本和5个术语，不发送截图、窗口标题或完整记录。记录和项目保存在本地，不收集应用遥测。请检查提供商的数据条款，不要通过Free / Developer发送个人信息或机密文本。详见[隐私政策](https://puritysb.github.io/ViewLingo/zh-hans/privacy.html)。
+常规捕捉和Live使用Mac上的Apple翻译，2.x继续在本地运行。在3.0中，您可将自己的DeepL API密钥存入钥匙串，同意后主动请求单独比较。仅发送选定原文、同次捕捉中最多5段先前文本和5个术语，不发送截图、窗口标题或完整记录。记录和项目保存在本地，不收集应用遥测。请检查提供商的数据条款，不要通过Free / Developer发送个人信息或机密文本。详见[隐私政策](https://puritysb.github.io/ViewLingo/zh-hans/privacy.html)。
 
 ### 🌟 为什么选择 ViewLingo？
 - **即时**：无需复制粘贴，无需切换应用

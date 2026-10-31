@@ -46,7 +46,7 @@ Kéo khung ngắm lên game, video, ảnh, PDF hay bất kỳ cửa sổ ứng d
 - 📧 Email: admin@foundby.kr
 
 ### 🔐 Quyền Riêng Tư
-Chụp thông thường và Live dùng Apple trên Mac; phiên bản 2.x tiếp tục xử lý cục bộ. Khi 3.0 được phát hành, bạn có thể lưu khóa API DeepL riêng vào Chuỗi khóa, đồng ý rồi chủ động yêu cầu so sánh riêng. Chỉ gửi nguyên văn đã chọn, tối đa năm đoạn trước đó trong cùng ảnh chụp và năm thuật ngữ đã chọn. Không gửi hình ảnh, tiêu đề cửa sổ hay toàn bộ lịch sử. Lịch sử và dự án được lưu cục bộ; ứng dụng không thu thập dữ liệu đo từ xa. Hãy xem điều khoản dữ liệu của nhà cung cấp và không gửi nội dung cá nhân hoặc bí mật bằng Free / Developer. Xem [Chính sách quyền riêng tư](https://puritysb.github.io/ViewLingo/privacy.html).
+Chụp thông thường và Live dùng Apple trên Mac; phiên bản 2.x tiếp tục xử lý cục bộ. Trong 3.0, bạn có thể lưu khóa API DeepL riêng vào Chuỗi khóa, đồng ý rồi chủ động yêu cầu so sánh riêng. Chỉ gửi nguyên văn đã chọn, tối đa năm đoạn trước đó trong cùng ảnh chụp và năm thuật ngữ đã chọn. Không gửi hình ảnh, tiêu đề cửa sổ hay toàn bộ lịch sử. Lịch sử và dự án được lưu cục bộ; ứng dụng không thu thập dữ liệu đo từ xa. Hãy xem điều khoản dữ liệu của nhà cung cấp và không gửi nội dung cá nhân hoặc bí mật bằng Free / Developer. Xem [Chính sách quyền riêng tư](https://puritysb.github.io/ViewLingo/privacy.html).
 
 ### 🌟 Tại Sao Chọn ViewLingo?
 - **Tức thì**: Không cần sao chép-dán, không cần chuyển ứng dụng

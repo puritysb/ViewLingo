@@ -46,7 +46,7 @@
 - 📧 郵箱：admin@foundby.kr
 
 ### 🔐 隱私權
-一般擷取與Live使用Mac上的Apple翻譯，2.x繼續在本機運作。3.0推出後，您可將自己的DeepL API金鑰存入鑰匙圈，同意後主動要求獨立比較。僅傳送選定原文、同次擷取中最多5段先前文字和5個術語，不傳送截圖、視窗標題或完整紀錄。紀錄與專案儲存在本機，不收集應用程式遙測。請檢查提供者的資料條款，不要透過Free / Developer傳送個人資料或機密文字。詳見[隱私政策](https://puritysb.github.io/ViewLingo/zh-hant/privacy.html)。
+一般擷取與Live使用Mac上的Apple翻譯，2.x繼續在本機運作。在3.0中，您可將自己的DeepL API金鑰存入鑰匙圈，同意後主動要求獨立比較。僅傳送選定原文、同次擷取中最多5段先前文字和5個術語，不傳送截圖、視窗標題或完整紀錄。紀錄與專案儲存在本機，不收集應用程式遙測。請檢查提供者的資料條款，不要透過Free / Developer傳送個人資料或機密文字。詳見[隱私政策](https://puritysb.github.io/ViewLingo/zh-hant/privacy.html)。
 
 ### 🌟 為什麼選擇 ViewLingo？
 - **即時**：不必複製貼上，不必切換 App

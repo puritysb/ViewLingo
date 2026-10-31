@@ -46,7 +46,7 @@ Faites glisser un viseur sur un jeu, une vidéo, une photo, un PDF ou n'importe 
 - 📧 Email : admin@foundby.kr
 
 ### 🔐 Confidentialité
-Les captures habituelles et Live utilisent Apple sur votre Mac ; la version 2.x reste locale. Lorsque la version 3.0 sera disponible, vous pourrez enregistrer votre propre clé API DeepL dans le Trousseau et demander une comparaison séparée après consentement. Seuls le texte original choisi, au plus cinq passages précédents de la même capture et cinq termes sélectionnés sont envoyés. Les images, titres de fenêtres et l’historique complet ne sont pas envoyés. L’historique et les projets restent locaux ; l’app ne collecte aucune télémétrie. Vérifiez les conditions de données du fournisseur et n’envoyez pas de textes personnels ou confidentiels avec Free / Developer. Consultez la [Politique de Confidentialité](https://puritysb.github.io/ViewLingo/privacy.html).
+Les captures habituelles et Live utilisent Apple sur votre Mac ; la version 2.x reste locale. Dans la version 3.0, vous pouvez enregistrer votre propre clé API DeepL dans le Trousseau et demander une comparaison séparée après consentement. Seuls le texte original choisi, au plus cinq passages précédents de la même capture et cinq termes sélectionnés sont envoyés. Les images, titres de fenêtres et l’historique complet ne sont pas envoyés. L’historique et les projets restent locaux ; l’app ne collecte aucune télémétrie. Vérifiez les conditions de données du fournisseur et n’envoyez pas de textes personnels ou confidentiels avec Free / Developer. Consultez la [Politique de Confidentialité](https://puritysb.github.io/ViewLingo/privacy.html).
 
 ### 🌟 Pourquoi ViewLingo ?
 - **Instantané** : Pas de copier-coller, pas de changement d'app
