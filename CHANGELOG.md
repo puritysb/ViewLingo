@@ -1,5 +1,27 @@
 # ViewLingo Changelog
 
+## Version 3.0.0 (October 30, 2026 KST)
+
+- Compare the original, Apple and optional DeepL translations side by side, choose your wording and copy the result. Start from the viewfinder or translation history
+- Manage saved glossaries in DeepL settings, and choose the scene context and preferred terms for each comparison. Your key stays in Keychain, with a local monthly character limit
+- Drag to add, reorder or remove languages. Refreshed settings and compact viewfinder controls make the next action easier to find; navigation and toolbars use native glass on macOS 26 and later
+- Explore the translation glass with interactive onboarding examples, alongside a refreshed glass-inspired app icon
+
+Default screen translation and Live stay with Apple on your Mac. Optional DeepL requires your own API key, a separate API account and internet; service charges may apply. Only text you explicitly request is sent, never screen images. See the [Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html).
+
+## Version 2.6.1 (October 2026)
+
+- Find and browse translation history more easily with full-text search across originals, translations and QR contents, plus improved keyboard navigation
+- Fixed the 50-session limit when unlimited history is selected, and improved messages when history cannot be read, saved or deleted
+- Added clearer feedback for failed or cancelled language-pack downloads, with a way to retry the affected language pair
+- Fixed outdated results appearing after changing languages or text filters during Live translation. Colour and background changes now apply to translations already on screen
+
+## Version 2.6.0 (October 13, 2026 KST)
+
+- Read the original text and translation together in a separate window, or above or below your selected area. Choose your preferred display in Settings
+- Fixed cases where Live translation kept showing an older translation after a new result was ready, including when text moved on screen
+- Improved translation recovery when waking your Mac or returning to the app
+
 ## Version 2.5.4 (October 9, 2026 KST)
 
 - Updated App Store previews to show area selection, translation and Live updates at real speed
