@@ -46,7 +46,7 @@ Arrastra un visor sobre un juego, un video, una foto, un PDF o cualquier ventana
 - 📧 Email: admin@foundby.kr
 
 ### 🔐 Privacidad
-Las capturas normales y Live usan Apple en tu Mac; 2.x sigue funcionando localmente. Cuando 3.0 esté disponible, podrás guardar tu clave de API de DeepL en el Llavero y solicitar una comparación separada después de dar tu consentimiento. Solo se envían el original seleccionado, hasta cinco pasajes anteriores de la misma captura y cinco términos elegidos. No se envían imágenes, títulos de ventanas ni el historial completo. El historial y los proyectos se guardan localmente; la app no recopila telemetría. Revisa las condiciones de datos del proveedor y no envíes textos personales o confidenciales con Free / Developer. Consulta la [Política de Privacidad](https://puritysb.github.io/ViewLingo/privacy.html).
+Las capturas normales y Live usan Apple en tu Mac; 2.x sigue funcionando localmente. En 3.0, puedes guardar tu clave de API de DeepL en el Llavero y solicitar una comparación separada después de dar tu consentimiento. Solo se envían el original seleccionado, hasta cinco pasajes anteriores de la misma captura y cinco términos elegidos. No se envían imágenes, títulos de ventanas ni el historial completo. El historial y los proyectos se guardan localmente; la app no recopila telemetría. Revisa las condiciones de datos del proveedor y no envíes textos personales o confidenciales con Free / Developer. Consulta la [Política de Privacidad](https://puritysb.github.io/ViewLingo/privacy.html).
 
 ### 🌟 ¿Por qué ViewLingo?
 - **Instantáneo**: Sin copiar y pegar, sin cambiar de app

@@ -46,7 +46,7 @@ Ziehen Sie einen Sucher über ein Spiel, ein Video, ein Foto, ein PDF oder ein b
 - 📧 E-Mail: admin@foundby.kr
 
 ### 🔐 Datenschutz
-Normale Aufnahmen und Live verwenden Apple auf Ihrem Mac; 2.x bleibt lokal. Sobald 3.0 verfügbar ist, können Sie Ihren eigenen DeepL-API-Schlüssel im Schlüsselbund speichern und nach Ihrer Zustimmung einen separaten Vergleich anfordern. Gesendet werden nur der ausgewählte Originaltext, höchstens fünf vorherige Passagen derselben Aufnahme und fünf ausgewählte Begriffe. Bilder, Fenstertitel und der gesamte Verlauf werden nicht gesendet. Verlauf und Projekte bleiben lokal; die App sammelt keine Telemetrie. Prüfen Sie die Datenbedingungen des Anbieters und senden Sie mit Free / Developer keine personenbezogenen oder vertraulichen Texte. Einzelheiten enthält die [Datenschutzerklärung](https://puritysb.github.io/ViewLingo/privacy.html).
+Normale Aufnahmen und Live verwenden Apple auf Ihrem Mac; 2.x bleibt lokal. In 3.0 können Sie Ihren eigenen DeepL-API-Schlüssel im Schlüsselbund speichern und nach Ihrer Zustimmung einen separaten Vergleich anfordern. Gesendet werden nur der ausgewählte Originaltext, höchstens fünf vorherige Passagen derselben Aufnahme und fünf ausgewählte Begriffe. Bilder, Fenstertitel und der gesamte Verlauf werden nicht gesendet. Verlauf und Projekte bleiben lokal; die App sammelt keine Telemetrie. Prüfen Sie die Datenbedingungen des Anbieters und senden Sie mit Free / Developer keine personenbezogenen oder vertraulichen Texte. Einzelheiten enthält die [Datenschutzerklärung](https://puritysb.github.io/ViewLingo/privacy.html).
 
 ### 🌟 Warum ViewLingo?
 - **Sofort**: Kein Kopieren und Einfügen, kein App-Wechsel

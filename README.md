@@ -40,7 +40,7 @@ ViewLingo offers every language that both your Mac's text recognition and Apple 
 - **Local history**: History and screenshots are stored on your Mac; choose how long to keep them or clear them anytime
 
 ### Optional DeepL comparison in 3.0
-ViewLingo 2.x remains local. When 3.0 is available, you can save your own DeepL API key in macOS Keychain, consent to sharing text and explicitly request a separate comparison. Only the selected original, up to five previous passages from the same capture and five selected glossary terms are sent. Screenshots, window titles and the full history are never sent. Opening settings or editing a glossary does not send text. Provider data terms, fees and limits apply separately from ViewLingo; do not send personal or confidential text with Free / Developer. See the [Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html) before enabling it.
+ViewLingo 2.x remains local. In 3.0, you can save your own DeepL API key in macOS Keychain, consent to sharing text and explicitly request a separate comparison. Only the selected original, up to five previous passages from the same capture and five selected glossary terms are sent. Screenshots, window titles and the full history are never sent. Opening settings or editing a glossary does not send text. Provider data terms, fees and limits apply separately from ViewLingo; do not send personal or confidential text with Free / Developer. See the [Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html) before enabling it.
 
 ## System Requirements
 

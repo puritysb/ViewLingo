@@ -2,17 +2,17 @@
 
 🌍 Language: **English** | [한국어](docs/PRIVACY-ko.md) | [日本語](https://puritysb.github.io/ViewLingo/ja/privacy.html) | [简体中文](https://puritysb.github.io/ViewLingo/zh-hans/privacy.html) | [繁體中文](https://puritysb.github.io/ViewLingo/zh-hant/privacy.html)
 
-**Last Updated: October 23, 2026**
+**Last Updated: November 1, 2026**
 
 ## Our Commitment to Your Privacy
 
-ViewLingo is designed with your privacy in mind. We believe that powerful translation tools shouldn't come at the cost of your personal data. That's why ViewLingo operates entirely on your device without collecting or transmitting any of your information. Your translation history stays on your Mac.
+ViewLingo is designed with your privacy in mind. We believe that powerful translation tools shouldn't come at the cost of your personal data. That's why ViewLingo translates on your device by default and never collects your information. Text leaves your Mac only when you choose the optional DeepL comparison described below. Your translation history stays on your Mac.
 
 ## Data Collection
 
 **ViewLingo does not collect any personal data.** 
 
-All translations are processed entirely on your device using macOS built-in translation models. We have no servers, no analytics, and no tracking of any kind.
+Regular captures and Live translation are processed on your device using macOS built-in translation models. We have no servers, no analytics, and no tracking of any kind.
 
 ## Screen Capture
 
@@ -21,7 +21,7 @@ When you use ViewLingo's translation features:
 - Screen captures are used solely for text recognition and translation
 - All image processing happens locally on your Mac
 - Captured images are processed locally; the only copy kept is in your on-device translation history (see below)
-- No screen data ever leaves your device
+- Screen images never leave your device
 - We cannot see what you translate or when you use the app
 
 ## Translation History
@@ -50,9 +50,9 @@ The screen recording permission is managed by macOS and can be revoked at any ti
 
 ViewLingo is proudly independent:
 
-- Uses only Apple's built-in macOS frameworks
+- Uses Apple's built-in macOS frameworks for regular translation
 - No third-party analytics or crash reporting tools
-- No external translation APIs or services
+- Optional DeepL comparison (3.0): off by default. After you save your own API key in Keychain and consent, only the text you select for a request, up to five previous passages and five glossary terms are sent directly to DeepL. Screenshots, window titles and history are never sent. DeepL's own terms apply. Details: [Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html)
 - No advertisements or ad networks
 - No social media integrations
 
@@ -96,7 +96,7 @@ For any privacy-related questions or concerns:
 ## Summary
 
 - **No data collection** - We don't collect anything
-- **No internet required** - Everything works offline
+- **No internet required** - Apple translation works offline; only the optional DeepL comparison uses the internet
 - **No tracking** - We don't know who uses our app or how
 - **You're in control** - All data stays on your device
 
