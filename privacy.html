@@ -27,6 +27,16 @@
             <p>Regular captures and Live translation use Apple on your Mac. ViewLingo 2.x remains local. The optional DeepL connection described below is available in version 3.0; it is disabled until you set it up and consent.</p>
         </div>
 
+        <section id="openai-comparison">
+            <h2>Optional OpenAI comparison in 3.2</h2>
+            <p>OpenAI comparison is optional and disabled until you save your own OpenAI API key, confirm an eligible region and consent. The key is stored separately from DeepL in macOS Keychain. It uses your API account, not your ChatGPT subscription. Sign in with ChatGPT is not offered without commercial authorization.</p>
+            <p>Only after you press Translate with OpenAI, the selected original text, source and target languages, up to five selected preceding passages from the same capture and up to five selected terms are sent directly to OpenAI over HTTPS. Your API key authenticates the request; OpenAI also receives network information needed to deliver it. Screenshots, window titles, other history and unrelated projects are never sent. Regular Apple translation and Live never switch to OpenAI automatically.</p>
+            <p>We request store:false. This is not a guarantee of zero retention: OpenAI may retain abuse-monitoring logs under its API policy. API data is not used for training by default unless you opt in with OpenAI. Your provider account terms, retention settings and API charges apply separately from ViewLingo.</p>
+            <p>App Store region and your session-only declaration of your current country are checked locally against an allow-list. They do not prove physical location. Unverified or unsupported regions, including mainland China, cannot send OpenAI requests. Provider refusals also stop the connection. We do not collect GPS data or contact an IP-geolocation service.</p>
+            <p>You can revoke consent and delete the key even in an unsupported region. Cancellation cannot recall an already sent request. The local monthly token budget conservatively reserves input and output allowance and records usage; it is not a monetary or account-wide spending limit. Deleting local data does not delete information already processed by OpenAI.</p>
+            <p><a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a> · <a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a></p>
+        </section>
+
         <section>
             <h2>Default Apple translation</h2>
             <p>Apple text recognition processes captured images on your Mac. Apple translation works offline after the required language packs are downloaded. Regular capture and Live never switch to DeepL automatically. We do not operate a server that receives your app screenshots or translation requests, and the Mac app has no analytics or tracking.</p>
