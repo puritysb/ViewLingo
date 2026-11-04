@@ -6,14 +6,47 @@
 
     // Only registered, non-personal campaign names may cross the store boundary.
     var CAMPAIGNS = ['vl_google_us_l01', 'vl_dg_us_01', 'vl_dg_qa_01', 'vl_qa_260913', 'vl_ly_jp_s01', 'vl_ly_jp_d01'];
+    // Website routing metadata only, not pixel configuration or proof of Apple receipt.
+    // Match the already published ad URLs exactly; never forward arbitrary UTMs/click IDs.
+    var CHANNEL_ROUTES = [
+        {source: 'meta', medium: 'paid_social', campaign: 'vl_meta_kr_awareness_20261104', content: 'screen_translation_a'},
+        {source: 'kakao', medium: 'display', campaign: 'vl_kakao_kr_pc_cpm_20261105', content: 'icon_a'}
+    ];
     // Preserve already published ad URLs while staying below Apple's 30-character limit.
     var LEGACY_DISPLAY = 'vl_ly_jp_macfan_display_20261030';
-    function campaignLink(href, currentURL) {
+    function channelRoute(campaign) {
+        return CHANNEL_ROUTES.filter(function (route) { return route.campaign === campaign; })[0];
+    }
+    function matchesUTM(current, route) {
+        return ['source', 'medium', 'campaign', 'content'].every(function (key) {
+            var values = current.searchParams.getAll('utm_' + key);
+            return values.length === 1 && values[0] === route[key];
+        });
+    }
+    function campaignForURL(currentURL) {
         var current = new URL(currentURL);
         var values = current.searchParams.getAll('campaign');
+        if (values.length > 1) return '';
         var campaign = values.length === 1 ? values[0] : '';
         if (campaign === LEGACY_DISPLAY) { campaign = 'vl_ly_jp_d01'; }
-        if (CAMPAIGNS.indexOf(campaign) === -1 || href.charAt(0) === '#') {
+        // Preserve the existing Google/Yahoo boundary and legacy normalization.
+        if (CAMPAIGNS.indexOf(campaign) !== -1) return campaign;
+        if (current.username || current.password || !/^https?:$/.test(current.protocol)) return '';
+        var route = channelRoute(campaign);
+        if (values.length) {
+            if (!route) return '';
+            var hasUTM = ['source', 'medium', 'campaign', 'content'].some(function (key) {
+                return current.searchParams.has('utm_' + key);
+            });
+            return !hasUTM || matchesUTM(current, route) ? campaign : '';
+        }
+        var matched = CHANNEL_ROUTES.filter(function (item) { return matchesUTM(current, item); });
+        return matched.length === 1 ? matched[0].campaign : '';
+    }
+    function campaignLink(href, currentURL) {
+        var current = new URL(currentURL);
+        var campaign = campaignForURL(currentURL);
+        if (!campaign || href.charAt(0) === '#') {
             return href;
         }
         var target;
@@ -26,6 +59,8 @@
         if (target.origin === current.origin && (
             /^\/ViewLingo\/(?:index\.html|guide\.html|faq\.html|privacy\.html|featuring\.html|translate-japanese-games-on-mac\.html)?$/.test(target.pathname) ||
             /^\/ViewLingo\/(?:ko|ja|zh-hans|zh-hant)\/(?:index\.html|faq\.html|privacy\.html)?$/.test(target.pathname))) {
+            // New channel routes carry only canonical public campaign metadata internally.
+            if (channelRoute(campaign)) target.search = '';
             target.searchParams.set('campaign', campaign);
             return target.href;
         }
@@ -34,12 +69,12 @@
 
     // Node's built-in test runner can exercise URL boundaries without a browser or dependencies.
     if (typeof module !== 'undefined' && module.exports) {
-        module.exports = { campaignLink: campaignLink };
+        module.exports = { campaignLink: campaignLink, campaignForURL: campaignForURL };
     }
     if (typeof document === 'undefined') { return; }
 
     // Dynamic UI uses the same registered campaign boundary as static links.
-    window.ViewLingoCampaign = {link: campaignLink};
+    window.ViewLingoCampaign = {link: campaignLink, campaign: campaignForURL};
 
     var campaignOnly = document.currentScript && document.currentScript.hasAttribute('data-campaign-only');
 

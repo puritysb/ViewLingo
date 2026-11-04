@@ -197,6 +197,12 @@
                     var value = page.searchParams.get(key);
                     if (value && /^[a-zA-Z0-9_.-]{1,256}$/.test(value)) safe.searchParams.set(key, value);
                 });
+                // Preserve the two exact public UTM routes in the already consented
+                // Google event context; no new event, recipient, SDK or click ID is added.
+                if (!page.searchParams.has('campaign') && window.ViewLingoCampaign && window.ViewLingoCampaign.campaign) {
+                    var routedCampaign = window.ViewLingoCampaign.campaign(page.href);
+                    if (routedCampaign) safe.searchParams.set('campaign', routedCampaign);
+                }
                 gtag('config', ID, {send_page_view: false, allow_ad_personalization_signals: false,
                     allow_google_signals: false, cookie_domain: 'puritysb.github.io', cookie_path: '/ViewLingo/',
                     page_location: safe.href, page_referrer: '', page_title: document.title});

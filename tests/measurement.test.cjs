@@ -3,6 +3,10 @@ const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
 const source = fs.readFileSync('js/measurement.js', 'utf8');
+const newChannelURLs = [
+  ['vl_meta_kr_awareness_20261104', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=meta&utm_medium=paid_social&utm_campaign=vl_meta_kr_awareness_20261104&utm_content=screen_translation_a'],
+  ['vl_kakao_kr_pc_cpm_20261105', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_pc_cpm_20261105&utm_content=icon_a']
+];
 function harness({choice, landingChoice, qa=false, blocked=false, dnt=false, lang='en', oldChoice, referrer='', href='https://puritysb.github.io/ViewLingo/?campaign=vl_dg_us_01&email=private'}={}) {
   const listeners={}, nodes=[], scripts=[], events=[], funnelEvents=[], timers=[], values={};
   if(choice) values.viewlingo_ad_measurement_v2=JSON.stringify({choice,expires:Date.now()+10000});
@@ -19,6 +23,27 @@ function harness({choice, landingChoice, qa=false, blocked=false, dnt=false, lan
   const buttons=nodes[0].children[2].children;
   return {context, scripts, events, funnelEvents, nodes, timers, values, acceptLanding:()=>nodes[1].children[2].children[0].click(),declineLanding:()=>nodes[1].children[2].children[1].click(),settings:()=>nodes[2].click(), yahoo:()=>Array.from(context.window.yjDataLayer||[],a=>a[0]), accept:()=>buttons[0].click(),decline:()=>buttons[1].click(),click(href='https://apps.apple.com/app/apple-store/id6749508592'){const e={target:{closest:()=>({href})},button:0,preventDefault(){this.defaultPrevented=true;}};listeners.click(e);return e;},commands:()=>Array.from(context.window.dataLayer||[],a=>Array.from(a))};
 }
+test('new channel metadata never expands recipients or bypasses consent/privacy/QA',()=>{
+  for(const [campaign,href] of newChannelURLs) {
+    for(const opts of [{},{choice:'denied'},{oldChoice:'granted'},{choice:'granted',blocked:true},{choice:'granted',dnt:true}]) {
+      const h=harness({href,...opts});h.click();
+      assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);assert.equal(h.yahoo().length,0);
+    }
+    const qa=harness({href:href+'&measurement_qa=1',qa:true});qa.accept();qa.click();
+    assert.equal(qa.scripts.length,0);assert.equal(qa.commands().length,0);assert.equal(qa.yahoo().length,0);
+    const h=harness({href});h.accept();h.acceptLanding();h.click();h.click();
+    assert.equal(h.scripts.length,1);assert.match(h.scripts[0].src,/googletagmanager/);
+    assert.equal(h.yahoo().length,0);assert.equal(h.funnelEvents.length,0);
+    assert.equal(h.nodes[1].hidden,true);
+    const config=h.commands().find(x=>x[0]==='config')[2];
+    assert.equal(config.page_location,'https://puritysb.github.io/ViewLingo/ko/?campaign='+campaign);
+    assert.equal(config.page_referrer,'');
+    assert.equal(h.commands().filter(x=>x[0]==='event').length,2);
+    assert.ok(h.commands().filter(x=>x[0]==='event').every(x=>x[2].value===0));
+    const policy=h.nodes[0].children[2].children.find(n=>n.tag==='a');
+    assert.equal(policy.href,'https://puritysb.github.io/ViewLingo/ko/privacy.html?campaign='+campaign);
+  }
+});
 test('no tag or conversion before consent, including decline and store navigation',()=>{const h=harness();h.click();h.decline();assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);});
 test('consent loads one tag and emits distinct zero-value visit and click events',()=>{const h=harness();h.accept();h.accept();h.click();assert.equal(h.scripts.length,1);const c=h.commands().filter(x=>x[0]==='event');assert.equal(c.length,2);assert.match(c[0][2].send_to,/IRJz/);assert.match(c[1][2].send_to,/ZHS8/);assert.ok(c.every(x=>x[2].value===0));const config=h.commands().find(x=>x[0]==='config')[2];assert.ok(!config.page_location.includes('email'));assert.equal(config.allow_ad_personalization_signals,false);assert.equal(h.context.location.destination,undefined);h.timers[0]();assert.match(h.context.location.destination,/apps.apple.com/);});
 test('saved choice and withdrawal reload stop future events',()=>{const h=harness({choice:'granted'});assert.equal(h.scripts.length,1);h.decline();assert.equal(h.context.location.reloaded,true);const n=h.commands().length;h.click();assert.equal(h.commands().length,n);});

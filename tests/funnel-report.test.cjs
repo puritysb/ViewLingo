@@ -6,6 +6,17 @@ const period = {start:'2026-01-01T00:00:00Z',end:'2026-01-02T00:00:00Z',timezone
 function observed(value, extra={}) {return {status:'observed',value,source:'yahoo_report',campaign,evidence:'offline-test-only',period:{...period},...extra};}
 function input(metrics) {return {schemaVersion:1,rows:[{campaign,metrics}]};}
 const paidAppEvidence = {appId:'6749508592',itemType:'paid_app',positiveCustomerPrice:true,excludesRedownloadsAndFreeUnits:true,refundsSeparate:true};
+test('registered Meta and Kakao remain separate and cannot borrow Yahoo ad metrics or fabricate purchases',()=>{
+  for(const [campaign,channel] of [['vl_meta_kr_awareness_20261104','meta'],['vl_kakao_kr_pc_cpm_20261105','kakao']]) {
+    const impressions=observed(100,{campaign,source:channel+'_report'});
+    const ad_clicks=observed(2,{campaign,source:channel+'_report'});
+    const r=report({schemaVersion:1,rows:[{campaign,metrics:{impressions,ad_clicks}}]})[0];
+    assert.equal(r.channel,channel);assert.equal(r.ratios.adCtr.value,0.02);
+    assert.equal(r.metrics.landing_arrivals.value,null);assert.equal(r.metrics.paid_app_purchases.value,null);
+    assert.throws(()=>report({schemaVersion:1,rows:[{campaign,metrics:{ad_clicks:{...ad_clicks,source:'yahoo_report'}}}]}),/matching/);
+    assert.throws(()=>report({schemaVersion:1,rows:[{campaign,metrics:{paid_app_purchases:{...ad_clicks,source:'apple_downloads'}}}]}),/transaction evidence/);
+  }
+});
 test('synthetic ad observations yield CTR while unknown downstream stages remain null',()=>{
   const r=report(input({impressions:observed(100),ad_clicks:observed(20),spend:observed(1000,{currency:'JPY'})}))[0];
   assert.equal(r.ratios.adCtr.value,20/100);

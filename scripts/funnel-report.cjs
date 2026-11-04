@@ -2,7 +2,11 @@
 
 // Offline aggregate reconciliation only. No SDK, credentials or network access.
 const fs = require('node:fs');
-const CAMPAIGNS = new Set(['vl_ly_jp_s01', 'vl_ly_jp_d01']);
+const CHANNELS = new Map([
+  ['vl_ly_jp_s01', 'yahoo_search'], ['vl_ly_jp_d01', 'yahoo_display'],
+  ['vl_meta_kr_awareness_20261104', 'meta'], ['vl_kakao_kr_pc_cpm_20261105', 'kakao']
+]);
+const CAMPAIGNS = new Set(CHANNELS.keys());
 const MONEY = new Set(['spend', 'sales', 'proceeds', 'refunded_proceeds']);
 const METRICS = ['impressions', 'ad_clicks', 'landing_arrivals', 'store_cta_clicks',
   'apple_product_page_views', 'first_downloads', 'redownloads', 'total_downloads',
@@ -20,6 +24,11 @@ function validateMetric(name, metric, campaign) {
   }
   if (!metric.source || metric.campaign !== campaign || !metric.evidence) {
     throw new Error(`${name}: campaign-specific source and evidence required`);
+  }
+  const channel = CHANNELS.get(campaign);
+  if ((channel === 'meta' || channel === 'kakao') &&
+      ['impressions', 'ad_clicks', 'spend'].includes(name) && metric.source !== channel + '_report') {
+    throw new Error(`${name}: matching ${channel} ad report required`);
   }
   const p = metric.period;
   if (!p || !Number.isFinite(Date.parse(p.start)) || !Number.isFinite(Date.parse(p.end)) ||
@@ -61,7 +70,7 @@ function report(input) {
   if (input.schemaVersion !== 1 || !Array.isArray(input.rows)) throw new Error('schemaVersion 1 and rows required');
   const seen = new Set();
   return input.rows.map(row => {
-    if (!CAMPAIGNS.has(row.campaign) || seen.has(row.campaign)) throw new Error('unique registered Yahoo campaign required');
+    if (!CAMPAIGNS.has(row.campaign) || seen.has(row.campaign)) throw new Error('unique registered campaign required');
     seen.add(row.campaign);
     const metrics = {};
     for (const name of METRICS) {
@@ -70,7 +79,7 @@ function report(input) {
     }
     const m = metrics;
     const result = {
-      campaign: row.campaign, metrics,
+      campaign: row.campaign, channel: CHANNELS.get(row.campaign), metrics,
       purchaseStatus: m.paid_app_purchases.status === 'observed' ? 'apple_reported_paid_app_transactions' : 'not_verified',
       paidCustomerStatus: m.paying_users.status === 'observed' ?
         (m.paying_users.value > 0 ? 'apple_reported_paying_customers' : 'apple_reported_zero_paying_customers') : 'not_verified',

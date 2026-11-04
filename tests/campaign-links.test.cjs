@@ -4,9 +4,77 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const { campaignLink } = require('../js/common.js');
+const { campaignForURL } = require('../js/common.js');
 const root = 'https://puritysb.github.io/ViewLingo/';
 const store = 'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=web&mt=12';
 const qa = root + '?campaign=vl_qa_260913&utm_source=google&gclid=private-test';
+const channelRoutes = [
+    ['vl_meta_kr_awareness_20261104', 'utm_source=meta&utm_medium=paid_social&utm_campaign=vl_meta_kr_awareness_20261104&utm_content=screen_translation_a'],
+    ['vl_kakao_kr_pc_cpm_20261105', 'utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_pc_cpm_20261105&utm_content=icon_a']
+];
+
+test('published Meta and Kakao UTMs become fixed Apple ct and survive every locale/policy route', () => {
+    for (const [campaign, query] of channelRoutes) {
+        assert.ok(campaign.length <= 30);
+        const entry = root + 'ko/?' + query + '&fbclid=private-test&email=never-forward';
+        assert.equal(campaignForURL(entry), campaign);
+        for (const locale of ['', 'ko/', 'ja/', 'zh-hans/', 'zh-hant/']) {
+            for (const page of ['index.html', 'faq.html', 'privacy.html']) {
+                const next = campaignLink(root + locale + page + '?email=private#details', entry);
+                assert.equal(new URL(next).search, '?campaign=' + campaign);
+                assert.equal(new URL(next).hash, '#details');
+                const target = locale === 'ja/' ? store.replace('/app/apple-store/', '/jp/app/') : store;
+                assert.equal(campaignLink(target, next), target.replace('ct=web', 'ct=' + campaign));
+                assert.equal(campaignForURL(next), campaign);
+            }
+        }
+        assert.equal(campaignLink('privacy.html', entry), root + 'ko/privacy.html?campaign=' + campaign);
+        assert.equal(campaignLink('../guide.html', entry), root + 'guide.html?campaign=' + campaign);
+        assert.equal(campaignLink(store, entry), store.replace('ct=web', 'ct=' + campaign));
+        assert.equal(campaignLink('#features', entry), '#features');
+        assert.equal(campaignLink('https://example.com/', entry), 'https://example.com/');
+    }
+});
+
+test('new UTM routes reject missing, conflicting, duplicate and lookalike metadata', () => {
+    for (const [campaign, query] of channelRoutes) {
+        for (const bad of [query.replace('utm_source=', 'other_source='),
+            query.replace('utm_medium=', 'UTM_medium='), query.replace('utm_content=', 'other_content='),
+            query + '&utm_source=meta', query + '&utm_campaign=' + campaign,
+            query.replace(campaign, campaign + '_extra'), query + '&campaign=unknown',
+            query + '&campaign=', query + '&campaign=' + campaign + '&campaign=' + campaign]) {
+            assert.equal(campaignLink(store, root + 'ko/?' + bad), store);
+        }
+        const other = channelRoutes.find(r => r[0] !== campaign);
+        assert.equal(campaignLink(store, root + 'ko/?campaign=' + campaign + '&' + other[1]), store);
+        assert.equal(campaignLink(store, root + 'ko/?campaign=' + campaign + '&utm_source=meta'), store);
+        assert.equal(campaignLink(store, 'https://user:password@puritysb.github.io/ViewLingo/ko/?' + query), store);
+    }
+});
+
+test('actual HTML Store anchors get channel attribution offline, without running any SDK', () => {
+    const code = fs.readFileSync(path.join(__dirname, '../js/common.js'), 'utf8');
+    for (const [campaign, query] of channelRoutes) {
+        for (const locale of ['', 'ko/', 'ja/', 'zh-hans/', 'zh-hant/']) {
+            for (const page of ['index.html', 'faq.html', 'privacy.html', ...(locale ? [] : ['guide.html', 'featuring.html', 'translate-japanese-games-on-mac.html'])]) {
+                const html = fs.readFileSync(path.join(__dirname, '..', locale, page), 'utf8');
+                const links = [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)].map(m => ({
+                    href: m[1].replace(/&amp;/g, '&'), getAttribute() { return this.href; },
+                    setAttribute(n,v) { this.href=v; }, hasAttribute() { return false; }
+                }));
+                vm.runInNewContext(code, {URL, window:{location:{href:root+locale+page+'?'+query}},
+                    document:{readyState:'complete',currentScript:{hasAttribute:()=>true},querySelectorAll:()=>links}});
+                const stores = links.filter(l=>/^https:\/\/apps.apple.com\//.test(l.href));
+                if (page === 'index.html') assert.ok(stores.length > 0);
+                for (const link of stores) {
+                    const u = new URL(link.href);
+                    assert.equal(u.search, '?pt=128040795&ct='+campaign+'&mt=12');
+                    assert.equal(u.pathname.startsWith('/jp/'), locale==='ja/');
+                }
+            }
+        }
+    }
+});
 
 test('store link forwards only registered campaign and fixed provider, never click identifiers', () => {
     assert.equal(campaignLink(store, qa),

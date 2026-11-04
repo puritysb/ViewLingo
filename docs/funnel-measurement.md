@@ -2,6 +2,27 @@
 
 This site preserves campaign links and sends optional, consented Store-click events. It cannot inspect a customer's Apple purchase, and a Store click is never a purchase. This procedure compares campaign aggregates; it does not identify or follow individual people.
 
+## Published Meta and Kakao URL compatibility
+
+Two exact public UTM combinations now resolve to canonical website campaign names:
+
+| Source | Medium | UTM campaign / Apple `ct` | Content |
+| --- | --- | --- | --- |
+| `meta` | `paid_social` | `vl_meta_kr_awareness_20261104` | `screen_translation_a` |
+| `kakao` | `display` | `vl_kakao_kr_pc_cpm_20261105` | `icon_a` |
+
+All four UTM values must match once each. A conflicting, empty or duplicate explicit `campaign` is not rescued by UTM matching. Internal pages, language switches and the dynamically created consent-policy link carry only the canonical `campaign`; Store links carry only the fixed app/provider/media type and that `ct`. Incoming click identifiers, user input and arbitrary UTMs are not copied to those links. Existing Google/Yahoo routing remains separate. No advertising account URL edit or domain migration is required for these two already published links.
+
+Both names fit Apple's 30-character syntax. The existing provider token `128040795` was previously generated and verified for this app; Apple's documentation permits reusing it while changing `ct`. This is website routing and format validation, **not** confirmation that Apple has shown a campaign row, received a paid customer or validated a new campaign in an authenticated session. That evidence still requires an available campaign report and its privacy thresholds. No authenticated Apple session or purchase was used to implement this change.
+
+This change adds no Meta or Kakao SDK, pixel, recipient, purpose grant, customer ID, storage, server collector or purchase event. Existing consented Google visit/Store commands retain a canonical campaign in their configured `page_location` for the exact UTM routes. This metadata is **not a verified channel-by-channel reporting dataset**: current Google Ads action reporting has not been shown to expose those URL values as a usable cross-channel breakdown. The Yahoo-only `viewlingo:funnel` contract and Yahoo SDK remain inactive for Meta/Kakao traffic. Therefore **Meta/Kakao landing-arrival and Store-CTA counts by channel are not yet established**. Platform ad impressions/clicks/spend and future Apple campaign data must remain separate from this unverified middle section.
+
+The offline report accepts the two canonical names and labels their channels. Ad impressions/clicks/spend need matching `meta_report` or `kakao_report` sources; this does not fetch reports or prove their authenticity. Unavailable landing/CTA/Apple metrics stay null. A later implementation of per-channel website aggregates would need a concrete collector/event/reporting design, verified owned tracking assets, recipient/purpose and automatic-collection review, updated consent where needed, separate deployment approval and receiver acceptance. Neither Google URL metadata nor a DOM CustomEvent is a replacement for that work.
+
+GitHub Pages can serve these static routes and scripts. The loss was caused by URL matching, not static hosting. Moving to another domain would not add an event collector, overcome Apple's privacy thresholds or prove purchases; it would add new redirects and attribution/cookie boundaries. Keep the current domain for this compatibility fix.
+
+Official Apple rules: [campaign links](https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links/). Do not forward Apple aggregate purchases as individual vendor purchase conversions or treat ad attribution as incremental causal lift.
+
 ## Current collection boundaries
 
 | Stage | Evidence source | Meaning and limits |
