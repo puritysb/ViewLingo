@@ -5,7 +5,8 @@ const fs = require('node:fs');
 const source = fs.readFileSync('js/measurement.js', 'utf8');
 const newChannelURLs = [
   ['vl_meta_kr_awareness_20261104', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=meta&utm_medium=paid_social&utm_campaign=vl_meta_kr_awareness_20261104&utm_content=screen_translation_a'],
-  ['vl_kakao_kr_pc_cpm_20261105', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_pc_cpm_20261105&utm_content=icon_a']
+  ['vl_kakao_kr_pc_cpm_20261105', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_pc_cpm_20261105&utm_content=icon_a'],
+  ['vl_google_tw_s01', 'https://puritysb.github.io/ViewLingo/zh-hant/?campaign=vl_google_tw_s01&utm_source=google&utm_medium=cpc&utm_campaign=vl_google_tw_s01&utm_content=screen_text_a']
 ];
 function harness({choice, landingChoice, qa=false, blocked=false, dnt=false, lang='en', oldChoice, referrer='', href='https://puritysb.github.io/ViewLingo/?campaign=vl_dg_us_01&email=private'}={}) {
   const listeners={}, nodes=[], scripts=[], events=[], funnelEvents=[], timers=[], values={};
@@ -36,12 +37,12 @@ test('new channel metadata never expands recipients or bypasses consent/privacy/
     assert.equal(h.yahoo().length,0);assert.equal(h.funnelEvents.length,0);
     assert.equal(h.nodes[1].hidden,true);
     const config=h.commands().find(x=>x[0]==='config')[2];
-    assert.equal(config.page_location,'https://puritysb.github.io/ViewLingo/ko/?campaign='+campaign);
+    assert.equal(config.page_location,'https://puritysb.github.io/ViewLingo/'+(campaign==='vl_google_tw_s01'?'zh-hant/':'ko/')+'?campaign='+campaign);
     assert.equal(config.page_referrer,'');
     assert.equal(h.commands().filter(x=>x[0]==='event').length,2);
     assert.ok(h.commands().filter(x=>x[0]==='event').every(x=>x[2].value===0));
     const policy=h.nodes[0].children[2].children.find(n=>n.tag==='a');
-    assert.equal(policy.href,'https://puritysb.github.io/ViewLingo/ko/privacy.html?campaign='+campaign);
+    assert.equal(policy.href,'https://puritysb.github.io/ViewLingo/'+(campaign==='vl_google_tw_s01'?'zh-hant/':'ko/')+'privacy.html?campaign='+campaign);
   }
 });
 test('no tag or conversion before consent, including decline and store navigation',()=>{const h=harness();h.click();h.decline();assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);});

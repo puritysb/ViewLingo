@@ -10,10 +10,11 @@ const store = 'https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&
 const qa = root + '?campaign=vl_qa_260913&utm_source=google&gclid=private-test';
 const channelRoutes = [
     ['vl_meta_kr_awareness_20261104', 'utm_source=meta&utm_medium=paid_social&utm_campaign=vl_meta_kr_awareness_20261104&utm_content=screen_translation_a'],
-    ['vl_kakao_kr_pc_cpm_20261105', 'utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_pc_cpm_20261105&utm_content=icon_a']
+    ['vl_kakao_kr_pc_cpm_20261105', 'utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_pc_cpm_20261105&utm_content=icon_a'],
+    ['vl_google_tw_s01', 'campaign=vl_google_tw_s01&utm_source=google&utm_medium=cpc&utm_campaign=vl_google_tw_s01&utm_content=screen_text_a']
 ];
 
-test('published Meta and Kakao UTMs become fixed Apple ct and survive every locale/policy route', () => {
+test('registered channel UTMs become fixed Apple ct and survive every locale/policy route', () => {
     for (const [campaign, query] of channelRoutes) {
         assert.ok(campaign.length <= 30);
         const entry = root + 'ko/?' + query + '&fbclid=private-test&email=never-forward';
@@ -213,4 +214,14 @@ test('Japanese storefront choice is retained without changing other languages',(
       'https://apps.apple.com/jp/app/id6749508592?pt=128040795&ct='+campaign+'&mt=12');
     assert.equal(new URL(campaignLink(store,root+'?campaign='+campaign)).pathname,'/app/apple-store/id6749508592');
   }
+});
+
+test('prepared Taiwan canonical token remains bounded without a UTM tuple',()=>{
+    const entry=root+'zh-hant/?campaign=vl_google_tw_s01';
+    assert.equal(campaignForURL(entry),'vl_google_tw_s01');
+    assert.equal(new URL(campaignLink('privacy.html',entry)).search,'?campaign=vl_google_tw_s01');
+    for(const bad of ['vl_google_tw_s01_extra','VL_GOOGLE_TW_S01','unknown','']) {
+        assert.equal(campaignForURL(root+'zh-hant/?campaign='+bad),'');
+    }
+    assert.equal(campaignForURL(entry+'&campaign=vl_google_tw_s01'),'');
 });

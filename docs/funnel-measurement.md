@@ -23,6 +23,10 @@ GitHub Pages can serve these static routes and scripts. The loss was caused by U
 
 Official Apple rules: [campaign links](https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links/). Do not forward Apple aggregate purchases as individual vendor purchase conversions or treat ad attribution as incremental causal lift.
 
+## Prepared Taiwan Search route
+
+`https://puritysb.github.io/ViewLingo/zh-hant/?campaign=vl_google_tw_s01&utm_source=google&utm_medium=cpc&utm_campaign=vl_google_tw_s01&utm_content=screen_text_a` is a prepared public route, not proof of a saved, published or active ad. The exact UTM tuple and the canonical campaign are allowlisted; partial, conflicting, duplicate and unknown metadata are rejected. FAQ, privacy, language navigation and Store links preserve the canonical campaign without forwarding click IDs. The fixed Apple app/provider remain unchanged; `ct=vl_google_tw_s01` fits Apple's syntax but receipt and paid-customer campaign reporting remain unverified. Existing Google consented visit/Store events, refusals, GPC/DNT and Yahoo campaign boundaries remain unchanged. This route adds no collector, pixel, recipient or purpose and does not establish a new channel-level web report.
+
 ## Current collection boundaries
 
 | Stage | Evidence source | Meaning and limits |

@@ -7,10 +7,12 @@
     // Only registered, non-personal campaign names may cross the store boundary.
     var CAMPAIGNS = ['vl_google_us_l01', 'vl_dg_us_01', 'vl_dg_qa_01', 'vl_qa_260913', 'vl_ly_jp_s01', 'vl_ly_jp_d01'];
     // Website routing metadata only, not pixel configuration or proof of Apple receipt.
-    // Match the already published ad URLs exactly; never forward arbitrary UTMs/click IDs.
+    // Match explicitly registered public ad URLs exactly; never forward arbitrary UTMs/click IDs.
     var CHANNEL_ROUTES = [
         {source: 'meta', medium: 'paid_social', campaign: 'vl_meta_kr_awareness_20261104', content: 'screen_translation_a'},
-        {source: 'kakao', medium: 'display', campaign: 'vl_kakao_kr_pc_cpm_20261105', content: 'icon_a'}
+        {source: 'kakao', medium: 'display', campaign: 'vl_kakao_kr_pc_cpm_20261105', content: 'icon_a'},
+        // Prepared Taiwan route; this does not publish or activate an ad.
+        {source: 'google', medium: 'cpc', campaign: 'vl_google_tw_s01', content: 'screen_text_a'}
     ];
     // Preserve already published ad URLs while staying below Apple's 30-character limit.
     var LEGACY_DISPLAY = 'vl_ly_jp_macfan_display_20261030';
