@@ -53,6 +53,38 @@
         try { localStorage.setItem(KEY, JSON.stringify({choice: choice, expires: Date.now() + TTL})); } catch (_) {}
     }
     function gtag() { window.dataLayer.push(arguments); }
+    // One Google queue/loader, two independent purposes. Ads never grants Analytics.
+    var googleLoaded = false, analyticsGranted = false;
+    function googleConsent() {
+        gtag('consent', 'update', {ad_storage: granted ? 'granted' : 'denied',
+            analytics_storage: analyticsGranted ? 'granted' : 'denied',
+            ad_user_data: granted ? 'granted' : 'denied', ad_personalization: 'denied'});
+    }
+    function googleStart(id) {
+        if (qa || blocked) return;
+        if (!googleLoaded) {
+            googleLoaded = true;
+            window.dataLayer = window.dataLayer || [];
+            gtag('consent', 'default', {ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
+            gtag('js', new Date());
+            googleConsent();
+            var script = document.createElement('script'); script.async = true;
+            script.referrerPolicy = 'no-referrer';
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+            document.head.appendChild(script);
+        } else { googleConsent(); }
+    }
+    window.ViewLingoGoogle = {
+        analytics: function (id, config) {
+            if (qa || blocked || !/^G-[A-Z0-9]+$/.test(id)) return;
+            analyticsGranted = true;
+            googleStart(id);
+            gtag('config', id, config);
+        },
+        event: function (name, params) {
+            if (!qa && !blocked && analyticsGranted) gtag('event', name, params);
+        }
+    };
     function yahooCampaign() {
         if (!window.ViewLingoCampaign) return '';
         var store = window.ViewLingoCampaign.link('https://apps.apple.com/jp/app/id6749508592?ct=web', location.href);
@@ -187,10 +219,7 @@
         if (!started) {
             started = true;
             if (!qa) {
-                window.dataLayer = window.dataLayer || [];
-                gtag('consent', 'default', {ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
-                gtag('consent', 'update', {ad_storage: 'granted', analytics_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'denied'});
-                gtag('js', new Date());
+                googleStart(ID);
                 var page = new URL(location.href);
                 var safe = new URL(page.origin + page.pathname);
                 ['campaign', 'gclid', 'gbraid', 'wbraid'].forEach(function (key) {
@@ -206,10 +235,6 @@
                 gtag('config', ID, {send_page_view: false, allow_ad_personalization_signals: false,
                     allow_google_signals: false, cookie_domain: 'puritysb.github.io', cookie_path: '/ViewLingo/',
                     page_location: safe.href, page_referrer: '', page_title: document.title});
-                var script = document.createElement('script');
-                script.async = true;
-                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
-                document.head.appendChild(script);
             }
         }
         enableYahoo();
@@ -232,7 +257,7 @@
         });
         // Clear commands still waiting for a slow loader before unloading it.
         if (window.yjDataLayer) window.yjDataLayer.length = 0;
-        if (started || yahooStarted) location.reload();
+        if (started || yahooStarted || googleLoaded) location.reload();
     }
     function init() {
         var box = document.createElement('section');

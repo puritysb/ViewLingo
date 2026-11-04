@@ -45,6 +45,18 @@
         var matched = CHANNEL_ROUTES.filter(function (item) { return matchesUTM(current, item); });
         return matched.length === 1 ? matched[0].campaign : '';
     }
+    function campaignMetadata(currentURL) {
+        var campaign = campaignForURL(currentURL);
+        var route = channelRoute(campaign);
+        if (route) return {source: route.source, medium: route.medium, campaign: campaign, content: route.content};
+        var legacy = {
+            vl_google_us_l01: ['google', 'cpc'], vl_dg_us_01: ['google', 'display'],
+            vl_dg_qa_01: ['qa', 'test'], vl_qa_260913: ['qa', 'test'],
+            vl_ly_jp_s01: ['yahoo', 'cpc'], vl_ly_jp_d01: ['yahoo', 'display']
+        }[campaign];
+        return legacy ? {source: legacy[0], medium: legacy[1], campaign: campaign, content: 'none'} :
+            {source: 'unattributed', medium: 'none', campaign: 'web', content: 'none'};
+    }
     function campaignLink(href, currentURL) {
         var current = new URL(currentURL);
         var campaign = campaignForURL(currentURL);
@@ -71,12 +83,12 @@
 
     // Node's built-in test runner can exercise URL boundaries without a browser or dependencies.
     if (typeof module !== 'undefined' && module.exports) {
-        module.exports = { campaignLink: campaignLink, campaignForURL: campaignForURL };
+        module.exports = { campaignLink: campaignLink, campaignForURL: campaignForURL, campaignMetadata: campaignMetadata };
     }
     if (typeof document === 'undefined') { return; }
 
     // Dynamic UI uses the same registered campaign boundary as static links.
-    window.ViewLingoCampaign = {link: campaignLink, campaign: campaignForURL};
+    window.ViewLingoCampaign = {link: campaignLink, campaign: campaignForURL, metadata: campaignMetadata};
 
     var campaignOnly = document.currentScript && document.currentScript.hasAttribute('data-campaign-only');
 
