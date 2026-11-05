@@ -12,7 +12,9 @@
         {source: 'meta', medium: 'paid_social', campaign: 'vl_meta_kr_awareness_20261104', content: 'screen_translation_a'},
         {source: 'kakao', medium: 'display', campaign: 'vl_kakao_kr_pc_cpm_20261105', content: 'icon_a'},
         // Prepared Taiwan route; this does not publish or activate an ad.
-        {source: 'google', medium: 'cpc', campaign: 'vl_google_tw_s01', content: 'screen_text_a'}
+        {source: 'google', medium: 'cpc', campaign: 'vl_google_tw_s01', content: 'screen_text_a'},
+        // Prepared Taiwan Demand Gen route; canonical URL only, no new collector.
+        {source: 'google', medium: 'display', campaign: 'vl_google_tw_d01', content: 'none'}
     ];
     // Preserve already published ad URLs while staying below Apple's 30-character limit.
     var LEGACY_DISPLAY = 'vl_ly_jp_macfan_display_20261030';

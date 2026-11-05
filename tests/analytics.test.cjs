@@ -66,7 +66,7 @@ test('Ads withdrawal preserves Analytics choice and reload enables only Analytic
   assert.equal(after.commands().filter(x=>x[0]==='consent'&&x[1]==='update').at(-1)[2].ad_storage,'denied');
 });
 test('registered public campaigns populate standard campaign fields and event-scoped reports without raw URLs',()=>{
-  for(const [campaign,source,medium] of [['vl_meta_kr_awareness_20261104','meta','paid_social'],['vl_kakao_kr_pc_cpm_20261105','kakao','display'],['vl_google_tw_s01','google','cpc'],['vl_ly_jp_s01','yahoo','cpc'],['vl_ly_jp_d01','yahoo','display']]){
+  for(const [campaign,source,medium] of [['vl_meta_kr_awareness_20261104','meta','paid_social'],['vl_kakao_kr_pc_cpm_20261105','kakao','display'],['vl_google_tw_s01','google','cpc'],['vl_google_tw_d01','google','display'],['vl_ly_jp_s01','yahoo','cpc'],['vl_ly_jp_d01','yahoo','display']]){
     const h=harness({analytics:'granted',href:root+'zh-hant/?campaign='+campaign+'&email=private&fbclid=private#gclid=private'});h.click();
     const config=h.commands().find(x=>x[0]==='config'&&x[1]===fixtureID)[2];
     assert.equal(config.campaign_source,source);assert.equal(config.campaign_medium,medium);assert.equal(config.campaign_name,campaign);

@@ -129,3 +129,18 @@ Ratios are withheld for unavailable data, non-final or non-matching absolute per
 ## Deployment and acceptance
 
 Two dedicated Yahoo landing actions are configured; no new collection service, paid-app event or credential is added. Before publishing script changes, update the script cache revision in each referencing page and run `node --test tests/*.test.cjs` and `git diff --check`. Public code/docs must not include private campaign metrics or exports. After deployment, compare public bytes and inspect with QA only; do not generate real provider events. Report deployment success separately from natural receiver confirmation and Apple campaign paid-customer evidence.
+
+
+## Prepared Taiwan Demand Gen route
+
+The unpublished Demand Gen draft can use the prepared canonical URL
+`https://puritysb.github.io/ViewLingo/zh-hant/?campaign=vl_google_tw_d01`.
+The route maps to `google / display`, campaign `vl_google_tw_d01`, content `none`,
+separately from Search `vl_google_tw_s01` (`google / cpc`). No ad is published by
+this website change. No draft UTM tuple was supplied: use the canonical URL;
+partial/conflicting UTMs are rejected. Internal navigation preserves only the
+registered campaign; Apple receives fixed `pt=128040795`, `ct=vl_google_tw_d01`,
+`mt=12` for app `6749508592`. Existing consented Ads and separate Analytics
+collectors remain unchanged. No new event, recipient, pixel or purchase tracking
+is added. Offline queue/URL tests do not establish production receipt, processed
+reporting, or Apple purchase attribution.

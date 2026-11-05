@@ -225,3 +225,24 @@ test('prepared Taiwan canonical token remains bounded without a UTM tuple',()=>{
     }
     assert.equal(campaignForURL(entry+'&campaign=vl_google_tw_s01'),'');
 });
+
+
+test('Taiwan Demand Gen canonical route stays separate from Search without expanding URL collection', () => {
+    const {campaignMetadata} = require('../js/common.js');
+    const campaign = 'vl_google_tw_d01';
+    const entry = root + 'zh-hant/?campaign=' + campaign;
+    assert.deepEqual(campaignMetadata(entry), {source:'google', medium:'display', campaign, content:'none'});
+    for (const locale of ['', 'ko/', 'ja/', 'zh-hans/', 'zh-hant/']) {
+        for (const page of ['index.html', 'faq.html', 'privacy.html']) {
+            const next = campaignLink(root+locale+page+'?email=private', entry+'&gclid=private');
+            assert.equal(new URL(next).search, '?campaign='+campaign);
+            const target = locale==='ja/' ? store.replace('/app/apple-store/', '/jp/app/') : store;
+            assert.equal(campaignLink(target, next), target.replace('ct=web','ct='+campaign));
+        }
+    }
+    assert.equal(campaignMetadata(root+'zh-hant/?campaign=vl_google_tw_s01').medium,'cpc');
+    for (const query of ['campaign='+campaign+'_extra', 'campaign='+campaign+'&campaign='+campaign,
+        'campaign='+campaign+'&utm_source=google', 'campaign='+campaign+'&utm_campaign=vl_google_tw_s01']) {
+        assert.equal(campaignForURL(root+'zh-hant/?'+query),'');
+    }
+});
