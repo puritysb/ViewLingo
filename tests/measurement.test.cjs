@@ -7,6 +7,8 @@ const newChannelURLs = [
   ['vl_google_tw_d01', 'https://puritysb.github.io/ViewLingo/zh-hant/?campaign=vl_google_tw_d01'],
   ['vl_meta_kr_awareness_20261104', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=meta&utm_medium=paid_social&utm_campaign=vl_meta_kr_awareness_20261104&utm_content=screen_translation_a'],
   ['vl_kakao_kr_pc_cpm_20261105', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_pc_cpm_20261105&utm_content=icon_a'],
+  ['vl_kakao_kr_sq_20261106', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_sq_20261106&utm_content=before_after_square_v2'],
+  ['vl_kakao_kr_wide_20261106', 'https://puritysb.github.io/ViewLingo/ko/?utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_wide_20261106&utm_content=before_after_wide_v2'],
   ['vl_google_tw_s01', 'https://puritysb.github.io/ViewLingo/zh-hant/?campaign=vl_google_tw_s01&utm_source=google&utm_medium=cpc&utm_campaign=vl_google_tw_s01&utm_content=screen_text_a']
 ];
 function harness({choice, landingChoice, qa=false, blocked=false, dnt=false, lang='en', oldChoice, referrer='', href='https://puritysb.github.io/ViewLingo/?campaign=vl_dg_us_01&email=private'}={}) {

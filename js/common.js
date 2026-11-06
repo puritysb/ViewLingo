@@ -11,6 +11,10 @@
     var CHANNEL_ROUTES = [
         {source: 'meta', medium: 'paid_social', campaign: 'vl_meta_kr_awareness_20261104', content: 'screen_translation_a'},
         {source: 'kakao', medium: 'display', campaign: 'vl_kakao_kr_pc_cpm_20261105', content: 'icon_a'},
+        // Prepared creative-specific routes. The existing icon_a route stays unchanged.
+        // Unique campaign keys preserve fixed content through canonical internal links.
+        {source: 'kakao', medium: 'display', campaign: 'vl_kakao_kr_sq_20261106', content: 'before_after_square_v2'},
+        {source: 'kakao', medium: 'display', campaign: 'vl_kakao_kr_wide_20261106', content: 'before_after_wide_v2'},
         // Prepared Taiwan route; this does not publish or activate an ad.
         {source: 'google', medium: 'cpc', campaign: 'vl_google_tw_s01', content: 'screen_text_a'},
         // Prepared Taiwan Demand Gen route; canonical URL only, no new collector.

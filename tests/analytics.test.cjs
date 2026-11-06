@@ -135,3 +135,40 @@ test('every public page wires the verified stream after the shared consent bridg
     const html=fs.readFileSync(file,'utf8');assert.ok(html.includes('id="website-analytics"'));assert.ok(html.includes('https://policies.google.com/technologies/partner-sites'));
   }
 });
+
+test('Kakao creative metadata stays distinct under the unchanged Analytics consent boundary',()=>{
+  const routes=[['vl_kakao_kr_pc_cpm_20261105','icon_a'],['vl_kakao_kr_sq_20261106','before_after_square_v2'],['vl_kakao_kr_wide_20261106','before_after_wide_v2']];
+  for(const [campaign,content] of routes) {
+    const href=root+'ko/?'+new URLSearchParams({utm_source:'kakao',utm_medium:'display',utm_campaign:campaign,utm_content:content});
+    for(const ads of ['granted','denied']) for(const analytics of ['granted','denied']) {
+      const h=harness({ads,analytics,href:href+'&email=private&fbclid=private'});h.click('.hero');h.click('.purchase-section');
+      const commands=h.commands(),events=commands.filter(x=>x[0]==='event'&&x[2]?.send_to===fixtureID);
+      assert.equal(h.scripts.length,ads==='granted'||analytics==='granted'?1:0);
+      assert.equal(h.context.window.yjDataLayer,undefined);
+      assert.equal(events.length,analytics==='granted'?2:0);
+      assert.ok(!JSON.stringify(commands).includes('private'));
+      if(analytics==='granted') {
+        const config=commands.find(x=>x[0]==='config'&&x[1]===fixtureID)[2];
+        assert.equal(config.campaign_name,campaign);assert.equal(config.campaign_content,content);
+        assert.equal(config.campaign_source,'kakao');assert.equal(config.campaign_medium,'display');
+        assert.equal(config.send_page_view,false);assert.equal(config.allow_google_signals,false);
+        assert.equal(config.allow_ad_personalization_signals,false);assert.equal(config.cookie_expires,60*24*60*60);
+        assert.deepEqual(events.map(x=>x[1]),['landing_arrival','store_cta_click']);
+        for(const event of events) {
+          assert.equal(event[2].vl_campaign,campaign);assert.equal(event[2].vl_content,content);
+          assert.equal(event[2].vl_source,'kakao');assert.equal(event[2].vl_medium,'display');
+          assert.equal(event[2].page_location,root+'ko/');assert.equal(event[2].page_referrer,'');assert.equal(event[2].value,0);
+        }
+        h.buttons(3)[1].click();assert.equal(h.location.reloaded,true);assert.equal(h.commands().filter(isGA).length,0);
+        assert.equal(JSON.parse(h.values.viewlingo_ad_measurement_v2).choice,ads);
+      }
+    }
+    for(const opts of [{},{analytics:'denied'},{analytics:'granted',blocked:true},{analytics:'granted',dnt:true},{analytics:'granted',qa:true}]) {
+      const h=harness({href,...opts});h.click();assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);
+    }
+    const internal=harness({analytics:'granted',href:root+'ja/faq.html?campaign='+campaign,referrer:root+'ko/'});internal.click();
+    const internalEvents=internal.commands().filter(x=>x[0]==='event'&&x[2]?.send_to===fixtureID);
+    assert.deepEqual(internalEvents.map(x=>x[1]),['store_cta_click']);
+    assert.equal(internalEvents[0][2].vl_campaign,campaign);assert.equal(internalEvents[0][2].vl_content,content);
+  }
+});

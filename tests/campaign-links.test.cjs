@@ -11,6 +11,8 @@ const qa = root + '?campaign=vl_qa_260913&utm_source=google&gclid=private-test';
 const channelRoutes = [
     ['vl_meta_kr_awareness_20261104', 'utm_source=meta&utm_medium=paid_social&utm_campaign=vl_meta_kr_awareness_20261104&utm_content=screen_translation_a'],
     ['vl_kakao_kr_pc_cpm_20261105', 'utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_pc_cpm_20261105&utm_content=icon_a'],
+    ['vl_kakao_kr_sq_20261106', 'utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_sq_20261106&utm_content=before_after_square_v2'],
+    ['vl_kakao_kr_wide_20261106', 'utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_wide_20261106&utm_content=before_after_wide_v2'],
     ['vl_google_tw_s01', 'campaign=vl_google_tw_s01&utm_source=google&utm_medium=cpc&utm_campaign=vl_google_tw_s01&utm_content=screen_text_a']
 ];
 
@@ -34,6 +36,46 @@ test('registered channel UTMs become fixed Apple ct and survive every locale/pol
         assert.equal(campaignLink(store, entry), store.replace('ct=web', 'ct=' + campaign));
         assert.equal(campaignLink('#features', entry), '#features');
         assert.equal(campaignLink('https://example.com/', entry), 'https://example.com/');
+    }
+});
+
+test('Kakao creative routes preserve distinct fixed content without relabeling historical icon traffic', () => {
+    const {campaignMetadata} = require('../js/common.js');
+    const routes = [
+        ['vl_kakao_kr_pc_cpm_20261105', 'icon_a'],
+        ['vl_kakao_kr_sq_20261106', 'before_after_square_v2'],
+        ['vl_kakao_kr_wide_20261106', 'before_after_wide_v2']
+    ];
+    for (const [campaign, content] of routes) {
+        const canonical = root + 'ko/?campaign=' + campaign;
+        const tuple = new URLSearchParams({utm_source:'kakao', utm_medium:'display', utm_campaign:campaign, utm_content:content}).toString();
+        const expected = {source:'kakao', medium:'display', campaign, content};
+        for (const entry of [canonical, root+'ko/?'+tuple, canonical+'&'+tuple]) {
+            assert.deepEqual(campaignMetadata(entry), expected);
+            let current = entry+'&email=private&yclid=private#private';
+            for (const next of ['privacy.html', '../ja/index.html', '../guide.html', 'ko/faq.html']) {
+                current = campaignLink(next, current);
+                assert.deepEqual(campaignMetadata(current), expected);
+                assert.equal(new URL(current).search, '?campaign='+campaign);
+            }
+            assert.equal(new URL(campaignLink(store,current)).search, '?pt=128040795&ct='+campaign+'&mt=12');
+        }
+        for (const [,otherContent] of routes.filter(r=>r[1]!==content)) {
+            assert.equal(campaignForURL(root+'ko/?'+tuple.replace(content,otherContent)), '');
+        }
+        assert.equal(campaignForURL(canonical+'&utm_content='+content), '');
+        assert.equal(campaignForURL(root+'ko/?'+tuple+'&utm_content='+content), '');
+        assert.ok(campaign.length<=30 && /^[a-zA-Z0-9_]+$/.test(campaign));
+    }
+});
+
+test('every public page requests the prepared common-script revision only once', () => {
+    const paths=['index.html','faq.html','privacy.html','guide.html','featuring.html','translate-japanese-games-on-mac.html'];
+    for(const locale of ['ko','ja','zh-hans','zh-hant']) for(const page of ['index','faq','privacy']) paths.push(`${locale}/${page}.html`);
+    for(const file of paths) {
+        const html=fs.readFileSync(path.join(__dirname,'..',file),'utf8');
+        assert.equal((html.match(/js\/common\.js\?v=2026110601/g)||[]).length,1,file);
+        assert.equal((html.match(/js\/common\.js\?/g)||[]).length,1,file);
     }
 });
 

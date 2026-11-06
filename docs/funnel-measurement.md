@@ -144,3 +144,57 @@ registered campaign; Apple receives fixed `pt=128040795`, `ct=vl_google_tw_d01`,
 collectors remain unchanged. No new event, recipient, pixel or purchase tracking
 is added. Offline queue/URL tests do not establish production receipt, processed
 reporting, or Apple purchase attribution.
+
+## Kakao creative-specific route rollout
+
+The existing `vl_kakao_kr_pc_cpm_20261105` / `icon_a` route stays unchanged. It
+cannot distinguish creatives that already shared that URL. Do not relabel or
+split those historical observations retroactively.
+
+Two additive routes are available in the code:
+
+| Creative | Website campaign / Apple `ct` | Fixed content |
+| --- | --- | --- |
+| Square before/after v2 | `vl_kakao_kr_sq_20261106` | `before_after_square_v2` |
+| Landscape before/after v2 | `vl_kakao_kr_wide_20261106` | `before_after_wide_v2` |
+
+Both use source `kakao` and medium `display`. These are website reporting keys,
+not new campaigns or budgets in the Kakao advertising account. Unique keys let
+the existing canonical internal links preserve content without new storage or
+arbitrary query forwarding. GA4 can group both routes by VL Source/Medium, and
+compare them by VL Campaign or VL Content. Apple `ct` also differs by creative;
+its privacy thresholds may delay or hide those smaller rows. No Apple receipt,
+purchase, or privacy-threshold exemption is implied.
+
+Final URL templates, usable only after the corresponding deployment is verified:
+
+- Square: `https://puritysb.github.io/ViewLingo/ko/?utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_sq_20261106&utm_content=before_after_square_v2`
+- Landscape: `https://puritysb.github.io/ViewLingo/ko/?utm_source=kakao&utm_medium=display&utm_campaign=vl_kakao_kr_wide_20261106&utm_content=before_after_wide_v2`
+
+The equivalent canonical `?campaign=<key>` routes resolve to the same fixed
+metadata. All four UTM fields must match exactly if any are present. Changing
+only `utm_content` on the old URL remains invalid rather than silently assigning
+it to a new creative. Duplicate, partial, conflicting and unknown metadata
+continues to fail closed. Do not add multiple route rows sharing one campaign
+key: canonical internal navigation would lose which content row was intended.
+
+This patch changes only URL allowlists, the offline report's accepted campaign
+keys, tests, documentation and the common-script cache revision. The Analytics
+and Ads/Yahoo collection scripts, consent copy/choices, event names/counts,
+tracking IDs, recipient set and privacy protections are unchanged. It adds no
+page-view event, SDK, key, product link or customer identifier.
+
+Deployment and live ad URL editing are separate steps and are not completed by
+this patch. First obtain deployment approval and verify the public common script
+and HTML revision. Then confirm exact target creatives and a suitable change
+window before saving either ad URL. Kakao may re-review an edited destination;
+verify the platform's current behavior and the user's permission before that
+step. Record the cutover time, preserve the old route and ad history, and compare
+only post-cutover creative-specific data. If rollback is needed, restore the old
+ad URL while keeping the additive website mappings. The offline reconciler must
+receive separately evidenced creative-period rows, never duplicate one campaign
+total into both new routes. No real provider event is needed for offline QA.
+
+## Unified offline report
+
+See [Cross-channel reporting](cross-channel-reporting.md) for the supported Google, Yahoo, Meta and Kakao campaign registry, evidence requirements and offline JSON/CSV/HTML outputs. This is not automatic data ingestion. Keep private account exports, snapshots and generated operational reports outside this public repository. The saved GA4 report covers consented website events only; ad costs and Apple campaign data require their own source records.
