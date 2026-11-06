@@ -28,6 +28,16 @@
             <p>一般擷取與Live翻譯使用Mac上的Apple翻譯。ViewLingo 2.x繼續在本機運作。以下選用DeepL連線自3.0起提供，在您自行設定並同意前保持關閉。</p>
         </div>
 
+        <section id="openai-comparison">
+            <h2>3.2 的選用 OpenAI 比較</h2>
+            <p>OpenAI 比較是選用功能。在支援的 App Store 地區，也僅於您儲存自己的 API 金鑰並另行同意傳送後才啟用。金鑰與 DeepL 分開存於 macOS 鑰匙圈。此功能使用 API 帳戶，而非 ChatGPT 訂閱；未獲商業授權前不提供 ChatGPT 登入。</p>
+            <p>僅於點選使用 OpenAI 翻譯時，才透過 HTTPS 直接傳送所選原文、來源與目標語言、同一擷取中選定的最多五段先前上下文及五項術語。API 金鑰用於驗證，OpenAI 也會處理通訊所需的網路資訊。不傳送截圖、視窗標題、其他歷史或無關專案。Apple 翻譯與 Live 不會自動切換至 OpenAI。</p>
+            <p>請求使用 store:false，但不保證零保留。OpenAI 可能依 API 政策保留濫用監控記錄。除非您另行向 OpenAI 同意分享，否則 API 資料預設不用於訓練。提供者的帳戶條款、保留設定和 API 費用與 ViewLingo 分開適用。</p>
+            <p>App Store 地區會自動與本機允許清單核對，無須選擇國家或於每次工作階段重新確認。Storefront 不證明實際位置。在中國大陸等不支援或未確認的商店地區，OpenAI 請求會被阻止。OpenAI 也可能依實際連線地區拒絕存取；服務提供者拒絕時連線將停止。我們不收集 GPS，也不查詢 IP 地理位置服務。</p>
+            <p>即使在不支援地區，也可撤回同意並刪除金鑰。取消無法收回已傳送的請求。此 Mac 的月度權杖預算會保守預留輸入與輸出並記錄用量，但不是金額或帳戶總限額。刪除本機資料不會刪除 OpenAI 已處理的資訊。</p>
+            <p><a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a> · <a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a></p>
+        </section>
+
         <section>
             <h2>預設Apple翻譯</h2>
             <p>Apple文字辨識在Mac上處理擷取的影像。下載所需語言包後，Apple翻譯可離線使用。一般擷取與Live不會自動切換到DeepL。我們不營運接收應用程式截圖或翻譯請求的伺服器，Mac應用程式沒有使用分析或追蹤功能。</p>
