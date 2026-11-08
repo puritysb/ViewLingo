@@ -66,31 +66,84 @@
             analytics_storage: analyticsGranted ? 'granted' : 'denied',
             ad_user_data: granted ? 'granted' : 'denied', ad_personalization: 'denied'});
     }
-    function googleStart(id) {
+    function googleStart(id, config) {
         if (qa || blocked) return;
         if (!googleLoaded) {
             googleLoaded = true;
             window.dataLayer = window.dataLayer || [];
             gtag('consent', 'default', {ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
-            gtag('js', new Date());
             googleConsent();
+            if (config) {
+                // Apply privacy/page/campaign defaults before a Google-managed tag auto-initializes.
+                gtag('set', config);
+                gtag('config', id, config);
+            }
+            gtag('js', new Date());
             var script = document.createElement('script'); script.async = true;
             script.referrerPolicy = 'no-referrer';
             script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
             document.head.appendChild(script);
-        } else { googleConsent(); }
+        } else {
+            googleConsent();
+            if (config) {
+                // Apply privacy/page/campaign defaults before a Google-managed tag auto-initializes.
+                gtag('set', config);
+                gtag('config', id, config);
+            }
+        }
     }
     window.ViewLingoGoogle = {
         analytics: function (id, config) {
             if (qa || blocked || !/^G-[A-Z0-9]+$/.test(id)) return;
             analyticsGranted = true;
-            googleStart(id);
-            gtag('config', id, config);
+            googleStart(id, config);
         },
         event: function (name, params) {
             if (!qa && !blocked && analyticsGranted) gtag('event', name, params);
         }
     };
+    // A single navigation owner lets either independently consented purpose finish.
+    var storeProviders = [], storeNavigationPending = false;
+    window.ViewLingoStore = {register: function (provider) { storeProviders.push(provider); }};
+    window.ViewLingoStore.register({
+        enabled: function () { return granted && !blocked && !storeSent; },
+        send: function (link, done) {
+            // Yahoo has no completion callback here: keep the shared 700ms upper bound.
+            event('store', yahooStarted ? undefined : done);
+        }
+    });
+    function storeClick(e) {
+        var link = e.target.closest && e.target.closest('a[href]');
+        if (!link || (e.defaultPrevented && !qa) || (link.hasAttribute && link.hasAttribute('download'))) return;
+        var url;
+        try { url = new URL(qa && link.getAttribute && link.getAttribute('data-viewlingo-qa-store') || link.href, location.href); } catch (_) { return; }
+        if (url.origin !== 'https://apps.apple.com' || !/^\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592$/.test(url.pathname)) return;
+        var sameTab = !qa && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey &&
+            (!link.target || link.target === '_self') && e.button === 0;
+        if (qa) e.preventDefault();
+        if (sameTab && storeNavigationPending) { e.preventDefault(); return; }
+        var active = storeProviders.filter(function (provider) { return provider.enabled(); });
+        var wait = sameTab && active.length > 0;
+        var remaining = active.length, dispatching = true, navigated = false;
+        function proceed() {
+            if (wait && !navigated) { navigated = true; location.assign(link.href); }
+        }
+        if (wait) {
+            e.preventDefault(); storeNavigationPending = true;
+            setTimeout(proceed, 700); // A blocked loader must never trap navigation.
+        }
+        active.forEach(function (provider) {
+            var finished = false;
+            function done() {
+                if (finished) return;
+                finished = true; remaining--;
+                if (!dispatching && remaining === 0) proceed();
+            }
+            try { provider.send(link, done); } catch (_) { done(); }
+        });
+        dispatching = false;
+        if (remaining === 0) proceed();
+    }
     function yahooCampaign() {
         if (!window.ViewLingoCampaign) return '';
         var store = window.ViewLingoCampaign.link('https://apps.apple.com/jp/app/id6749508592?ct=web', location.href);
@@ -310,23 +363,7 @@
         (document.querySelector('footer') || document.body).appendChild(settings);
         var choice = saved(); box.hidden = !!choice || blocked;
         if (choice === 'granted') enable();
-        document.addEventListener('click', function (e) {
-            var link = e.target.closest && e.target.closest('a[href]');
-            if (!link || (e.defaultPrevented && !qa)) return;
-            var url;
-            try { url = new URL(qa && link.getAttribute && link.getAttribute('data-viewlingo-qa-store') || link.href, location.href); } catch (_) { return; }
-            if (url.origin === 'https://apps.apple.com' && /^\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592$/.test(url.pathname)) {
-                if (qa) e.preventDefault();
-                if (granted && !blocked && !qa && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey &&
-                    (!link.target || link.target === '_self') && e.button === 0) {
-                    e.preventDefault();
-                    var navigated = false;
-                    function proceed() { if (!navigated) { navigated = true; location.assign(link.href); } }
-                    setTimeout(proceed, 700); // A blocked or slow tag must never block the store link.
-                    event('store'); // Allow both independent providers up to the same bounded navigation delay.
-                } else { event('store'); }
-            }
-        });
+        document.addEventListener('click', storeClick);
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();

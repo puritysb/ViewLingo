@@ -74,7 +74,7 @@ test('every public page requests the prepared common-script revision only once',
     for(const locale of ['ko','ja','zh-hans','zh-hant']) for(const page of ['index','faq','privacy']) paths.push(`${locale}/${page}.html`);
     for(const file of paths) {
         const html=fs.readFileSync(path.join(__dirname,'..',file),'utf8');
-        assert.equal((html.match(/js\/common\.js\?v=2026110801/g)||[]).length,1,file);
+        assert.equal((html.match(/js\/common\.js\?v=2026110802/g)||[]).length,1,file);
         assert.equal((html.match(/js\/common\.js\?/g)||[]).length,1,file);
     }
 });

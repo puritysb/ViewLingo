@@ -122,12 +122,12 @@
 
     // Node's built-in test runner can exercise URL boundaries without a browser or dependencies.
     if (typeof module !== 'undefined' && module.exports) {
-        module.exports = { campaignLink: campaignLink, campaignForURL: campaignForURL, campaignMetadata: campaignMetadata, isQA: isQA };
+        module.exports = { campaignLink: campaignLink, campaignForURL: campaignForURL, campaignMetadata: campaignMetadata, isQA: isQA, internalPage: internalPage };
     }
     if (typeof document === 'undefined') { return; }
 
     // Dynamic UI uses the same registered campaign boundary as static links.
-    window.ViewLingoCampaign = {link: campaignLink, campaign: campaignForURL, metadata: campaignMetadata, isQA: isQA};
+    window.ViewLingoCampaign = {link: campaignLink, campaign: campaignForURL, metadata: campaignMetadata, isQA: isQA, internalPage: internalPage};
 
     var campaignOnly = document.currentScript && document.currentScript.hasAttribute('data-campaign-only');
 
