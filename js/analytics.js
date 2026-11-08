@@ -10,7 +10,9 @@
     var page = new URL(location.href);
     if (!/^\/ViewLingo\/(?:(?:ko|ja|zh-hans|zh-hant)\/)?(?:index\.html|faq\.html|privacy\.html|guide\.html|featuring\.html|translate-japanese-games-on-mac\.html)?$/.test(page.pathname)) return;
     var pagePath = page.pathname.replace(/index\.html$/, '');
-    var qa = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || page.searchParams.get('measurement_qa') === '1';
+    var qa = !window.ViewLingoCampaign || typeof window.ViewLingoCampaign.isQA !== 'function' ||
+        window.ViewLingoCampaign.isQA(location);
+    var qaChoice = null;
     var blocked = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
     var granted = false, started = false, landingSent = false, storeSent = false;
     var meta = window.ViewLingoCampaign.metadata(location.href);
@@ -23,9 +25,11 @@
     };
     var t = copy[document.documentElement.lang.toLowerCase()] || copy.en;
     function saved() {
+        if (qa) return qaChoice;
         try { var v = JSON.parse(localStorage.getItem(KEY)); return v && v.expires > Date.now() && /^(granted|denied)$/.test(v.choice) ? v.choice : null; } catch (_) { return null; }
     }
     function remember(choice) {
+        if (qa) { qaChoice = choice; return; }
         try { localStorage.setItem(KEY, JSON.stringify({choice: choice, expires: Date.now() + TTL})); } catch (_) {}
     }
     function ctaLocation(link) {
@@ -74,6 +78,7 @@
     }
     function revoke() {
         granted = false;
+        if (qa) return;
         // Unload rather than send denied-mode pings. Other purpose choices survive reload.
         window['ga-disable-' + ID] = true;
         document.cookie.split(';').forEach(function (part) {
@@ -109,8 +114,11 @@
         if (choice === 'granted') enable();
         document.addEventListener('click', function (e) {
             var link = e.target.closest && e.target.closest('a[href]'); if (!link) return;
-            var url; try { url = new URL(link.href, location.href); } catch (_) { return; }
-            if (url.origin === 'https://apps.apple.com' && /^\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592$/.test(url.pathname)) event('store_cta_click', ctaLocation(link));
+            var url; try { url = new URL(qa && link.getAttribute && link.getAttribute('data-viewlingo-qa-store') || link.href, location.href); } catch (_) { return; }
+            if (url.origin === 'https://apps.apple.com' && /^\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592$/.test(url.pathname)) {
+                if (qa) e.preventDefault();
+                event('store_cta_click', ctaLocation(link));
+            }
         });
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();

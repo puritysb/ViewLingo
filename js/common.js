@@ -63,14 +63,47 @@
         return legacy ? {source: legacy[0], medium: legacy[1], campaign: campaign, content: 'none'} :
             {source: 'unattributed', medium: 'none', campaign: 'web', content: 'none'};
     }
+    function isQA(currentURL) {
+        try {
+            var input = currentURL || window.location;
+            var url = new URL(typeof input === 'string' ? input : input.href);
+            var host = typeof input === 'string' ? url.hostname : input.hostname || url.hostname;
+            return host === 'localhost' || host === '127.0.0.1' ||
+                url.searchParams.getAll('measurement_qa').indexOf('1') !== -1 ||
+                /^\/ViewLingo\/qa-receiver(?:\/|$)/.test(url.pathname) ||
+                url.searchParams.getAll('campaign').some(function (value) {
+                    return value === 'vl_dg_qa_01' || value === 'vl_qa_260913';
+                });
+        } catch (_) { return true; } // An invalid test context must never enable a collector.
+    }
+    function internalPage(target, current) {
+        return target.origin === current.origin && (
+            /^\/ViewLingo\/(?:index\.html|guide\.html|faq\.html|privacy\.html|featuring\.html|translate-japanese-games-on-mac\.html)?$/.test(target.pathname) ||
+            /^\/ViewLingo\/(?:ko|ja|zh-hans|zh-hant)\/(?:index\.html|faq\.html|privacy\.html)?$/.test(target.pathname));
+    }
+    function storeURL(href, currentURL) {
+        try {
+            var url = new URL(href, currentURL);
+            return url.origin === 'https://apps.apple.com' &&
+                /^\/(?:[a-z]{2}\/)?app\/(?:apple-store\/)?id6749508592$/.test(url.pathname);
+        } catch (_) { return false; }
+    }
     function campaignLink(href, currentURL) {
         var current = new URL(currentURL);
         var campaign = campaignForURL(currentURL);
-        if (!campaign || href.charAt(0) === '#') {
+        if (href.charAt(0) === '#') {
             return href;
         }
         var target;
         try { target = new URL(href, current); } catch (error) { return href; }
+        // QA is independent of campaign recognition, including campaign-less tests.
+        if (isQA(currentURL) && internalPage(target, current)) {
+            target.search = '';
+            if (campaign) target.searchParams.set('campaign', campaign);
+            target.searchParams.set('measurement_qa', '1');
+            return target.href;
+        }
+        if (!campaign) return href;
         if (target.origin === 'https://apps.apple.com' &&
             /^\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592$/.test(target.pathname)) {
             var storePath = target.pathname.indexOf('/jp/') === 0 ? '/jp/app/id6749508592' : '/app/apple-store/id6749508592';
@@ -89,12 +122,12 @@
 
     // Node's built-in test runner can exercise URL boundaries without a browser or dependencies.
     if (typeof module !== 'undefined' && module.exports) {
-        module.exports = { campaignLink: campaignLink, campaignForURL: campaignForURL, campaignMetadata: campaignMetadata };
+        module.exports = { campaignLink: campaignLink, campaignForURL: campaignForURL, campaignMetadata: campaignMetadata, isQA: isQA };
     }
     if (typeof document === 'undefined') { return; }
 
     // Dynamic UI uses the same registered campaign boundary as static links.
-    window.ViewLingoCampaign = {link: campaignLink, campaign: campaignForURL, metadata: campaignMetadata};
+    window.ViewLingoCampaign = {link: campaignLink, campaign: campaignForURL, metadata: campaignMetadata, isQA: isQA};
 
     var campaignOnly = document.currentScript && document.currentScript.hasAttribute('data-campaign-only');
 
@@ -104,6 +137,11 @@
                 var href = link.getAttribute('href');
                 var updated = campaignLink(href, window.location.href);
                 if (updated !== href) { link.setAttribute('href', updated); }
+                if (isQA(window.location) && storeURL(updated, window.location.href)) {
+                    // A fragment also blocks context-menu/new-tab navigation to the real store.
+                    link.setAttribute('data-viewlingo-qa-store', updated);
+                    link.setAttribute('href', '#viewlingo-qa-store');
+                }
             }
         });
     }
@@ -213,6 +251,27 @@
 
     function init() {
         setUpCampaignLinks();
+        if (isQA(window.location) && document.addEventListener) {
+            function inspectStore(e) {
+                var link = e.target.closest && e.target.closest('a[href]');
+                if (!link) return;
+                var href = link.getAttribute && link.getAttribute('data-viewlingo-qa-store') || link.href;
+                if (!storeURL(href, window.location.href)) return;
+                e.preventDefault();
+                // Only a fixed registered campaign can be shown in the local diagnostic.
+                var diagnostic = campaignLink('https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=web&mt=12', window.location.href);
+                if (document.createElement && document.body && document.getElementById) {
+                    var output = document.getElementById('viewlingo-qa-store');
+                    if (!output) {
+                        output = document.createElement('output'); output.id = 'viewlingo-qa-store';
+                        output.setAttribute('role', 'status'); document.body.appendChild(output);
+                    }
+                    output.textContent = 'QA: Store navigation blocked. Expected URL: ' + diagnostic;
+                }
+            }
+            document.addEventListener('click', inspectStore, true);
+            document.addEventListener('auxclick', inspectStore, true);
+        }
         if (campaignOnly) { return; }
         setUpLanguageSelector();
         setUpMobileMenu();

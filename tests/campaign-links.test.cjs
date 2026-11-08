@@ -74,7 +74,7 @@ test('every public page requests the prepared common-script revision only once',
     for(const locale of ['ko','ja','zh-hans','zh-hant']) for(const page of ['index','faq','privacy']) paths.push(`${locale}/${page}.html`);
     for(const file of paths) {
         const html=fs.readFileSync(path.join(__dirname,'..',file),'utf8');
-        assert.equal((html.match(/js\/common\.js\?v=2026110601/g)||[]).length,1,file);
+        assert.equal((html.match(/js\/common\.js\?v=2026110801/g)||[]).length,1,file);
         assert.equal((html.match(/js\/common\.js\?/g)||[]).length,1,file);
     }
 });
@@ -133,14 +133,14 @@ test('all languages and supported internal routes retain campaign across round t
     for (const locale of ['', 'ko/', 'ja/', 'zh-hans/', 'zh-hant/']) {
         for (const page of ['', 'index.html', 'faq.html', 'privacy.html']) {
             const destination = new URL(campaignLink(root + locale + page, qa));
-            assert.equal(destination.search, '?campaign=vl_qa_260913');
+            assert.equal(destination.search, '?campaign=vl_qa_260913&measurement_qa=1');
             assert.equal(new URL(campaignLink('/ViewLingo/guide.html', destination.href)).search,
-                '?campaign=vl_qa_260913');
+                '?campaign=vl_qa_260913&measurement_qa=1');
             assert.match(campaignLink(store, destination.href), /ct=vl_qa_260913/);
         }
     }
     assert.equal(campaignLink('../index.html#features', root + 'ko/?campaign=vl_qa_260913'),
-        root + 'index.html?campaign=vl_qa_260913#features');
+        root + 'index.html?campaign=vl_qa_260913&measurement_qa=1#features');
 });
 
 test('external sites, other apps, files and fragment navigation stay untouched', () => {
@@ -156,11 +156,11 @@ test('external sites, other apps, files and fragment navigation stay untouched',
 test('game guide preserves registered attribution through guide, locale and store navigation', () => {
     const page = root + 'translate-japanese-games-on-mac.html';
     const landing = campaignLink(page + '#setup', qa);
-    assert.equal(landing, page + '?campaign=vl_qa_260913#setup');
+    assert.equal(landing, page + '?campaign=vl_qa_260913&measurement_qa=1#setup');
     const korean = campaignLink('ko/index.html', landing);
-    assert.equal(korean, root + 'ko/index.html?campaign=vl_qa_260913');
+    assert.equal(korean, root + 'ko/index.html?campaign=vl_qa_260913&measurement_qa=1');
     const back = campaignLink('../translate-japanese-games-on-mac.html', korean);
-    assert.equal(back, page + '?campaign=vl_qa_260913');
+    assert.equal(back, page + '?campaign=vl_qa_260913&measurement_qa=1');
     const guideStore = store.replace('ct=web', 'ct=web_game_guide');
     assert.equal(campaignLink(guideStore, page), guideStore);
     assert.match(campaignLink(guideStore, back), /ct=vl_qa_260913&mt=12$/);
@@ -176,16 +176,20 @@ test('page initialization rewrites actual HTML anchors and skips downloads', () 
             const html = fs.readFileSync(path.join(__dirname, '..', locale, page), 'utf8');
             assert.match(html, /src="(?:\.\.\/)?js\/common\.js(?:\?v=\d+)?"/);
             const links = [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)].map(m => ({
-                href: m[1], getAttribute() { return this.href; },
-                setAttribute(name, value) { this.href = value; }, hasAttribute() { return false; }
+                href: m[1], attrs: {}, getAttribute(name) { return name === 'href' ? this.href : this.attrs[name]; },
+                setAttribute(name, value) { if (name === 'href') this.href = value; else this.attrs[name] = value; }, hasAttribute() { return false; }
             }));
+            const storeCount = links.filter(l => /apps\.apple\.com\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592/.test(l.href)).length;
             const download = { href: 'index.html', getAttribute() { return this.href; },
                 hasAttribute() { return true; }, setAttribute() { assert.fail('download mutated'); } };
             vm.runInNewContext(code, { URL, window: { location: { href: root + locale + page + '?campaign=vl_qa_260913' } },
                 document: { readyState: 'complete', currentScript: { hasAttribute: () => true },
                     querySelectorAll: () => [...links, download] } });
-            for (const link of links.filter(l => /apps\.apple\.com\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592/.test(l.href))) {
-                assert.match(link.href, /ct=vl_qa_260913&mt=12$/);
+            const blocked = links.filter(l => l.attrs['data-viewlingo-qa-store']);
+            assert.equal(blocked.length, storeCount, locale + page);
+            for (const link of blocked) {
+                assert.equal(link.href, '#viewlingo-qa-store');
+                assert.match(link.attrs['data-viewlingo-qa-store'], /ct=vl_qa_260913&mt=12$/);
             }
         }
     }

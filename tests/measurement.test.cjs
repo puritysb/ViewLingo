@@ -83,7 +83,7 @@ test('late-created consent policy link retains LY attribution through privacy, h
     for(const locale of ['', 'ja/', 'ko/', 'zh-hans/', 'zh-hant/']){
       const h=harness({qa:true,href:'https://puritysb.github.io/ViewLingo/'+locale+'index.html?campaign='+campaign+'&measurement_qa=1&yclid=private'});
       const policy=h.nodes[0].children[2].children[2].href;
-      assert.equal(new URL(policy).search,'?campaign='+expected);
+      assert.equal(new URL(policy).search,'?campaign='+expected+'&measurement_qa=1');
       const home=h.context.window.ViewLingoCampaign.link('index.html',policy);
       const store=h.context.window.ViewLingoCampaign.link('https://apps.apple.com/jp/app/id6749508592?pt=128040795&ct=web&mt=12',home);
       assert.equal(new URL(store).search,'?pt=128040795&ct='+expected+'&mt=12');

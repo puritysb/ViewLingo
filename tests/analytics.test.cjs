@@ -13,10 +13,41 @@ function harness({ads,analytics,blocked=false,dnt=false,qa=false,href=root+'ko/?
   const location={href,hostname:qa?'localhost':'puritysb.github.io',reload(){location.reloaded=true;},assign(){}};
   const context={URL,Date,document:doc,location,window:{location},navigator:{globalPrivacyControl:blocked,doNotTrack:dnt?'1':'0'},localStorage:{getItem:k=>values[k]??null,setItem:(k,v)=>values[k]=v},CustomEvent:function(type,v){this.type=type;this.detail=v.detail;},setTimeout(){}};
   for(const name of ['common','measurement','analytics']) vm.runInNewContext(fs.readFileSync(`js/${name}.js`,'utf8'),context);
-  function click(slot){const link={href:'https://apps.apple.com/app/id6749508592',closest:selector=>selector===slot?{}:null};const e={target:{closest:()=>link},button:0,preventDefault(){this.defaultPrevented=true;}};for(const fn of listeners.click||[])fn(e);}
+  function click(slot){const link={href:'https://apps.apple.com/app/id6749508592',closest:selector=>selector===slot?{}:null};const e={target:{closest:()=>link},button:0,preventDefault(){this.defaultPrevented=true;}};for(const fn of listeners.click||[])fn(e);return e;}
   return {context,doc,location,values,nodes,scripts,events,click,buttons:i=>nodes[i].children[2].children,commands:()=>Array.from(context.window.dataLayer||[],x=>Array.from(x))};
 }
 const isGA=x=>(x[0]==='config'&&x[1]===fixtureID)||(x[0]==='event'&&x[2]?.send_to===fixtureID);
+test('QA remains isolated across every locale and page with stored production grants',()=>{
+  const {campaignLink,isQA}=require('../js/common.js');
+  const campaigns=['','vl_dg_qa_01','vl_qa_260913','vl_ly_jp_s01','vl_kakao_kr_wide_20261106','vl_kakao_kr_sq_20261106'];
+  for(const campaign of campaigns) for(const locale of ['', 'ko/', 'ja/', 'zh-hans/', 'zh-hant/']) {
+    const initial=root+locale+'?measurement_qa=1'+(campaign?'&campaign='+campaign:'');
+    for(const path of ['index.html','faq.html','privacy.html','../guide.html']) {
+      const next=campaignLink(path,initial);
+      if(!new URL(next,initial).pathname.startsWith('/ViewLingo/'))continue;
+      assert.equal(isQA(next),true);
+      const h=harness({href:next,ads:'granted',analytics:'granted'});
+      const before=JSON.stringify(h.values);
+      assert.equal(h.commands().length,0);
+      // QA consent is document-only: no production choice inheritance, writes or deletion.
+      h.buttons(0)[0].click();h.buttons(3)[0].click();
+      const click=h.click();assert.equal(click.defaultPrevented,true);
+      h.buttons(0)[1].click();h.buttons(3)[1].click();
+      assert.equal(JSON.stringify(h.values),before);
+      assert.equal(h.doc.cookie,'');assert.equal(h.location.reloaded,undefined);
+      assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);
+      assert.equal(h.context.window.yjDataLayer,undefined);
+      assert.equal(h.events.filter(e=>e.type==='viewlingo:analytics-qa'&&e.detail.event==='store_cta_click').length,1);
+    }
+  }
+});
+test('legacy QA campaigns and duplicate QA flags cannot reach production without the ordinary flag',()=>{
+  for(const query of ['campaign=vl_dg_qa_01','campaign=vl_qa_260913','campaign=vl_dg_qa_01&campaign=unknown','measurement_qa=0&measurement_qa=1']) {
+    const h=harness({href:root+'ko/?'+query,ads:'granted',analytics:'granted'});
+    h.buttons(0)[0].click();h.buttons(3)[0].click();assert.equal(h.click().defaultPrevented,true);
+    assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);
+  }
+});
 test('four independent consent combinations load only authorized destinations on one queue',()=>{
   for(const ads of ['granted','denied']) for(const analytics of ['granted','denied']) {
     const h=harness({ads,analytics});h.click();h.click();const c=h.commands();
@@ -37,7 +68,7 @@ test('old Ads permission, missing or expired Analytics consent never activates A
 });
 test('GPC, DNT and QA never append a provider loader or queue an Analytics request',()=>{
   for(const opts of [{blocked:true},{dnt:true},{qa:true}]) {
-    const h=harness({ads:'granted',analytics:'granted',...opts});h.click();
+    const h=harness({ads:'granted',analytics:'granted',...opts});if(opts.qa){h.buttons(0)[0].click();h.buttons(3)[0].click();}h.click();
     assert.equal(h.scripts.length,0);assert.equal(h.commands().length,0);
     assert.equal(h.events.filter(e=>e.type==='viewlingo:analytics-qa').length,opts.qa?2:0);
   }
@@ -125,7 +156,7 @@ test('every public page wires the verified stream after the shared consent bridg
   const paths=['index.html','faq.html','privacy.html','guide.html','featuring.html','translate-japanese-games-on-mac.html'];
   for(const locale of ['ko','ja','zh-hans','zh-hant']) for(const page of ['index','faq','privacy'])paths.push(`${locale}/${page}.html`);
   for(const file of paths){const html=fs.readFileSync(file,'utf8');
-    assert.equal((html.match(/js\/analytics\.js\?v=2026110501/g)||[]).length,1,file);
+    assert.equal((html.match(/js\/analytics\.js\?v=2026110801/g)||[]).length,1,file);
     assert.ok(html.includes('data-measurement-id="G-HHSGB68SC4"'),file);
     assert.ok(html.indexOf('js/common.js?')<html.indexOf('js/measurement.js?'),file);
     assert.ok(html.indexOf('js/measurement.js?')<html.indexOf('js/analytics.js?'),file);

@@ -8,8 +8,9 @@
     var OLD_KEY = 'viewlingo_ad_measurement_v1';
     var LANDING_KEY = 'viewlingo_yahoo_landing_v1';
     var TTL = 180 * 24 * 60 * 60 * 1000;
-    var qa = location.hostname === 'localhost' || location.hostname === '127.0.0.1' ||
-        new URL(location.href).searchParams.get('measurement_qa') === '1';
+    var qa = !window.ViewLingoCampaign || typeof window.ViewLingoCampaign.isQA !== 'function' ||
+        window.ViewLingoCampaign.isQA(location);
+    var qaChoice = null;
     var blocked = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
     var granted = false, started = false, visited = false, storeSent = false, yahooStarted = false, landingSent = false;
     var lang = document.documentElement.lang.toLowerCase();
@@ -29,7 +30,9 @@
         'zh-hant': ['另行同意Yahoo造訪評估', '是否也允許Yahoo Ads（LINE Yahoo）評估您到達已登記廣告活動頁面的情況？這會增加價值為0的造訪事件，並非購買。Yahoo可能接收廣告活動及廣告識別碼、IP位址和瀏覽器及網路資訊。原有Store點擊選擇保持不變。此獨立選擇保留180天。', '允許造訪評估', '拒絕造訪評估']
     };
     var lt = landingTexts[lang] || landingTexts.en;
+    var qaLandingChoice = null;
     function savedLanding() {
+        if (qa) return qaLandingChoice;
         try {
             var value = JSON.parse(localStorage.getItem(LANDING_KEY));
             return value && value.expires > Date.now() && /^(granted|denied)$/.test(value.choice) ? value.choice : null;
@@ -38,9 +41,11 @@
     var landingGranted = savedLanding() === 'granted', landingBox;
     function rememberLanding(choice) {
         landingGranted = choice === 'granted';
+        if (qa) { qaLandingChoice = choice; return; }
         try { localStorage.setItem(LANDING_KEY, JSON.stringify({choice: choice, expires: Date.now() + TTL})); } catch (_) {}
     }
     function saved() {
+        if (qa) return qaChoice;
         try {
             var value = JSON.parse(localStorage.getItem(KEY));
             if (value && value.expires > Date.now() && /^(granted|denied)$/.test(value.choice)) return value.choice;
@@ -50,6 +55,7 @@
         } catch (_) { return null; }
     }
     function remember(choice) {
+        if (qa) { qaChoice = choice; return; }
         try { localStorage.setItem(KEY, JSON.stringify({choice: choice, expires: Date.now() + TTL})); } catch (_) {}
     }
     function gtag() { window.dataLayer.push(arguments); }
@@ -244,6 +250,7 @@
     }
     function revoke() {
         granted = false;
+        if (qa) return;
         if (landingBox) landingBox.hidden = true;
         // Reload unloads the tag entirely. No denied-mode pings are sent after withdrawal.
         document.cookie.split(';').forEach(function (part) {
@@ -305,10 +312,11 @@
         if (choice === 'granted') enable();
         document.addEventListener('click', function (e) {
             var link = e.target.closest && e.target.closest('a[href]');
-            if (!link || e.defaultPrevented) return;
+            if (!link || (e.defaultPrevented && !qa)) return;
             var url;
-            try { url = new URL(link.href, location.href); } catch (_) { return; }
+            try { url = new URL(qa && link.getAttribute && link.getAttribute('data-viewlingo-qa-store') || link.href, location.href); } catch (_) { return; }
             if (url.origin === 'https://apps.apple.com' && /^\/(?:jp\/)?app\/(?:apple-store\/)?id6749508592$/.test(url.pathname)) {
+                if (qa) e.preventDefault();
                 if (granted && !blocked && !qa && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey &&
                     (!link.target || link.target === '_self') && e.button === 0) {
                     e.preventDefault();
