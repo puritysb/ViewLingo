@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="../css/measurement.css?v=2026103002">
     <link rel="stylesheet" href="../css/acquisition.css?v=2026102903">
     <link rel="icon" type="image/png" href="../assets/acquisition/20261029-onboarding/icon.png">
+    <link rel="stylesheet" href="../css/translation-benchmark.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -237,7 +238,31 @@
         </div>
     </section>
 
-    </main>
+        <section class="benchmark" id="translation-benchmark" aria-labelledby="benchmark-heading">
+      <div class="container">
+        <h2 id="benchmark-heading">翻译引擎对比实验</h2>
+        <p>我们将相同的 40 条原文交给三个翻译引擎，对比原意保留情况和响应时间。</p>
+        <div class="benchmark-grid">
+        <figure>
+          <figcaption>重大语义错误（共 40 条）</figcaption>
+          <div class="benchmark-row"><span>Apple</span><strong>3/40</strong><meter min="0" max="40" value="3" aria-label="Apple · 重大语义错误（共 40 条） · 3/40"></meter></div>
+          <div class="benchmark-row"><span>DeepL</span><strong>1/40</strong><meter min="0" max="40" value="1" aria-label="DeepL · 重大语义错误（共 40 条） · 1/40"></meter></div>
+          <div class="benchmark-row"><span>OpenAI Terra</span><strong>0/40</strong><meter min="0" max="40" value="0" aria-label="OpenAI Terra · 重大语义错误（共 40 条） · 0/40"></meter></div>
+        </figure>
+        <figure>
+          <figcaption>响应时间中位数</figcaption>
+          <div class="benchmark-row"><span>Apple</span><strong>0.025 秒</strong><meter min="0" max="2.5" value="0.0254987" aria-label="Apple · 响应时间中位数 · 0.025 秒"></meter></div>
+          <div class="benchmark-row"><span>DeepL</span><strong>0.386 秒</strong><meter min="0" max="2.5" value="0.386265" aria-label="DeepL · 响应时间中位数 · 0.386 秒"></meter></div>
+          <div class="benchmark-row"><span>OpenAI Terra</span><strong>2.187 秒</strong><meter min="0" max="2.5" value="2.18655" aria-label="OpenAI Terra · 响应时间中位数 · 2.187 秒"></meter></div>
+        </figure>
+        </div>
+        <details>
+          <summary>实验方法与范围</summary>
+          <p>2026 年 11 月 9 日使用合成例句测量，涵盖英译韩、日译韩、韩译英和英译繁体中文。各引擎只接收原文。Apple 使用已安装的 macOS 翻译 SDK 的首次测量结果，DeepL 使用 quality_optimized，OpenAI 使用 Terra。由同一个 AI 在隐藏提供方名称的情况下评估译文。响应时间仅涵盖文本翻译。实际屏幕翻译还涉及截图和文字识别。</p>
+        </details>
+      </div>
+    </section>
+</main>
 
     <footer>
         <div class="container">

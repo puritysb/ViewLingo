@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="../css/measurement.css?v=2026103002">
     <link rel="stylesheet" href="../css/acquisition.css?v=2026102903">
     <link rel="icon" type="image/png" href="../assets/acquisition/20261029-onboarding/icon.png">
+    <link rel="stylesheet" href="../css/translation-benchmark.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">コンテンツにスキップ</a>
@@ -238,7 +239,31 @@
         </div>
     </section>
 
-    </main>
+        <section class="benchmark" id="translation-benchmark" aria-labelledby="benchmark-heading">
+      <div class="container">
+        <h2 id="benchmark-heading">翻訳エンジンの比較</h2>
+        <p>同じ40件の原文を3つの翻訳エンジンに入力し、意味の保持と応答時間を比較しました。</p>
+        <div class="benchmark-grid">
+        <figure>
+          <figcaption>重大な意味の誤り（40件中）</figcaption>
+          <div class="benchmark-row"><span>Apple</span><strong>3/40</strong><meter min="0" max="40" value="3" aria-label="Apple · 重大な意味の誤り（40件中） · 3/40"></meter></div>
+          <div class="benchmark-row"><span>DeepL</span><strong>1/40</strong><meter min="0" max="40" value="1" aria-label="DeepL · 重大な意味の誤り（40件中） · 1/40"></meter></div>
+          <div class="benchmark-row"><span>OpenAI Terra</span><strong>0/40</strong><meter min="0" max="40" value="0" aria-label="OpenAI Terra · 重大な意味の誤り（40件中） · 0/40"></meter></div>
+        </figure>
+        <figure>
+          <figcaption>応答時間の中央値</figcaption>
+          <div class="benchmark-row"><span>Apple</span><strong>0.025秒</strong><meter min="0" max="2.5" value="0.0254987" aria-label="Apple · 応答時間の中央値 · 0.025秒"></meter></div>
+          <div class="benchmark-row"><span>DeepL</span><strong>0.386秒</strong><meter min="0" max="2.5" value="0.386265" aria-label="DeepL · 応答時間の中央値 · 0.386秒"></meter></div>
+          <div class="benchmark-row"><span>OpenAI Terra</span><strong>2.187秒</strong><meter min="0" max="2.5" value="2.18655" aria-label="OpenAI Terra · 応答時間の中央値 · 2.187秒"></meter></div>
+        </figure>
+        </div>
+        <details>
+          <summary>実験方法と範囲</summary>
+          <p>2026年11月9日に、英語から韓国語、日本語から韓国語、韓国語から英語、英語から繁体字中国語への合成例文で測定しました。各エンジンには原文のみを渡しました。Appleはインストール済みのmacOS翻訳SDKの初回測定、DeepLはquality_optimized、OpenAIはTerraです。同じAIが提供元名を伏せた結果を評価しました。応答時間はテキストの翻訳にかかった時間です。実際の画面翻訳では画面の取得と文字認識も行います。</p>
+        </details>
+      </div>
+    </section>
+</main>
 
     <footer>
         <div class="container">
