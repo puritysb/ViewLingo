@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="../css/measurement.css?v=2026103002">
     <link rel="stylesheet" href="../css/acquisition.css?v=2026102903">
     <link rel="icon" type="image/png" href="../assets/acquisition/20261029-onboarding/icon.png">
+    <link rel="stylesheet" href="../css/translation-benchmark.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
@@ -237,6 +238,30 @@
         </div>
     </section>
 
+    <section class="benchmark" id="translation-benchmark" aria-labelledby="benchmark-heading">
+      <div class="container">
+        <h2 id="benchmark-heading">번역 엔진 비교 실험</h2>
+        <p>같은 원문 40개를 세 엔진에 넣고, 의미를 얼마나 잘 보존하는지와 응답 시간을 비교했습니다.</p>
+        <div class="benchmark-grid">
+        <figure>
+          <figcaption>중대한 의미 오류 · 40개 중</figcaption>
+          <div class="benchmark-row"><span>Apple</span><strong>3/40</strong><meter min="0" max="40" value="3" aria-label="Apple · 중대한 의미 오류 · 40개 중 · 3/40"></meter></div>
+          <div class="benchmark-row"><span>DeepL</span><strong>1/40</strong><meter min="0" max="40" value="1" aria-label="DeepL · 중대한 의미 오류 · 40개 중 · 1/40"></meter></div>
+          <div class="benchmark-row"><span>OpenAI Terra</span><strong>0/40</strong><meter min="0" max="40" value="0" aria-label="OpenAI Terra · 중대한 의미 오류 · 40개 중 · 0/40"></meter></div>
+        </figure>
+        <figure>
+          <figcaption>응답 시간 중앙값</figcaption>
+          <div class="benchmark-row"><span>Apple</span><strong>0.025초</strong><meter min="0" max="2.5" value="0.0254987" aria-label="Apple · 응답 시간 중앙값 · 0.025초"></meter></div>
+          <div class="benchmark-row"><span>DeepL</span><strong>0.386초</strong><meter min="0" max="2.5" value="0.386265" aria-label="DeepL · 응답 시간 중앙값 · 0.386초"></meter></div>
+          <div class="benchmark-row"><span>OpenAI Terra</span><strong>2.187초</strong><meter min="0" max="2.5" value="2.18655" aria-label="OpenAI Terra · 응답 시간 중앙값 · 2.187초"></meter></div>
+        </figure>
+        </div>
+        <details>
+          <summary>실험 방법과 범위</summary>
+          <p>영어→한국어, 일본어→한국어, 한국어→영어, 영어→번체 중국어의 합성 문장으로 2026년 11월 9일에 측정했습니다. 원문만 제공했고 Apple은 설치된 macOS 번역 SDK의 첫 실행 표본, DeepL은 quality_optimized, OpenAI는 Terra를 사용했습니다. 같은 AI가 제공자 이름을 가린 출력을 검수했습니다. 응답 시간은 텍스트 요청 기준이며 실제 화면 번역 시간은 캡처와 OCR에도 영향을 받습니다.</p>
+        </details>
+      </div>
+    </section>
     </main>
 
     <footer>

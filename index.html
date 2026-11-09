@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="css/measurement.css?v=2026103002">
     <link rel="stylesheet" href="css/acquisition.css?v=2026102903">
     <link rel="icon" type="image/png" href="assets/acquisition/20261029-onboarding/icon.png">
+    <link rel="stylesheet" href="css/translation-benchmark.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -238,6 +239,30 @@
         </div>
     </section>
 
+    <section class="benchmark" id="translation-benchmark" aria-labelledby="benchmark-heading">
+      <div class="container">
+        <h2 id="benchmark-heading">Translation engines in a side-by-side test</h2>
+        <p>We sent the same 40 source passages to all three engines and measured meaning preservation and response time.</p>
+        <div class="benchmark-grid">
+        <figure>
+          <figcaption>Major meaning errors out of 40</figcaption>
+          <div class="benchmark-row"><span>Apple</span><strong>3/40</strong><meter min="0" max="40" value="3" aria-label="Apple · Major meaning errors out of 40 · 3/40"></meter></div>
+          <div class="benchmark-row"><span>DeepL</span><strong>1/40</strong><meter min="0" max="40" value="1" aria-label="DeepL · Major meaning errors out of 40 · 1/40"></meter></div>
+          <div class="benchmark-row"><span>OpenAI Terra</span><strong>0/40</strong><meter min="0" max="40" value="0" aria-label="OpenAI Terra · Major meaning errors out of 40 · 0/40"></meter></div>
+        </figure>
+        <figure>
+          <figcaption>Median response time</figcaption>
+          <div class="benchmark-row"><span>Apple</span><strong>0.025 s</strong><meter min="0" max="2.5" value="0.0254987" aria-label="Apple · Median response time · 0.025 s"></meter></div>
+          <div class="benchmark-row"><span>DeepL</span><strong>0.386 s</strong><meter min="0" max="2.5" value="0.386265" aria-label="DeepL · Median response time · 0.386 s"></meter></div>
+          <div class="benchmark-row"><span>OpenAI Terra</span><strong>2.187 s</strong><meter min="0" max="2.5" value="2.18655" aria-label="OpenAI Terra · Median response time · 2.187 s"></meter></div>
+        </figure>
+        </div>
+        <details>
+          <summary>Method and scope</summary>
+          <p>Measured on November 9, 2026 using synthetic English to Korean, Japanese to Korean, Korean to English, and English to Traditional Chinese passages. Each engine received source text alone. Timings use the first repetition for the installed macOS Translation SDK, quality_optimized for DeepL, and Terra for OpenAI. The same AI rated outputs with provider names hidden. These timings cover text requests. Screen translation also depends on capture and OCR.</p>
+        </details>
+      </div>
+    </section>
     </main>
 
     <footer>

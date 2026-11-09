@@ -1,0 +1,9 @@
+.benchmark { padding: 4rem 0; }
+.benchmark-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.benchmark figure { margin: 0; padding: 1.25rem; border: 1px solid currentColor; border-radius: 1rem; }
+.benchmark figcaption { font-weight: 700; margin-bottom: 1rem; }
+.benchmark-row { display: grid; grid-template-columns: 1fr auto; gap: .25rem 1rem; margin: .75rem 0; }
+.benchmark-row meter { grid-column: 1 / -1; width: 100%; height: 1rem; accent-color: #287bbd; }
+.benchmark-row strong { font-variant-numeric: tabular-nums; }
+.benchmark details { margin-top: 1rem; }
+.benchmark summary { cursor: pointer; }
