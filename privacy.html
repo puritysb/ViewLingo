@@ -16,7 +16,7 @@
         <header>
             <div class="logo">ViewLingo</div>
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last updated: November 9, 2026</p>
+            <p class="last-updated">Last updated: November 19, 2026</p>
         </header>
 
         <main id="main-content">
@@ -25,13 +25,13 @@
 
         <div class="tldr">
             <h2>🔒 Local by default. External translation is your choice.</h2>
-            <p>Regular captures and Live translation use Apple on your Mac. ViewLingo 2.x remains local. The optional DeepL connection described below is available in version 3.0; it is disabled until you set it up and consent.</p>
+            <p>Capture translation uses Apple on your Mac by default. Live translation uses Apple on your Mac. Optional network features require your consent.</p>
         </div>
 
         <section id="openai-comparison">
             <h2>Optional OpenAI comparison with your own API key in 3.2</h2>
             <p>OpenAI comparison is optional. In supported App Store regions, it is disabled until you save your own OpenAI API key and consent. The key is stored separately from DeepL in macOS Keychain. It uses your API account, not your ChatGPT subscription. Sign in with ChatGPT is not offered without commercial authorization.</p>
-            <p>Only after you press Translate with OpenAI, the selected original text, source and target languages, up to five selected preceding passages from the same capture and up to five selected terms are sent directly to OpenAI over HTTPS. Your API key authenticates the request; OpenAI also receives network information needed to deliver it. Screenshots, window titles, other history and unrelated projects are never sent. Regular Apple translation and Live never switch to OpenAI automatically.</p>
+            <p>For manual comparison, when you press Translate with OpenAI, the selected original text, source and target languages, up to five selected preceding passages from the same capture and up to five selected terms are sent directly to OpenAI over HTTPS. Your API key authenticates the request; OpenAI also receives network information needed to deliver it. Screenshots, window titles, other history and unrelated projects are never sent.</p>
             <p>We request store:false. This is not a guarantee of zero retention: OpenAI may retain abuse-monitoring logs under its API policy. API data is not used for training by default unless you opt in with OpenAI. Your provider account terms, retention settings and API charges apply separately from ViewLingo.</p>
             <p>Your App Store region is checked automatically against a local allow-list, without asking you to select a country or confirm it each session. Storefront does not prove physical location. Unverified or unsupported Storefronts, including mainland China, cannot send OpenAI requests. OpenAI may also refuse access from the actual connection location; provider refusals stop the connection. We do not collect GPS data or contact an IP-geolocation service.</p>
             <p>You can revoke consent and delete the key even in an unsupported region. Cancellation cannot recall an already sent request. The local monthly token budget conservatively reserves input and output allowance and records usage; it is not a monetary or account-wide spending limit. Deleting local data does not delete information already processed by OpenAI.</p>
@@ -40,16 +40,30 @@
 
         <section id="openai-free-trial">
             <h2>Optional free OpenAI trial</h2>
-            <p>ViewLingo 3.2 offers a developer-funded trial in supported regions while the service is available. You can choose the trial instead of using your own API key and separately consent to sending text. Up to 10 new comparison requests per day are counted locally on this Mac, resetting at 00:00 UTC. This is a soft limit, not an account-wide entitlement. Cached results do not count; cancellations or lost replies after dispatch may count. The trial may change, pause or end. It does not automatically switch to your paid API key.</p>
+            <p>ViewLingo 3.2 offers a developer-funded trial in supported regions while the service is available. You can choose the trial instead of using your own API key and separately consent to sending text. Up to 10 new requests shared by comparison and optional capture translation per day are counted locally on this Mac, resetting at 00:00 UTC. This is a soft limit, not an account-wide entitlement. Cached results do not count; cancellations or lost replies after dispatch may count. The trial may change, pause or end. It does not automatically switch to your paid API key.</p>
             <p>For the trial, the previewed original text, languages, up to five selected context passages and five selected terms pass through a ViewLingo relay hosted by Cloudflare to OpenAI. The developer’s API key remains on that server; your own API key is not sent to the relay. No screenshots, window titles, app account or persistent installation identifier are sent. Apple and Live translation remain local.</p>
             <p>The relay processes text in memory and does not intentionally log or persist translation content. Cloudflare and OpenAI process network metadata needed to provide and protect the service. Cloudflare’s edge country information is used to block unsupported or unknown locations; a client-declared country is not trusted. This is not a promise of complete anonymity or zero provider retention. OpenAI’s API retention and default no-training policy described above still apply. Aggregate project cost monitoring is separate from app analytics; no user behavior tracking is added.</p>
             <p>Trial consent and the daily request record stay locally and are separate from BYOK consent, keys and usage. You can revoke trial permission without deleting your own key. Trial API fees are paid by the developer; your own API-key charges remain your responsibility.</p>
             <p>If the trial is unavailable, ViewLingo shows the existing Apple translation when available. You can resume the trial manually. You can also withdraw trial consent in connection settings after the service is removed.</p>
         </section>
 
+        <section id="optional-capture-engine">
+            <h2>Optional default engine for capture translation</h2>
+            <p>This section applies when you use this feature in ViewLingo 3.3.</p>
+            <p>In Settings › Translation Engine, you can separately consent to using one connected service for regular captures. Each capture sends recognized text and the source and target languages directly to DeepL, OpenAI or Claude (Anthropic) using your API key, or through the Cloudflare-hosted ViewLingo relay to OpenAI if you select the free trial. Requests do not contain screenshots, window titles or unrelated history. The trial counts one new request per distinct passage and shares the daily allowance with comparison. If the allowance runs out or the service fails, the capture uses Apple translation. You can select Apple at any time. Live and Shortcuts use Apple translation.</p>
+            <p><a href="https://www.anthropic.com/legal/privacy">Anthropic Privacy Policy</a></p>
+        </section>
+
+        <section id="apple-pcc">
+            <h2>Optional comparison with Apple Private Cloud Compute</h2>
+            <p>This section applies when you use this feature in ViewLingo 3.3.</p>
+            <p>Where available, you can separately allow ViewLingo to send a selected passage, language information, and any context or terms you selected to Apple Private Cloud Compute for comparison. The app sends no screenshot, window title, API key or unrelated history. Apple applies a service quota. If a request fails or the quota is reached, the Apple baseline remains available. You can withdraw consent in Connection Settings.</p>
+            <p><a href="https://security.apple.com/blog/private-cloud-compute/">Apple Private Cloud Compute</a></p>
+        </section>
+
         <section>
             <h2>Default Apple translation</h2>
-            <p>Apple text recognition processes captured images on your Mac. Apple translation works offline after the required language packs are downloaded. Regular capture and Live never switch to DeepL automatically. Default Apple translation does not send screenshots or translation requests to a developer server. The optional trial relay described above is a separate, consented path. The Mac app has no analytics or tracking.</p>
+            <p>Apple text recognition processes captured images on your Mac. Apple translation works offline after the required language packs are downloaded. Default Apple translation does not send screenshots or translation requests to a developer server. The optional trial relay described above is a separate, consented path. The Mac app has no analytics or tracking.</p>
         </section>
 
         <section>
@@ -76,7 +90,7 @@
 
         <section>
             <h2>Your controls</h2>
-            <p>You choose which text and options to send on each request. Context starts off. You can cancel, revoke consent, disconnect and delete saved keys. A request already sent cannot be recalled and may count toward API usage even after cancellation or a timeout. You can delete local history or projects in the app; this does not erase data already processed by DeepL. Contact DeepL about its retained data and your rights under its policy.</p>
+            <p>For manual comparisons, you choose which text and options to send. For capture translation, you can return to Apple in Settings. Context starts off. You can cancel, revoke consent, disconnect and delete saved keys. A request already sent cannot be recalled and may count toward API usage even after cancellation or a timeout. You can delete local history or projects in the app; this does not erase data already processed by DeepL. Contact DeepL about its retained data and your rights under its policy.</p>
         </section>
 
         <section>
