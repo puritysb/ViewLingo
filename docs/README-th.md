@@ -66,5 +66,5 @@
 <p align="center">
   <a href="https://puritysb.github.io/ViewLingo/privacy">นโยบายความเป็นส่วนตัว</a> •
   <a href="../SUPPORT.md">การสนับสนุน</a> •
-  <a href="https://github.com/puritysb/ViewLingo/releases">บันทึกการเผยแพร่</a>
+  <a href="https://puritysb.github.io/ViewLingo/CHANGELOG.html">บันทึกการเผยแพร่</a>
 </p>

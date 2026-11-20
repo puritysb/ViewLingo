@@ -66,5 +66,5 @@
 <p align="center">
   <a href="https://puritysb.github.io/ViewLingo/zh-hant/privacy.html">隱私政策</a> •
   <a href="../SUPPORT.md">支援</a> •
-  <a href="https://github.com/puritysb/ViewLingo/releases">發布說明</a>
+  <a href="https://puritysb.github.io/ViewLingo/CHANGELOG.html">發布說明</a>
 </p>

@@ -66,5 +66,5 @@
 <p align="center">
   <a href="https://puritysb.github.io/ViewLingo/ko/privacy.html">개인정보 처리방침</a> •
   <a href="SUPPORT-ko.md">지원</a> •
-  <a href="https://github.com/puritysb/ViewLingo/releases">릴리즈 노트</a>
+  <a href="https://puritysb.github.io/ViewLingo/CHANGELOG.html">릴리즈 노트</a>
 </p>

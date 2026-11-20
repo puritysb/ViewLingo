@@ -66,5 +66,5 @@
 <p align="center">
   <a href="https://puritysb.github.io/ViewLingo/ja/privacy.html">プライバシーポリシー</a> •
   <a href="../SUPPORT.md">サポート</a> •
-  <a href="https://github.com/puritysb/ViewLingo/releases">リリースノート</a>
+  <a href="https://puritysb.github.io/ViewLingo/CHANGELOG.html">リリースノート</a>
 </p>

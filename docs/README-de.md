@@ -66,5 +66,5 @@ Mit ❤️ für Sprachlernende und Weltbürger gemacht
 <p align="center">
   <a href="https://puritysb.github.io/ViewLingo/privacy">Datenschutzerklärung</a> •
   <a href="../SUPPORT.md">Support</a> •
-  <a href="https://github.com/puritysb/ViewLingo/releases">Versionshinweise</a>
+  <a href="https://puritysb.github.io/ViewLingo/CHANGELOG.html">Versionshinweise</a>
 </p>

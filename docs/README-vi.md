@@ -66,5 +66,5 @@ Chụp thông thường và Live dùng Apple trên Mac; phiên bản 2.x tiếp 
 <p align="center">
   <a href="https://puritysb.github.io/ViewLingo/privacy">Chính Sách Quyền Riêng Tư</a> •
   <a href="../SUPPORT.md">Hỗ Trợ</a> •
-  <a href="https://github.com/puritysb/ViewLingo/releases">Ghi Chú Phát Hành</a>
+  <a href="https://puritysb.github.io/ViewLingo/CHANGELOG.html">Ghi Chú Phát Hành</a>
 </p>
