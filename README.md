@@ -1,65 +1,40 @@
-# ViewLingo - AR Screen Translator for Mac
+# ViewLingo — screen translation for Mac
 
-Read any text on your Mac screen in your language, right where it appears.
+Drag a viewfinder over dialogue in a game, subtitles in a video, or text in a PDF. ViewLingo reads the selected area and draws the translation over the original. Turn on Live to follow the next line as it appears.
+
+[Get ViewLingo on the Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12) · [Version history](https://puritysb.github.io/ViewLingo/CHANGELOG.html) · [Get support](SUPPORT.md)
 
 🌍 Language: **English** | [한국어](docs/README-ko.md) | [日本語](docs/README-ja.md) | [简体中文](docs/README-zh-Hans.md) | [繁體中文](docs/README-zh-Hant.md) | [ไทย](docs/README-th.md) | [Español](docs/README-es.md) | [Français](docs/README-fr.md) | [Deutsch](docs/README-de.md) | [Tiếng Việt](docs/README-vi.md)
 
-[Version history](https://puritysb.github.io/ViewLingo/CHANGELOG.html)
+[![Translated dialogue over the original game window](assets/acquisition/20261027/en-US/scene-1.jpg)](https://puritysb.github.io/ViewLingo/translate-japanese-games-on-mac.html)
 
-[![macOS](https://img.shields.io/badge/macOS-15.0+-blue)](https://www.apple.com/macos/)
-[![App Store](https://img.shields.io/badge/App%20Store-Available-green)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
-[![Privacy](https://img.shields.io/badge/Privacy-Local%20by%20default-brightgreen)](https://puritysb.github.io/ViewLingo/privacy.html)
+[Watch the Japanese game translation demo](https://puritysb.github.io/ViewLingo/translate-japanese-games-on-mac.html)
 
-## About ViewLingo
+## Translate your first selection
 
-Drag a viewfinder over a game, video, photo, PDF or app window. ViewLingo recognizes the text and lays the translation directly over the original, like AR for your screen. No copying or switching apps. Regular capture and Live translation use Apple on your Mac.
+1. Install ViewLingo on a Mac running macOS 15 or later. Apple silicon and Intel Macs are supported. During setup, allow Screen Recording and download the language packs you need.
+2. Press `fn + Control + Option` and drag over the text. Move or resize the viewfinder to adjust what gets translated. You can change the shortcut in Settings.
+3. For changing text, select **Live**. Lock the viewfinder when you want to click or scroll in the window underneath.
 
-## Key Features
+ViewLingo also recognizes vertical Japanese, Chinese and Korean text. The available translation languages depend on your Mac. ViewLingo is a one-time purchase. The App Store shows the price for your region.
 
-### Viewfinder Translation
-Press `fn + Control + Option` (configurable in Settings) and drag over the text you want to read. Double-tap `fn + Control` to drop a viewfinder right at your pointer. Move or resize it at any time and the translation follows.
+## Where translation happens
 
-### In-Place AR Overlay
-Translations are drawn over the original text, fitted to its layout and colors, with automatic font sizing so longer translations stay readable. When space is tight, hover to see the full translation.
+- **Default captures and Live** use Apple Translation on your Mac and work offline after the language packs are downloaded. Text recognition happens on your Mac.
+- **Regular captures** can use a connected service after you select it and allow text sharing. The service receives recognized text and the source and target languages. If it is unavailable, ViewLingo falls back to Apple Translation.
+- **Translation comparison** lets you send a selected passage and any context or terms you choose, with separate consent. Supported Macs can also use Apple Private Cloud Compute for comparison. Connected providers may charge for API use.
 
-### Live Mode
-Turn on Live and ViewLingo follows changing text in video subtitles, games, slides and streams, and holds steady when the screen doesn't change. Lock the viewfinder to click and scroll through it while translation keeps running on top.
+Screenshots and saved history stay on your Mac. You can clear history or change how long it is kept. The [privacy policy](https://puritysb.github.io/ViewLingo/privacy.html) explains each connection and how to withdraw consent.
 
-### Compact Viewfinder Controls
-Compact viewfinder controls keep Live, Retry and Close within reach. In 3.0, full-screen selections use an inset toolbar with room for edge resizing.
+## Help and feedback
 
-### Vertical Text
-Vertical Japanese, Chinese and Korean text is recognized and translated.
+- [User guide](https://puritysb.github.io/ViewLingo/guide.html) and [FAQ](https://puritysb.github.io/ViewLingo/faq.html) for setup and troubleshooting.
+- [Report a bug](https://github.com/puritysb/ViewLingo/issues/new?template=bug_report.md) or [ask a question in Discussions](https://github.com/puritysb/ViewLingo/discussions).
 
-### Languages From Your Mac
-ViewLingo offers every language that both your Mac's text recognition and Apple Translation support, so the list grows with macOS. Setup walks you through downloading each language pack once; after that, default Apple translation works offline.
+This repository hosts the [ViewLingo website](https://puritysb.github.io/ViewLingo/) and public support materials. The Mac app is proprietary. [License](LICENSE)
 
-### Private by Design
-- **Apple by default**: Text recognition, regular capture translation and Live run on your Mac
-- **Default translation works offline**: Apple needs no internet connection after language packs are downloaded
-- **No app analytics or tracking**: Default Apple translation requires no account
-- **One permission**: Screen Recording, used only for the area you select
-- **Local history**: History and screenshots are stored on your Mac; choose how long to keep them or clear them anytime
-
-### Optional DeepL comparison in 3.0
-ViewLingo 2.x remains local. In 3.0, you can save your own DeepL API key in macOS Keychain, consent to sharing text and explicitly request a separate comparison. Only the selected original, up to five previous passages from the same capture and five selected glossary terms are sent. Screenshots, window titles and the full history are never sent. Opening settings or editing a glossary does not send text. Provider data terms, fees and limits apply separately from ViewLingo; do not send personal or confidential text with Free / Developer. See the [Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html) before enabling it.
-
-## System Requirements
-
-- macOS 15.0 or later
-- Universal app for Apple silicon and Intel Macs
-- Screen Recording permission
-
-## Get ViewLingo
-
-- **Platform**: [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
-- **Pricing**: One-time app purchase, no ViewLingo subscription. Check the App Store for regional pricing; optional DeepL API usage is separate.
-- **App languages**: English, Korean, Japanese, Simplified and Traditional Chinese, Thai, Vietnamese, German, French, Spanish, Brazilian Portuguese and Russian
-
-## See it in use
-
-- [Translate Japanese games on a Mac](https://puritysb.github.io/ViewLingo/translate-japanese-games-on-mac.html): actual recording, language setup, Live mode and practical limits.
-- [User guide](https://puritysb.github.io/ViewLingo/guide.html) and [FAQ](https://puritysb.github.io/ViewLingo/faq.html).
+<details>
+<summary>Website maintenance</summary>
 
 The displayed product name is **ViewLingo** in every language, including wordmarks, badges and editorial video/image text. Do not transform the brand to uppercase. Technical identifiers and historical capture pixels retain their original spelling.
 
@@ -69,32 +44,4 @@ Image thumbnails use a native dialog from `js/media.js`: Close, Escape and the b
 
 Run website regression checks with `node --test tests/*.test.cjs` and `git diff --check`. Inspect desktop and mobile layouts in the browser. The game guide preserves registered incoming campaigns; otherwise its Store links use the fixed `web_game_guide` campaign label. This is aggregate App Store attribution, not app telemetry or a purchase event sent to Google.
 
-## Built With Apple Technologies
-
-- Apple Vision (text recognition)
-- Apple Translation (on-device translation)
-- ScreenCaptureKit (screen capture)
-- SwiftUI and AppKit
-
-## Support
-
-- **Bug Reports**: [Open an issue](https://github.com/puritysb/ViewLingo/issues)
-- **Questions and ideas**: [GitHub Discussions](https://github.com/puritysb/ViewLingo/discussions)
-- **Website**: [puritysb.github.io/ViewLingo](https://puritysb.github.io/ViewLingo/)
-
-## Documentation
-
-- **[Official Website](https://puritysb.github.io/ViewLingo)** - Product information
-- **[User Guide](https://puritysb.github.io/ViewLingo/guide)** - Complete usage guide
-- **[FAQ](https://puritysb.github.io/ViewLingo/faq)** - Frequently asked questions
-- **[Privacy Policy](https://puritysb.github.io/ViewLingo/privacy.html)** - Our commitment to your privacy
-
-## License
-
-ViewLingo is proprietary software available exclusively through the [Mac App Store](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12).
-
----
-
-<p align="center">
-  Made with care by <a href="https://github.com/puritysb">Serendipity Bound</a>
-</p>
+</details>
