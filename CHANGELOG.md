@@ -4,6 +4,28 @@
 
 Choose a connected service for screen captures after you approve text sharing. If it’s unavailable, ViewLingo uses Apple Translation. On supported Macs, you can also compare translations with Apple Private Cloud Compute.
 
+## Version 3.2.0
+
+• Try optional AI translation comparison without an API key, with up to 10 requests a day on this Mac in supported regions. Availability may change; when the trial is unavailable, your existing Apple translation remains available.
+• Simplified translation connections and made context and terminology easier to select before sending.
+• Added optional OpenAI translation comparison with your own API key in supported App Store regions. Review text before sending; API charges are separate. Apple translation and Live stay on-device.
+• Fixed missing covers over original text when a translation uses fewer lines, and clipped translation endings in dense paragraphs.
+• Reduced missed and duplicate text in some complex photo backgrounds and kept separate Korean instructions from being combined.
+• Fixed a case where a Live translation did not reappear after its previous display was cleared.
+• Improved OCR startup preparation with a separate warmup request, keeping warmup out of the screen-reading request queue.
+• Added progress and cancellation guidance when initial text recognition takes longer. First-use model preparation may still take time.
+• Stopped repeated capture requests after a macOS denial and avoided unnecessary Screen Recording permission reset instructions.
+• Improved cleanup of ongoing work when closing a capture window or quitting the app.
+
+## Version 3.1.0
+
+• Live keeps reading the screen while a caption is being translated, so it can pick up the next line sooner.
+• Fixed capture stopping when you move or resize the viewfinder during its first translation. Results from an earlier position no longer appear after moving.
+• Improved column boundaries in tables and multi-column text, and the separate translation window stays in place while new text is read.
+• Improved recognition of short words on macOS 27 and alignment of Arabic text in the separate translation window.
+• Use Help → Report a Problem to review a report, hide sensitive parts of an image, then open a mail draft or save a file.
+• Use Shortcuts to translate an image on your Mac and pass the original and translated text to the next action.
+
 ## Version 3.0.0 (October 30, 2026 KST)
 
 - Compare the original, Apple and optional DeepL translations side by side, choose your wording and copy the result. Start from the viewfinder or translation history
@@ -197,6 +219,36 @@ this release has not been confirmed to resolve that reported condition.
 - Improved overlay background opacity (70%) for better readability
 - Clean rounded corners on all viewfinder layers
 - Multiple keyboard shortcut options (configurable in Settings)
+
+## Version 2.0.0
+
+v2.0 Major Improvements:
+
+macOS Compatibility &amp; Design
+
+Fixed crashes on the latest macOS
+• Resolved stability issues on macOS 26 for a seamless experience.
+
+Refined viewfinder design
+• Updated to match the latest macOS style with a cleaner, more transparent look.
+
+Stability Enhancements
+
+Improved Live Mode reliability
+• Fixed issues where Live Mode could freeze or restart during long sessions.
+
+Removed translation overlay ghosting
+• Eliminated lingering text artifacts for a clearer view.
+
+Performance Optimization
+
+Better memory efficiency
+• Runs faster and smoother with less system resource usage.
+
+Smarter translation efficiency
+• Reduced duplicate translation calls for quicker results.
+
+Update to ViewTrans 2.0 now and enjoy optimized stability and design on the latest macOS!
 
 ## Version 1.2.0 (August 2025)
 
