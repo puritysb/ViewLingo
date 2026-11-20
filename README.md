@@ -4,6 +4,8 @@ Read any text on your Mac screen in your language, right where it appears.
 
 🌍 Language: **English** | [한국어](docs/README-ko.md) | [日本語](docs/README-ja.md) | [简体中文](docs/README-zh-Hans.md) | [繁體中文](docs/README-zh-Hant.md) | [ไทย](docs/README-th.md) | [Español](docs/README-es.md) | [Français](docs/README-fr.md) | [Deutsch](docs/README-de.md) | [Tiếng Việt](docs/README-vi.md)
 
+[Version history](https://puritysb.github.io/ViewLingo/CHANGELOG.html)
+
 [![macOS](https://img.shields.io/badge/macOS-15.0+-blue)](https://www.apple.com/macos/)
 [![App Store](https://img.shields.io/badge/App%20Store-Available-green)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 [![Privacy](https://img.shields.io/badge/Privacy-Local%20by%20default-brightgreen)](https://puritysb.github.io/ViewLingo/privacy.html)

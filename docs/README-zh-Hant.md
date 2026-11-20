@@ -2,6 +2,8 @@
 
 🌍 Language: [English](../README.md) | [한국어](README-ko.md) | [日本語](README-ja.md) | [简体中文](README-zh-Hans.md) | **繁體中文** | [ไทย](README-th.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Tiếng Việt](README-vi.md)
 
+[版本記錄](https://puritysb.github.io/ViewLingo/CHANGELOG.html)
+
 [![在 Mac App Store 下載](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 
 ## 🎯 螢幕上的文字，就地讀懂

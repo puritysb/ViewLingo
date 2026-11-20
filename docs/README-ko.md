@@ -2,6 +2,8 @@
 
 🌍 Language: [English](../README.md) | **한국어** | [日本語](README-ja.md) | [简体中文](README-zh-Hans.md) | [繁體中文](README-zh-Hant.md) | [ไทย](README-th.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Tiếng Việt](README-vi.md)
 
+[버전별 변경 이력](https://puritysb.github.io/ViewLingo/CHANGELOG.html)
+
 [![Mac App Store에서 다운로드](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/app/apple-store/id6749508592?pt=128040795&ct=github&mt=12)
 
 ## 🎯 화면의 글자를 그 자리에서 내 언어로
