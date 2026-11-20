@@ -1,5 +1,9 @@
 # ViewLingo Changelog
 
+## Version 3.3.0 (November 20, 2026 KST)
+
+Choose a connected service for screen captures after you approve text sharing. If it’s unavailable, ViewLingo uses Apple Translation. On supported Macs, you can also compare translations with Apple Private Cloud Compute.
+
 ## Version 3.0.0 (October 30, 2026 KST)
 
 - Compare the original, Apple and optional DeepL translations side by side, choose your wording and copy the result. Start from the viewfinder or translation history
